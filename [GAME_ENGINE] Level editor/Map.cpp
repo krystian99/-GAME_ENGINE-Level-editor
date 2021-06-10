@@ -594,8 +594,8 @@ void Map::move_map_Wheel()
 			mapBG_area.setX(0);
 	}
 
-	static int RenderPOS_X, RenderPOS_Y;
-	static double scaleX, scaleY;
+	int RenderPOS_X, RenderPOS_Y;
+	double scaleX, scaleY;
 
 	for (auto& enemy : enemies) {
 		scaleX = double(enemy->get_mapX() - mapBG_area.left()) / double(mapBG_area.getW());
@@ -605,6 +605,17 @@ void Map::move_map_Wheel()
 		RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
 
 		enemy->update_renderPOS(RenderPOS_X, RenderPOS_Y);
+	}
+
+	if (Map_manager::getSelect_satate() == Selecting_Obj_state::MULTI)
+	{
+		scaleX = double(multiOBJ_s.get_mapX() - mapBG_area.left()) / double(mapBG_area.getW());
+		scaleY = double(multiOBJ_s.get_mapY() - mapBG_area.up()) / double(mapBG_area.getH());
+
+		RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
+		RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
+
+		multiOBJ_s.update_renderPOS(RenderPOS_X, RenderPOS_Y);
 	}
 }
 
@@ -900,6 +911,12 @@ void multiOBJ_select_structure::mouseWheel_events(int moveS)
 		updateX(-moveS);
 	else
 		updateX(moveS);
+}
+
+void multiOBJ_select_structure::update_renderPOS(int x, int y)
+{
+	setX(x);
+	setY(y);
 }
 
 void multiOBJ_select_structure::set_mapPos(Rect && area)

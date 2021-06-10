@@ -51,6 +51,14 @@ public:
 	void events_moving(bool mouse_over, const SDL_Rect& edit_area);
 	void mouseWheel_events(int moveS);
 
+	void update_renderPOS(int x, int y);
+
+	void update_mapX(int moveS);
+	void update_mapY(int moveS);
+
+	int get_mapX() const { return mapPos.left(); }
+	int get_mapY() const { return mapPos.up(); }
+
 	void set_mapPos(Rect && area);
 	void set_mapPos(int x, int y, int w, int h);
 	void setX_map();
