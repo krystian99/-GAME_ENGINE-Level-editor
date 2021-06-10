@@ -210,7 +210,7 @@ void Map::mouseWheel_events()
 		case Map_state::SELECTING_OBJECTS:
 			switch (Map_manager::getSelect_satate()) {
 			case Selecting_Obj_state::MULTI:
-				multiOBJ_s.mouseWheel_events(MAP_MOVE_SIZE);
+				//multiOBJ_s.mouseWheel_events(MAP_MOVE_SIZE);
 				break;
 			}
 			break;
@@ -837,7 +837,6 @@ void multiOBJ_select_structure::mouse_events(bool mouse_over, const Map_mouseHan
 			h = mY - point.y;
 			mapH = CoordinateBar_map::getY() - map_point.getY();
 		}
-
 		set(x, y, w, h);
 		set_mapPos(mapX, mapY, mapW, mapH);
 	}
