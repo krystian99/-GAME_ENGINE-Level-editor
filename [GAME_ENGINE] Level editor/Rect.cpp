@@ -15,6 +15,12 @@ Rect::Rect(int x, int y, int w, int h)
 	set(x, y, w, h);
 }
 
+void Rect::set(int x, int y)
+{
+	pos.x = x;
+	pos.y = y;
+}
+
 void Rect::set(int x, int y, int w, int h)
 {
 	pos = { x, y, w, h };

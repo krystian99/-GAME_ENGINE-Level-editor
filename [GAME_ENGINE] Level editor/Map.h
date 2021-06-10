@@ -46,7 +46,7 @@ public:
 
 	void events(const Rect& edit_area, Enemies & enemies);
 	void mouse_events(bool, const Map_mouseHandler &);
-	void moveEvent_mouseR(Enemies&, const Rect&, const Rect&);
+	void moveEvent_mouseR(Enemies&, const Rect&, const Rect&, const Map_mouseHandler& map_mouseHandler);
 
 	void events_moving(bool mouse_over, const SDL_Rect& edit_area);
 
@@ -58,8 +58,10 @@ public:
 	int get_mapX() const { return mapPos.left(); }
 	int get_mapY() const { return mapPos.up(); }
 
-	void set_mapPos(Rect && area);
+	void set_mapPOS(int x, int y);
 	void set_mapPos(int x, int y, int w, int h);
+	void set_mapPos(Rect && area);
+
 	void setX_map();
 	void setY_map();
 	void setW_map();

@@ -563,7 +563,7 @@ void Map::movingObject_mouseL_event()
 
 void Map::multi_movingObject_mouseR_event()
 {
-	multiOBJ_s.moveEvent_mouseR(enemies, edit_area, mapBG_area);
+	multiOBJ_s.moveEvent_mouseR(enemies, edit_area, mapBG_area, map_mouseHandler);
 
 	Map_manager::setMain_state(Map_state::SELECTING_OBJECTS);
 }
@@ -855,12 +855,15 @@ void multiOBJ_select_structure::mouse_events(bool mouse_over, const Map_mouseHan
 	}
 }
 
-void multiOBJ_select_structure::moveEvent_mouseR(Enemies& enemies, const Rect& edit_area, const Rect & mapBG_area)
+void multiOBJ_select_structure::moveEvent_mouseR(Enemies& enemies, const Rect& edit_area, const Rect & mapBG_area, const Map_mouseHandler & map_mouseHandler)
 {
-	for (auto& enemy : moving_objects) {
 
+	for (auto& enemy : moving_objects) {
+		int RenderPOS_X, RenderPOS_Y;
 		double scaleTX_w, scaleTX_h;
 		int x, y;
+
+		double scaleX, scaleY;
 
 		scaleTX_w = double(enemy.enemy->left() - edit_area.left()) / edit_area.getW();
 		scaleTX_h = double(enemy.enemy->up() - edit_area.up()) / edit_area.getH();
@@ -868,8 +871,8 @@ void multiOBJ_select_structure::moveEvent_mouseR(Enemies& enemies, const Rect& e
 		x = mapBG_area.left() + round(mapBG_area.getW() * scaleTX_w);
 		y = mapBG_area.up() + round(mapBG_area.getH() * scaleTX_h);
 
-		int RenderPOS_X, RenderPOS_Y;
-		double scaleX, scaleY;
+		//int RenderPOS_X, RenderPOS_Y;
+		//double scaleX, scaleY;
 		scaleX = double(x - mapBG_area.left()) / double(mapBG_area.getW());
 		scaleY = double(y - mapBG_area.up()) / double(mapBG_area.getH());
 		RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
@@ -878,6 +881,28 @@ void multiOBJ_select_structure::moveEvent_mouseR(Enemies& enemies, const Rect& e
 		enemy.enemy->update_mapPOS(x, y);
 		enemy.enemy->update_renderPOS(RenderPOS_X, RenderPOS_Y);
 	}
+
+
+	int RenderPOS_X, RenderPOS_Y;
+	int x, y; // dla mapy
+	double scale_renderX, scale_renderY;
+	double scale_mapX, scale_mapY;
+
+	scale_mapX = double(left() - edit_area.left()) / edit_area.getW();
+	scale_mapY = double(up() - edit_area.up()) / edit_area.getH();
+
+	x = mapBG_area.left() + round(mapBG_area.getW() * scale_mapX);
+	y = mapBG_area.up() + round(mapBG_area.getH() * scale_mapY);
+
+	scale_renderX = double(x - mapBG_area.left()) / double(mapBG_area.getW());;
+	scale_renderY = double(y - mapBG_area.up()) / double(mapBG_area.getH());;
+
+	RenderPOS_X = round(scale_renderX * edit_area.getW()) + edit_area.left();
+	RenderPOS_Y = round(scale_renderY * edit_area.getH()) + edit_area.up();
+
+
+	mapPos.set(x, y);
+	set(RenderPOS_X, RenderPOS_Y);
 }
 
 void multiOBJ_select_structure::events_moving(bool mouse_over, const SDL_Rect& edit_a)
@@ -925,6 +950,11 @@ void multiOBJ_select_structure::update_renderPOS(int x, int y)
 void multiOBJ_select_structure::set_mapPos(Rect && area)
 {
 	mapPos = std::move(area);
+}
+
+void multiOBJ_select_structure::set_mapPOS(int x, int y)
+{
+	mapPos.set(x, y);
 }
 
 void multiOBJ_select_structure::set_mapPos(int x, int y, int w, int h)

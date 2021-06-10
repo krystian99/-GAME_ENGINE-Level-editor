@@ -12,6 +12,7 @@ public:
 
 	Rect& operator=(Rect&&);
 
+	void set(int x, int y);
 	void set(int x, int y, int w, int h);
 	void set(SDL_Rect tmp);
 
