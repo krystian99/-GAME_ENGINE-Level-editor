@@ -25,6 +25,8 @@ public:
 
 	static const bool & is_pressedL() { return l_pressed; }
 
+	static bool pressed_Lbutton() { return l_pressed; }
+
 	static bool is_inPOS(const SDL_Rect & pos);
 	static bool clickedPoint_inPOS(const Rect &);
 

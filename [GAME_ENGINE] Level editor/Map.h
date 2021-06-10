@@ -9,6 +9,7 @@
 #include "BlockPlacer_module.h"
 #include <memory>
 #include "CoordinateBar_mouse.h"
+#include "Map_mouseHandler.h"
 
 class singleOBJmove_structure : public Rect
 {
@@ -44,13 +45,18 @@ public:
 	void OBJs_set(Enemies& enemy, const Rect & edit_area);
 
 	void events(const Rect& edit_area, Enemies & enemies);
-	void mouse_events(bool, const Rect &);
+	void mouse_events(bool, const Map_mouseHandler &);
 	void moveEvent_mouseR(Enemies&, const Rect&, const Rect&);
 
 	void events_moving(bool mouse_over, const SDL_Rect& edit_area);
 	void mouseWheel_events(int moveS);
 
-	void set_mapPos(SDL_Rect area);
+	void set_mapPos(Rect && area);
+	void set_mapPos(int x, int y, int w, int h);
+	void setX_map();
+	void setY_map();
+	void setW_map();
+	void setH_map();
 
 	void reset(SDL_Rect a)
 	{
@@ -145,6 +151,8 @@ private:
 	void update_OBJs_renderPOS();
 	void move_map_Mouse();
 private:
+	Map_mouseHandler map_mouseHandler;
+
 	const CoordinateBar_mouse* mouse_cord;
 	int scaleMapX;
 	int scaleMapY;

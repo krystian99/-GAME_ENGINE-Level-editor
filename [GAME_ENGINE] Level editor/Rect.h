@@ -6,8 +6,11 @@ class Rect
 {
 public:
 	Rect(){}
+	Rect(Rect&& rect);
 	Rect(SDL_Rect rect);
 	Rect(int x, int y, int w, int h);
+
+	Rect& operator=(Rect&&);
 
 	void set(int x, int y, int w, int h);
 	void set(SDL_Rect tmp);

@@ -156,6 +156,7 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="Map_manager.h" />
     <ClInclude Include="Map_module.h" />
+    <ClInclude Include="Map_mouseHandler.h" />
     <ClInclude Include="Map_states.h" />
     <ClInclude Include="MenuLocal_func.h" />
     <ClInclude Include="Menu_Animation.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="OBJ_TYPES.h" />
     <ClInclude Include="Others_ID.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="Rect.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Script_Editor.h" />
@@ -218,12 +220,14 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Map_manager.cpp" />
     <ClCompile Include="Map_module.cpp" />
+    <ClCompile Include="Map_mouseHandler.cpp" />
     <ClCompile Include="MenuLocal_func.cpp" />
     <ClCompile Include="Menu_Animation.cpp" />
     <ClCompile Include="Menu_base.cpp" />
     <ClCompile Include="Menu_Level.cpp" />
     <ClCompile Include="Menu_local.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Point.cpp" />
     <ClCompile Include="Rect.cpp" />
     <ClCompile Include="Script_Editor.cpp" />
     <ClCompile Include="ScrollBar.cpp" />

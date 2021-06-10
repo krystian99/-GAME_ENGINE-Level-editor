@@ -1,4 +1,9 @@
 #include "Rect.h"
+#include <algorithm>
+Rect::Rect(Rect&& rect)
+{
+	pos = rect.get();
+}
 
 Rect::Rect(SDL_Rect r)
 {
@@ -24,4 +29,11 @@ void Rect::update(int x, int y)
 {
 	pos.x += x;
 	pos.y += y;
+}
+
+Rect & Rect::operator=(Rect&& rect)
+{
+	set(rect.get());
+
+	return *this;
 }

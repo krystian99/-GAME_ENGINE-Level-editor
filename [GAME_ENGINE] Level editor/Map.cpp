@@ -6,6 +6,7 @@
 #include "Renderer.h"
 #include "Enemy_Types.h"
 #include "Engine_manager.h"
+#include "CoordinateBar_map.h"
 
 Map::Map(const SDL_Rect& pos) :
 	enemy_placerModule{ enemies },
@@ -54,6 +55,8 @@ void Map::load_Objects(const std::string& name)
 void Map::events() // zdarzenia zale¿ne od myszki(przyciski myszki: lewy, prawy, kó³ko)
 {
 	events_enemies();
+
+	//map_mouseHandler.events(is_mouseOver());
 
 	switch (Map_manager::getMain_state()) {
 	case Map_state::SELECTING_OBJECTS:
@@ -251,6 +254,7 @@ void Map::mouse_handler()
 				case Selecting_Obj_state::MULTI:
 					pressing_mouseL_multiOBJ_select = true;
 					multi_selectingObject_mouseEvents();
+					map_mouseHandler.events(is_mouseOver());
 					break;
 				}
 
@@ -487,7 +491,7 @@ void Map::render_enemies()
 
 void Map::multi_selectingObject_mouseEvents()
 {
-	multiOBJ_s.mouse_events(is_mouseOver(), edit_area);
+	multiOBJ_s.mouse_events(is_mouseOver(), map_mouseHandler);
 }
 
 void Map::multi_selecingOBJ_mouseR()
@@ -780,33 +784,51 @@ void multiOBJ_select_structure::events(const Rect & edit_area, Enemies& enemies)
 	}
 }
 
-void multiOBJ_select_structure::mouse_events(bool mouse_over, const Rect & edit_area)
+void multiOBJ_select_structure::mouse_events(bool mouse_over, const Map_mouseHandler & map_mouseHandler)
 {
 	const int& mX = Mouse::getX();
 	const int& mY = Mouse::getY();
 
 	auto & point = Mouse::get_clickedPoint();
+	auto& map_point = map_mouseHandler.get_clickedPoint();
 
+	if (mouse_over && Mouse::isUpdated()) {
+		int x, y, w, h;
 
-	if (mouse_over && Mouse::clickedPoint_inPOS(edit_area)) {
+		int mapX, mapY, mapH, mapW;
 
 		if (mX < point.x)
 		{
-			setX(mX);
-			setW(point.x - mX);
+			x = mX;
+			mapX = map_mouseHandler.getX();
+
+			w = point.x - mX;
+			mapW = map_point.getX() - CoordinateBar_map::getX();
 		}
 		else {
-			setX(point.x);
-			setW(mX - point.x);
+			x = point.x;
+			mapX = map_point.getX();
+
+			w = mX - point.x;
+			mapW = CoordinateBar_map::getX() - map_point.getX();
 		}
 		if (mY < point.y) {
-			setY(mY);
-			setH(point.y - mY);
+			y = mY;
+			mapY = CoordinateBar_map::getY();
+
+			h = point.y - mY;
+			mapH = map_point.getY() - CoordinateBar_map::getY();
 		}
 		else {
-			setY(point.y);
-			setH(mY - point.y);
+			y = point.y;
+			mapY = map_point.getY();
+
+			h = mY - point.y;
+			mapH = CoordinateBar_map::getY() - map_point.getY();
 		}
+
+		set(x, y, w, h);
+		set_mapPos(mapX, mapY, mapW, mapH);
 	}
 }
 
@@ -880,10 +902,14 @@ void multiOBJ_select_structure::mouseWheel_events(int moveS)
 		updateX(moveS);
 }
 
-void multiOBJ_select_structure::set_mapPos(SDL_Rect render_area)
+void multiOBJ_select_structure::set_mapPos(Rect && area)
 {
+	mapPos = std::move(area);
+}
 
-	mapPos.set(render_area);
+void multiOBJ_select_structure::set_mapPos(int x, int y, int w, int h)
+{
+	mapPos.set(x, y, w, h);
 }
 
 void multiOBJ_select_structure::updateOBJs(SDL_Point clicked_point)
