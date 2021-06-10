@@ -800,7 +800,7 @@ void multiOBJ_select_structure::mouse_events(bool mouse_over, const Map_mouseHan
 		if (mX < point.x)
 		{
 			x = mX;
-			mapX = map_mouseHandler.getX();
+			mapX = CoordinateBar_map::getX();
 
 			w = point.x - mX;
 			mapW = map_point.getX() - CoordinateBar_map::getX();

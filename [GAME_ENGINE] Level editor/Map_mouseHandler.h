@@ -8,8 +8,8 @@ public:
 
 	void events(bool mouse_over);
 
-	int getX() const { return clicked_point.getX(); }
-	int getY() const { return clicked_point.getY(); }
+	int getX_point() const { return clicked_point.getX(); }
+	int getY_point() const { return clicked_point.getY(); }
 
 	const Point& get_clickedPoint() const { return clicked_point; }
 private:
