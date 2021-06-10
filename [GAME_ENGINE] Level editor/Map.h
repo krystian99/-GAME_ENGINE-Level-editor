@@ -80,8 +80,6 @@ private:
 
 	const Rect* edit_area;
 	const Rect* mapBG_area;
-
-	const CoordinateBar_mouse* map_cord;
 };
 
 class Map

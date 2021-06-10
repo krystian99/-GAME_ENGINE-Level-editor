@@ -14,7 +14,8 @@ CoordinateBar_mouse::CoordinateBar_mouse(const SDL_Rect & pos)
 
 void CoordinateBar_mouse::events()
 {
-	update_text();
+	if (Mouse::isUpdated())
+		update_text();
 }
 
 void CoordinateBar_mouse::render()
