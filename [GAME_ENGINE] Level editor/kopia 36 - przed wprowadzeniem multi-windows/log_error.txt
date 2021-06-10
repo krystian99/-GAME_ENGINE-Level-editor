@@ -1,1 +1,0 @@
-Couldn't open data/button_inut/accept.png
