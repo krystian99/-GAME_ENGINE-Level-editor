@@ -1,0 +1,2 @@
+Unable to render text surface! SDL_ttf Error: 
+Text has zero width

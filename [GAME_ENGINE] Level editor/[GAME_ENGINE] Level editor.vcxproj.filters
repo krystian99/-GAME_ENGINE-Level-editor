@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Animation_Management">
+      <UniqueIdentifier>{282376b5-6fca-47d0-9996-806e3de2faad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level Editor">
+      <UniqueIdentifier>{d37d85d5-f6da-4f6f-8d0d-ef0795dc2ef9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buttons.h">
+      <UniqueIdentifier>{f237a1be-5452-4df2-bfa7-a94c1dcb5c31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buttons.cpp">
+      <UniqueIdentifier>{3b3ebc6d-2c46-4d8f-94c2-5d369bd4feed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menus.cpp">
+      <UniqueIdentifier>{7ee8bb37-cf21-4f60-8df2-74e41277d91c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menus.h">
+      <UniqueIdentifier>{9b6e1bd6-daa4-4cf4-b8f0-5da233ff8f49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level Editor\Map module">
+      <UniqueIdentifier>{6b28218f-7f61-4583-bcbf-193a962af613}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level Editor\Map module\objects.h">
+      <UniqueIdentifier>{064a6f8b-5eec-4001-bbc9-d081f70da799}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level Editor\Map module\objects.cpp">
+      <UniqueIdentifier>{5e4590e7-10cc-473e-9747-cbd3bf0f46b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level Editor\Map module\States &amp; Types">
+      <UniqueIdentifier>{2d7a1e61-f5c1-4cd0-81d8-022426e7c2b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level Editor\Modules.h">
+      <UniqueIdentifier>{d1ddb873-cdb3-4d72-8b38-f012e6e9d4cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level Editor\Modules.cpp">
+      <UniqueIdentifier>{0dbdb3f8-bb34-4ea9-ae54-2c5cf0713f98}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Setup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputArea.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Video_Info.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Base_OBJ.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine_stateID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelEditor_state.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelEditor_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Coordinates_bar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollBar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Buttons_OBJ_create.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Buttons_Functions_header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Buttons_Map_Functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuLocal_func.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation_management.h">
+      <Filter>Animation_Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation_manager.h">
+      <Filter>Animation_Management</Filter>
+    </ClInclude>
+    <ClInclude Include="HitBox.h">
+      <Filter>Animation_Management</Filter>
+    </ClInclude>
+    <ClInclude Include="HitBoxes_types.h">
+      <Filter>Animation_Management</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScroolBar_mapModules.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu_local.h">
+      <Filter>Buttons.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Buttons.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Button_Func.h">
+      <Filter>Buttons.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Button_input.h">
+      <Filter>Buttons.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Button_Menu.h">
+      <Filter>Buttons.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Button_TEXT.h">
+      <Filter>Buttons.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MENU.h">
+      <Filter>Menus.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu_Animation.h">
+      <Filter>Menus.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu_base.h">
+      <Filter>Menus.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu_ID.h">
+      <Filter>Menus.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu_Level.h">
+      <Filter>Menus.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu_manager.h">
+      <Filter>Menus.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu_start.h">
+      <Filter>Menus.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Folder_button.h">
+      <Filter>Buttons.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Level Editor\Map module\objects.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy_OBJ.h">
+      <Filter>Level Editor\Map module\objects.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Map_OBJ.h">
+      <Filter>Level Editor\Map module\objects.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Static_OBJ.h">
+      <Filter>Level Editor\Map module\objects.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>Level Editor\Map module\objects.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy_ID.h">
+      <Filter>Level Editor\Map module\States &amp; Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy_Types.h">
+      <Filter>Level Editor\Map module\States &amp; Types</Filter>
+    </ClInclude>
+    <ClInclude Include="OBJ_TYPES.h">
+      <Filter>Level Editor\Map module\States &amp; Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Dynamic_OBJ.h">
+      <Filter>Level Editor\Map module\objects.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bar_modules_left.h">
+      <Filter>Level Editor\Modules.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Level Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Map_states.h">
+      <Filter>Level Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Map_manager.h">
+      <Filter>Level Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelCreator.h">
+      <Filter>Level Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Block_module_Manager.h">
+      <Filter>Level Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Others_ID.h">
+      <Filter>Level Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Block_types.h">
+      <Filter>Level Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Interact_OBJ.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockPlacer_module.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemies_placer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Map_module.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Script_Editor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Setup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputArea.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Video_Info.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Base_OBJ.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Coordinates_bar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Buttons_OBJ_create.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Buttons_Map_Functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation_management.cpp">
+      <Filter>Animation_Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation_manager.cpp">
+      <Filter>Animation_Management</Filter>
+    </ClCompile>
+    <ClCompile Include="HitBox.cpp">
+      <Filter>Animation_Management</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuLocal_func.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScroolBar_mapModules.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu_local.cpp">
+      <Filter>Buttons.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Button_TEXT.cpp">
+      <Filter>Buttons.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Button_Menu.cpp">
+      <Filter>Buttons.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Button_input.cpp">
+      <Filter>Buttons.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Button_Func.cpp">
+      <Filter>Buttons.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Buttons.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="MENU.cpp">
+      <Filter>Menus.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu_Animation.cpp">
+      <Filter>Menus.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu_base.cpp">
+      <Filter>Menus.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu_Level.cpp">
+      <Filter>Menus.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu_manager.cpp">
+      <Filter>Menus.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu_start.cpp">
+      <Filter>Menus.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Folder_button.cpp">
+      <Filter>Buttons.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>Level Editor\Map module\objects.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Level Editor\Map module\objects.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Dynamic_OBJ.cpp">
+      <Filter>Level Editor\Map module\objects.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Map_OBJ.cpp">
+      <Filter>Level Editor\Map module\objects.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Static_OBJ.cpp">
+      <Filter>Level Editor\Map module\objects.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bar_modules_left.cpp">
+      <Filter>Level Editor\Modules.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Block_module_Manager.cpp">
+      <Filter>Level Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelCreator.cpp">
+      <Filter>Level Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelEditor_manager.cpp">
+      <Filter>Level Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Level Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="Map_manager.cpp">
+      <Filter>Level Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="Interact_OBJ.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockPlacer_module.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemies_placer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Map_module.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Script_Editor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Rect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="[GAME_ENGINE] Level editor.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\x64\Release\icon.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
