@@ -49,7 +49,6 @@ public:
 	void moveEvent_mouseR(Enemies&, const Rect&, const Rect&);
 
 	void events_moving(bool mouse_over, const SDL_Rect& edit_area);
-	void mouseWheel_events(int moveS);
 
 	void update_renderPOS(int x, int y);
 

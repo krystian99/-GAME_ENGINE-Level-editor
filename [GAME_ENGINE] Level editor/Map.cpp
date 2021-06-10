@@ -837,8 +837,19 @@ void multiOBJ_select_structure::mouse_events(bool mouse_over, const Map_mouseHan
 			h = mY - point.y;
 			mapH = CoordinateBar_map::getY() - map_point.getY();
 		}
-		set(x, y, w, h);
+
 		set_mapPos(mapX, mapY, mapW, mapH);
+
+		int RenderPOS_X, RenderPOS_Y;
+		double scaleX, scaleY;
+
+		scaleX = double(get_mapX() - mapBG_area->left()) / double(mapBG_area->getW());
+		scaleY = double(get_mapY() - mapBG_area->up()) / double(mapBG_area->getH());
+
+		RenderPOS_X = round(scaleX * edit_area->getW()) + edit_area->left();
+		RenderPOS_Y = round(scaleY * edit_area->getH()) + edit_area->up();
+
+		set(RenderPOS_X, RenderPOS_Y, w, h);
 	}
 }
 
@@ -903,15 +914,6 @@ void multiOBJ_select_structure::events_moving(bool mouse_over, const SDL_Rect& e
 			enemy.enemy->update_about(tmp_px_left, tmp_px_up);
 	}
 }
-
-void multiOBJ_select_structure::mouseWheel_events(int moveS)
-{
-	if (Mouse::getWheelState() == Mouse_wheel::UP)
-		updateX(-moveS);
-	else
-		updateX(moveS);
-}
-
 void multiOBJ_select_structure::update_renderPOS(int x, int y)
 {
 	setX(x);
