@@ -137,7 +137,7 @@
     <ClInclude Include="Button_Menu.h" />
     <ClInclude Include="Button_TEXT.h" />
     <ClInclude Include="CoordinateBar_map.h" />
-    <ClInclude Include="Coordinates_bar.h" />
+    <ClInclude Include="CoordinateBar_mouse.h" />
     <ClInclude Include="Dynamic_OBJ.h" />
     <ClInclude Include="Enemies_placer.h" />
     <ClInclude Include="Enemy.h" />
@@ -206,7 +206,7 @@
     <ClCompile Include="Button_Menu.cpp" />
     <ClCompile Include="Button_TEXT.cpp" />
     <ClCompile Include="CoordinateBar_map.cpp" />
-    <ClCompile Include="Coordinates_bar.cpp" />
+    <ClCompile Include="CoordinateBar_mouse.cpp" />
     <ClCompile Include="Dynamic_OBJ.cpp" />
     <ClCompile Include="Enemies_placer.cpp" />
     <ClCompile Include="Enemy.cpp" />

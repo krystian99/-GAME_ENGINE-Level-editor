@@ -8,7 +8,7 @@
 #include "Enemies_placer.h"
 #include "BlockPlacer_module.h"
 #include <memory>
-#include "Coordinates_bar.h"
+#include "CoordinateBar_mouse.h"
 
 class singleOBJmove_structure : public Rect
 {
@@ -34,7 +34,7 @@ private:
 	using Enemies = std::vector<Enemy_ptr>;
 public:
 	multiOBJ_select_structure(){}
-	multiOBJ_select_structure(const Rect* edit_a, const Rect* mapBG_a, const Coordinates_bar* map_cord);
+	multiOBJ_select_structure(const Rect* edit_a, const Rect* mapBG_a);
 
 	void set_borderOBJ(const Rect& pos, Enemy* enemy); //ustaw graniczne obiekty i dodaj do kontenera obiektow przenoszonych
 
@@ -81,7 +81,7 @@ private:
 	const Rect* edit_area;
 	const Rect* mapBG_area;
 
-	const Coordinates_bar* map_cord;
+	const CoordinateBar_mouse* map_cord;
 };
 
 class Map
@@ -95,7 +95,7 @@ public:
 	void events();
 	void events_indp();
 
-	void set_cord(const Coordinates_bar* map_cord, const Coordinates_bar* screen_cord);
+	void set_cord(const CoordinateBar_mouse* mouse_cord);
 
 	void reset();
 
@@ -147,8 +147,7 @@ private:
 	void update_OBJs_renderPOS();
 	void move_map_Mouse();
 private:
-	const Coordinates_bar* map_cord;
-	const Coordinates_bar* mouse_cord;
+	const CoordinateBar_mouse* mouse_cord;
 	int scaleMapX;
 	int scaleMapY;
 

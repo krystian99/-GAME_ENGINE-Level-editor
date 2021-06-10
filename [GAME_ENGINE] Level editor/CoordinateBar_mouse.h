@@ -3,27 +3,26 @@
 #include <string>
 #include "Text.h"
 #include <memory>
+#include "Mouse.h"
 
-enum class CoordinateBar_state{ OTHER, STANDARD };
-
-class Coordinates_bar
+class CoordinateBar_mouse
 {
 public:
 	// pos - pozycja coordinate_bar
 	// rt - adres wzglêdem której pozycji aktualizowaæ dane
 	// ru - dane które wzglêdem rt bêd¹ aktualizowane
 	//Coordinates_bar(const SDL_Rect & pos, const SDL_Rect * rt, const SDL_Rect * ru);
-	Coordinates_bar(const SDL_Rect & pos);
+	CoordinateBar_mouse(const SDL_Rect & pos);
+
 	void events();
 	void render();
 
-	int getX() const { return x; }
-	int getY() const { return y; }
+	int getX() const { return Mouse::getX(); }
+	int getY() const { return Mouse::getY(); }
 
 	void set(const SDL_Rect * rt, const SDL_Rect * ru);
-	void set(double scaleX, double scaleY);
 
-	~Coordinates_bar() {}
+	~CoordinateBar_mouse() {}
 private:
 
 	void update_text();
@@ -40,8 +39,6 @@ private:
 
 	// Tekst wyœwietlany
 	std::string render_text;
-
-	CoordinateBar_state state;
 
 	//std::unique_ptr<Text> coord_x, coord_y;
 	std::unique_ptr<Text> text_to_render;

@@ -9,7 +9,7 @@
 
 Map::Map(const SDL_Rect& pos) :
 	enemy_placerModule{ enemies },
-	multiOBJ_s{ &edit_area, &mapBG_area, map_cord }
+	multiOBJ_s{ &edit_area, &mapBG_area }
 {
 	edit_area.set(pos);
 
@@ -97,9 +97,8 @@ void Map::events_indp()
 	}
 }
 
-void Map::set_cord(const Coordinates_bar* map_cord, const Coordinates_bar* mouse_cord)
+void Map::set_cord(const CoordinateBar_mouse* mouse_cord)
 {
-	this->map_cord = map_cord;
 	this->mouse_cord = mouse_cord;
 }
 
@@ -668,12 +667,10 @@ void Map::move_map_Mouse()
 	}
 }
 
-multiOBJ_select_structure::multiOBJ_select_structure(const Rect* edit_a, const Rect* mapBG_a, const Coordinates_bar* map_cord)
+multiOBJ_select_structure::multiOBJ_select_structure(const Rect* edit_a, const Rect* mapBG_a)
 {
 	edit_area = edit_a;
 	mapBG_area = mapBG_a;
-
-	this->map_cord = map_cord;
 }
 
 void multiOBJ_select_structure::set_borderOBJ(const Rect& pos, Enemy* enemy)

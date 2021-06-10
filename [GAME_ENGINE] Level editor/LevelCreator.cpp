@@ -9,7 +9,6 @@
 
 LevelCreator::LevelCreator() : // inicjuje wszystkie dane Level Creatora - ustala funkcje przycisków itd.
 	map_edit_area{ { 160, 128, 1200, 600 } },
-	map_coordinate{ { 300, 40, 100, 50 } },
 	mouse_cord{ { 115, 40, 100, 50 } },
 	scrollBar_folders{ { 1089, 141, 80, 750 }, SDL_Color{ 60, 60, 60, 255 }, 80 },
 	objectType_optionsBar{ { 745, 90, 313, 38 }, SDL_Color{ 50, 100, 170, 255 }, 55 },
@@ -65,7 +64,7 @@ LevelCreator::LevelCreator() : // inicjuje wszystkie dane Level Creatora - ustal
 		BButton_ptr{ new Button{ "data/engine_files/test.png" } }
 	};
 
-	map_edit_area.set_cord(&map_coordinate, &mouse_cord);
+	map_edit_area.set_cord(&mouse_cord);
 }
 
 void LevelCreator::events_multiwindow()
@@ -186,7 +185,6 @@ void LevelCreator::load_Level()
 	Base_OBJ::set_size_multiplier(multiplier);
 
 	map_edit_area.load_Objects(LevelEditor_manager::get_levelsPath() + LevelEditor_manager::get_levelName());
-	map_coordinate.set(&map_edit_area.get_position(), &map_edit_area.get_backgroundArea()); // zamiana stanu na other
 }
 
 void LevelCreator::new_Level()
@@ -195,7 +193,6 @@ void LevelCreator::new_Level()
 	Base_OBJ::reset_multiplier();
 	map_edit_area.reset();
 	map_edit_area.set_background(LevelEditor_manager::get_levels_mapsPath() + LevelEditor_manager::get_backgroundName() + ".png");
-	map_coordinate.set(&map_edit_area.get_position(), &map_edit_area.get_backgroundArea()); // zamiana stanu na other
 }
 
 void LevelCreator::switch_Main_state()

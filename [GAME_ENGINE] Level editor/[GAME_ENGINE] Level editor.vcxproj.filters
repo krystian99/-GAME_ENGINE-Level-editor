@@ -93,7 +93,7 @@
     <ClInclude Include="Text.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Coordinates_bar.h">
+    <ClInclude Include="CoordinateBar_mouse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ScrollBar.h">
@@ -293,7 +293,7 @@
     <ClCompile Include="Text.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Coordinates_bar.cpp">
+    <ClCompile Include="CoordinateBar_mouse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ScrollBar.cpp">

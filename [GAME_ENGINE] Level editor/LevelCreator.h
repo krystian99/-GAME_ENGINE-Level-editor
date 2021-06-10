@@ -1,6 +1,6 @@
 #pragma once
 #include <fstream>
-#include "Coordinates_bar.h"
+#include "CoordinateBar_mouse.h"
 #include "Map.h"
 #include "ScrollBar.h"
 #include "Menu_local.h"
@@ -41,7 +41,7 @@ private:
 
 	Text Level_name, Map_name;
 
-	Coordinates_bar map_coordinate, mouse_cord;
+	CoordinateBar_mouse mouse_cord;
 
 	class Queue_events // g³ówna klasa zarz¹dzaj¹ca kolejk¹ 
 	{
