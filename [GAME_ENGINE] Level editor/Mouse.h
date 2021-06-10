@@ -28,6 +28,9 @@ public:
 	static bool is_inPOS(const SDL_Rect & pos);
 	static bool clickedPoint_inPOS(const Rect &);
 
+	// klikniêto przycisk lub ruszono myszk¹
+	static bool isUpdated() { return updated || moved(); }
+
 	static bool moved();
 
 	static const SDL_Point & get_clickedPoint() { return clicked_point; }
@@ -46,6 +49,8 @@ private:
 	static SDL_Point clicked_point; // gdy zostanie klikniêty lewy klawisz i jest trzymany, to zapisz wspó³rzêdne punktu 
 
 	static bool l_pressed;
+
+	static bool updated;
 
 	static int mX_r, mY_r; // kordynaty poprzednie przed zaktualizowaniem zdarzeñ - SDL_PollEvent(&event_handler);
 	static int mX, mY; // kordynaty myszki
