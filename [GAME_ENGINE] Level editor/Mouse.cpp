@@ -48,12 +48,26 @@ void Mouse::update(SDL_Event * ev)
 	return false;
 }*/
 
-bool Mouse::is_inPOS(SDL_Rect pos)
+bool Mouse::is_inPOS(const SDL_Rect & pos)
 {
 	if (Mouse::getX() >= pos.x && Mouse::getX() <= pos.x + pos.w
 		&& Mouse::getY() >= pos.y && Mouse::getY() <= pos.y + pos.h)
 		return true;
 	return false;
+}
+
+bool Mouse::clickedPoint_inPOS(const Rect& pos)
+{
+	if (clicked_point.x >= pos.left() && clicked_point.x <= pos.right()
+		&& clicked_point.y >= pos.up() && clicked_point.y <= pos.down())
+		return true;
+
+	return false;
+}
+
+bool Mouse::moved()
+{
+	return mX != mX_r || mY != mY_r;
 }
 
 void Mouse::switch_buttons_down(SDL_Event * ev)

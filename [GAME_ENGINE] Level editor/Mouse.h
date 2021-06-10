@@ -1,4 +1,5 @@
 #pragma once
+#include "Rect.h"
 #include <SDL_rect.h>
 union SDL_Event;
 
@@ -24,7 +25,10 @@ public:
 
 	static const bool & is_pressedL() { return l_pressed; }
 
-	static bool is_inPOS(SDL_Rect pos);
+	static bool is_inPOS(const SDL_Rect & pos);
+	static bool clickedPoint_inPOS(const Rect &);
+
+	static bool moved();
 
 	static const SDL_Point & get_clickedPoint() { return clicked_point; }
 	//static const bool & check_clickedPoint(const SDL_Rect & pos);

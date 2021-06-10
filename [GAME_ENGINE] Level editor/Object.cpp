@@ -3,8 +3,7 @@
 
 void Object::events()
 {
-	if (Mouse::getX() >= position.x && Mouse::getX() <= position.x + position.w
-		&& Mouse::getY() >= position.y && Mouse::getY() <= position.y + position.h)
+	if (Mouse::is_inPOS(position))
 	{
 		reset_states();
 

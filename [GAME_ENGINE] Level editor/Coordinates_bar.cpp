@@ -41,6 +41,7 @@ void Coordinates_bar::events()
 		y = mY;
 		break;
 	}
+
 	update_text();
 }
 
@@ -54,6 +55,10 @@ void Coordinates_bar::set(const SDL_Rect * rt, const SDL_Rect * ru)
 	state = CoordinateBar_state::OTHER;
 	cord = rt;
 	cord2 = ru;
+}
+
+void Coordinates_bar::set(double scaleX, double scaleY)
+{
 }
 
 void Coordinates_bar::update_text()

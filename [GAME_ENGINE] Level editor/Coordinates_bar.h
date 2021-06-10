@@ -17,7 +17,11 @@ public:
 	void events();
 	void render();
 
+	int getX() const { return x; }
+	int getY() const { return y; }
+
 	void set(const SDL_Rect * rt, const SDL_Rect * ru);
+	void set(double scaleX, double scaleY);
 
 	~Coordinates_bar() {}
 private:

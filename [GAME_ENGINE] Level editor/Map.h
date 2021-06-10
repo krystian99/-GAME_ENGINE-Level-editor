@@ -8,6 +8,7 @@
 #include "Enemies_placer.h"
 #include "BlockPlacer_module.h"
 #include <memory>
+#include "Coordinates_bar.h"
 
 class singleOBJmove_structure : public Rect
 {
@@ -29,23 +30,33 @@ public:
 
 class multiOBJ_select_structure : public Rect // struktura potrzebna zeby nie pomieszac danych oraz by zwiekszyc wydajnosc
 {
+private:
+	using Enemies = std::vector<Enemy_ptr>;
 public:
+	multiOBJ_select_structure(){}
+	multiOBJ_select_structure(const Rect* edit_a, const Rect* mapBG_a);
+
 	struct Move_OBJ
 	{
 		Enemy* enemy;
 		int px_up, px_left;
 	};
 
-	/*void set(SDL_Rect a)
-	{
-		area = { a.x, a.y, 1, 1 };
-	}*/
 	void set_borderOBJ(const Rect& pos, Enemy* enemy); //ustaw graniczne obiekty i dodaj do kontenera obiektow przenoszonych
 
 	void render(const SDL_Rect& edit_area);
 	void render();
 
+	void OBJs_set(Enemies& enemy, const Rect & edit_area);
+
+	void events(const Rect& edit_area, Enemies & enemies);
+	void mouse_events(bool, const Rect &);
+	void moveEvent_mouseR(Enemies&, const Rect&, const Rect&);
+
 	void events_moving(bool mouse_over, const SDL_Rect& edit_area);
+	void mouseWheel_events(int moveS);
+
+	void set_mapPos(SDL_Rect area);
 
 	void reset(SDL_Rect a)
 	{
@@ -58,6 +69,8 @@ public:
 
 	//SDL_Rect area;
 
+	Rect mapPos;
+
 	int px_up, px_left;
 
 	std::vector<Move_OBJ> moving_objects;
@@ -66,6 +79,9 @@ public:
 	Enemy* enemy_down{ nullptr };
 	Enemy* enemy_left{ nullptr };
 	Enemy* enemy_right{ nullptr };
+private:
+	const Rect* edit_area;
+	const Rect* mapBG_area;
 };
 
 class Map
@@ -79,6 +95,8 @@ public:
 	void events();
 	void events_indp();
 
+	void set_cord(const Coordinates_bar* map_cord, const Coordinates_bar* screen_cord);
+
 	void reset();
 
 	void render();
@@ -91,6 +109,11 @@ public:
 	// zwróæ obszar czêœci textury renderowanej na ekranie
 	const SDL_Rect & get_backgroundArea() const { return mapBG_area.get(); }
 private:
+	void set_ScaledSize();
+
+	void mouseR_events();
+	void mouseWheel_events();
+
 	void mouse_handler();
 
 	void Init_objectsSize();
@@ -98,7 +121,6 @@ private:
 	void update_events();
 	void update_ObjectsSize();
 
-	void multi_selectingObject_events();
 	void multi_selectingObject_mouseEvents();
 	void multi_selecingOBJ_mouseR();
 	void single_selectingObject_events();
@@ -125,6 +147,11 @@ private:
 	void update_OBJs_renderPOS();
 	void move_map_Mouse();
 private:
+	const Coordinates_bar* map_cord;
+	const Coordinates_bar* mouse_cord;
+	int scaleMapX;
+	int scaleMapY;
+
 	int MAP_MOVE_SIZE = 20; // iloœæ pixeli przesuniêcia mapy
 
 	bool mouse_over{ false };

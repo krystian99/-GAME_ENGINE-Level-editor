@@ -159,13 +159,17 @@ void Map_manager::render_tempOBJ(int edit_areaX, int edit_areaY)
 {
 	int x = Mouse::getX(), y = Mouse::getY();
 
-	if (Mouse::getX() + temp_renderOBJ.w > edit_areaX + edit_W)
+	if (Mouse::getX() + temp_renderOBJ.w >= edit_areaX + edit_W)
 		x = edit_areaX + edit_W - temp_renderOBJ.w;
-	if (Mouse::getY() + temp_renderOBJ.h > edit_areaY + edit_H)
+	else if (Mouse::getX() < edit_areaX)
+		x = edit_areaX;
+	if (Mouse::getY() + temp_renderOBJ.h >= edit_areaY + edit_H)
 		y = edit_areaY + edit_H - temp_renderOBJ.h;
+	else if (Mouse::getY() < edit_areaY)
+		y = edit_areaY;
 
-	temp_renderOBJ.x = x - temp_renderOBJ.w / 2;
-	temp_renderOBJ.y = y - temp_renderOBJ.h / 2;
+	temp_renderOBJ.x = x;
+	temp_renderOBJ.y = y;
 
 	OBJ_texture->render(nullptr, &temp_renderOBJ, object_flip);
 }

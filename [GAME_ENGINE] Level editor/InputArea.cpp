@@ -81,7 +81,7 @@ void InputArea::addBack(const char & c)
 	keyboard = SDL_GetKeyboardState(nullptr);
 
 	empty = false;
-	if (keyboard[SDL_SCANCODE_LSHIFT] || keyboard[SDL_SCANCODE_RSHIFT] || Keyboard::is_CapsLock_toggled())//if (Keyboard::getModState() == Key::SHIFT)
+	if (keyboard[SDL_SCANCODE_LSHIFT] || keyboard[SDL_SCANCODE_RSHIFT] || Keyboard::is_CapsLock_toggled())
 		input.push_back(toupper(c));
 	else 
 		input.push_back(tolower(c));
@@ -241,8 +241,8 @@ void InputArea::getDigits()
 void InputArea::mouse_handler()
 {
 	clicked = false;
-	if (Mouse::getX() >= position.x && Mouse::getX() <= position.x + position.w
-		&& Mouse::getY() >= position.y && Mouse::getY() <= position.y + position.h)
+
+	if (Mouse::is_inPOS(position))
 	{
 		clicked = true;
 	}

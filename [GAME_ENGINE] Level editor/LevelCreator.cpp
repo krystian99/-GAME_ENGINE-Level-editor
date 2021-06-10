@@ -18,6 +18,8 @@ LevelCreator::LevelCreator() : // inicjuje wszystkie dane Level Creatora - ustal
 	plus{ { 1080, 30, 40, 30 }, "data/engine_files/plus.png", &Base_OBJ::update_multiplierUP },
 	minus{ { 1080, 80, 40, 30 }, "data/engine_files/minus.png", &Base_OBJ::update_multiplierDOWN }
 {
+	//map_coordinate.set();
+
 	scrollBar_folders = {
 		BButton_ptr{ new Folder_button{ "data/textures/test.png", &Buttons_OBJ_create::Enemy::create_TEST } }, // posiada dwie warstwy otexturowania. Jedna to kolor -> renderowana jako pierwsza, druga to textura w³¹œciwa
 		BButton_ptr{ new Folder_button{ "data/textures/test2.png", &Buttons_OBJ_create::Enemy::create_TEST2 } },
@@ -61,6 +63,8 @@ LevelCreator::LevelCreator() : // inicjuje wszystkie dane Level Creatora - ustal
 		BButton_ptr{ new Button{ "data/engine_files/test.png" } },
 		BButton_ptr{ new Button{ "data/engine_files/test.png" } }
 	};
+
+	map_edit_area.set_cord(&map_coordinate, &mouse_cord);
 }
 
 void LevelCreator::events_multiwindow()

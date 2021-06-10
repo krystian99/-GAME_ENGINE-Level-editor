@@ -25,13 +25,16 @@ public:
 	void setX(int x) { pos.x = x; }
 	void setY(int y) { pos.y = y; }
 
+	const int & getW() const { return pos.w; }
+	const int & getH() const { return pos.h; }
+
 	void setW(int w) { pos.w = w; }
 	void setH(int h) { pos.h = h; }
 
-	SDL_Rect get() const { return pos; }
+	const SDL_Rect & get() const { return pos; }
 
 	~Rect() {}
 private:
-	SDL_Rect pos;
+	SDL_Rect pos{};
 };
 

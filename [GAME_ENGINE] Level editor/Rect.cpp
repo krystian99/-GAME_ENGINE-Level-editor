@@ -2,10 +2,7 @@
 
 Rect::Rect(SDL_Rect r)
 {
-	pos.x = r.x;
-	pos.y = r.y;
-	pos.w = r.w;
-	pos.h = r.h;
+	pos = r;
 }
 
 Rect::Rect(int x, int y, int w, int h)
