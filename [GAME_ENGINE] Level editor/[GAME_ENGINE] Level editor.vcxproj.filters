@@ -255,6 +255,9 @@
     <ClInclude Include="Rect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CoordinateBar_map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Texture.cpp">
@@ -420,6 +423,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Rect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CoordinateBar_map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

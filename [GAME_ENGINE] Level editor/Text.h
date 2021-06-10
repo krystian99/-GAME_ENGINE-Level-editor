@@ -8,6 +8,7 @@ struct _TTF_Font;
 class Text
 {
 public:
+	//Text(){}
 	Text(const int & startX, const int & startY, const std::string & font_path, const std::string & render_text, int size_text, const SDL_Color & color_text);
 	Text(const int & startX, const int & startY, const std::string & font_path, int size_text, const SDL_Color & color_text);
 

@@ -5,6 +5,7 @@
 #include "Folder_button.h"
 #include "Buttons_OBJ_create.h"
 #include "Buttons_Map_Functions.h"
+#include "CoordinateBar_map.h"
 
 LevelCreator::LevelCreator() : // inicjuje wszystkie dane Level Creatora - ustala funkcje przycisków itd.
 	map_edit_area{ { 160, 128, 1200, 600 } },
@@ -18,7 +19,7 @@ LevelCreator::LevelCreator() : // inicjuje wszystkie dane Level Creatora - ustal
 	plus{ { 1080, 30, 40, 30 }, "data/engine_files/plus.png", &Base_OBJ::update_multiplierUP },
 	minus{ { 1080, 80, 40, 30 }, "data/engine_files/minus.png", &Base_OBJ::update_multiplierDOWN }
 {
-	//map_coordinate.set();
+	CoordinateBar_map::Init({ 300, 40, 100, 50 }, &map_edit_area.get_position(), &map_edit_area.get_backgroundArea());
 
 	scrollBar_folders = {
 		BButton_ptr{ new Folder_button{ "data/textures/test.png", &Buttons_OBJ_create::Enemy::create_TEST } }, // posiada dwie warstwy otexturowania. Jedna to kolor -> renderowana jako pierwsza, druga to textura w³¹œciwa
@@ -113,7 +114,11 @@ void LevelCreator::events()
 void LevelCreator::events_indp()
 {
 	if (map_edit_area.is_mouseOver())
-		map_coordinate.events();
+	{
+		//map_coordinate.events();
+
+		CoordinateBar_map::events();
+	}
 
 	bar_modules_left.events_indp();
 
@@ -139,8 +144,10 @@ void LevelCreator::render()
 	Level_name.render();
 	Map_name.render();
 
-	if (map_edit_area.is_mouseOver())
-		map_coordinate.render();
+	if (map_edit_area.is_mouseOver()) {
+		//map_coordinate.render();
+		CoordinateBar_map::render();
+	}
 	mouse_cord.render();
 }
 

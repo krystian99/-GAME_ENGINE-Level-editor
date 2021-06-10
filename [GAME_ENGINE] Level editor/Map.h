@@ -34,13 +34,7 @@ private:
 	using Enemies = std::vector<Enemy_ptr>;
 public:
 	multiOBJ_select_structure(){}
-	multiOBJ_select_structure(const Rect* edit_a, const Rect* mapBG_a);
-
-	struct Move_OBJ
-	{
-		Enemy* enemy;
-		int px_up, px_left;
-	};
+	multiOBJ_select_structure(const Rect* edit_a, const Rect* mapBG_a, const Coordinates_bar* map_cord);
 
 	void set_borderOBJ(const Rect& pos, Enemy* enemy); //ustaw graniczne obiekty i dodaj do kontenera obiektow przenoszonych
 
@@ -66,8 +60,12 @@ public:
 	}
 
 	void updateOBJs(SDL_Point clicked_point);
-
-	//SDL_Rect area;
+private:
+	struct Move_OBJ
+	{
+		Enemy* enemy;
+		int px_up, px_left;
+	};
 
 	Rect mapPos;
 
@@ -79,9 +77,11 @@ public:
 	Enemy* enemy_down{ nullptr };
 	Enemy* enemy_left{ nullptr };
 	Enemy* enemy_right{ nullptr };
-private:
+
 	const Rect* edit_area;
 	const Rect* mapBG_area;
+
+	const Coordinates_bar* map_cord;
 };
 
 class Map
