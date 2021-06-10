@@ -7,6 +7,8 @@ int Mouse::mY = 0; // obecna pozycja
 int Mouse::mX_r = 0; // poprzednia pozycja
 int Mouse::mY_r = 0; // poprzednia pozycja
 
+bool Mouse::updated{ false };
+
 SDL_Point Mouse::clicked_point{};
 
 bool Mouse::l_pressed{ false };
@@ -35,18 +37,11 @@ void Mouse::update(SDL_Event * ev)
 	case SDL_MOUSEWHEEL:
 		switch_motion_wheel_FLAG(ev);
 		break;
+	default:
+		updated = false;
+		break;
 	}
 }
-
-/*const bool & Mouse::check_clickedPoint(const SDL_Rect & pos)
-{
-	if (clicked_point.x >= pos.x && clicked_point.x <= pos.x + pos.w
-		&& clicked_point.y >= pos.y && clicked_point.y <= pos.y + pos.h)
-	{
-		return true;
-	}
-	return false;
-}*/
 
 bool Mouse::is_inPOS(const SDL_Rect & pos)
 {
@@ -77,14 +72,19 @@ void Mouse::switch_buttons_down(SDL_Event * ev)
 		key_state = Mouse_key::L_BUTTON;
 		clicked_point = { mX, mY };
 		l_pressed = true;
+		updated = true;
 		break;
 	case SDL_BUTTON_RIGHT:
 		key_state = Mouse_key::R_BUTTON;
 		clicked_point = { mX, mY };
+		updated = true;
 		break;
 	case SDL_BUTTON_MIDDLE:
 		key_state = Mouse_key::MID_BUTTON;
+		updated = true;
 		break;
+	default:
+		updated = false;
 	}
 }
 
@@ -96,6 +96,9 @@ void Mouse::switch_motion_wheel_FLAG(SDL_Event * ev)
 			wheel_state = Mouse_wheel::DOWN;
 		else
 			wheel_state = Mouse_wheel::UP;
+
+		updated = true;
+
 		break;
 	}
 }

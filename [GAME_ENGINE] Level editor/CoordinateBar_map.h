@@ -20,8 +20,6 @@ public:
 	static int getX() { return x; }
 	static int getY() { return y; }
 
-	static void set(double scaleX, double scaleY);
-
 private:
 	static void update_text();
 private:

@@ -15,7 +15,7 @@ std::unique_ptr<Text> CoordinateBar_map::text_to_render{};
 
 void CoordinateBar_map::events(bool mouse_over)
 {
-	if (mouse_over) {
+	if (mouse_over && Mouse::isUpdated()) {
 		static const int& mX = Mouse::getX();
 		static const int& mY = Mouse::getY();
 
@@ -47,11 +47,6 @@ void CoordinateBar_map::Init(const SDL_Rect& pos, const SDL_Rect* edit_a, const 
 	position.h = round(pos.h * Video_Info::get_scaleH());
 
 	text_to_render = std::move(std::unique_ptr<Text>{ new Text{ pos.x + 50, pos.y + 10, "data/fonts/standard_font.ttf", 20,{ 255, 255, 255, 255 } } });
-}
-
-
-void CoordinateBar_map::set(double scaleX, double scaleY)
-{
 }
 
 void CoordinateBar_map::update_text()
