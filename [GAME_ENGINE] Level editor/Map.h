@@ -101,7 +101,7 @@ public:
 
 	void render();
 
-	bool is_mouseOver() const { return mouse_over; }
+	const bool & is_mouseOver() const { return mouse_over; }
 
 	void set_background(const std::string & bg);
 

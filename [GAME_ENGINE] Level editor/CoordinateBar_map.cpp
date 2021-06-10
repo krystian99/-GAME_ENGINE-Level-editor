@@ -13,24 +13,27 @@ SDL_Rect CoordinateBar_map::position{};
 std::string CoordinateBar_map::render_text{};
 std::unique_ptr<Text> CoordinateBar_map::text_to_render{};
 
-void CoordinateBar_map::events()
+void CoordinateBar_map::events(bool mouse_over)
 {
-	static const int& mX = Mouse::getX();
-	static const int& mY = Mouse::getY();
+	if (mouse_over) {
+		static const int& mX = Mouse::getX();
+		static const int& mY = Mouse::getY();
 
-	static double scaleX, scaleY;
+		static double scaleX, scaleY;
 
-	scaleX = double(mX - edit_area->x) / edit_area->w;
-	scaleY = double(mY - edit_area->y) / edit_area->h;
-	x = map_area->x + round(map_area->w * scaleX);
-	y = map_area->y + round(map_area->h * scaleY);
+		scaleX = double(mX - edit_area->x) / edit_area->w;
+		scaleY = double(mY - edit_area->y) / edit_area->h;
+		x = map_area->x + round(map_area->w * scaleX);
+		y = map_area->y + round(map_area->h * scaleY);
 
-	update_text();
+		update_text();
+	}
 }
 
-void CoordinateBar_map::render()
+void CoordinateBar_map::render(bool mouse_over)
 {
-	text_to_render->render(0, text_to_render->getWidth());
+	if (mouse_over)
+		text_to_render->render(0, text_to_render->getWidth());
 }
 
 void CoordinateBar_map::Init(const SDL_Rect& pos, const SDL_Rect* edit_a, const SDL_Rect* map_a)

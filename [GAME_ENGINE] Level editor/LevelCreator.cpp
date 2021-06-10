@@ -113,12 +113,7 @@ void LevelCreator::events()
 
 void LevelCreator::events_indp()
 {
-	if (map_edit_area.is_mouseOver())
-	{
-		//map_coordinate.events();
-
-		CoordinateBar_map::events();
-	}
+	CoordinateBar_map::events(map_edit_area.is_mouseOver());
 
 	bar_modules_left.events_indp();
 
@@ -144,10 +139,8 @@ void LevelCreator::render()
 	Level_name.render();
 	Map_name.render();
 
-	if (map_edit_area.is_mouseOver()) {
-		//map_coordinate.render();
-		CoordinateBar_map::render();
-	}
+	CoordinateBar_map::render(map_edit_area.is_mouseOver());
+
 	mouse_cord.render();
 }
 

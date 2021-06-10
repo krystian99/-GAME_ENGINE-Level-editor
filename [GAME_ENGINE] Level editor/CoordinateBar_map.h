@@ -12,8 +12,8 @@ public:
 	// ru - dane które wzglêdem rt bêd¹ aktualizowane
 	//Coordinates_bar(const SDL_Rect & pos, const SDL_Rect * rt, const SDL_Rect * ru);
 	//CoordinateBar_map(const SDL_Rect& pos);
-	static void events();
-	static void render();
+	static void events(bool mouse_over);
+	static void render(bool mouse_over);
 
 	static void Init(const SDL_Rect& pos, const SDL_Rect* edit_a, const SDL_Rect* map_a);
 
