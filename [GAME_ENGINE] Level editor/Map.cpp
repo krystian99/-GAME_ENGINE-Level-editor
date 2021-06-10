@@ -225,6 +225,8 @@ void Map::mouse_handler()
 	if (Mouse::is_inPOS(edit_area.get()))
 	{
 		mouse_over = true;
+		map_mouseHandler.events(is_mouseOver());
+
 		if (Mouse::getBt_state() == Mouse_key::L_BUTTON) { // pojedyncze klikniêcie
 			switch (Map_manager::getMain_state())
 			{
@@ -254,7 +256,7 @@ void Map::mouse_handler()
 				case Selecting_Obj_state::MULTI:
 					pressing_mouseL_multiOBJ_select = true;
 					multi_selectingObject_mouseEvents();
-					map_mouseHandler.events(is_mouseOver());
+					//map_mouseHandler.events(is_mouseOver());
 					break;
 				}
 
@@ -607,7 +609,7 @@ void Map::move_map_Wheel()
 		enemy->update_renderPOS(RenderPOS_X, RenderPOS_Y);
 	}
 
-	if (Map_manager::getSelect_satate() == Selecting_Obj_state::MULTI)
+	if (Map_manager::getSelect_satate() == Selecting_Obj_state::MULTI && Map_manager::getMain_state() != Map_state::MULTI_MOVING_OBJECTS)
 	{
 		scaleX = double(multiOBJ_s.get_mapX() - mapBG_area.left()) / double(mapBG_area.getW());
 		scaleY = double(multiOBJ_s.get_mapY() - mapBG_area.up()) / double(mapBG_area.getH());
