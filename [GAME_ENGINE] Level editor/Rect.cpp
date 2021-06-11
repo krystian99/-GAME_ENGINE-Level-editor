@@ -1,5 +1,6 @@
 #include "Rect.h"
 #include <algorithm>
+
 Rect::Rect(Rect&& rect)
 {
 	pos = rect.get();
