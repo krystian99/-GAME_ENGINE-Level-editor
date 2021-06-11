@@ -730,20 +730,31 @@ void multiOBJ_select_structure::render(const SDL_Rect& edit_a)
 
 	Renderer::set_renderColor({ 0, 0, 255, 255 });
 
+	bool RENDER = true;
+
 	if (left() < edit_area.left()) {
 		tmp.x = edit_area.left();
+
 		tmp.w -= edit_area.left() - left();
+
+		if (tmp.w < 0)
+			RENDER = false;
 	}
 	if (up() < edit_area.up()) {
 		tmp.y = edit_area.up();
 		tmp.h -= edit_area.up() - up();
 	}
-	if (right() > edit_area.right())
+	if (right() > edit_area.right()) {
 		tmp.w = edit_area.right() - left();
+
+		if (tmp.x >= edit_area.right())
+			RENDER = false;
+	}
 	if (down() > edit_area.down())
 		tmp.h = edit_area.down() - up();
 
-	SDL_RenderDrawRect(Renderer::get(), &tmp);
+	if (RENDER)
+		SDL_RenderDrawRect(Renderer::get(), &tmp);
 	Renderer::set_defaultColor();
 }
 
