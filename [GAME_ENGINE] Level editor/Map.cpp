@@ -610,15 +610,7 @@ void Map::move_map_Wheel()
 	}
 
 	if (Map_manager::getSelect_satate() == Selecting_Obj_state::MULTI && Map_manager::getMain_state() != Map_state::MULTI_MOVING_OBJECTS)
-	{
-		scaleX = double(multiOBJ_s.get_mapX() - mapBG_area.left()) / double(mapBG_area.getW());
-		scaleY = double(multiOBJ_s.get_mapY() - mapBG_area.up()) / double(mapBG_area.getH());
-
-		RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
-		RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
-
-		multiOBJ_s.update_renderPOS(RenderPOS_X, RenderPOS_Y);
-	}
+		multiOBJ_s.moveMap_Event();
 }
 
 void Map::update_OBJs_renderPOS()
@@ -682,6 +674,9 @@ void Map::move_map_Mouse()
 			enemy->update_renderPOS(RenderPOS_X, RenderPOS_Y);
 		}
 	}
+
+	if (Map_manager::getSelect_satate() == Selecting_Obj_state::MULTI && Map_manager::getMain_state() != Map_state::MULTI_MOVING_OBJECTS)
+		multiOBJ_s.moveMap_Event();
 }
 
 multiOBJ_select_structure::multiOBJ_select_structure(const Rect* edit_a, const Rect* mapBG_a)
@@ -857,6 +852,7 @@ void multiOBJ_select_structure::mouse_events(bool mouse_over, const Map_mouseHan
 
 void multiOBJ_select_structure::moveEvent_mouseR(Enemies& enemies, const Rect& edit_area, const Rect & mapBG_area, const Map_mouseHandler & map_mouseHandler)
 {
+	setState_movingOBJs(false);
 
 	for (auto& enemy : moving_objects) {
 		int RenderPOS_X, RenderPOS_Y;
@@ -871,8 +867,6 @@ void multiOBJ_select_structure::moveEvent_mouseR(Enemies& enemies, const Rect& e
 		x = mapBG_area.left() + round(mapBG_area.getW() * scaleTX_w);
 		y = mapBG_area.up() + round(mapBG_area.getH() * scaleTX_h);
 
-		//int RenderPOS_X, RenderPOS_Y;
-		//double scaleX, scaleY;
 		scaleX = double(x - mapBG_area.left()) / double(mapBG_area.getW());
 		scaleY = double(y - mapBG_area.up()) / double(mapBG_area.getH());
 		RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
@@ -894,12 +888,11 @@ void multiOBJ_select_structure::moveEvent_mouseR(Enemies& enemies, const Rect& e
 	x = mapBG_area.left() + round(mapBG_area.getW() * scale_mapX);
 	y = mapBG_area.up() + round(mapBG_area.getH() * scale_mapY);
 
-	scale_renderX = double(x - mapBG_area.left()) / double(mapBG_area.getW());;
-	scale_renderY = double(y - mapBG_area.up()) / double(mapBG_area.getH());;
+	scale_renderX = double(x - mapBG_area.left()) / double(mapBG_area.getW());
+	scale_renderY = double(y - mapBG_area.up()) / double(mapBG_area.getH());
 
 	RenderPOS_X = round(scale_renderX * edit_area.getW()) + edit_area.left();
 	RenderPOS_Y = round(scale_renderY * edit_area.getH()) + edit_area.up();
-
 
 	mapPos.set(x, y);
 	set(RenderPOS_X, RenderPOS_Y);
@@ -907,6 +900,8 @@ void multiOBJ_select_structure::moveEvent_mouseR(Enemies& enemies, const Rect& e
 
 void multiOBJ_select_structure::events_moving(bool mouse_over, const SDL_Rect& edit_a)
 {
+	setState_movingOBJs(true);
+
 	Rect edit_area{ edit_a };
 
 	int tmp_px_left, tmp_px_up;
@@ -941,6 +936,20 @@ void multiOBJ_select_structure::events_moving(bool mouse_over, const SDL_Rect& e
 			enemy.enemy->update_about(tmp_px_left, tmp_px_up);
 	}
 }
+void multiOBJ_select_structure::moveMap_Event()
+{
+	double scaleX, scaleY;
+
+	int RenderPOS_X, RenderPOS_Y;
+
+	scaleX = double(get_mapX() - mapBG_area->left()) / double(mapBG_area->getW());
+	scaleY = double(get_mapY() - mapBG_area->up()) / double(mapBG_area->getH());
+
+	RenderPOS_X = round(scaleX * edit_area->getW()) + edit_area->left();
+	RenderPOS_Y = round(scaleY * edit_area->getH()) + edit_area->up();
+
+	update_renderPOS(RenderPOS_X, RenderPOS_Y);
+}
 void multiOBJ_select_structure::update_renderPOS(int x, int y)
 {
 	setX(x);
@@ -962,6 +971,13 @@ void multiOBJ_select_structure::set_mapPos(int x, int y, int w, int h)
 	mapPos.set(x, y, w, h);
 }
 
+void multiOBJ_select_structure::reset(SDL_Rect a)
+{
+	enemy_up = enemy_down = enemy_left = enemy_right = nullptr;
+	moving_objects.clear();
+	set(a.x, a.y, 1, 1);
+}
+
 void multiOBJ_select_structure::updateOBJs(SDL_Point clicked_point)
 {
 	// zachowanie proporcji po kliknieciu
@@ -973,6 +989,11 @@ void multiOBJ_select_structure::updateOBJs(SDL_Point clicked_point)
 		enemy.px_left = clicked_point.x - enemy.enemy->get_renderPOS().x;
 		enemy.px_up = clicked_point.y - enemy.enemy->get_renderPOS().y;
 	}
+}
+
+void multiOBJ_select_structure::setState_movingOBJs(bool state)
+{
+	is_movingOBJs = state;
 }
 
 void singleOBJmove_structure::set(Enemy* enemy)

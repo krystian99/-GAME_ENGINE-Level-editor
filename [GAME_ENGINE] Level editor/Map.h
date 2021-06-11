@@ -42,13 +42,19 @@ public:
 	void render(const SDL_Rect& edit_area);
 	void render();
 
+	bool isMoving() const { return is_movingOBJs;}
+
 	void OBJs_set(Enemies& enemy, const Rect & edit_area);
 
 	void events(const Rect& edit_area, Enemies & enemies);
+
+	// wciœniêty lewy przycisk myszy
 	void mouse_events(bool, const Map_mouseHandler &);
+	// zakoñczone przenoszenie i ustawienie obiektow na mapie
 	void moveEvent_mouseR(Enemies&, const Rect&, const Rect&, const Map_mouseHandler& map_mouseHandler);
 
 	void events_moving(bool mouse_over, const SDL_Rect& edit_area);
+	void moveMap_Event();
 
 	void update_renderPOS(int x, int y);
 
@@ -67,14 +73,12 @@ public:
 	void setW_map();
 	void setH_map();
 
-	void reset(SDL_Rect a)
-	{
-		enemy_up = enemy_down = enemy_left = enemy_right = nullptr;
-		moving_objects.clear();
-		set(a.x, a.y, 1, 1);
-	}
+	void reset(SDL_Rect a);
 
 	void updateOBJs(SDL_Point clicked_point);
+private:
+	void setState_movingOBJs(bool);
+	//bool isMoving() const { return is_movingOBJs; }
 private:
 	struct Move_OBJ
 	{
@@ -83,6 +87,8 @@ private:
 	};
 
 	Rect mapPos;
+
+	bool is_movingOBJs{ false };
 
 	int px_up, px_left;
 
