@@ -8,8 +8,8 @@ class Event_handler
 {
 	using FUNCTION = void(*)();
 public:
-	void push(FUNCTION & f);
+	void push(FUNCTION f);
 private:
-	queue<FUNCTION &> events;
+	queue<FUNCTION> events;
 	SDL_Event event_handler;
 };
