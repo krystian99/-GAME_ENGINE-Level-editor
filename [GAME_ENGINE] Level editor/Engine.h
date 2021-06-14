@@ -16,8 +16,6 @@ private:
 	void events_dpnd();
 	void render();
 private:
-	void render_events();
-private:
 	SDL_Event event_handler;
 
 	MENU menu;

@@ -130,9 +130,7 @@ void LevelCreator::render()
 	scrollBar_folders.render();
 	map_optionsBar.render();
 
-	Event_handler::push(new Event_handlerOBJ_map{ &map_edit_area });
-
-	//map_edit_area.render();
+	map_edit_area.render();
 
 	bar_modules_left.render();
 

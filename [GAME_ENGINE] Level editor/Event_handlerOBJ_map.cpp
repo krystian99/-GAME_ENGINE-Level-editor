@@ -1,18 +1,17 @@
 #include "Event_handlerOBJ_map.h"
-//#include "Renderer.h"
 
-Event_handlerOBJ_map::Event_handlerOBJ_map(Map* map)// Map_state map_event = Map_state::NONE)
+Event_handlerOBJ_map::Event_handlerOBJ_map(Map* map, Func func)// Map_state map_event = Map_state::NONE)
 {
 	this->map = map;
-	//this->map_event = map_event;
+	this->func = func;
 }
 
 Event_handlerOBJ_map::~Event_handlerOBJ_map()
 {
-	run();
+	process();
 }
 
-void Event_handlerOBJ_map::render()
+void Event_handlerOBJ_map::process()
 {
-	map->render();
+	func(map);
 }

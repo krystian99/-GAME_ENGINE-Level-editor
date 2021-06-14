@@ -7,6 +7,9 @@
 #include "Enemy_Types.h"
 #include "Engine_manager.h"
 #include "CoordinateBar_map.h"
+#include "Event_handler.h"
+#include "Event_handlerOBJ_map.h"
+#include "EventOBJ.h"
 
 Map::Map(const SDL_Rect& pos) :
 	enemy_placerModule{ enemies },
@@ -54,7 +57,9 @@ void Map::load_Objects(const std::string& name)
 
 void Map::events() // zdarzenia zale¿ne od myszki(przyciski myszki: lewy, prawy, kó³ko)
 {
-	events_enemies();
+	//events_enemies();
+
+	Event_handler::push(new Event_handlerOBJ_map{ this, Map_events::events_enemies });
 
 	//map_mouseHandler.events(is_mouseOver());
 
@@ -107,8 +112,11 @@ void Map::set_cord(const CoordinateBar_mouse* mouse_cord)
 
 void Map::render()
 {
-	render_map();
-	render_enemies();
+	//render_map();
+	//render_enemies();
+
+	Event_handler::push(new EventOBJ<Map>{ this, Map_events::render_map }); // testowe renderowanie
+	Event_handler::push(new EventOBJ<Map>{ this, Map_events::render_enemies }); // testowe renderowanie
 
 	switch (Map_manager::getMain_state()) {
 	case Map_state::PLACING_OBJECTS:
@@ -184,6 +192,7 @@ void Map::set_ScaledSize()
 void Map::mouseR_events()
 {
 	if (Mouse::getBt_state() == Mouse_key::R_BUTTON) {
+		updated = true;
 		switch (Map_manager::getMain_state()) {
 		case Map_state::PLACING_OBJECTS:
 			Map_manager::switch_OBJ_orient();
@@ -205,6 +214,7 @@ void Map::mouseR_events()
 void Map::mouseWheel_events()
 {
 	if (Mouse::getWheelState() != Mouse_wheel::NONE) {
+		updated = true;
 		move_map_Wheel();
 		switch (Map_manager::getMain_state()) {
 		case Map_state::SELECTING_OBJECTS:
@@ -220,6 +230,7 @@ void Map::mouseWheel_events()
 
 void Map::mouse_handler()
 {
+	updated = false;
 	mouse_over = false;
 
 	if (Mouse::is_inPOS(edit_area.get()))
@@ -228,6 +239,7 @@ void Map::mouse_handler()
 		map_mouseHandler.events(is_mouseOver());
 
 		if (Mouse::getBt_state() == Mouse_key::L_BUTTON) { // pojedyncze klikniêcie
+			updated = true;
 			switch (Map_manager::getMain_state())
 			{
 			case Map_state::PLACING_OBJECTS:
@@ -247,6 +259,7 @@ void Map::mouse_handler()
 		}
 
 		if (Mouse::is_pressedL()) { // przytrzymanie lewego klawisza myszy
+			updated = true;
 			switch (Map_manager::getMain_state()) {
 			case Map_state::MOVING_MAP:
 				move_map_Mouse();
@@ -440,6 +453,8 @@ void Map::render_map()
 
 void Map::render_enemies()
 {
+	//Map_events::render_enemies(this);
+
 	static SDL_Rect temp_pos, texture_area;
 
 	for (auto& enemy : enemies) {

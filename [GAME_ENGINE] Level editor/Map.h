@@ -10,6 +10,7 @@
 #include <memory>
 #include "CoordinateBar_mouse.h"
 #include "Map_mouseHandler.h"
+#include "Map_events.h"
 
 class singleOBJmove_structure : public Rect
 {
@@ -105,8 +106,14 @@ private:
 
 class Map
 {
+	friend void Map_events::render_enemies(Map* map);
+	friend void Map_events::render_map(Map* map);
+
+	friend void Map_events::events_enemies(Map* map);
 public:
 	Map(const SDL_Rect & pos);
+
+	bool isUpdated() const { return updated; }
 
 	void save_Objects(const std::string & name); // zapisuje dane wszystkich obiektów do pliku
 	void load_Objects(const std::string & name); // ³aduje dane obiektów z pliku
@@ -173,6 +180,8 @@ private:
 	int scaleMapY;
 
 	int MAP_MOVE_SIZE = 20; // iloœæ pixeli przesuniêcia mapy
+
+	bool updated{ true };
 
 	bool mouse_over{ false };
 

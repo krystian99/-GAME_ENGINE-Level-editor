@@ -125,37 +125,26 @@ void Engine::render()
 		switch (Engine_manager::getState())
 		{
 		case Engine_state::IS_IN_MENU:
+			//Renderer::clear();
 			menu.render();
+			//Renderer::update();
 			break;
 		case Engine_state::IS_IN_LC:
+			//Renderer::clear();
 			level_editor.render();
+			//Renderer::update();
 			break;
 		case Engine_state::IS_IN_ANIMATION_MANAGEMENT:
+			//Renderer::clear();
 			animation_config_creator.render();
+			//Renderer::update();
 			break;
 		}
 
-		while (!Event_handler::empty())
+		while (!Event_handler::empty()) {
 			Event_handler::process();
+		}
 
 		Renderer::update();
 	}
-}
-
-void Engine::render_events()
-{
-	Renderer::clear();
-	switch (Engine_manager::getState())
-	{
-	case Engine_state::IS_IN_MENU:
-		menu.render();
-		break;
-	case Engine_state::IS_IN_LC:
-		level_editor.render();
-		break;
-	case Engine_state::IS_IN_ANIMATION_MANAGEMENT:
-		animation_config_creator.render();
-		break;
-	}
-	Renderer::update();
 }

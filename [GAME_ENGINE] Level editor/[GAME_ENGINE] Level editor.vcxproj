@@ -147,8 +147,10 @@
     <ClInclude Include="Engine_manager.h" />
     <ClInclude Include="Engine_stateID.h" />
     <ClInclude Include="Error.h" />
+    <ClInclude Include="EventOBJ.h" />
     <ClInclude Include="Event_handler.h" />
     <ClInclude Include="Event_handlerOBJ.h" />
+    <ClInclude Include="Event_handlerOBJ_LevelCreator.h" />
     <ClInclude Include="Event_handlerOBJ_map.h" />
     <ClInclude Include="Folder_button.h" />
     <ClInclude Include="HitBox.h" />
@@ -157,6 +159,7 @@
     <ClInclude Include="InputArea.h" />
     <ClInclude Include="Interact_OBJ.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="Map_events.h" />
     <ClInclude Include="Map_manager.h" />
     <ClInclude Include="Map_module.h" />
     <ClInclude Include="Map_mouseHandler.h" />
@@ -216,14 +219,17 @@
     <ClCompile Include="Enemies_placer.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Engine_manager.cpp" />
+    <ClCompile Include="EventOBJ.cpp" />
     <ClCompile Include="Event_handler.cpp" />
     <ClCompile Include="Event_handlerOBJ.cpp" />
+    <ClCompile Include="Event_handlerOBJ_LevelCreator.cpp" />
     <ClCompile Include="Event_handlerOBJ_map.cpp" />
     <ClCompile Include="Folder_button.cpp" />
     <ClCompile Include="HitBox.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="Interact_OBJ.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Map_events.cpp" />
     <ClCompile Include="Map_manager.cpp" />
     <ClCompile Include="Map_module.cpp" />
     <ClCompile Include="Map_mouseHandler.cpp" />

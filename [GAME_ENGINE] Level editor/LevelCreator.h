@@ -14,6 +14,8 @@ class LevelCreator
 public:
 	LevelCreator();
 
+	bool isUpdated() const { return map_edit_area.isUpdated(); }
+
 	void events_multiwindow();
 
 	void reset_states();
