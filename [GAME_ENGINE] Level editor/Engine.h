@@ -5,6 +5,7 @@
 #include "Menu_manager.h"
 #include "Animation_management.h"
 #include "Script_Editor.h"
+#include "Event_handler.h"
 
 class Engine // g³ówna klasa steruj¹ca/operuj¹ca
 {
@@ -27,6 +28,8 @@ private:
 	Animation_management animation_config_creator;
 
 	Script_Editor script_editor;
+
+	//Event_handler eventsTest;
 
 	bool escape_pressed{ false }, test{ false };
 };

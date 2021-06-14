@@ -25,6 +25,8 @@ void Engine::events()
 			switch (event_handler.window.event) {
 			case SDL_WINDOWEVENT_CLOSE:
 				Engine_manager::Quit();
+				//eventsTest.push(Engine_manager::Quit);
+
 				break;
 			}
 		}
@@ -34,11 +36,18 @@ void Engine::events()
 		else { // wykonaj eventy dla pozostalych okien
 			switch (Engine_manager::getState()) {
 			case Engine_state::IS_IN_LC:
+				//eventsTest.push()
 				level_editor.events_multiwindow();
 				break;
 			}
 		}
 	}
+	/*while (!eventsTest.empty())
+	{
+		eventsTest.process();
+		eventsTest.pop();
+	}*/
+
 	events_indp();
 }
 
