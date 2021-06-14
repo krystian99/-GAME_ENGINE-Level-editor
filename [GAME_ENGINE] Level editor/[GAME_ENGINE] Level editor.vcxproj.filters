@@ -267,6 +267,12 @@
     <ClInclude Include="Event_handler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Event_handlerOBJ.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Event_handlerOBJ_map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Texture.cpp">
@@ -444,6 +450,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Event_handler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Event_handlerOBJ.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Event_handlerOBJ_map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

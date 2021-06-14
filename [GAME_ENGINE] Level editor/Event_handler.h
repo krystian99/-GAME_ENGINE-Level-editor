@@ -1,4 +1,5 @@
 #pragma once
+#include "Event_handlerOBJ.h"
 #include <queue>
 #include <SDL_events.h>
 
@@ -6,10 +7,13 @@ using namespace std;
 
 class Event_handler
 {
-	using FUNCTION = void(*)();
 public:
-	void push(FUNCTION f);
+	static void pop();
+
+	static bool empty() { return events.empty(); }
+
+	static void push(Event_handlerOBJ* eventOBJ);
+
 private:
-	queue<FUNCTION> events;
-	SDL_Event event_handler;
+	static queue<Event_handlerOBJ*> events;
 };

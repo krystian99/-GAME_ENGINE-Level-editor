@@ -148,6 +148,8 @@
     <ClInclude Include="Engine_stateID.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="Event_handler.h" />
+    <ClInclude Include="Event_handlerOBJ.h" />
+    <ClInclude Include="Event_handlerOBJ_map.h" />
     <ClInclude Include="Folder_button.h" />
     <ClInclude Include="HitBox.h" />
     <ClInclude Include="HitBoxes_types.h" />
@@ -215,6 +217,8 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Engine_manager.cpp" />
     <ClCompile Include="Event_handler.cpp" />
+    <ClCompile Include="Event_handlerOBJ.cpp" />
+    <ClCompile Include="Event_handlerOBJ_map.cpp" />
     <ClCompile Include="Folder_button.cpp" />
     <ClCompile Include="HitBox.cpp" />
     <ClCompile Include="Image.cpp" />
