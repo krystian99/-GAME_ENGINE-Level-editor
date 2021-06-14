@@ -8,7 +8,7 @@ using namespace std;
 class Event_handler
 {
 public:
-	static void pop();
+	static void process();
 
 	static bool empty() { return events.empty(); }
 

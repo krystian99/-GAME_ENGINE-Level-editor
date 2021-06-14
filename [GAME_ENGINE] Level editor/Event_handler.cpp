@@ -2,9 +2,9 @@
 
 queue<Event_handlerOBJ*> Event_handler::events{};
 
-void Event_handler::pop()
+void Event_handler::process()
 {
-	events.front()->run();
+	//events.front()->run();
 
 	delete events.front();
 

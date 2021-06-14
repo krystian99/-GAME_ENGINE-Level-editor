@@ -2,7 +2,7 @@
 class Event_handlerOBJ
 {
 public:
-	virtual void run() = 0;
+	virtual ~Event_handlerOBJ(){}
 protected:
 	virtual void render() {}
 

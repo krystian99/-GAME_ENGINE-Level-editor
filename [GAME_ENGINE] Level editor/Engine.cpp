@@ -5,6 +5,7 @@
 #include "Mouse.h"
 #include "Renderer.h"
 #include "Keyboard.h"
+#include "Event_handler.h"
 
 void Engine::run()
 {
@@ -133,6 +134,10 @@ void Engine::render()
 			animation_config_creator.render();
 			break;
 		}
+
+		while (!Event_handler::empty())
+			Event_handler::process();
+
 		Renderer::update();
 	}
 }

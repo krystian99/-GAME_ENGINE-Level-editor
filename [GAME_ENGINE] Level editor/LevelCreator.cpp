@@ -6,6 +6,8 @@
 #include "Buttons_OBJ_create.h"
 #include "Buttons_Map_Functions.h"
 #include "CoordinateBar_map.h"
+#include "Event_handlerOBJ_map.h"
+#include "Event_handler.h"
 
 LevelCreator::LevelCreator() : // inicjuje wszystkie dane Level Creatora - ustala funkcje przycisków itd.
 	map_edit_area{ { 160, 128, 1200, 600 } },
@@ -128,7 +130,9 @@ void LevelCreator::render()
 	scrollBar_folders.render();
 	map_optionsBar.render();
 
-	map_edit_area.render();
+	Event_handler::push(new Event_handlerOBJ_map{ &map_edit_area });
+
+	//map_edit_area.render();
 
 	bar_modules_left.render();
 

@@ -5,14 +5,15 @@
 
 class Event_handlerOBJ_map : public Event_handlerOBJ
 {
-	Event_handlerOBJ_map(Map* map, Map_state map_event);
-
-	void run() { render(); }
+public:
+	Event_handlerOBJ_map(Map* map);// , Map_state map_event = Map_state::NONE);
+	~Event_handlerOBJ_map();
 private:
+	void run() { render(); }
 	void render();
 	//void mouse_events() {}
 private:
 	Map* map;
-	Map_state map_event;
+	//Map_state map_event;
 };
 
