@@ -35,7 +35,8 @@ private:
 	void switch_Main_state();
 	void switch_Management_state();
 private:
-	ScrollBar scrollBar_folders, map_optionsBar, objectType_optionsBar;
+	ScrollBar<ScrollBar_orient::VERTICAL, Render_state::TEXTURE> scrollBar_folders, objectType_optionsBar;
+	ScrollBar< ScrollBar_orient::HORIZONTAL, Render_state::TEXTURE> map_optionsBar;
 
 	Map map_edit_area;
 

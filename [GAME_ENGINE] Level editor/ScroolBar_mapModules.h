@@ -12,5 +12,5 @@ public:
 	void render();
 	void events();
 private:
-	ScrollBar map_modules;
+	ScrollBar<ScrollBar_orient::VERTICAL, Render_state::TEXTURE> map_modules;
 };

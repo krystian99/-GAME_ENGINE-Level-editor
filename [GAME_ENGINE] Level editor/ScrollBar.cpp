@@ -8,7 +8,7 @@ template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state r
 ScrollBar<scroolbarOrient, renderState>::ScrollBar(const SDL_Rect& pos, const std::string& texture, int buttonSize_expand, int space_beetwen_buttons = button_space_default, int space_fromSide = button_space_default) :
 	ScrollBar{ pos, buttonSize_expand, space_beetwen_buttons, space_fromSide }
 {
-	render_state = Render_state::TEXTURE;
+	this->render_state = Render_state::TEXTURE;
 	textureBG.loadFromFile(texture_path);
 }
 
@@ -17,7 +17,7 @@ template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state r
 ScrollBar<scroolbarOrient, renderState>::ScrollBar(const SDL_Rect& pos, const SDL_Color& color, int buttonSize_expand, int space_beetwen_buttons, int space_fromSide) :
 	ScrollBar{ pos, buttonSize_expand, space_beetwen_buttons, space_fromSide }
 {
-	render_state = Render_state::COLOR;
+	this->render_state = Render_state::COLOR;
 	colorBG = color;
 }
 
@@ -151,7 +151,7 @@ void ScrollBar<scroolbarOrient, renderState>::render_buttons()
 	}
 }
 //#pragma warning(disable: 175)
-template <>
+/*template <>
 void ScrollBar<ScrollBar_orient::HORIZONTAL, Render_state::TEXTURE>::render_buttons()
 {
 	static SDL_Rect temp_pos, texture_area;
@@ -191,6 +191,129 @@ void ScrollBar<ScrollBar_orient::HORIZONTAL, Render_state::TEXTURE>::render_butt
 		}
 	}
 }
+
+template <>
+void ScrollBar<ScrollBar_orient::HORIZONTAL, Render_state::COLOR>::render_buttons()
+{
+	static SDL_Rect temp_pos, texture_area;
+
+	for (auto& button : buttons) {
+		auto& pos = button->getPOS();
+
+		if (pos.x >= position.x + space_fromSide && pos.x + pos.w <= position.x + position.w - space_fromSide)
+			button->render(); // renderuj ca³y przycisk
+		else if (pos.x < position.x + space_fromSide && pos.x + pos.w > position.x + space_fromSide) {
+			temp_pos = { position.x + space_fromSide, position.y + space_fromSide, pos.x + pos.w - (position.x + space_fromSide) , pos.h };
+
+			auto& tX = button->getTX();
+
+			double scale = double(temp_pos.w) / double(pos.w);
+
+			texture_area.x = tX.getWidth() - std::round(tX.getWidth() * scale);
+			texture_area.y = 0;
+			texture_area.w = tX.getWidth() - texture_area.x;
+			texture_area.h = tX.getHeight();
+
+			button->render(texture_area, temp_pos);
+		}
+		else if (pos.x + pos.w > position.x + position.w - space_fromSide && pos.x <= position.x + position.w - space_fromSide) {
+			temp_pos = { pos.x, position.y + space_fromSide, position.x + position.w - space_fromSide - pos.x, pos.h };
+
+			auto& tX = button->getTX();
+
+			double scale = double(temp_pos.w) / double(pos.w);
+
+			texture_area.x = 0;
+			texture_area.y = 0;
+			texture_area.w = std::round(tX.getWidth() * scale);
+			texture_area.h = tX.getHeight();
+
+			button->render(texture_area, temp_pos);
+		}
+	}
+}
+
+template <>
+void ScrollBar<ScrollBar_orient::VERTICAL, Render_state::TEXTURE>::render_buttons()
+{
+	static SDL_Rect temp_pos, texture_area;
+
+	for (auto& button : buttons) {
+		auto& pos = button->getPOS();
+
+		if (pos.y >= position.y + space_fromSide && pos.y + pos.h <= position.y + position.h - space_fromSide)
+			button->render();
+		else if (pos.y < position.y + space_fromSide && pos.y + pos.h > position.y + space_fromSide) {
+			temp_pos = { position.x + space_fromSide, position.y + space_fromSide, pos.w, pos.y + pos.h - (position.y + space_fromSide) };
+
+			auto& tX = button->getTX();
+
+			double scale = double(temp_pos.h) / double(pos.h);
+
+			texture_area.x = 0;
+			texture_area.y = tX.getHeight() - std::round(tX.getHeight() * scale);
+			texture_area.w = tX.getWidth();
+			texture_area.h = tX.getHeight() - texture_area.y;
+
+			button->render(texture_area, temp_pos);
+		}
+		else if (pos.y + pos.h > position.y + position.h - space_fromSide && pos.y <= position.y + position.h - space_fromSide) {
+			temp_pos = { position.x + space_fromSide, pos.y, pos.w, position.y + position.h - space_fromSide - pos.y };
+
+			auto& tX = button->getTX();
+
+			double scale = double(temp_pos.h) / double(pos.h);
+
+			texture_area.x = 0;
+			texture_area.y = 0;
+			texture_area.w = tX.getWidth();
+			texture_area.h = std::round(tX.getHeight() * scale);
+
+			button->render(texture_area, temp_pos);
+		}
+	}
+}
+
+template <>
+void ScrollBar<ScrollBar_orient::VERTICAL, Render_state::COLOR>::render_buttons()
+{
+	static SDL_Rect temp_pos, texture_area;
+
+	for (auto& button : buttons) {
+		auto& pos = button->getPOS();
+
+		if (pos.y >= position.y + space_fromSide && pos.y + pos.h <= position.y + position.h - space_fromSide)
+			button->render();
+		else if (pos.y < position.y + space_fromSide && pos.y + pos.h > position.y + space_fromSide) {
+			temp_pos = { position.x + space_fromSide, position.y + space_fromSide, pos.w, pos.y + pos.h - (position.y + space_fromSide) };
+
+			auto& tX = button->getTX();
+
+			double scale = double(temp_pos.h) / double(pos.h);
+
+			texture_area.x = 0;
+			texture_area.y = tX.getHeight() - std::round(tX.getHeight() * scale);
+			texture_area.w = tX.getWidth();
+			texture_area.h = tX.getHeight() - texture_area.y;
+
+			button->render(texture_area, temp_pos);
+		}
+		else if (pos.y + pos.h > position.y + position.h - space_fromSide && pos.y <= position.y + position.h - space_fromSide) {
+			temp_pos = { position.x + space_fromSide, pos.y, pos.w, position.y + position.h - space_fromSide - pos.y };
+
+			auto& tX = button->getTX();
+
+			double scale = double(temp_pos.h) / double(pos.h);
+
+			texture_area.x = 0;
+			texture_area.y = 0;
+			texture_area.w = tX.getWidth();
+			texture_area.h = std::round(tX.getHeight() * scale);
+
+			button->render(texture_area, temp_pos);
+		}
+	}
+}*/
 
 template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
 void ScrollBar<scroolbarOrient, renderState>::move_all(int size_x, int size_y)
