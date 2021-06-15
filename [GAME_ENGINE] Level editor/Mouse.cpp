@@ -1,5 +1,4 @@
 #include "Mouse.h"
-#include <SDL_events.h>
 #include <SDL_mouse.h>
 
 int Mouse::mX = 0; // obecna pozycja

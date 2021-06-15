@@ -112,11 +112,11 @@ void Map::set_cord(const CoordinateBar_mouse* mouse_cord)
 
 void Map::render()
 {
-	//render_map();
-	//render_enemies();
+	render_map();
+	render_enemies();
 
-	Event_handler::push(new EventOBJ<Map>{ this, Map_events::render_map }); // testowe renderowanie
-	Event_handler::push(new EventOBJ<Map>{ this, Map_events::render_enemies }); // testowe renderowanie
+	//Event_handler::push(new EventOBJ<Map>{ this, Map_events::render_map }); // testowe renderowanie
+	//Event_handler::push(new EventOBJ<Map>{ this, Map_events::render_enemies }); // testowe renderowanie
 
 	switch (Map_manager::getMain_state()) {
 	case Map_state::PLACING_OBJECTS:

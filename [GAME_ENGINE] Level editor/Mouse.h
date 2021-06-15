@@ -1,7 +1,8 @@
 #pragma once
 #include "Rect.h"
 #include <SDL_rect.h>
-union SDL_Event;
+#include <SDL_events.h>
+
 
 enum class Mouse_key {
 	NONE,

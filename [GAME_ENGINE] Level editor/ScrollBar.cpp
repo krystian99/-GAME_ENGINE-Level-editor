@@ -269,9 +269,7 @@ void ScrollBar::events() // do poprawy -
 {
 	reset_states();
 
-
-	if (Mouse::getX() >= position.x && Mouse::getX() <= position.x + position.w
-		&& Mouse::getY() >= position.y && Mouse::getY() <= position.y + position.h)
+	if (Mouse::is_inPOS(position))
 	{
 		mouse_over = true;
 		if (Mouse::getWheelState() != Mouse_wheel::NONE)
@@ -292,11 +290,12 @@ void ScrollBar::events() // do poprawy -
 		//buttons_rangePoint_events();
 
 		for (auto & button : buttons) {
-			auto pos = button->getPOS();
-			
+
 			button->events();
-			if (button->is_mouseOver())
+			if (button->is_mouseOver()) {
 				current_mouseOver_button = button.get();
+				break;
+			}
 			if (button->is_mouseKey_1hit(Mouse_key::L_BUTTON)) {
 				if (current_button)
 					current_button->set_active(false);
@@ -308,12 +307,8 @@ void ScrollBar::events() // do poprawy -
 			}
 		}
 	}
-	else {
+	else
 		deactivate_mouseOverEvent(); // je¿eli pozosta³ przycisk, który wymaga usuniêcia flagi mouse_Over
-	}
-	/*else
-		for (auto & button : buttons)
-			button->events();*/
 }
 
 void ScrollBar::render()
