@@ -2,21 +2,19 @@
 #include <vector>
 #include "Button.h"
 #include "Texture.h"
+#include "Rect.h"
+//#include <SDL_rect.h>
 
+enum class ScrollBar_orient { HORIZONTAL, VERTICAL };
+enum class Render_state { COLOR, TEXTURE };
+
+template<enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
 class ScrollBar
 {
-	enum class Render_state { COLOR, TEXTURE };
-
-	struct Button_rangePoint {
-		void events_horizontal();
-		void events_vertical();
-	private:
-
-	};
+	//enum class Render_state { COLOR, TEXTURE };
 public:
-	enum class ScrollBar_orient { HORIZONTAL, VERTICAL };
 
-	ScrollBar(const SDL_Rect & pos, const std::string & texture, int buttonSize_expand, int space_beetwen_buttons = button_space_default, int space_fromSide = button_space_default); // ustala automatycznie orientacjê
+	ScrollBar(const SDL_Rect &pos, const std::string & texture, int buttonSize_expand, int space_beetwen_buttons = button_space_default, int space_fromSide = button_space_default); // ustala automatycznie orientacjê
 	ScrollBar(const SDL_Rect & pos, const SDL_Color & color, int buttonSize_expand, int space_beetwen_buttons = button_space_default, int space_fromSide = button_space_default); // ustala automatycznie orientacjê
 	ScrollBar(const SDL_Rect & pos, const SDL_Color & color, ScrollBar_orient ornt, int buttonSize_expand, int space_beetwen_buttons = button_space_default, int space_fromSide = button_space_default); // spaceof -> iloœæ miejsca dla przycisku
 
@@ -39,6 +37,9 @@ public:
 private:
 	ScrollBar(const SDL_Rect & pos, int buttonSize_expand, int space_beetwen_buttons = button_space_default, int space_fromSide = button_space_default);
 
+	void render_horizontal();
+	void render_vertical();
+
 	void reset_states();
 
 	void render_buttons();
@@ -47,11 +48,6 @@ private:
 
 	void move_horizontal();
 	void move_vertical();
-
-	/*void update_buttonRange_vertical();
-	void update_buttonRange_horizontal();
-
-	void buttons_rangePoint_events();*/
 private:
 	SDL_Rect position;
 
@@ -75,8 +71,6 @@ private:
 
 	ScrollBar_orient orient; // wyznaczane automatycznie albo rêcznie
 	Render_state render_state;
-
-	//std::vector<Button*>::iterator buttonFront, button_end; // przyciski do zdarzeñ wyznaczaj¹ce zakres, w którym bêd¹ wykonywane zdarzenia
 
 	std::vector<BButton_ptr> buttons; // bazowy przycisk - mog¹ byæ umieszczone pochodne tego przycisku
 };

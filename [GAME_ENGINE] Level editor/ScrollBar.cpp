@@ -4,27 +4,31 @@
 #include "Mouse.h"
 #include <cmath>
 
-ScrollBar::ScrollBar(const SDL_Rect & pos, const std::string & texture_path, int buttonSize_expand, int space_beetwen_buttons, int space_fromSide) :
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+ScrollBar<scroolbarOrient, renderState>::ScrollBar(const SDL_Rect& pos, const std::string& texture, int buttonSize_expand, int space_beetwen_buttons = button_space_default, int space_fromSide = button_space_default) :
 	ScrollBar{ pos, buttonSize_expand, space_beetwen_buttons, space_fromSide }
 {
 	render_state = Render_state::TEXTURE;
 	textureBG.loadFromFile(texture_path);
 }
 
-ScrollBar::ScrollBar(const SDL_Rect & pos, const SDL_Color & color, int buttonSize_expand, int space_beetwen_buttons, int space_fromSide) :
+
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+ScrollBar<scroolbarOrient, renderState>::ScrollBar(const SDL_Rect& pos, const SDL_Color& color, int buttonSize_expand, int space_beetwen_buttons, int space_fromSide) :
 	ScrollBar{ pos, buttonSize_expand, space_beetwen_buttons, space_fromSide }
 {
 	render_state = Render_state::COLOR;
 	colorBG = color;
 }
 
-ScrollBar::ScrollBar(const SDL_Rect & pos, const SDL_Color & color, ScrollBar_orient ornt, int buttonSize_expand, int space_beetwen_buttons, int space_fromSide) :
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+ScrollBar<scroolbarOrient, renderState>::ScrollBar(const SDL_Rect& pos, const SDL_Color& color, ScrollBar_orient ornt, int buttonSize_expand, int space_beetwen_buttons, int space_fromSide) :
 	ScrollBar{ pos, color, buttonSize_expand, space_beetwen_buttons, space_fromSide }
 {
 
 }
-
-ScrollBar::ScrollBar(const SDL_Rect & pos, int buttonSize_expand, int space_beetwen_buttons, int space_fromSide)
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+ScrollBar<scroolbarOrient, renderState>::ScrollBar(const SDL_Rect& pos, int buttonSize_expand, int space_beetwen_buttons, int space_fromSide)
 {
 	button_space = space_beetwen_buttons;
 	this->space_fromSide = space_fromSide;
@@ -46,27 +50,41 @@ ScrollBar::ScrollBar(const SDL_Rect & pos, int buttonSize_expand, int space_beet
 	}
 }
 
-void ScrollBar::reset_states()
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+void ScrollBar<scroolbarOrient, renderState>::render_horizontal()
+{
+
+}
+
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+void ScrollBar<scroolbarOrient, renderState>::render_vertical()
+{
+
+}
+
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+void ScrollBar<scroolbarOrient, renderState>::reset_states()
 {
 	mouse_over = false;
 	button_clicked = false;
 }
 
-void ScrollBar::render_buttons()
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+void ScrollBar<scroolbarOrient, renderState>::render_buttons()
 {
 	static SDL_Rect temp_pos, texture_area;
 
 	switch (orient) {
 	case ScrollBar_orient::HORIZONTAL: // nie zosta³o ukoñczone
-		for (auto & button : buttons) {
-			auto & pos = button->getPOS();
+		for (auto& button : buttons) {
+			auto& pos = button->getPOS();
 
 			if (pos.x >= position.x + space_fromSide && pos.x + pos.w <= position.x + position.w - space_fromSide)
 				button->render(); // renderuj ca³y przycisk
 			else if (pos.x < position.x + space_fromSide && pos.x + pos.w > position.x + space_fromSide) {
 				temp_pos = { position.x + space_fromSide, position.y + space_fromSide, pos.x + pos.w - (position.x + space_fromSide) , pos.h };
 
-				auto & tX = button->getTX();
+				auto& tX = button->getTX();
 
 				double scale = double(temp_pos.w) / double(pos.w);
 
@@ -80,7 +98,7 @@ void ScrollBar::render_buttons()
 			else if (pos.x + pos.w > position.x + position.w - space_fromSide && pos.x <= position.x + position.w - space_fromSide) {
 				temp_pos = { pos.x, position.y + space_fromSide, position.x + position.w - space_fromSide - pos.x, pos.h };
 
-				auto & tX = button->getTX();
+				auto& tX = button->getTX();
 
 				double scale = double(temp_pos.w) / double(pos.w);
 
@@ -94,15 +112,15 @@ void ScrollBar::render_buttons()
 		}
 		break;
 	case ScrollBar_orient::VERTICAL: // dzia³a perfekcyjnie
-		for (auto & button : buttons) {
-			auto & pos = button->getPOS();
+		for (auto& button : buttons) {
+			auto& pos = button->getPOS();
 
 			if (pos.y >= position.y + space_fromSide && pos.y + pos.h <= position.y + position.h - space_fromSide)
 				button->render();
 			else if (pos.y < position.y + space_fromSide && pos.y + pos.h > position.y + space_fromSide) {
 				temp_pos = { position.x + space_fromSide, position.y + space_fromSide, pos.w, pos.y + pos.h - (position.y + space_fromSide) };
 
-				auto & tX = button->getTX();
+				auto& tX = button->getTX();
 
 				double scale = double(temp_pos.h) / double(pos.h);
 
@@ -116,7 +134,7 @@ void ScrollBar::render_buttons()
 			else if (pos.y + pos.h > position.y + position.h - space_fromSide && pos.y <= position.y + position.h - space_fromSide) {
 				temp_pos = { position.x + space_fromSide, pos.y, pos.w, position.y + position.h - space_fromSide - pos.y };
 
-				auto & tX = button->getTX();
+				auto& tX = button->getTX();
 
 				double scale = double(temp_pos.h) / double(pos.h);
 
@@ -128,17 +146,61 @@ void ScrollBar::render_buttons()
 				button->render(texture_area, temp_pos);
 			}
 		}
-		break;
+		ScrollBar_orient::HORIZONTAL
+			break;
+	}
+}
+//#pragma warning(disable: 175)
+template <>
+void ScrollBar<ScrollBar_orient::HORIZONTAL, Render_state::TEXTURE>::render_buttons()
+{
+	static SDL_Rect temp_pos, texture_area;
+
+	for (auto& button : buttons) {
+		auto& pos = button->getPOS();
+
+		if (pos.x >= position.x + space_fromSide && pos.x + pos.w <= position.x + position.w - space_fromSide)
+			button->render(); // renderuj ca³y przycisk
+		else if (pos.x < position.x + space_fromSide && pos.x + pos.w > position.x + space_fromSide) {
+			temp_pos = { position.x + space_fromSide, position.y + space_fromSide, pos.x + pos.w - (position.x + space_fromSide) , pos.h };
+
+			auto& tX = button->getTX();
+
+			double scale = double(temp_pos.w) / double(pos.w);
+
+			texture_area.x = tX.getWidth() - std::round(tX.getWidth() * scale);
+			texture_area.y = 0;
+			texture_area.w = tX.getWidth() - texture_area.x;
+			texture_area.h = tX.getHeight();
+
+			button->render(texture_area, temp_pos);
+		}
+		else if (pos.x + pos.w > position.x + position.w - space_fromSide && pos.x <= position.x + position.w - space_fromSide) {
+			temp_pos = { pos.x, position.y + space_fromSide, position.x + position.w - space_fromSide - pos.x, pos.h };
+
+			auto& tX = button->getTX();
+
+			double scale = double(temp_pos.w) / double(pos.w);
+
+			texture_area.x = 0;
+			texture_area.y = 0;
+			texture_area.w = std::round(tX.getWidth() * scale);
+			texture_area.h = tX.getHeight();
+
+			button->render(texture_area, temp_pos);
+		}
 	}
 }
 
-void ScrollBar::move_all(int size_x, int size_y)
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+void ScrollBar<scroolbarOrient, renderState>::move_all(int size_x, int size_y)
 {
-	for (auto & button : buttons)
+	for (auto& button : buttons)
 		button->update_about(size_x, size_y);
 }
 
-void ScrollBar::move_horizontal()
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+void ScrollBar<scroolbarOrient, renderState>::move_horizontal()
 {
 	static int temp_moveSize;
 
@@ -146,17 +208,17 @@ void ScrollBar::move_horizontal()
 	case Mouse_wheel::UP:
 		if (buttons.back()->getPOS().x + buttons.back()->getPOS().w > position.x + position.w - space_fromSide) { // sprawdz czy mo¿na jeszcze przesun¹æ
 			if (buttons.back()->getPOS().x + buttons.back()->getPOS().w - Move_size > position.x + position.w - space_fromSide) {
-				for (auto & button : buttons) {
-					const SDL_Rect & pos = button->getPOS(); // skrócenie identyfikatora
+				for (auto& button : buttons) {
+					const SDL_Rect& pos = button->getPOS(); // skrócenie identyfikatora
 					button->update_position(pos.x - Move_size, pos.y);
 				}
 			}
 			else {
-				const SDL_Rect & pos = buttons.back()->getPOS();
+				const SDL_Rect& pos = buttons.back()->getPOS();
 				temp_moveSize = pos.x + pos.w - (position.x + position.w - space_fromSide);
 
-				for (auto & button : buttons) {
-					const SDL_Rect & pos = button->getPOS(); // skrócenie identyfikatora
+				for (auto& button : buttons) {
+					const SDL_Rect& pos = button->getPOS(); // skrócenie identyfikatora
 					button->update_position(pos.x - temp_moveSize, pos.y);
 				}
 			}
@@ -165,17 +227,17 @@ void ScrollBar::move_horizontal()
 	case Mouse_wheel::DOWN:
 		if (buttons.front()->getPOS().x < position.x + space_fromSide) {
 			if (buttons.front()->getPOS().x + Move_size < position.x + space_fromSide) {
-				for (auto & button : buttons) {
-					const SDL_Rect & pos = button->getPOS();
+				for (auto& button : buttons) {
+					const SDL_Rect& pos = button->getPOS();
 					button->update_position(pos.x + Move_size, pos.y);
 				}
 			}
 			else {
-				const SDL_Rect & pos = buttons.front()->getPOS();
+				const SDL_Rect& pos = buttons.front()->getPOS();
 				temp_moveSize = position.x + space_fromSide - pos.x;
 
-				for (auto & button : buttons) {
-					const SDL_Rect & pos = button->getPOS(); // skrócenie identyfikatora
+				for (auto& button : buttons) {
+					const SDL_Rect& pos = button->getPOS(); // skrócenie identyfikatora
 					button->update_position(pos.x + temp_moveSize, pos.y);
 				}
 			}
@@ -184,7 +246,8 @@ void ScrollBar::move_horizontal()
 	}
 }
 
-void ScrollBar::move_vertical() // dzia³a perfekcyjnie
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+void ScrollBar<scroolbarOrient, renderState>::move_vertical() // dzia³a perfekcyjnie
 {
 	static int temp_moveSize;
 
@@ -192,17 +255,17 @@ void ScrollBar::move_vertical() // dzia³a perfekcyjnie
 	case Mouse_wheel::DOWN:
 		if (buttons.back()->getPOS().y + buttons.back()->getPOS().h > position.y + position.h - space_fromSide) { // sprawdz czy mo¿na jeszcze przesun¹æ
 			if (buttons.back()->getPOS().y + buttons.back()->getPOS().h - Move_size > position.y + position.h - space_fromSide) {
-				for (auto & button : buttons) {
-					const SDL_Rect & pos = button->getPOS(); // skrócenie identyfikatora
+				for (auto& button : buttons) {
+					const SDL_Rect& pos = button->getPOS(); // skrócenie identyfikatora
 					button->update_position(pos.x, pos.y - Move_size);
 				}
 			}
 			else {
-				const SDL_Rect & pos = buttons.back()->getPOS();
+				const SDL_Rect& pos = buttons.back()->getPOS();
 				temp_moveSize = pos.y + pos.h - (position.y + position.h - space_fromSide);
 
-				for (auto & button : buttons) {
-					const SDL_Rect & pos = button->getPOS(); // skrócenie identyfikatora
+				for (auto& button : buttons) {
+					const SDL_Rect& pos = button->getPOS(); // skrócenie identyfikatora
 					button->update_position(pos.x, pos.y - temp_moveSize);
 				}
 			}
@@ -211,17 +274,17 @@ void ScrollBar::move_vertical() // dzia³a perfekcyjnie
 	case Mouse_wheel::UP:
 		if (buttons.front()->getPOS().y < position.y + space_fromSide) {
 			if (buttons.front()->getPOS().y + Move_size < position.y + space_fromSide) {
-				for (auto & button : buttons) {
-					const SDL_Rect & pos = button->getPOS();
+				for (auto& button : buttons) {
+					const SDL_Rect& pos = button->getPOS();
 					button->update_position(pos.x, pos.y + Move_size);
 				}
 			}
 			else {
-				const SDL_Rect & pos = buttons.front()->getPOS();
+				const SDL_Rect& pos = buttons.front()->getPOS();
 				temp_moveSize = position.y + space_fromSide - pos.y;
 
-				for (auto & button : buttons) {
-					const SDL_Rect & pos = button->getPOS(); // skrócenie identyfikatora
+				for (auto& button : buttons) {
+					const SDL_Rect& pos = button->getPOS(); // skrócenie identyfikatora
 					button->update_position(pos.x, pos.y + temp_moveSize);
 				}
 			}
@@ -230,42 +293,8 @@ void ScrollBar::move_vertical() // dzia³a perfekcyjnie
 	}
 }
 
-/*void ScrollBar::update_buttonRange_vertical()
-{
-
-}
-
-void ScrollBar::update_buttonRange_horizontal()
-{
-	switch (Mouse::getWheelState()) {
-	case Mouse_wheel::UP:
-
-
-
-		break;
-	case Mouse_wheel::DOWN:
-
-		break;
-	}
-}
-
-void ScrollBar::buttons_rangePoint_events()
-{
-	auto & button_f = *buttonFront;
-	auto & button_e = *button_end;
-
-	auto pos = button_f->getPOS();
-
-	switch (orient) {
-	case ScrollBar_orient::VERTICAL:
-		//if (pos.x >= position.x)
-		break;
-	case ScrollBar_orient::HORIZONTAL:
-		break;
-	}
-}*/
-
-void ScrollBar::events() // do poprawy - 
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+void ScrollBar<scroolbarOrient, renderState>::events() // do poprawy - 
 {
 	reset_states();
 
@@ -274,7 +303,7 @@ void ScrollBar::events() // do poprawy -
 		mouse_over = true;
 		if (Mouse::getWheelState() != Mouse_wheel::NONE)
 		{
-			switch (orient) 
+			switch (orient)
 			{
 			case ScrollBar_orient::HORIZONTAL:
 				move_horizontal();
@@ -289,7 +318,7 @@ void ScrollBar::events() // do poprawy -
 
 		//buttons_rangePoint_events();
 
-		for (auto & button : buttons) {
+		for (auto& button : buttons) {
 
 			button->events();
 			if (button->is_mouseOver()) {
@@ -311,7 +340,8 @@ void ScrollBar::events() // do poprawy -
 		deactivate_mouseOverEvent(); // je¿eli pozosta³ przycisk, który wymaga usuniêcia flagi mouse_Over
 }
 
-void ScrollBar::render()
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+void ScrollBar<scroolbarOrient, renderState>::render()
 {
 	switch (render_state)
 	{
@@ -328,13 +358,15 @@ void ScrollBar::render()
 	render_buttons();
 }
 
-void ScrollBar::reset()
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+void ScrollBar<scroolbarOrient, renderState>::reset()
 {
 	if (current_button)
 		current_button->set_active(false);
 }
 
-void ScrollBar::deactivate_buttons()
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+void ScrollBar<scroolbarOrient, renderState>::deactivate_buttons()
 {
 	if (current_button) {
 		current_button->set_active(false);
@@ -342,7 +374,8 @@ void ScrollBar::deactivate_buttons()
 	}
 }
 
-void ScrollBar::deactivate_mouseOverEvent()
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+void ScrollBar<scroolbarOrient, renderState>::deactivate_mouseOverEvent()
 {
 	if (current_mouseOver_button) {
 		if (!current_mouseOver_button->is_active()) {
@@ -352,7 +385,8 @@ void ScrollBar::deactivate_mouseOverEvent()
 	}
 }
 
-void ScrollBar::update_about(int x, int y) // przesuñ ca³y ScrollBar w³¹cznie ze wszystkimi przyciskami
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+void ScrollBar<scroolbarOrient, renderState>::update_about(int x, int y) // przesuñ ca³y ScrollBar w³¹cznie ze wszystkimi przyciskami
 {
 	position.x += x; // zaktualizuj pozycjê scrollbara
 	position.y += y;
@@ -360,7 +394,8 @@ void ScrollBar::update_about(int x, int y) // przesuñ ca³y ScrollBar w³¹cznie ze
 	move_all(x, y); // zaktualizuj pozycjê przycisków
 }
 
-void ScrollBar::operator=(const std::vector<BButton_ptr> & btns) // automatycznie ustala pozycje przycisków
+template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+void ScrollBar<scroolbarOrient, renderState>::operator=(const std::vector<BButton_ptr>& btns) // automatycznie ustala pozycje przycisków
 {
 	buttons = std::move(btns);
 
@@ -370,13 +405,13 @@ void ScrollBar::operator=(const std::vector<BButton_ptr> & btns) // automatyczni
 	switch (orient)
 	{
 	case ScrollBar_orient::HORIZONTAL:
-		for (auto & button : buttons) {
+		for (auto& button : buttons) {
 			button->set_position({ x, y, button_width, button_height });
 			x += button_width + button_space;
 		}
 		break;
 	case ScrollBar_orient::VERTICAL:
-		for (auto & button : buttons) {
+		for (auto& button : buttons) {
 			button->set_position({ x, y, button_width, button_height });
 			y += button_height + button_space;
 		}
