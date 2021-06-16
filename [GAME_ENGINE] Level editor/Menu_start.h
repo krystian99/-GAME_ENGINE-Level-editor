@@ -22,4 +22,6 @@ private:
 	Button Exit;
 
 	Button levelEditor_button, animationsEditor_button, Script_editor_button;
+
+	Button game;
 };

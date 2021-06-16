@@ -153,6 +153,7 @@
     <ClInclude Include="Event_handlerOBJ_LevelCreator.h" />
     <ClInclude Include="Event_handlerOBJ_map.h" />
     <ClInclude Include="Folder_button.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="HitBox.h" />
     <ClInclude Include="HitBoxes_types.h" />
     <ClInclude Include="Image.h" />
@@ -225,6 +226,7 @@
     <ClCompile Include="Event_handlerOBJ_LevelCreator.cpp" />
     <ClCompile Include="Event_handlerOBJ_map.cpp" />
     <ClCompile Include="Folder_button.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="HitBox.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="Interact_OBJ.cpp" />
