@@ -16,7 +16,7 @@ public:
 	void render();
 private:
 	Menu_local menu_options;
-	ScrollBar<ScrollBar_orient::HORIZONTAL> modules_list;
+	ScrollBar<ScrollBar_orient::VERTICAL> modules_list;
 
 	bool moving_objects{ false };
 };
