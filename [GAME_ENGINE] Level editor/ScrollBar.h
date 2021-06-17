@@ -14,7 +14,6 @@ template<enum class ScrollBar_orient scroolbarOrient>
 class ScrollBar
 {
 	enum class Render_state { COLOR, TEXTURE };
-	//enum class Render_state { COLOR, TEXTURE };
 public:
 	ScrollBar(const SDL_Rect& pos, int buttonSize_expand, int space_beetwen_buttons = button_space_default, int space_fromSide = button_space_default)
 	{
