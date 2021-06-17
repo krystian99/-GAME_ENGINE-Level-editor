@@ -5,10 +5,14 @@
 #include "Rect.h"
 //#include <SDL_rect.h>
 
+class Button;
+class Rect;
+class Texture;
+
 enum class ScrollBar_orient { HORIZONTAL, VERTICAL };
 enum class Render_state { COLOR, TEXTURE };
 
-template<enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
+template<enum class ScrollBar_orient scroolbarOrient>
 class ScrollBar
 {
 	//enum class Render_state { COLOR, TEXTURE };

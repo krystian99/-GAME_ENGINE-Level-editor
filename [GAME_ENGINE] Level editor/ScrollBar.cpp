@@ -4,8 +4,8 @@
 #include "Mouse.h"
 #include <cmath>
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-ScrollBar<scroolbarOrient, renderState>::ScrollBar(const SDL_Rect& pos, const std::string& texture, int buttonSize_expand, int space_beetwen_buttons = button_space_default, int space_fromSide = button_space_default) :
+template <enum class ScrollBar_orient scroolbarOrient>
+ScrollBar<scroolbarOrient>::ScrollBar(const SDL_Rect& pos, const std::string& texture, int buttonSize_expand, int space_beetwen_buttons = button_space_default, int space_fromSide = button_space_default) :
 	ScrollBar{ pos, buttonSize_expand, space_beetwen_buttons, space_fromSide }
 {
 	render_state = Render_state::TEXTURE;
@@ -13,22 +13,22 @@ ScrollBar<scroolbarOrient, renderState>::ScrollBar(const SDL_Rect& pos, const st
 }
 
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-ScrollBar<scroolbarOrient, renderState>::ScrollBar(const SDL_Rect& pos, const SDL_Color& color, int buttonSize_expand, int space_beetwen_buttons, int space_fromSide) :
+template <enum class ScrollBar_orient scroolbarOrient>
+ScrollBar<scroolbarOrient>::ScrollBar(const SDL_Rect& pos, const SDL_Color& color, int buttonSize_expand, int space_beetwen_buttons, int space_fromSide) :
 	ScrollBar{ pos, buttonSize_expand, space_beetwen_buttons, space_fromSide }
 {
 	render_state = Render_state::COLOR;
 	colorBG = color;
 }
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-ScrollBar<scroolbarOrient, renderState>::ScrollBar(const SDL_Rect& pos, const SDL_Color& color, ScrollBar_orient ornt, int buttonSize_expand, int space_beetwen_buttons, int space_fromSide) :
+template <enum class ScrollBar_orient scroolbarOrient>
+ScrollBar<scroolbarOrient>::ScrollBar(const SDL_Rect& pos, const SDL_Color& color, ScrollBar_orient ornt, int buttonSize_expand, int space_beetwen_buttons, int space_fromSide) :
 	ScrollBar{ pos, color, buttonSize_expand, space_beetwen_buttons, space_fromSide }
 {
 
 }
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-ScrollBar<scroolbarOrient, renderState>::ScrollBar(const SDL_Rect& pos, int buttonSize_expand, int space_beetwen_buttons, int space_fromSide)
+template <enum class ScrollBar_orient scroolbarOrient>
+ScrollBar<scroolbarOrient>::ScrollBar(const SDL_Rect& pos, int buttonSize_expand, int space_beetwen_buttons, int space_fromSide)
 {
 	button_space = space_beetwen_buttons;
 	this->space_fromSide = space_fromSide;
@@ -50,27 +50,27 @@ ScrollBar<scroolbarOrient, renderState>::ScrollBar(const SDL_Rect& pos, int butt
 	}
 }
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-void ScrollBar<scroolbarOrient, renderState>::render_horizontal()
+template <enum class ScrollBar_orient scroolbarOrient>
+void ScrollBar<scroolbarOrient>::render_horizontal()
 {
 
 }
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-void ScrollBar<scroolbarOrient, renderState>::render_vertical()
+template <enum class ScrollBar_orient scroolbarOrient>
+void ScrollBar<scroolbarOrient>::render_vertical()
 {
 
 }
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-void ScrollBar<scroolbarOrient, renderState>::reset_states()
+template <enum class ScrollBar_orient scroolbarOrient>
+void ScrollBar<scroolbarOrient>::reset_states()
 {
 	mouse_over = false;
 	button_clicked = false;
 }
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-void ScrollBar<scroolbarOrient, renderState>::render_buttons()
+template <enum class ScrollBar_orient scroolbarOrient>
+void ScrollBar<scroolbarOrient>::render_buttons()
 {
 	static SDL_Rect temp_pos, texture_area;
 
@@ -146,13 +146,12 @@ void ScrollBar<scroolbarOrient, renderState>::render_buttons()
 				button->render(texture_area, temp_pos);
 			}
 		}
-		ScrollBar_orient::HORIZONTAL
-			break;
+		break;
 	}
 }
-//#pragma warning(disable: 175)
+
 template <>
-void ScrollBar<ScrollBar_orient::HORIZONTAL, Render_state::TEXTURE>::render_buttons()
+void ScrollBar<ScrollBar_orient::HORIZONTAL>::render_buttons()
 {
 	static SDL_Rect temp_pos, texture_area;
 
@@ -192,15 +191,57 @@ void ScrollBar<ScrollBar_orient::HORIZONTAL, Render_state::TEXTURE>::render_butt
 	}
 }
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-void ScrollBar<scroolbarOrient, renderState>::move_all(int size_x, int size_y)
+template <>
+void ScrollBar<ScrollBar_orient::VERTICAL>::render_buttons()
+{
+	static SDL_Rect temp_pos, texture_area;
+
+	for (auto& button : buttons) {
+		auto& pos = button->getPOS();
+
+		if (pos.y >= position.y + space_fromSide && pos.y + pos.h <= position.y + position.h - space_fromSide)
+			button->render();
+		else if (pos.y < position.y + space_fromSide && pos.y + pos.h > position.y + space_fromSide) {
+			temp_pos = { position.x + space_fromSide, position.y + space_fromSide, pos.w, pos.y + pos.h - (position.y + space_fromSide) };
+
+			auto& tX = button->getTX();
+
+			double scale = double(temp_pos.h) / double(pos.h);
+
+			texture_area.x = 0;
+			texture_area.y = tX.getHeight() - std::round(tX.getHeight() * scale);
+			texture_area.w = tX.getWidth();
+			texture_area.h = tX.getHeight() - texture_area.y;
+
+			button->render(texture_area, temp_pos);
+		}
+		else if (pos.y + pos.h > position.y + position.h - space_fromSide && pos.y <= position.y + position.h - space_fromSide) {
+			temp_pos = { position.x + space_fromSide, pos.y, pos.w, position.y + position.h - space_fromSide - pos.y };
+
+			auto& tX = button->getTX();
+
+			double scale = double(temp_pos.h) / double(pos.h);
+
+			texture_area.x = 0;
+			texture_area.y = 0;
+			texture_area.w = tX.getWidth();
+			texture_area.h = std::round(tX.getHeight() * scale);
+
+			button->render(texture_area, temp_pos);
+		}
+	}
+}
+
+
+template <enum class ScrollBar_orient scroolbarOrient>
+void ScrollBar<scroolbarOrient>::move_all(int size_x, int size_y)
 {
 	for (auto& button : buttons)
 		button->update_about(size_x, size_y);
 }
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-void ScrollBar<scroolbarOrient, renderState>::move_horizontal()
+template <enum class ScrollBar_orient scroolbarOrient>
+void ScrollBar<scroolbarOrient>::move_horizontal()
 {
 	static int temp_moveSize;
 
@@ -246,8 +287,8 @@ void ScrollBar<scroolbarOrient, renderState>::move_horizontal()
 	}
 }
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-void ScrollBar<scroolbarOrient, renderState>::move_vertical() // dzia³a perfekcyjnie
+template <enum class ScrollBar_orient scroolbarOrient>
+void ScrollBar<scroolbarOrient>::move_vertical() // dzia³a perfekcyjnie
 {
 	static int temp_moveSize;
 
@@ -293,8 +334,8 @@ void ScrollBar<scroolbarOrient, renderState>::move_vertical() // dzia³a perfekcy
 	}
 }
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-void ScrollBar<scroolbarOrient, renderState>::events() // do poprawy - 
+template <enum class ScrollBar_orient scroolbarOrient>
+void ScrollBar<scroolbarOrient>::events() // do poprawy - 
 {
 	reset_states();
 
@@ -340,8 +381,8 @@ void ScrollBar<scroolbarOrient, renderState>::events() // do poprawy -
 		deactivate_mouseOverEvent(); // je¿eli pozosta³ przycisk, który wymaga usuniêcia flagi mouse_Over
 }
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-void ScrollBar<scroolbarOrient, renderState>::render()
+template <enum class ScrollBar_orient scroolbarOrient>
+void ScrollBar<scroolbarOrient>::render()
 {
 	switch (render_state)
 	{
@@ -358,15 +399,15 @@ void ScrollBar<scroolbarOrient, renderState>::render()
 	render_buttons();
 }
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-void ScrollBar<scroolbarOrient, renderState>::reset()
+template <enum class ScrollBar_orient scroolbarOrient>
+void ScrollBar<scroolbarOrient>::reset()
 {
 	if (current_button)
 		current_button->set_active(false);
 }
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-void ScrollBar<scroolbarOrient, renderState>::deactivate_buttons()
+template <enum class ScrollBar_orient scroolbarOrient>
+void ScrollBar<scroolbarOrient>::deactivate_buttons()
 {
 	if (current_button) {
 		current_button->set_active(false);
@@ -374,8 +415,8 @@ void ScrollBar<scroolbarOrient, renderState>::deactivate_buttons()
 	}
 }
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-void ScrollBar<scroolbarOrient, renderState>::deactivate_mouseOverEvent()
+template <enum class ScrollBar_orient scroolbarOrient>
+void ScrollBar<scroolbarOrient>::deactivate_mouseOverEvent()
 {
 	if (current_mouseOver_button) {
 		if (!current_mouseOver_button->is_active()) {
@@ -385,8 +426,8 @@ void ScrollBar<scroolbarOrient, renderState>::deactivate_mouseOverEvent()
 	}
 }
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-void ScrollBar<scroolbarOrient, renderState>::update_about(int x, int y) // przesuñ ca³y ScrollBar w³¹cznie ze wszystkimi przyciskami
+template <enum class ScrollBar_orient scroolbarOrient>
+void ScrollBar<scroolbarOrient>::update_about(int x, int y) // przesuñ ca³y ScrollBar w³¹cznie ze wszystkimi przyciskami
 {
 	position.x += x; // zaktualizuj pozycjê scrollbara
 	position.y += y;
@@ -394,8 +435,8 @@ void ScrollBar<scroolbarOrient, renderState>::update_about(int x, int y) // prze
 	move_all(x, y); // zaktualizuj pozycjê przycisków
 }
 
-template <enum class ScrollBar_orient scroolbarOrient, enum class Render_state renderState>
-void ScrollBar<scroolbarOrient, renderState>::operator=(const std::vector<BButton_ptr>& btns) // automatycznie ustala pozycje przycisków
+template <enum class ScrollBar_orient scroolbarOrient>
+void ScrollBar<scroolbarOrient>::operator=(const std::vector<BButton_ptr>& btns) // automatycznie ustala pozycje przycisków
 {
 	buttons = std::move(btns);
 

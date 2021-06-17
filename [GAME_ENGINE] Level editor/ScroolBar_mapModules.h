@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include <SDL_render.h>
 #include <string>
 #include "ScrollBar.h"
@@ -13,4 +13,4 @@ public:
 	void events();
 private:
 	ScrollBar map_modules;
-};
+};*/
