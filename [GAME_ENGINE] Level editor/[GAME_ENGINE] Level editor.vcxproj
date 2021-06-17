@@ -249,7 +249,6 @@
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Rect.cpp" />
     <ClCompile Include="Script_Editor.cpp" />
-    <ClCompile Include="ScrollBar.cpp" />
     <ClCompile Include="ScroolBar_mapModules.cpp" />
     <ClCompile Include="Static_OBJ.cpp" />
     <ClCompile Include="Text.cpp" />

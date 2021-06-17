@@ -320,9 +320,6 @@
     <ClCompile Include="CoordinateBar_mouse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ScrollBar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Buttons_OBJ_create.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
