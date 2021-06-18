@@ -4,12 +4,11 @@
 #include "Menu_Level.h"
 #include "Module_base.h"
 
+// klasa zarz¹dzaj¹ca Menusami
 class MENU : public Module_base
 {
 public:
-	MENU() :
-		escape_pressed{ false }
-	{}
+	MENU();
 
 	void events();
 	void events_indp();
@@ -20,5 +19,6 @@ private:
 	Menu_Animation animation;
 	Menu_start start;
 	Menu_Level level;
-	bool escape_pressed;
+
+	bool escape_pressed{ false };
 };

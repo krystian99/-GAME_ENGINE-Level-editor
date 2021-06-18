@@ -1,8 +1,9 @@
 #pragma once
 #include "Button_Menu.h"
 #include "InputArea.h"
+#include "Module_base.h"
 
-class Menu_Animation
+class Menu_Animation : public Module_base
 {
 public:
 	Menu_Animation();

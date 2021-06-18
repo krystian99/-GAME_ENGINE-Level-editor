@@ -3,50 +3,22 @@
 #include <SDL_keyboard.h>
 #include "Engine_manager.h"
 
+MENU::MENU()
+{
+	Menu_manager::INIT(&animation, &start, &level);
+}
+
 void MENU::events()
 {
-	switch (Menu_manager::getState())
-	{
-	case Menu_ID::START:
-		start.events();
-		break;
-	case Menu_ID::LEVEL_MENU:
-		level.events();
-		break;
-	case  Menu_ID::ANIMATION_MENU:
-		animation.events();
-		break;
-	}
+	Menu_manager::getModule()->events();
 }
 
 void MENU::events_indp()
 {
-	switch (Menu_manager::getState())
-	{
-	case Menu_ID::START:
-		start.events_indp();
-		break;
-	case Menu_ID::LEVEL_MENU:
-		level.events_indp();
-		break;
-	case Menu_ID::ANIMATION_MENU:
-		animation.events_indp();
-		break;
-	}
+	Menu_manager::getModule()->events_indp();
 }
 
 void MENU::render()
 {
-	switch (Menu_manager::getState())
-	{
-	case Menu_ID::START:
-		start.render();
-		break;
-	case Menu_ID::LEVEL_MENU:
-		level.render();
-		break;
-	case Menu_ID::ANIMATION_MENU:
-		animation.render();
-		break;
-	}
+	Menu_manager::getModule()->render();
 }

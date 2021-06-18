@@ -3,8 +3,9 @@
 #include "Image.h"
 #include "Text.h"
 #include "Button.h"
+#include "Module_base.h"
 
-class Menu_start
+class Menu_start : public Module_base
 {
 public:
 	Menu_start();

@@ -5,12 +5,13 @@
 #include "Menu_manager.h"
 #include "Animation_management.h"
 #include "Script_Editor.h"
-#include "Module_base.h"
 
-class Engine // g³ówna klasa steruj¹ca/operuj¹ca
+// g³ówna klasa steruj¹ca/operuj¹ca
+class Engine
 {
 public:
 	Engine();
+
 	void run();
 private:
 	void events();

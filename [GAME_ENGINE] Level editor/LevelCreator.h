@@ -47,18 +47,5 @@ private:
 
 	CoordinateBar_mouse mouse_cord;
 
-	class Queue_events // g³ówna klasa zarz¹dzaj¹ca kolejk¹ 
-	{
-		// 1. Limit w kolejce to 10000 elementów
-		// 2. Jeœli bêd¹ wystêpowa³y jakieœ problemy to po prostu trzeba zminiejszyæ limit
-		// 3. Kolejka zdarzeñ bêdzie dotyczy³a wszystkich danych, nie tylko obiewktów na mapie
-		// ale te¿ np. obszarowego usuwania, usuwania itd. czyli wszystkich zmian na mapie
-	public:
-
-	private:
-		std::deque<int> koleja_main;
-		std::deque<int> koleja_tmp;
-	};
-
 	Button plus, minus;
 };

@@ -4,8 +4,9 @@
 #include "Folder_button.h"
 #include "Image.h"
 #include "Button.h"
+#include "Module_base.h"
 
-class Menu_Level
+class Menu_Level : public Module_base
 {
 public:
 	Menu_Level();
