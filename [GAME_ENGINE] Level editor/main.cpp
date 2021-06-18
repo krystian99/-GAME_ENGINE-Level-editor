@@ -7,23 +7,22 @@
 int main(int argc, char*argv[]) 
 {
 	try {
-		Setup setup_game; // inicjuje grafikê, okno, statyczne dane itd.
+		// inicjuje grafikê, okno, statyczne dane itd.
+		Setup setup_game;
 
-		Engine engine; // odpowiada za zdarzenia, renderowania i pilnowania operacji oraz przekierowywania
-		engine.run(); // uruchamia pêtlê g³ówn¹
+		// odpowiada za zdarzenia, renderowania i pilnowania operacji oraz przekierowywania
+		Engine engine;
+		// uruchamia pêtlê g³ówn¹
+		engine.run();
 	}
 	catch (const std::string & str)
 	{
 		std::ofstream log_exception{ "log_error.txt", std::ios_base::out };
 
 		if (log_exception.is_open()) {
-
-			//using std::cerr;
 			using std::endl;
 
-			//cerr << str << endl;
 			log_exception << str << endl;
-			//system("pause");
 		}
 		log_exception.close();
 	}
@@ -31,16 +30,14 @@ int main(int argc, char*argv[])
 		std::ofstream log_exception{ "log_error.txt", std::ios_base::out };
 
 		if (log_exception.is_open()) {
-
-			//using std::cerr;
 			using std::endl;
 
-			//cerr << str << endl;
 			log_exception << "Something went wrong and program has aborted!" << endl;
-			//system("pause");
 		}
 		log_exception.close();
 	}
+
 	SDL_Quit();
+
 	return 0;
 }

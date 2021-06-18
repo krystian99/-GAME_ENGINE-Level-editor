@@ -187,7 +187,6 @@
     <ClInclude Include="Script_Editor.h" />
     <ClInclude Include="ScrollBar.h" />
     <ClInclude Include="ScroolBar_mapModules.h" />
-    <ClInclude Include="Static_OBJ.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="LevelEditor_manager.h" />
     <ClInclude Include="LevelEditor_state.h" />
@@ -254,7 +253,6 @@
     <ClCompile Include="Rect.cpp" />
     <ClCompile Include="Script_Editor.cpp" />
     <ClCompile Include="ScroolBar_mapModules.cpp" />
-    <ClCompile Include="Static_OBJ.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="InputArea.cpp" />
     <ClCompile Include="LevelEditor_manager.cpp" />

@@ -22,7 +22,8 @@ void Engine::run()
 
 void Engine::events()
 {
-	while (SDL_PollEvent(&event_handler)) // zdarzenia zale¿ne od aktualizacji 
+	// zdarzenia zale¿ne od myszki oraz klawiatury
+	while (SDL_PollEvent(&event_handler))
 	{
 		Keyboard::events(&event_handler);
 		Mouse::update(&event_handler);
@@ -37,7 +38,8 @@ void Engine::events()
 
 		if (event_handler.window.windowID == Renderer::get_mainWindow_ID())
 			Engine_manager::getModule()->events();
-		else { // wykonaj eventy dla pozostalych okien
+		// wykonaj eventy dla pozostalych okien
+		else {
 			switch (Engine_manager::getState()) {
 			case Engine_state::IS_IN_LC:
 				level_editor.events_multiwindow();
@@ -46,6 +48,7 @@ void Engine::events()
 		}
 	}
 
+	// zdarzenia niezale¿ne od myszki i klawiatury
 	events_indp();
 }
 
@@ -110,9 +113,8 @@ void Engine::render()
 
 		Engine_manager::getModule()->render();
 
-		while (!Event_handler::empty()) {
+		while (!Event_handler::empty())
 			Event_handler::process();
-		}
 
 		Renderer::update();
 	}

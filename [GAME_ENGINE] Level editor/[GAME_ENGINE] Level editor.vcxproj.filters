@@ -189,9 +189,6 @@
     <ClInclude Include="Map_OBJ.h">
       <Filter>Level Editor\Map module\objects.h</Filter>
     </ClInclude>
-    <ClInclude Include="Static_OBJ.h">
-      <Filter>Level Editor\Map module\objects.h</Filter>
-    </ClInclude>
     <ClInclude Include="Block.h">
       <Filter>Level Editor\Map module\objects.h</Filter>
     </ClInclude>
@@ -405,9 +402,6 @@
       <Filter>Level Editor\Map module\objects.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Map_OBJ.cpp">
-      <Filter>Level Editor\Map module\objects.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Static_OBJ.cpp">
       <Filter>Level Editor\Map module\objects.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Timer.cpp">
