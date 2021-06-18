@@ -7,6 +7,11 @@
 #include "Keyboard.h"
 #include "Event_handler.h"
 
+Engine::Engine()
+{
+	Engine_manager::INIT(&menu, &level_editor, &animation_config_creator, &script_editor);
+}
+
 void Engine::run()
 {
 	while (Engine_manager::is_running()) {
@@ -31,7 +36,7 @@ void Engine::events()
 		}
 
 		if (event_handler.window.windowID == Renderer::get_mainWindow_ID())
-			events_dpnd();
+			Engine_manager::getModule()->events();
 		else { // wykonaj eventy dla pozostalych okien
 			switch (Engine_manager::getState()) {
 			case Engine_state::IS_IN_LC:
@@ -63,6 +68,7 @@ void Engine::events_indp()
 			break;
 		case Engine_state::IS_IN_ANIMATION_MANAGEMENT:
 			Engine_manager::setState(Engine_state::IS_IN_MENU);
+			//currentModule = &menu;
 			Menu_manager::set_Menu(Menu_ID::ANIMATION_MENU);
 			break;
 		case Engine_state::IS_IN_MENU:
@@ -87,34 +93,12 @@ void Engine::events_indp()
 	else if (!key[SDL_SCANCODE_ESCAPE])
 		test = false;
 
-	switch (Engine_manager::getState())
-	{
-	case Engine_state::IS_IN_MENU:
-		menu.events_indp();
-		break;
-	case Engine_state::IS_IN_LC:
-		level_editor.events_indp();
-		break;
-	case Engine_state::IS_IN_ANIMATION_MANAGEMENT:
-		animation_config_creator.events_indp();
-		break;
-	}
+	Engine_manager::getModule()->events_indp();
 }
 
 void Engine::events_dpnd()
 {
-	switch (Engine_manager::getState())
-	{
-	case Engine_state::IS_IN_MENU:
-		menu.events();
-		break;
-	case Engine_state::IS_IN_LC:
-		level_editor.events();
-		break;
-	case Engine_state::IS_IN_ANIMATION_MANAGEMENT:
-		animation_config_creator.events();
-		break;
-	}
+	Engine_manager::getModule()->events();
 }
 
 void Engine::render()
@@ -122,24 +106,8 @@ void Engine::render()
 	if (Engine_manager::get_updateState() != Engine_updateState::RENDER_PREPARING) 
 	{
 		Renderer::clear();
-		switch (Engine_manager::getState())
-		{
-		case Engine_state::IS_IN_MENU:
-			//Renderer::clear();
-			menu.render();
-			//Renderer::update();
-			break;
-		case Engine_state::IS_IN_LC:
-			//Renderer::clear();
-			level_editor.render();
-			//Renderer::update();
-			break;
-		case Engine_state::IS_IN_ANIMATION_MANAGEMENT:
-			//Renderer::clear();
-			animation_config_creator.render();
-			//Renderer::update();
-			break;
-		}
+
+		Engine_manager::getModule()->render();
 
 		while (!Event_handler::empty()) {
 			Event_handler::process();

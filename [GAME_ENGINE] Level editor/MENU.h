@@ -2,8 +2,9 @@
 #include "Menu_start.h"
 #include "Menu_Animation.h"
 #include "Menu_Level.h"
+#include "Module_base.h"
 
-class MENU
+class MENU : public Module_base
 {
 public:
 	MENU() :

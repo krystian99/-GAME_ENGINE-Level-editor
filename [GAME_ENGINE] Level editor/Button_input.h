@@ -40,5 +40,5 @@ private:
 
 	std::unique_ptr<InputArea> input;
 
-	Texture accept, cancel;
+	//Texture accept, cancel;
 };

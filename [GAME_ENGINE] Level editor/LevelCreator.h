@@ -8,8 +8,9 @@
 #include "Button_input.h"
 #include "Bar_modules_left.h"
 #include <queue>
+#include "Module_base.h"
 
-class LevelCreator
+class LevelCreator : public Module_base
 {
 public:
 	LevelCreator();

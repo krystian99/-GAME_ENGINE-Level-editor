@@ -8,11 +8,6 @@ Button_input::Button_input(SDL_Rect pos, const std::string & teture_path, const 
 	komunikat.reset(new Text{ 68, 33, "data/fonts/standard_font.ttf", comm, 25,{ 255, 0, 0, 255 } });
 
 	input->setCurrent(true);
-	/*button_accept = { 5, 35, 40, 30 };
-	button_cancel = { 255, 35, 40, 30 };
-
-	accept.loadFromFile(window->getRenderer(), "data/button_input/accept.png");
-	cancel.loadFromFile(window->getRenderer(), "data/button_input/cancel.png");*/
 }
 
 Button_input::Button_input(const std::string & teture_path, const char * desctiption, Func onclick, const char * comm) :
@@ -23,19 +18,14 @@ Button_input::Button_input(const std::string & teture_path, const char * desctip
 	komunikat.reset(new Text{ 68, 33, "data/fonts/standard_font.ttf", comm, 25,{ 255, 0, 0, 255 } });
 
 	input->setCurrent(true);
-	button_accept = { 5, 35, 40, 30 };
-	button_cancel = { 255, 35, 40, 30 };
-
-	accept.loadFromFile(window->getRenderer(), "data/button_input/accept.png");
-	cancel.loadFromFile(window->getRenderer(), "data/button_input/cancel.png");
 }
 
 void Button_input::events()
 {
 	static const Uint8 * key = SDL_GetKeyboardState(nullptr);
 
-
 	Button::events();
+
 	if (window->is_shown())
 		input->events();
 
@@ -70,13 +60,9 @@ void Button_input::render()
 
 
 		input->render(window->getRenderer());
-		//accept.render(window->getRenderer(), nullptr, &button_accept);
-		//cancel.render(window->getRenderer(), nullptr, &button_cancel);
 
-		if (text_active && !timer.passed()) {
-			komunikat->render(window->getRenderer());// 15, komunikat->getWidth());
-			//komunikat->render(window->getRenderer());
-		}
+		if (text_active && !timer.passed())
+			komunikat->render(window->getRenderer());
 		else
 			text_active = false;
 

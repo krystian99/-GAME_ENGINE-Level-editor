@@ -5,12 +5,13 @@
 #include <string>
 #include "Texture.h"
 #include "Text.h"
+#include "Module_base.h"
 
 struct Frame_data {
 	HitBox_data data;
 };
 
-class Animation_management // ustala hiboxy dla kazdej klatki animacji
+class Animation_management : public Module_base // ustala hiboxy dla kazdej klatki animacji
 {
 public:
 	Animation_management();

@@ -176,6 +176,7 @@
     <ClInclude Include="Menu_base.h" />
     <ClInclude Include="Menu_Level.h" />
     <ClInclude Include="Menu_local.h" />
+    <ClInclude Include="Module_base.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="OBJ_TYPES.h" />
     <ClInclude Include="Others_ID.h" />
@@ -245,6 +246,7 @@
     <ClCompile Include="Menu_base.cpp" />
     <ClCompile Include="Menu_Level.cpp" />
     <ClCompile Include="Menu_local.cpp" />
+    <ClCompile Include="Module_base.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Rect.cpp" />
