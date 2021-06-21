@@ -59,9 +59,9 @@ void Map::load_Objects(const std::string& name)
 
 void Map::events() // zdarzenia zale¿ne od myszki(przyciski myszki: lewy, prawy, kó³ko)
 {
-	//events_enemies();
+	events_enemies();
 
-	Event_handler::push(new Event_handlerOBJ_map{ this, Map_events::events_enemies });
+	//Event_handler::push(new Event_handlerOBJ_map{ this, Map_events::events_enemies });
 
 	//map_mouseHandler.events(is_mouseOver());
 

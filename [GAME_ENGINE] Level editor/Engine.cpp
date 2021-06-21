@@ -47,7 +47,7 @@ void Engine::events()
 			}
 		}
 
-		if (Keyboard::is_LCNTRL_Z())
+		if (Keyboard::is_pressed_LCNTRL_Z())
 			Engine_manager::Quit();
 	}
 
@@ -57,18 +57,7 @@ void Engine::events()
 
 void Engine::events_indp()
 {
-	//Keyboard::events_indp();
-
-	static const Uint8 * key = SDL_GetKeyboardState(nullptr);
-
-	if (!escape_pressed && !test) 
-	{
-		if (key[SDL_SCANCODE_ESCAPE])
-			escape_pressed = true;
-	}
-
-	if (escape_pressed)
-	{
+	if (Keyboard::is_pressedEscape()) {
 		switch (Engine_manager::getState()) {
 		case Engine_state::IS_IN_LC:
 			Engine_manager::setState(Engine_state::IS_IN_MENU);
@@ -91,16 +80,7 @@ void Engine::events_indp()
 			}
 			break;
 		}
-
-		escape_pressed = false;
 	}
-
-	if (key[SDL_SCANCODE_ESCAPE]) {
-		test = true;
-		escape_pressed = false;
-	}
-	else if (!key[SDL_SCANCODE_ESCAPE])
-		test = false;
 
 	Engine_manager::getModule()->events_indp();
 }

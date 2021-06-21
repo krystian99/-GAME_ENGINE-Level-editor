@@ -11,22 +11,31 @@ const Uint8* Keyboard::keyboard{ nullptr };
 bool Keyboard::flag_pressed_once{ false };
 bool Keyboard::pressed_once{ false };*/
 
-Keyboard::Key_pressing Keyboard::cnrtl_z{ 
+Keyboard::Key_pressing Keyboard::cntrl_z{ 
 	{ Key::LCNTRL, Key::Z }
 };
 
-Keyboard::Key_pressing Keyboard::cnrtl_y{
+Keyboard::Key_pressing Keyboard::cntrl_y{
 	{ Key::LCNTRL, Key::Y }
 };
 
-bool Keyboard::is_LCNTRL_Z()
+Keyboard::Key_pressing Keyboard::escape{
+	{ Key::ESCAPE }
+};
+
+bool Keyboard::is_pressed_LCNTRL_Z()
 {
-	return cnrtl_z.pressedOnce();
+	return cntrl_z.pressedOnce();
 }
 
-bool Keyboard::is_LCNTRL_Y()
+bool Keyboard::is_pressed_LCNTRL_Y()
 {
-	return cnrtl_z.pressedOnce();
+	return cntrl_z.pressedOnce();
+}
+
+bool Keyboard::is_pressedEscape()
+{
+	return escape.pressedOnce();
 }
 
 void Keyboard::switch_liters(SDL_Keycode & code)
@@ -256,8 +265,9 @@ void Keyboard::events(SDL_Event * ev)
 
 	keyboard = SDL_GetKeyboardState(nullptr);
 
-	cnrtl_z.events();
-	cnrtl_y.events();
+	cntrl_z.events();
+	cntrl_y.events();
+	escape.events();
 
 	switch (ev->type) {
 	case SDL_KEYDOWN:
@@ -283,19 +293,6 @@ void Keyboard::Key_pressing::events()
 
 	if (isPressed())
 		pressed = true;
-	/*int ile = 0;
-
-	for (auto i : keys)
-	{
-		if (keyboard[int(i)])
-			ile++;
-	}
-
-	if (ile == keys.size())
-		pressed = true;*/
-
-	/*if (keyboard[SDL_SCANCODE_LCTRL] && keyboard[SDL_SCANCODE_Z])
-		pressed = true;*/
 }
 
 bool Keyboard::Key_pressing::pressedOnce()
@@ -319,14 +316,9 @@ bool Keyboard::Key_pressing::pressedOnce()
 
 bool Keyboard::Key_pressing::isPressed() const
 {
-
-	int ile = 0;
-
 	for (auto i : keys)
-	{
 		if (!keyboard[int(i)])
 			return false;
-	}
 
 	return true;
 }

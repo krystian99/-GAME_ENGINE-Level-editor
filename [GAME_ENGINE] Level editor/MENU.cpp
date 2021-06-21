@@ -12,7 +12,7 @@ void MENU::events()
 {
 	Menu_manager::getModule()->events();
 
-	if (Keyboard::is_LCNTRL_Z())
+	if (Keyboard::is_pressed_LCNTRL_Z())
 		Menu_manager::set_Menu(Menu_ID::START);
 }
 

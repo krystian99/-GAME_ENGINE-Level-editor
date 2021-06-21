@@ -32,9 +32,11 @@ public:
 		return false;
 	}
 
-	static bool is_LCNTRL_Z();
+	static bool is_pressed_LCNTRL_Z();
 
-	static bool is_LCNTRL_Y();
+	static bool is_pressed_LCNTRL_Y();
+
+	static bool is_pressedEscape();
 
 	//static bool is_pressedOnce(const std::vector<Key> &);
 
@@ -81,8 +83,11 @@ private:
 	static bool flag_pressed_once;
 	static bool pressed_once;*/
 
-	static Key_pressing cnrtl_z;
-	static Key_pressing cnrtl_y;
+	static Key_pressing cntrl_z;
+	static Key_pressing cntrl_y;
+
+	static Key_pressing escape;
+
 	static const Uint8* keyboard;
 
 	static Key key_state;

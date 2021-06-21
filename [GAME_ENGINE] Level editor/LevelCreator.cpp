@@ -85,7 +85,7 @@ void LevelCreator::reset_states()
 // zdarzenia zale¿ne od myszki lub klawiatury
 void LevelCreator::events()
 {
-	if (Keyboard::is_LCNTRL_Z())
+	if (Keyboard::is_pressed_LCNTRL_Z())
 	{
 		Engine_manager::setState(Engine_state::IS_IN_MENU);
 	}
