@@ -34,6 +34,7 @@ void Map::save_Objects(const std::string& name)
 		for (auto& enemy : enemies)
 			save.write(reinterpret_cast<const char*>(&enemy->getData()), sizeof(enemy->getData()));
 	}
+
 	save.close();
 }
 
@@ -52,6 +53,7 @@ void Map::load_Objects(const std::string& name)
 		while (load.read(reinterpret_cast<char*>(&enemy_data), sizeof(Enemy_data)))
 			create_EnemyOBJ(enemy_data.mapPOS, enemy_data.id, enemy_data.flip);
 	}
+
 	load.close();
 }
 
@@ -880,15 +882,15 @@ void multiOBJ_select_structure::moveEvent_mouseR(Enemies& enemies, const Rect& e
 {
 	setState_movingOBJs(false);
 
-	for (auto& enemy : moving_objects) {
+	for (auto& moveOBJ : moving_objects) {
 		int RenderPOS_X, RenderPOS_Y;
 		double scaleTX_w, scaleTX_h;
 		int x, y;
 
 		double scaleX, scaleY;
 
-		scaleTX_w = double(enemy.enemy->left() - edit_area.left()) / edit_area.getW();
-		scaleTX_h = double(enemy.enemy->up() - edit_area.up()) / edit_area.getH();
+		scaleTX_w = double(moveOBJ.enemy->left() - edit_area.left()) / edit_area.getW();
+		scaleTX_h = double(moveOBJ.enemy->up() - edit_area.up()) / edit_area.getH();
 
 		x = mapBG_area.left() + round(mapBG_area.getW() * scaleTX_w);
 		y = mapBG_area.up() + round(mapBG_area.getH() * scaleTX_h);
@@ -898,10 +900,9 @@ void multiOBJ_select_structure::moveEvent_mouseR(Enemies& enemies, const Rect& e
 		RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
 		RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
 
-		enemy.enemy->update_mapPOS(x, y);
-		enemy.enemy->update_renderPOS(RenderPOS_X, RenderPOS_Y);
+		moveOBJ.enemy->update_mapPOS(x, y);
+		moveOBJ.enemy->update_renderPOS(RenderPOS_X, RenderPOS_Y);
 	}
-
 
 	int RenderPOS_X, RenderPOS_Y;
 	int x, y; // dla mapy
@@ -958,8 +959,8 @@ void multiOBJ_select_structure::events_moving(bool mouse_over, const SDL_Rect& e
 		updateX(tmp_px_left);
 		updateY(tmp_px_up);
 
-		for (auto& enemy : moving_objects)
-			enemy.enemy->update_about(tmp_px_left, tmp_px_up);
+		for (auto& moveOBJ : moving_objects)
+			moveOBJ.enemy->update_about(tmp_px_left, tmp_px_up);
 	}
 }
 void multiOBJ_select_structure::moveMap_Event()

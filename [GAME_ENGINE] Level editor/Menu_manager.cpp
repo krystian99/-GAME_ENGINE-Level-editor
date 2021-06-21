@@ -15,12 +15,15 @@ void Menu_manager::set_Menu(Menu_ID ID)
 	{
 	case Menu_ID::START:
 		currentModule = menu_start;
+		menu_id = ID;
 		break;
 	case Menu_ID::LEVEL_MENU:
 		currentModule = menu_level;
+		menu_id = ID;
 		break;
 	case Menu_ID::ANIMATION_MENU:
 		currentModule = menu_anim;
+		menu_id = ID;
 		break;
 	}
 }

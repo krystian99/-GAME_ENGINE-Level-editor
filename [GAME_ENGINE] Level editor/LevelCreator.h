@@ -33,6 +33,8 @@ private:
 
 	void leftBar_module_events(); // zamiast osobnej klasy, bedzie do tego specjalna funkcja -> nie ma sensu tworzyæ klasy
 
+	void keyboardHandler();
+
 	void switch_Main_state();
 	void switch_Management_state();
 private:

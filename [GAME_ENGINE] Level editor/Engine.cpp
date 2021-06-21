@@ -46,6 +46,9 @@ void Engine::events()
 				break;
 			}
 		}
+
+		if (Keyboard::is_LCNTRL_Z())
+			Engine_manager::Quit();
 	}
 
 	// zdarzenia niezale¿ne od myszki i klawiatury
@@ -54,6 +57,8 @@ void Engine::events()
 
 void Engine::events_indp()
 {
+	//Keyboard::events_indp();
+
 	static const Uint8 * key = SDL_GetKeyboardState(nullptr);
 
 	if (!escape_pressed && !test) 

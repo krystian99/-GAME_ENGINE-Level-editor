@@ -4,7 +4,21 @@
 Key Keyboard::key_state{ Key::NONE };
 Key Keyboard::mod_state{ Key::NONE };
 Key Keyboard::backspace_state{ Key::NONE };
-//bool Keyboard::toggled_capsLock{ false };
+const Uint8* Keyboard::keyboard{ nullptr };
+
+Keyboard::Key_pressing Keyboard::cnrtl_z{ SDL_SCANCODE_LCTRL | SDL_SCANCODE_Y };
+
+bool Keyboard::is_LCNTRL_Z()
+{
+	return cnrtl_z.pressedOnce();
+}
+
+bool Keyboard::is_LCNTRL_Y()
+{
+	if (keyboard[SDL_SCANCODE_LCTRL] && keyboard[SDL_SCANCODE_Y])
+		return true;
+	return false;
+}
 
 void Keyboard::switch_liters(SDL_Keycode & code)
 {
@@ -224,24 +238,16 @@ void Keyboard::switch_keys_up(SDL_Event * ev)
 {
 	mod_state = { Key::NONE };
 	key_state = { Key::NONE };
-	/*switch_others_up(ev->key.keysym.sym);
-	switch_liters_up(ev->key.keysym.sym);
-	switch_digits_up(ev->key.keysym.sym);*/
 }
-
-/*void Keyboard::Init()
-{
-	int temp = SDL_GetModState();
-	temp &= KMOD_CAPS; // lub temp = temp & KMOD_CAPS
-
-	if (temp == SDL_Keymod::KMOD_CAPS)
-		toggled_capsLock = true;
-}*/
 
 void Keyboard::events(SDL_Event * ev)
 {
 	key_state = { Key::NONE };
 	backspace_state = Key::NONE;
+
+	keyboard = SDL_GetKeyboardState(nullptr);
+
+	cnrtl_z.events();
 
 	switch (ev->type) {
 	case SDL_KEYDOWN:
@@ -251,4 +257,37 @@ void Keyboard::events(SDL_Event * ev)
 		switch_keys_up(ev);
 		break;
 	}
+}
+
+
+Keyboard::Key_pressing::Key_pressing(int code)
+{
+	this->code = code;
+}
+
+void Keyboard::Key_pressing::events()
+{
+	pressed = false;
+
+	if (keyboard[SDL_SCANCODE_LCTRL] && keyboard[SDL_SCANCODE_Z])
+		pressed = true;
+}
+
+bool Keyboard::Key_pressing::pressedOnce()
+{
+	if (!flag_pressed_once && pressed)
+	{
+		pressed_once = true;
+		flag_pressed_once = true;
+
+	}
+	else if (flag_pressed_once)
+	{
+		pressed_once = false;
+
+		if (!(keyboard[SDL_SCANCODE_LCTRL] && keyboard[SDL_SCANCODE_Z]))
+			flag_pressed_once = false;
+	}
+
+	return pressed_once;
 }

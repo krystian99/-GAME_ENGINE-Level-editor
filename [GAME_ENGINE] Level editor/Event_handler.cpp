@@ -1,6 +1,6 @@
 #include "Event_handler.h"
 
-queue<Event_handlerOBJ*> Event_handler::events{};
+std::queue<Event_handlerOBJ*> Event_handler::events{};
 
 void Event_handler::process()
 {

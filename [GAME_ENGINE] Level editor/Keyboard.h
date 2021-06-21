@@ -15,6 +15,7 @@ class Keyboard
 public:
 	static void Init();
 	static void events(SDL_Event * ev);
+	static void events_indp();
 
 	static bool is_CapsLock_toggled() { 
 		int temp = SDL_GetModState();
@@ -24,6 +25,12 @@ public:
 			return true;
 		return false;
 	}
+
+	static bool is_LCNTRL_Z();
+
+	static bool is_LCNTRL_Y();
+
+	static bool is_pressedOnce(SDL_Scancode);
 
 	static const Key & getState() { return key_state; }
 	static const Key & getModState() { return mod_state; }
@@ -40,6 +47,28 @@ private:
 	static void switch_keys_down(SDL_Event * ev);
 	static void switch_keys_up(SDL_Event * ev);
 private:
+	class Key_pressing
+	{
+	public:
+		Key_pressing(int code);
+
+		void events();
+
+		bool is_pressed() const { return pressed; }
+
+		bool pressedOnce();
+	private:
+		int code;
+
+		bool pressed{ false };
+
+		bool flag_pressed_once{ false };
+		bool pressed_once{ false };
+	};
+
+	static Key_pressing cnrtl_z;
+
+	static const Uint8* keyboard;
 	static Key key_state;
 	static Key mod_state;
 	static Key backspace_state;

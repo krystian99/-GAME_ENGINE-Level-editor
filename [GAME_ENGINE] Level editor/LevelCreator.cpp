@@ -8,6 +8,7 @@
 #include "CoordinateBar_map.h"
 #include "Event_handlerOBJ_map.h"
 #include "Event_handler.h"
+#include "Engine_manager.h"
 
 LevelCreator::LevelCreator() : // inicjuje wszystkie dane Level Creatora - ustala funkcje przycisków itd.
 	map_edit_area{ { 160, 128, 1200, 600 } },
@@ -114,6 +115,11 @@ void LevelCreator::events()
 
 void LevelCreator::events_indp()
 {
+	if (Keyboard::is_LCNTRL_Z())
+	{
+		Engine_manager::setState(Engine_state::IS_IN_MENU);
+	}
+
 	CoordinateBar_map::events(map_edit_area.is_mouseOver());
 
 	bar_modules_left.events_indp();
@@ -195,6 +201,11 @@ void LevelCreator::new_Level()
 	Base_OBJ::reset_multiplier();
 	map_edit_area.reset();
 	map_edit_area.set_background(LevelEditor_manager::get_levels_mapsPath() + LevelEditor_manager::get_backgroundName() + ".png");
+}
+
+void LevelCreator::keyboardHandler()
+{
+
 }
 
 void LevelCreator::switch_Main_state()

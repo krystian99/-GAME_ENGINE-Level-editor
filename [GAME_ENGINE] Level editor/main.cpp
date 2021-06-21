@@ -24,6 +24,7 @@ int main(int argc, char*argv[])
 
 			log_exception << str << endl;
 		}
+
 		log_exception.close();
 	}
 	catch (...) {
@@ -34,6 +35,7 @@ int main(int argc, char*argv[])
 
 			log_exception << "Something went wrong and program has aborted!" << endl;
 		}
+
 		log_exception.close();
 	}
 

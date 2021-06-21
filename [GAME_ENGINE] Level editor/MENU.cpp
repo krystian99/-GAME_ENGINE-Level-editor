@@ -11,6 +11,9 @@ MENU::MENU()
 void MENU::events()
 {
 	Menu_manager::getModule()->events();
+
+	if (Keyboard::is_LCNTRL_Z())
+		Menu_manager::set_Menu(Menu_ID::START);
 }
 
 void MENU::events_indp()
