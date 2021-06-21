@@ -85,6 +85,11 @@ void LevelCreator::reset_states()
 // zdarzenia zale¿ne od myszki lub klawiatury
 void LevelCreator::events()
 {
+	if (Keyboard::is_LCNTRL_Z())
+	{
+		Engine_manager::setState(Engine_state::IS_IN_MENU);
+	}
+
 	map_edit_area.events();
 	//objectType_optionsBar.events();
 
@@ -115,10 +120,9 @@ void LevelCreator::events()
 
 void LevelCreator::events_indp()
 {
-	if (Keyboard::is_LCNTRL_Z())
-	{
-		Engine_manager::setState(Engine_state::IS_IN_MENU);
-	}
+
+	/*if (Keyboard::is_pressedOnce({Key::LCNTRL, Key::Z}))
+		Engine_manager::setState(Engine_state::IS_IN_MENU);*/
 
 	CoordinateBar_map::events(map_edit_area.is_mouseOver());
 

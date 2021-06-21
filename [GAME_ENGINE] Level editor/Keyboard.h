@@ -1,21 +1,20 @@
 #pragma once
 #include <SDL_events.h>
 #include <SDL_keyboard.h>
+#include <vector>
 
 enum class Key {
 	NONE,
-	Q, W, E, R, T, Y, U, I, O, P, A, S, D, F, G, H, J, K, L, Z, X, C, V, B, N, M,
+	Q, W, E, R, T, Y, U, I, O, P, A, S, D, F, G, H, J, K, L, Z = SDL_Scancode::SDL_SCANCODE_Z, X, C, V, B, N, M,
 	SPACE, ENTER, DELETE, CAPS_LOCK, ESCAPE, BACKSPACE, SHIFT,
-	n1, n2, n3, n4, n5, n6, n7, n8, n9, n0
-
+	n1, n2, n3, n4, n5, n6, n7, n8, n9, n0,
+	LCNTRL = SDL_Scancode::SDL_SCANCODE_LCTRL
 }; // n - number
 
 class Keyboard
 {
 public:
-	static void Init();
 	static void events(SDL_Event * ev);
-	static void events_indp();
 
 	static bool is_CapsLock_toggled() { 
 		int temp = SDL_GetModState();
@@ -30,7 +29,7 @@ public:
 
 	static bool is_LCNTRL_Y();
 
-	static bool is_pressedOnce(SDL_Scancode);
+	//static bool is_pressedOnce(const std::vector<Key> &);
 
 	static const Key & getState() { return key_state; }
 	static const Key & getModState() { return mod_state; }
@@ -50,7 +49,7 @@ private:
 	class Key_pressing
 	{
 	public:
-		Key_pressing(int code);
+		Key_pressing(const std::vector<Key> &);
 
 		void events();
 
@@ -62,13 +61,21 @@ private:
 
 		bool pressed{ false };
 
+		std::vector<Key> keys;
+
 		bool flag_pressed_once{ false };
 		bool pressed_once{ false };
 	};
 
+	/*static bool pressed;
+
+	static bool flag_pressed_once;
+	static bool pressed_once;*/
+
 	static Key_pressing cnrtl_z;
 
 	static const Uint8* keyboard;
+
 	static Key key_state;
 	static Key mod_state;
 	static Key backspace_state;

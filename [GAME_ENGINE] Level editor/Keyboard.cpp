@@ -6,7 +6,13 @@ Key Keyboard::mod_state{ Key::NONE };
 Key Keyboard::backspace_state{ Key::NONE };
 const Uint8* Keyboard::keyboard{ nullptr };
 
-Keyboard::Key_pressing Keyboard::cnrtl_z{ SDL_SCANCODE_LCTRL | SDL_SCANCODE_Y };
+/*bool Keyboard::pressed{ false };
+bool Keyboard::flag_pressed_once{ false };
+bool Keyboard::pressed_once{ false };*/
+
+Keyboard::Key_pressing Keyboard::cnrtl_z{ 
+	{ Key::LCNTRL, Key::Z }
+};
 
 bool Keyboard::is_LCNTRL_Z()
 {
@@ -260,9 +266,11 @@ void Keyboard::events(SDL_Event * ev)
 }
 
 
-Keyboard::Key_pressing::Key_pressing(int code)
+Keyboard::Key_pressing::Key_pressing(const std::vector<Key>& keys)
 {
-	this->code = code;
+	//this->code = code;
+
+	this->keys = std::move(keys);
 }
 
 void Keyboard::Key_pressing::events()
