@@ -25,6 +25,11 @@ void Engine_manager::Quit()
 	running = false;
 }
 
+bool Engine_manager::is_inState(Engine_state s)
+{
+	return false;
+}
+
 void Engine_manager::setState(const Engine_state & st_chng)
 {
 	state = st_chng;

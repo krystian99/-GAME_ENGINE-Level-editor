@@ -38,6 +38,7 @@ void Engine::events()
 
 		if (event_handler.window.windowID == Renderer::get_mainWindow_ID())
 			Engine_manager::getModule()->events();
+
 		// wykonaj eventy dla pozostalych okien
 		else {
 			switch (Engine_manager::getState()) {
@@ -46,9 +47,6 @@ void Engine::events()
 				break;
 			}
 		}
-
-		if (Keyboard::is_pressed_LCNTRL_Z())
-			Engine_manager::Quit();
 	}
 
 	// zdarzenia niezale¿ne od myszki i klawiatury

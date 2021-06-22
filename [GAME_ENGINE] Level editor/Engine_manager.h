@@ -14,6 +14,8 @@ public:
 
 	static const Engine_state & getState() { return state; }
 
+	static bool is_inState(Engine_state s);
+
 	static const bool & is_running() { return running; }
 
 	static void setState(const Engine_state & st_chng);

@@ -7,19 +7,15 @@ Key Keyboard::backspace_state{ Key::NONE };
 
 const Uint8* Keyboard::keyboard{ nullptr };
 
-/*bool Keyboard::pressed{ false };
-bool Keyboard::flag_pressed_once{ false };
-bool Keyboard::pressed_once{ false };*/
-
-Keyboard::Key_pressing Keyboard::cntrl_z{ 
+Keyboard::Shortcut_keys Keyboard::cntrl_z{
 	{ Key::LCNTRL, Key::Z }
 };
 
-Keyboard::Key_pressing Keyboard::cntrl_y{
+Keyboard::Shortcut_keys Keyboard::cntrl_y{
 	{ Key::LCNTRL, Key::Y }
 };
 
-Keyboard::Key_pressing Keyboard::escape{
+Keyboard::Shortcut_keys Keyboard::escape{
 	{ Key::ESCAPE }
 };
 
@@ -139,16 +135,9 @@ void Keyboard::switch_others(SDL_Keycode & code)
 	case SDLK_ESCAPE:
 		key_state = { Key::ESCAPE };
 		break;
-	/*case SDLK_CAPSLOCK:
-		toggled_capsLock = !toggled_capsLock;
-		//key_state = { Key::CAPS_LOCK };
-		break;*/
 	case SDLK_KP_ENTER:
 		key_state = { Key::ENTER };
 		break;
-	/*case SDLK_LSHIFT: //case SDLK_RSHIFT:
-		mod_state = { Key::SHIFT };
-		break;*/
 	}
 }
 
@@ -191,38 +180,6 @@ void Keyboard::switch_digits(SDL_Keycode & code)
 
 void Keyboard::switch_liters_up(SDL_Keycode & code)
 {
-	/*switch (code)
-	{
-	case SDLK_a:
-	case SDLK_b:
-	case SDLK_c:
-	case SDLK_d:
-	case SDLK_e:
-	case SDLK_f:
-	case SDLK_g:
-	case SDLK_h:
-	case SDLK_i:
-	case SDLK_j:
-	case SDLK_k:
-	case SDLK_l:
-	case SDLK_m:
-	case SDLK_n:
-	case SDLK_o:
-	case SDLK_p:
-	case SDLK_q:
-	case SDLK_r:
-	case SDLK_s:
-	case SDLK_t:
-	case SDLK_u:
-	case SDLK_v:
-	case SDLK_w:
-	case SDLK_x:
-	case SDLK_y:
-	case SDLK_z:
-	case SDLK_BACKSPACE:
-		key_state = { Key::NONE };
-		break;
-	}*/
 	key_state = { Key::NONE };
 }
 
@@ -280,14 +237,12 @@ void Keyboard::events(SDL_Event * ev)
 }
 
 
-Keyboard::Key_pressing::Key_pressing(const std::vector<Key>& keys)
+Keyboard::Shortcut_keys::Shortcut_keys(const std::vector<Key>& keys)
 {
-	//this->code = code;
-
 	this->keys = std::move(keys);
 }
 
-void Keyboard::Key_pressing::events()
+void Keyboard::Shortcut_keys::events()
 {
 	pressed = false;
 
@@ -295,7 +250,7 @@ void Keyboard::Key_pressing::events()
 		pressed = true;
 }
 
-bool Keyboard::Key_pressing::pressedOnce()
+bool Keyboard::Shortcut_keys::pressedOnce()
 {
 	if (!flag_pressed_once && pressed)
 	{
@@ -314,9 +269,9 @@ bool Keyboard::Key_pressing::pressedOnce()
 	return pressed_once;
 }
 
-bool Keyboard::Key_pressing::isPressed() const
+bool Keyboard::Shortcut_keys::isPressed() const
 {
-	for (auto i : keys)
+	for (auto & i : keys)
 		if (!keyboard[int(i)])
 			return false;
 

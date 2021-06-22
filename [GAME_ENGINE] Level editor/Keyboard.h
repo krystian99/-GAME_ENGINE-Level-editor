@@ -32,13 +32,17 @@ public:
 		return false;
 	}
 
+	/* Musi zostaæ wywo³ane przez klasê zarz¹dzaj¹ca daym stanem
+	przyk³ad: MenuStart->events()
+	Wtedy klasa zarz¹dzaj¹ca przekierowuje dalej stany*/
 	static bool is_pressed_LCNTRL_Z();
 
+	/* Musi zostaæ wywo³ane przez klasê zarz¹dzaj¹ca daym stanem
+	przyk³ad: MenuStart->events()
+	Wtedy klasa zarz¹dzaj¹ca przekierowuje dalej stany*/
 	static bool is_pressed_LCNTRL_Y();
 
 	static bool is_pressedEscape();
-
-	//static bool is_pressedOnce(const std::vector<Key> &);
 
 	static const Key & getState() { return key_state; }
 	static const Key & getModState() { return mod_state; }
@@ -55,10 +59,10 @@ private:
 	static void switch_keys_down(SDL_Event * ev);
 	static void switch_keys_up(SDL_Event * ev);
 private:
-	class Key_pressing
+	class Shortcut_keys
 	{
 	public:
-		Key_pressing(const std::vector<Key> &);
+		Shortcut_keys(const std::vector<Key> &);
 
 		void events();
 
@@ -68,8 +72,6 @@ private:
 	private:
 		bool isPressed() const;
 	private:
-		int code;
-
 		bool pressed{ false };
 
 		std::vector<Key> keys;
@@ -78,15 +80,7 @@ private:
 		bool pressed_once{ false };
 	};
 
-	/*static bool pressed;
-
-	static bool flag_pressed_once;
-	static bool pressed_once;*/
-
-	static Key_pressing cntrl_z;
-	static Key_pressing cntrl_y;
-
-	static Key_pressing escape;
+	static Shortcut_keys cntrl_z, cntrl_y, escape;
 
 	static const Uint8* keyboard;
 
