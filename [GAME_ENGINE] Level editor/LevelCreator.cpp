@@ -9,6 +9,7 @@
 #include "Event_handlerOBJ_map.h"
 #include "Event_handler.h"
 #include "Engine_manager.h"
+#include <fstream>
 
 LevelCreator::LevelCreator() : // inicjuje wszystkie dane Level Creatora - ustala funkcje przycisków itd.
 	map_edit_area{ { 160, 128, 1200, 600 } },

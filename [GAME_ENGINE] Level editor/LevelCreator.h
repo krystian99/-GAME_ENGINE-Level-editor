@@ -1,11 +1,8 @@
 #pragma once
-#include <fstream>
 #include "CoordinateBar_mouse.h"
 #include "Map.h"
 #include "ScrollBar.h"
-#include "Menu_local.h"
 #include "Text.h"
-#include "Button_input.h"
 #include "Bar_modules_left.h"
 #include <queue>
 #include "Module_base.h"

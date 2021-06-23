@@ -19,19 +19,9 @@ Keyboard::Shortcut_keys Keyboard::escape{
 	{ Key::ESCAPE }
 };
 
-bool Keyboard::is_pressed_LCNTRL_Z()
+bool Keyboard::is_pressedKey(Key k)
 {
-	return cntrl_z.pressedOnce();
-}
-
-bool Keyboard::is_pressed_LCNTRL_Y()
-{
-	return cntrl_z.pressedOnce();
-}
-
-bool Keyboard::is_pressedEscape()
-{
-	return escape.pressedOnce();
+	return key_state == k;
 }
 
 void Keyboard::switch_liters(SDL_Keycode & code)
@@ -39,85 +29,85 @@ void Keyboard::switch_liters(SDL_Keycode & code)
 	switch (code)
 	{
 	case SDLK_a:
-		key_state = { Key::A };
+		key_state = Key::A;
 		break;
 	case SDLK_b:
-		key_state = { Key::B };
+		key_state = Key::B;
 		break;
 	case SDLK_c:
-		key_state = { Key::C };
+		key_state = Key::C;
 		break;
 	case SDLK_d:
-		key_state = { Key::D };
+		key_state = Key::D;
 		break;
 	case SDLK_e:
-		key_state = { Key::E };
+		key_state = Key::E;
 		break;
 	case SDLK_f:
-		key_state = { Key::F };
+		key_state = Key::F;
 		break;
 	case SDLK_g:
-		key_state = { Key::G };
+		key_state = Key::G;
 		break;
 	case SDLK_h:
-		key_state = { Key::H };
+		key_state = Key::H;
 		break;
 	case SDLK_i:
-		key_state = { Key::I };
+		key_state = Key::I;
 		break;
 	case SDLK_j:
-		key_state = { Key::J };
+		key_state = Key::J;
 		break;
 	case SDLK_k:
-		key_state = { Key::K };
+		key_state = Key::K;
 		break;
 	case SDLK_l:
-		key_state = { Key::L };
+		key_state = Key::L;
 		break;
 	case SDLK_m:
-		key_state = { Key::M };
+		key_state = Key::M;
 		break;
 	case SDLK_n:
-		key_state = { Key::N };
+		key_state = Key::N;
 		break;
 	case SDLK_o:
-		key_state = { Key::O };
+		key_state = Key::O;
 		break;
 	case SDLK_p:
-		key_state = { Key::P };
+		key_state = Key::P;
 		break;
 	case SDLK_q:
-		key_state = { Key::Q };
+		key_state = Key::Q;
 		break;
 	case SDLK_r:
-		key_state = { Key::R };
+		key_state = Key::R;
 		break;
 	case SDLK_s:
-		key_state = { Key::S };
+		key_state = Key::S;
 		break;
 	case SDLK_t:
-		key_state = { Key::T };
+		key_state = Key::T;
 		break;
 	case SDLK_u:
-		key_state = { Key::U };
+		key_state = Key::U;
 		break;
 	case SDLK_v:
-		key_state = { Key::V };
+		key_state = Key::V;
 		break;
 	case SDLK_w:
-		key_state = { Key::W };
+		key_state = Key::W;
 		break;
 	case SDLK_x:
-		key_state = { Key::X };
+		key_state = Key::X;
 		break;
 	case SDLK_y:
-		key_state = { Key::Y };
+		key_state = Key::Y;
 		break;
 	case SDLK_z:
-		key_state = { Key::Z };
+		key_state = Key::Z;
 		break;
 	case SDLK_BACKSPACE:
-		key_state = { Key::BACKSPACE };
+		key_state = Key::BACKSPACE;
 		break;
 	}
 }
@@ -130,13 +120,13 @@ void Keyboard::switch_others(SDL_Keycode & code)
 	switch (code)
 	{
 	case SDLK_SPACE:
-		key_state = { Key::SPACE };
+		key_state = Key::SPACE;
 		break;
 	case SDLK_ESCAPE:
-		key_state = { Key::ESCAPE };
+		key_state = Key::ESCAPE;
 		break;
 	case SDLK_KP_ENTER:
-		key_state = { Key::ENTER };
+		key_state = Key::ENTER;
 		break;
 	}
 }
@@ -180,22 +170,12 @@ void Keyboard::switch_digits(SDL_Keycode & code)
 
 void Keyboard::switch_liters_up(SDL_Keycode & code)
 {
-	key_state = { Key::NONE };
+	key_state = Key::NONE;
 }
 
 void Keyboard::switch_others_up(SDL_Keycode & code)
 {
-	/*switch (code)
-	{
-	case SDLK_SPACE:
-	case SDLK_ESCAPE:
-	case SDLK_CAPSLOCK:
-	case SDLK_KP_ENTER:
-	case SDLK_LSHIFT: //case SDLK_RSHIFT:
-		mod_state = { Key::NONE };
-		break;
-	}*/
-	mod_state = { Key::NONE };
+	mod_state = Key::NONE;
 }
 
 void Keyboard::switch_digits_up(SDL_Keycode & code)

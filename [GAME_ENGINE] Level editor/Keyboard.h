@@ -15,7 +15,8 @@ enum class Key {
 	SHIFT = SDL_SCANCODE_LSHIFT,
 	n1 = SDL_SCANCODE_1, n2 = SDL_SCANCODE_2, n3 = SDL_SCANCODE_3, n4 = SDL_SCANCODE_4, n5 = SDL_SCANCODE_5, n6 = SDL_SCANCODE_6, 
 	n7 = SDL_SCANCODE_7, n8 = SDL_SCANCODE_8, n9 = SDL_SCANCODE_9, n0 = SDL_SCANCODE_0,
-	LCNTRL = SDL_SCANCODE_LCTRL
+	LCNTRL = SDL_SCANCODE_LCTRL,
+	RSHIFT = SDL_SCANCODE_RSHIFT
 }; // n - number
 
 class Keyboard
@@ -35,14 +36,20 @@ public:
 	/* Musi zostaæ wywo³ane przez klasê zarz¹dzaj¹ca daym stanem
 	przyk³ad: MenuStart->events()
 	Wtedy klasa zarz¹dzaj¹ca przekierowuje dalej stany*/
-	static bool is_pressed_LCNTRL_Z();
+	static bool is_pressed_LCNTRL_Z() { return cntrl_z.pressedOnce(); }
 
 	/* Musi zostaæ wywo³ane przez klasê zarz¹dzaj¹ca daym stanem
 	przyk³ad: MenuStart->events()
 	Wtedy klasa zarz¹dzaj¹ca przekierowuje dalej stany*/
-	static bool is_pressed_LCNTRL_Y();
+	static bool is_pressed_LCNTRL_Y() { return cntrl_y.pressedOnce(); }
 
-	static bool is_pressedEscape();
+	static bool is_pressedEscape() { return escape.pressedOnce(); }
+
+	static bool is_pressedBackspace() { return backspace_state == Key::BACKSPACE; }
+
+	static bool is_pressedShift() { return keyboard[int(Key::SHIFT)] || keyboard[int(Key::RSHIFT)]; }
+
+	static bool is_pressedKey(Key k);
 
 	static const Key & getState() { return key_state; }
 	static const Key & getModState() { return mod_state; }

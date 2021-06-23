@@ -58,10 +58,13 @@ void InputArea::events()
 
 	if (current) 
 	{
-		if (Keyboard::getState() != Key::NONE) {
+		if (Keyboard::getState() != Key::NONE) 
+		{
 			if (alpha_enabled)
 				getLiters();
+
 			getOthers();
+
 			if (digits_enabled)
 				getDigits();
 		}
@@ -81,7 +84,7 @@ void InputArea::addBack(const char & c)
 	keyboard = SDL_GetKeyboardState(nullptr);
 
 	empty = false;
-	if (keyboard[SDL_SCANCODE_LSHIFT] || keyboard[SDL_SCANCODE_RSHIFT] || Keyboard::is_CapsLock_toggled())
+	if (Keyboard::is_pressedShift() || Keyboard::is_CapsLock_toggled())
 		input.push_back(toupper(c));
 	else 
 		input.push_back(tolower(c));
@@ -183,7 +186,7 @@ void InputArea::getLiters()
 
 void InputArea::getOthers()
 {
-	if (Keyboard::getBackSpace() == Key::BACKSPACE){
+	if (Keyboard::is_pressedBackspace()){
 		backspace_pressing = true;
 		if (input.size()) {
 			input.pop_back();
