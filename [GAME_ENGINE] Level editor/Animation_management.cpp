@@ -3,7 +3,9 @@
 #include "Mouse.h"
 #include "Video_Info.h"
 #include "Animation_manager.h"
-
+#include "Keyboard.h"
+#include "Engine_manager.h"
+#include "Menu_manager.h"
 Animation_management::Animation_management() :
 	frame_ofALL{ 400, 660, "data/fonts/standard_font.ttf", 30, { 255, 255, 255, 255 } },
 	current_frame{ 1 }
@@ -50,7 +52,7 @@ void Animation_management::render()
 
 	if (Mouse::is_pressedL())
 	{
-		static const auto & point = Mouse::get_clickedPoint();
+		static const auto& point = Mouse::get_clickedPoint();
 		if (point.x >= edit_area.x && point.x <= edit_area.x + edit_area.w
 			&& point.y >= edit_area.y && point.y <= edit_area.y + edit_area.h)
 		{
@@ -59,7 +61,7 @@ void Animation_management::render()
 			Renderer::set_defaultColor();
 		}
 	}
-	for (auto & hitbox : hitboxes)
+	for (auto& hitbox : hitboxes)
 		hitbox.render();
 
 	frame_ofALL.render();
@@ -81,8 +83,8 @@ void Animation_management::render()
 
 void Animation_management::set_hitbox()
 {
-	static const int & mX = Mouse::getX();
-	static const int & mY = Mouse::getY();
+	static const int& mX = Mouse::getX();
+	static const int& mY = Mouse::getY();
 
 	if (mX < Mouse::get_clickedPoint().x)
 	{
@@ -109,7 +111,7 @@ void Animation_management::mouse_handler_indp()
 		&& Mouse::getY() >= edit_area.y && Mouse::getY() <= edit_area.y + edit_area.h)
 	{
 		if (Mouse::is_pressedL()) {
-			static const auto & point = Mouse::get_clickedPoint();
+			static const auto& point = Mouse::get_clickedPoint();
 			if (point.x >= edit_area.x && point.x <= edit_area.x + edit_area.w
 				&& point.y >= edit_area.y && point.y <= edit_area.y + edit_area.h)
 			{
@@ -160,20 +162,19 @@ void Animation_management::mouse_handler_dpnd()
 
 void Animation_management::keyboard_handler_indp()
 {
-	static const Uint8 * key = SDL_GetKeyboardState(nullptr);
-
-	if (key[SDL_SCANCODE_LCTRL] && key[SDL_SCANCODE_Z])
-		mod_lcntrl_Z_PRESS = true;
-	else if (!key[SDL_SCANCODE_Z] && mod_lcntrl_Z_PRESS) {
+	if (Keyboard::is_pressed_LCNTRL_Z()) {
 		if (hitboxes.size())
 			hitboxes.pop_back();
-		mod_lcntrl_Z_PRESS = false;
 	}
 }
 
 void Animation_management::keyboard_handler_dpnd()
 {
-
+	if (Keyboard::is_pressedEscape())
+	{
+		Engine_manager::setState(Engine_state::IS_IN_MENU);
+		Menu_manager::set_Menu(Menu_ID::ANIMATION_MENU);
+	}
 }
 
 void Animation_management::set_NewConfig()
@@ -186,7 +187,7 @@ void Animation_management::load_Config()
 
 }
 
-void Animation_management::set_animation(const std::string & str)
+void Animation_management::set_animation(const std::string& str)
 {
 	animation.loadFromFile(str);
 

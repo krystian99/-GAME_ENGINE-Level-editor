@@ -22,14 +22,12 @@ Button_input::Button_input(const std::string & teture_path, const char * desctip
 
 void Button_input::events()
 {
-	static const Uint8 * key = SDL_GetKeyboardState(nullptr);
-
 	Button::events();
 
 	if (window->is_shown())
 		input->events();
 
-	if (key[SDL_SCANCODE_RETURN]) {
+	if (Keyboard::is_pressedKey(Key::ENTER)) {
 		if (!input->is_empty()) {
 			if ((*check_input)(input->getStr())) {
 				input->reset();
@@ -43,7 +41,7 @@ void Button_input::events()
 			}
 		}
 	}
-	else if (key[SDL_SCANCODE_ESCAPE]) {
+	else if (Keyboard::is_pressedEscape()) {
 		input->reset();
 		window->hide();
 		active = false;

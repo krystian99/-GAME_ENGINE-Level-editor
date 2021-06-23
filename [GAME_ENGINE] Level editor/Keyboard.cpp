@@ -1,5 +1,4 @@
 #include "Keyboard.h"
-#include "Setup.h"
 
 Key Keyboard::key_state{ Key::NONE };
 Key Keyboard::mod_state{ Key::NONE };
@@ -18,11 +17,6 @@ Keyboard::Shortcut_keys Keyboard::cntrl_y{
 Keyboard::Shortcut_keys Keyboard::escape{
 	{ Key::ESCAPE }
 };
-
-bool Keyboard::is_pressedKey(Key k)
-{
-	return key_state == k;
-}
 
 void Keyboard::switch_liters(SDL_Keycode & code)
 {

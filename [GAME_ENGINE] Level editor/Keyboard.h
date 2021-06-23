@@ -49,7 +49,7 @@ public:
 
 	static bool is_pressedShift() { return keyboard[int(Key::SHIFT)] || keyboard[int(Key::RSHIFT)]; }
 
-	static bool is_pressedKey(Key k);
+	static bool is_pressedKey(Key k) { return keyboard[int(k)]; }
 
 	static const Key & getState() { return key_state; }
 	static const Key & getModState() { return mod_state; }

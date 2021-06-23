@@ -2,6 +2,7 @@
 #include "Engine_manager.h"
 #include "Animation_manager.h"
 #include "Error.h"
+#include "Menu_manager.h"
 
 Menu_Animation::Menu_Animation() :
 	input_animName{ { 100, 30, 200, 70 }, 130, 40, "data/fonts/standard_font.ttf", 50,{ 0, 0, 255 } },
@@ -15,6 +16,7 @@ void Menu_Animation::events() // nie ma takiej potrzeby ¿eby tworzyæ specjalnych
 	if (Keyboard::is_pressed_LCNTRL_Z())
 	{
 		Engine_manager::setState(Engine_state::IS_IN_MENU);
+		Menu_manager::set_Menu(Menu_ID::START);
 	}
 
 	input_animName.events();

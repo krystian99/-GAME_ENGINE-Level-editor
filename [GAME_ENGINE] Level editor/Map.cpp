@@ -806,9 +806,7 @@ void multiOBJ_select_structure::OBJs_set(Enemies& enemies, const Rect & edit_are
 
 void multiOBJ_select_structure::events(const Rect & edit_area, Enemies& enemies)
 {
-	const Uint8* keyboard = SDL_GetKeyboardState(nullptr);
-
-	if (keyboard[SDL_SCANCODE_DELETE]) {
+	if (Keyboard::is_pressedKey(Key::DELETE)) {
 		reset(edit_area.get());
 		for (int i = 0; i != enemies.size(); i++) {
 			if (enemies[i]->is_selected()) {

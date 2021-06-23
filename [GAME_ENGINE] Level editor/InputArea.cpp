@@ -81,13 +81,13 @@ void InputArea::load_background(const std::string & d)
 
 void InputArea::addBack(const char & c)
 {
-	keyboard = SDL_GetKeyboardState(nullptr);
-
 	empty = false;
+
 	if (Keyboard::is_pressedShift() || Keyboard::is_CapsLock_toggled())
 		input.push_back(toupper(c));
 	else 
 		input.push_back(tolower(c));
+
 	updateTEXT();
 }
 
@@ -246,9 +246,7 @@ void InputArea::mouse_handler()
 	clicked = false;
 
 	if (Mouse::is_inPOS(position))
-	{
 		clicked = true;
-	}
 }
 
 void InputArea::reset()

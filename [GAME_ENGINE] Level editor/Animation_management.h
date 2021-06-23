@@ -32,7 +32,7 @@ private:
 	void set_NewConfig();
 	void load_Config();
 
-	void set_animation(const std::string & str);
+	void set_animation(const std::string& str);
 private:
 	SDL_Rect animBG_area;
 

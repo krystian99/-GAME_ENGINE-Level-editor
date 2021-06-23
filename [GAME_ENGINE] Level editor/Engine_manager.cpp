@@ -1,4 +1,5 @@
 #include "Engine_manager.h"
+#include "Menu_manager.h"
 
 bool Engine_manager::running{ true };
 Engine_state Engine_manager::state{ Engine_state::IS_IN_MENU };
