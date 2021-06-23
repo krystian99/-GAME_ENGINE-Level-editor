@@ -41,7 +41,7 @@ void Button_input::events()
 			}
 		}
 	}
-	else if (Keyboard::is_pressedEscape()) {
+	else if (Keyboard::is_pressedKey_once(Key::ESCAPE)) {
 		input->reset();
 		window->hide();
 		active = false;

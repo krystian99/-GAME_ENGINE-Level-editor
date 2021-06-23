@@ -170,7 +170,7 @@ void Animation_management::keyboard_handler_indp()
 
 void Animation_management::keyboard_handler_dpnd()
 {
-	if (Keyboard::is_pressedEscape())
+	if (Keyboard::is_pressedKey_once(Key::ESCAPE))
 	{
 		Engine_manager::setState(Engine_state::IS_IN_MENU);
 		Menu_manager::set_Menu(Menu_ID::ANIMATION_MENU);
