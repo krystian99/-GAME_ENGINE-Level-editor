@@ -46,7 +46,7 @@ public:
 
 	static bool is_pressedKey_once(Key k) { return key_state == k; }
 
-	static const Key & getState() { return key_state; }
+	static const Key & get_currentKey() { return key_state; }
 	static const Key & getModState() { return mod_state; }
 private:
 	static void switch_liters(SDL_Keycode & code);

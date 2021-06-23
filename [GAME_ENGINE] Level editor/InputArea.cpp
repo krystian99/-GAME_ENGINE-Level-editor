@@ -99,7 +99,7 @@ void InputArea::updateTEXT()
 
 void InputArea::getLiters()
 {
-	switch (Keyboard::getState())
+	switch (Keyboard::get_currentKey())
 	{
 	case Key::A:
 		addBack('A');
@@ -196,7 +196,7 @@ void InputArea::getOthers()
 		}
 	}
 
-	switch (Keyboard::getState())
+	switch (Keyboard::get_currentKey())
 	{
 	case Key::SPACE:
 		input.push_back(' ');
@@ -206,7 +206,7 @@ void InputArea::getOthers()
 
 void InputArea::getDigits()
 {
-	switch (Keyboard::getState())
+	switch (Keyboard::get_currentKey())
 	{
 	case Key::n0:
 		addBack('0');
