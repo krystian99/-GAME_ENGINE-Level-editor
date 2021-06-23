@@ -13,11 +13,11 @@ Menu_Animation::Menu_Animation() :
 
 void Menu_Animation::events() // nie ma takiej potrzeby ¿eby tworzyæ specjalnych obiekty, skoro i tak s¹ tylko raz tworzone w tym miejscu i potrzebuj¹ wsparcia g³ównej klasy menu ¿eby wykonaæ dana czynnoœæ
 {
-	if (Keyboard::is_pressed_LCNTRL_Z())
+	/*if (Keyboard::is_pressed_LCNTRL_Z())
 	{
 		Engine_manager::setState(Engine_state::IS_IN_MENU);
 		Menu_manager::set_Menu(Menu_ID::START);
-	}
+	}*/
 
 	input_animName.events();
 	input_amountOf_frames.events();

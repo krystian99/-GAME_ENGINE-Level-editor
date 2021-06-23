@@ -37,7 +37,7 @@ void Engine::events()
 		}
 
 		if (event_handler.window.windowID == Renderer::get_mainWindow_ID())
-			Engine_manager::getModule()->events();
+			events_dpnd();
 
 		// wykonaj eventy dla pozostalych okien
 		else {
@@ -55,7 +55,10 @@ void Engine::events()
 
 void Engine::events_indp()
 {
-	if (Keyboard::is_pressedEscape()) {
+	Engine_manager::getModule()->events_indp();
+
+
+	if (Keyboard::is_pressedEscape() || Keyboard::is_pressed_LCNTRL_Z()) {
 		switch (Engine_manager::getState()) {
 		case Engine_state::IS_IN_LC:
 			Engine_manager::setState(Engine_state::IS_IN_MENU);
@@ -72,15 +75,16 @@ void Engine::events_indp()
 			case Menu_ID::START:
 				Engine_manager::Quit();
 				break;
-			case Menu_ID::ANIMATION_MENU: case Menu_ID::LEVEL_MENU:
+			case Menu_ID::LEVEL_MENU:
+				Menu_manager::set_Menu(Menu_ID::START);
+				break;
+			case Menu_ID::ANIMATION_MENU:
 				Menu_manager::set_Menu(Menu_ID::START);
 				break;
 			}
 			break;
 		}
 	}
-
-	Engine_manager::getModule()->events_indp();
 }
 
 void Engine::events_dpnd()

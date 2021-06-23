@@ -3,7 +3,7 @@
 Key Keyboard::key_state{ Key::NONE };
 Key Keyboard::mod_state{ Key::NONE };
 
-const Uint8* Keyboard::keyboard{ nullptr };
+const Uint8* Keyboard::keyboard{ SDL_GetKeyboardState(nullptr) };
 
 Keyboard::Shortcut_keys Keyboard::cntrl_z{
 	{ Key::LCNTRL, Key::Z }
@@ -31,14 +31,15 @@ void Keyboard::switch_keys_down(SDL_Event* ev)
 void Keyboard::switch_keys_up(SDL_Event* ev)
 {
 	mod_state = { Key::NONE };
-	key_state = { Key::NONE };
+	//key_state = { Key::NONE };
+	//cntrl_y.reset();
+	//cntrl_z.reset();
+	//escape.reset();
 }
 
 void Keyboard::events(SDL_Event* ev)
 {
 	key_state = Key::NONE;
-
-	keyboard = SDL_GetKeyboardState(nullptr);
 
 	cntrl_z.events();
 	cntrl_y.events();
@@ -137,9 +138,6 @@ void Keyboard::switch_liters(SDL_Keycode & code)
 	case SDLK_z:
 		key_state = Key::Z;
 		break;
-	/*case SDLK_BACKSPACE:
-		key_state = Key::BACKSPACE;
-		break;*/
 	}
 }
 
@@ -249,6 +247,12 @@ bool Keyboard::Shortcut_keys::pressedOnce()
 	}
 
 	return pressed_once;
+}
+
+void Keyboard::Shortcut_keys::reset()
+{
+	//flag_pressed_once = true;
+	//pressed_once = false;
 }
 
 bool Keyboard::Shortcut_keys::isPressed() const

@@ -19,7 +19,7 @@ private:
 	void events_dpnd();
 	void render();
 private:
-	SDL_Event event_handler;
+	SDL_Event event_handler{};
 
 	MENU menu;
 

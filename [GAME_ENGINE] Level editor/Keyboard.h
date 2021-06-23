@@ -70,6 +70,8 @@ private:
 		bool is_pressed() const { return pressed; }
 
 		bool pressedOnce();
+
+		void reset();
 	private:
 		bool isPressed() const;
 	private:
