@@ -24,14 +24,7 @@ class Keyboard
 public:
 	static void events(SDL_Event * ev);
 
-	static bool is_CapsLock_toggled() { 
-		int temp = SDL_GetModState();
-		temp &= KMOD_CAPS; // lub temp = temp & KMOD_CAPS
-
-		if (temp == SDL_Keymod::KMOD_CAPS)
-			return true;
-		return false;
-	}
+	static bool is_CapsLock_toggled();
 
 	/* Musi zostaæ wywo³ane przez klasê zarz¹dzaj¹ca daym stanem
 	przyk³ad: MenuStart->events()

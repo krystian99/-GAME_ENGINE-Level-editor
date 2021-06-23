@@ -18,6 +18,45 @@ Keyboard::Shortcut_keys Keyboard::escape{
 	{ Key::ESCAPE }
 };
 
+void Keyboard::switch_digits_up(SDL_Keycode& code)
+{
+}
+
+void Keyboard::switch_keys_down(SDL_Event* ev)
+{
+	switch_liters(ev->key.keysym.sym);
+	switch_others(ev->key.keysym.sym);
+	switch_digits(ev->key.keysym.sym);
+}
+
+void Keyboard::switch_keys_up(SDL_Event* ev)
+{
+	mod_state = { Key::NONE };
+	key_state = { Key::NONE };
+}
+
+void Keyboard::events(SDL_Event* ev)
+{
+	key_state = Key::NONE;
+	backspace_state = Key::NONE;
+
+	keyboard = SDL_GetKeyboardState(nullptr);
+
+	cntrl_z.events();
+	cntrl_y.events();
+	escape.events();
+
+	switch (ev->type) {
+	case SDL_KEYDOWN:
+		switch_keys_down(ev);
+		break;
+	case SDL_KEYUP:
+		switch_keys_up(ev);
+		break;
+	}
+}
+
+
 void Keyboard::switch_liters(SDL_Keycode & code)
 {
 	switch (code)
@@ -100,9 +139,9 @@ void Keyboard::switch_liters(SDL_Keycode & code)
 	case SDLK_z:
 		key_state = Key::Z;
 		break;
-	case SDLK_BACKSPACE:
+	/*case SDLK_BACKSPACE:
 		key_state = Key::BACKSPACE;
-		break;
+		break;*/
 	}
 }
 
@@ -121,6 +160,8 @@ void Keyboard::switch_others(SDL_Keycode & code)
 		break;
 	case SDLK_KP_ENTER:
 		key_state = Key::ENTER;
+	case SDLK_BACKSPACE:
+		key_state = Key::BACKSPACE;
 		break;
 	}
 }
@@ -172,42 +213,14 @@ void Keyboard::switch_others_up(SDL_Keycode & code)
 	mod_state = Key::NONE;
 }
 
-void Keyboard::switch_digits_up(SDL_Keycode & code)
+bool Keyboard::is_CapsLock_toggled()
 {
-}
+	int temp = SDL_GetModState();
+	temp &= KMOD_CAPS; // lub temp = temp & KMOD_CAPS
 
-void Keyboard::switch_keys_down(SDL_Event * ev)
-{
-	switch_liters(ev->key.keysym.sym);
-	switch_others(ev->key.keysym.sym);
-	switch_digits(ev->key.keysym.sym);
-}
-
-void Keyboard::switch_keys_up(SDL_Event * ev)
-{
-	mod_state = { Key::NONE };
-	key_state = { Key::NONE };
-}
-
-void Keyboard::events(SDL_Event * ev)
-{
-	key_state = { Key::NONE };
-	backspace_state = Key::NONE;
-
-	keyboard = SDL_GetKeyboardState(nullptr);
-
-	cntrl_z.events();
-	cntrl_y.events();
-	escape.events();
-
-	switch (ev->type) {
-	case SDL_KEYDOWN:
-		switch_keys_down(ev);
-		break;
-	case SDL_KEYUP:
-		switch_keys_up(ev);
-		break;
-	}
+	if (temp == SDL_Keymod::KMOD_CAPS)
+		return true;
+	return false;
 }
 
 
