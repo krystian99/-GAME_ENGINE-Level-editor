@@ -86,8 +86,6 @@ void Object::mouse_handler()
 
 void Object::keyboard_handler()
 {
-	keyboard_key = Keyboard::getState();
-
-	if (keyboard_key != Key::NONE)
+	if (!Keyboard::is_pressedKey_once(Key::NONE))
 		keyboardEvents_1hit();
 }

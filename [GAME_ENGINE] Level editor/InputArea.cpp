@@ -52,13 +52,11 @@ void InputArea::render(SDL_Renderer * rn)
 
 void InputArea::events()
 {
-	backspace_pressing = false;
-
 	mouse_handler();
 
 	if (current) 
 	{
-		if (Keyboard::getState() != Key::NONE) 
+		if (!Keyboard::is_pressedKey_once(Key::NONE))
 		{
 			if (alpha_enabled)
 				getLiters();
@@ -186,9 +184,10 @@ void InputArea::getLiters()
 
 void InputArea::getOthers()
 {
-	if (Keyboard::is_pressedBackspace()){
-		backspace_pressing = true;
-		if (input.size()) {
+	if (Keyboard::is_pressedBackspace())
+	{
+		if (input.size()) 
+		{
 			input.pop_back();
 			if (!input.size())
 				empty = true;
@@ -196,6 +195,7 @@ void InputArea::getOthers()
 				updateTEXT();
 		}
 	}
+
 	switch (Keyboard::getState())
 	{
 	case Key::SPACE:
@@ -252,6 +252,7 @@ void InputArea::mouse_handler()
 void InputArea::reset()
 {
 	empty = true;
+
 	input.clear();
 }
 

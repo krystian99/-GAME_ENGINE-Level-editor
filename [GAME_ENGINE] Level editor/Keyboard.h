@@ -38,15 +38,16 @@ public:
 
 	static bool is_pressedEscape() { return escape.pressedOnce(); }
 
-	static bool is_pressedBackspace() { return backspace_state == Key::BACKSPACE; }
+	static bool is_pressedBackspace() { return key_state == Key::BACKSPACE; }
 
 	static bool is_pressedShift() { return keyboard[int(Key::SHIFT)] || keyboard[int(Key::RSHIFT)]; }
 
 	static bool is_pressedKey(Key k) { return keyboard[int(k)]; }
 
+	static bool is_pressedKey_once(Key k) { return key_state == k; }
+
 	static const Key & getState() { return key_state; }
 	static const Key & getModState() { return mod_state; }
-	static const Key & getBackSpace() { return backspace_state; }
 private:
 	static void switch_liters(SDL_Keycode & code);
 	static void switch_others(SDL_Keycode & code);
@@ -86,5 +87,4 @@ private:
 
 	static Key key_state;
 	static Key mod_state;
-	static Key backspace_state;
 };

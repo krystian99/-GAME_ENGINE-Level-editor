@@ -2,7 +2,6 @@
 
 Key Keyboard::key_state{ Key::NONE };
 Key Keyboard::mod_state{ Key::NONE };
-Key Keyboard::backspace_state{ Key::NONE };
 
 const Uint8* Keyboard::keyboard{ nullptr };
 
@@ -38,7 +37,6 @@ void Keyboard::switch_keys_up(SDL_Event* ev)
 void Keyboard::events(SDL_Event* ev)
 {
 	key_state = Key::NONE;
-	backspace_state = Key::NONE;
 
 	keyboard = SDL_GetKeyboardState(nullptr);
 
@@ -147,9 +145,6 @@ void Keyboard::switch_liters(SDL_Keycode & code)
 
 void Keyboard::switch_others(SDL_Keycode & code)
 {
-	if (code == SDLK_BACKSPACE) 
-		backspace_state = Key::BACKSPACE;
-
 	switch (code)
 	{
 	case SDLK_SPACE:
