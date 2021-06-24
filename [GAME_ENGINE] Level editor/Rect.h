@@ -16,6 +16,8 @@ public:
 	void set(int x, int y, int w, int h);
 	void set(SDL_Rect tmp);
 
+	bool is_inRect(const Rect& rect) const;
+
 	void update(int x, int y);
 
 	int left() const { return pos.x; }

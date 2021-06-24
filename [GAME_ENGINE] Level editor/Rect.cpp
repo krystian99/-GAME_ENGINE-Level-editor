@@ -32,6 +32,12 @@ void Rect::set(SDL_Rect tmp)
 	pos = tmp;
 }
 
+bool Rect::is_inRect(const Rect& rect) const
+{
+	return rect.left() > left() && rect.up() > up()
+		&& rect.right() < right() && rect.down() < down();
+}
+
 void Rect::update(int x, int y)
 {
 	pos.x += x;

@@ -41,7 +41,6 @@ public:
 
 	void set_borderOBJ(const Rect& pos, Enemy* enemy); //ustaw graniczne obiekty i dodaj do kontenera obiektow przenoszonych
 
-	void render(const SDL_Rect& edit_area);
 	void render();
 
 	bool isMoving() const { return is_movingOBJs;}
@@ -107,6 +106,12 @@ private:
 
 class Delete_OBJ_structure
 {
+
+};
+
+class PlacingOBJ_structure
+{
+public:
 
 };
 
@@ -182,6 +187,7 @@ private:
 	Map_mouseHandler map_mouseHandler;
 
 	const CoordinateBar_mouse* mouse_cord;
+
 	int scaleMapX;
 	int scaleMapY;
 
@@ -195,7 +201,7 @@ private:
 
 	bool pressing_mouseL_multiOBJ_select{ false };
 
-	multiOBJ_select_structure multiOBJ_s; // struktura
+	multiOBJ_select_structure multiOBJ_s;
 	singleOBJmove_structure singleOBJmove_s;
 
 	Delete_OBJ_structure deleteOBJ_s;
@@ -209,7 +215,7 @@ private:
 	Rect edit_area;
 	Rect mapBG_area;
 
-	Enemy_data enemy_data;
+	//Enemy_data enemy_data;
 
 	Texture mapBG;
 };

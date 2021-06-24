@@ -52,6 +52,13 @@ void Map_manager::setMain_state(const Map_state & st)
 {
 	prev_main_state = main_state;
 	main_state = st;
+
+	switch (st)
+	{
+	case Map_state::MULTI_MOVING_OBJECTS:
+		current_module = multiOBJ_s;
+		break;
+	}
 }
 
 void Map_manager::set_Update_state(Map_Update_state state)
