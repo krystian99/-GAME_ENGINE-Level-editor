@@ -15,8 +15,10 @@ public:
 	void run();
 private:
 	void events();
+
 	void events_indp();
 	void events_dpnd();
+
 	void render();
 private:
 	SDL_Event event_handler{};
@@ -28,6 +30,4 @@ private:
 	Animation_management animation_config_creator;
 
 	Script_Editor script_editor;
-
-	bool escape_pressed{ false }, test{ false };
 };

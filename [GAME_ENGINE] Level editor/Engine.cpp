@@ -67,7 +67,6 @@ void Engine::events_indp()
 			break;
 		case Engine_state::IS_IN_ANIMATION_MANAGEMENT:
 			Engine_manager::setState(Engine_state::IS_IN_MENU);
-			//currentModule = &menu;
 			Menu_manager::set_Menu(Menu_ID::ANIMATION_MENU);
 			break;
 		case Engine_state::IS_IN_MENU:

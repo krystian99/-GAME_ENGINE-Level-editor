@@ -13,7 +13,12 @@ Object_orient Map_manager::object_orient{ Object_orient::RIGHT };
 
 SDL_RendererFlip Map_manager::object_flip{ SDL_RendererFlip::SDL_FLIP_NONE };
 
-Current_MapModule Map_manager::current_module{ Current_MapModule::ENEMIES_PLACER };
+Module_base* Map_manager::current_module{ nullptr };
+
+Delete_OBJ_structure* Map_manager::deleteOBJ_s{};
+
+singleOBJmove_structure* Map_manager::singleOBJ_s{};
+multiOBJ_select_structure* Map_manager::multiOBJ_s{};
 
 Enemy_ID Map_manager::current_enemyID{ Enemy_ID::NONE };
 
@@ -28,6 +33,16 @@ int Map_manager::edit_H{};
 
 int Map_manager::mapBG_W{};
 int Map_manager::mapBG_H{};
+
+void Map_manager::INIT(multiOBJ_select_structure* multi, singleOBJmove_structure* single, Delete_OBJ_structure* dlt)
+{
+	current_module = nullptr;
+
+	multiOBJ_s = multi;
+	singleOBJ_s = single;
+
+	deleteOBJ_s = dlt;
+}
 
 void Map_manager::Init()
 {

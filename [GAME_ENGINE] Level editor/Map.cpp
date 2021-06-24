@@ -319,13 +319,13 @@ void Map::update_events()
 		for (auto& enemy : enemies)
 			enemy->update_Size();
 		break;
-	case Map_Update_state::MODULE_CHANGED:
+	/*case Map_Update_state::MODULE_CHANGED:
 		switch (Map_manager::get_currentModule()) {
 		case Current_MapModule::BLOCK_PLACER:
 			break;
 		case Current_MapModule::ENEMIES_PLACER:
 			break;
-		}
+		}*/
 	}
 	Map_manager::reset_UpdateState();
 }
@@ -782,6 +782,7 @@ void multiOBJ_select_structure::render()
 	Renderer::set_defaultColor();
 }
 
+// uruchamiane 
 void multiOBJ_select_structure::OBJs_set(Enemies& enemies, const Rect & edit_area)
 {
 	for (auto& enemy : enemies) {

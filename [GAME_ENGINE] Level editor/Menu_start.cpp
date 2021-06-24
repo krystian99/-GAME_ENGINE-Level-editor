@@ -15,9 +15,6 @@ Menu_start::Menu_start() :
 
 void Menu_start::events()
 {
-	//if (Keyboard::is_pressed_LCNTRL_Z())
-		//Engine_manager::Quit();
-
 	levelEditor_button.events();
 	animationsEditor_button.events();
 	Script_editor_button.events();

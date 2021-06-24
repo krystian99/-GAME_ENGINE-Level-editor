@@ -7,4 +7,3 @@ public:
 	virtual void events_indp(){}
 	virtual void render(){}
 };
-

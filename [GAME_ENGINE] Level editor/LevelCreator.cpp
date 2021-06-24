@@ -116,10 +116,6 @@ void LevelCreator::events()
 
 void LevelCreator::events_indp()
 {
-
-	/*if (Keyboard::is_pressedOnce({Key::LCNTRL, Key::Z}))
-		Engine_manager::setState(Engine_state::IS_IN_MENU);*/
-
 	CoordinateBar_map::events(map_edit_area.is_mouseOver());
 
 	bar_modules_left.events_indp();

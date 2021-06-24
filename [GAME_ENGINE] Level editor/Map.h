@@ -11,8 +11,9 @@
 #include "CoordinateBar_mouse.h"
 #include "Map_mouseHandler.h"
 #include "Map_events.h"
+#include "Module_base.h"
 
-class singleOBJmove_structure : public Rect
+class singleOBJmove_structure : public Rect, public Module_base
 {
 public:
 	void set(Enemy* enemy);
@@ -30,7 +31,7 @@ public:
 	int px_up;
 };
 
-class multiOBJ_select_structure : public Rect // struktura potrzebna zeby nie pomieszac danych oraz by zwiekszyc wydajnosc
+class multiOBJ_select_structure : public Rect, public Module_base // struktura potrzebna zeby nie pomieszac danych oraz by zwiekszyc wydajnosc
 {
 private:
 	using Enemies = std::vector<Enemy_ptr>;
@@ -44,7 +45,7 @@ public:
 	void render();
 
 	bool isMoving() const { return is_movingOBJs;}
-
+	// uruchamiane gdy zostanie zaznacozny obszar z obiektami do przeniesienia
 	void OBJs_set(Enemies& enemy, const Rect & edit_area);
 
 	void events(const Rect& edit_area, Enemies & enemies);
@@ -102,6 +103,11 @@ private:
 
 	const Rect* edit_area;
 	const Rect* mapBG_area;
+};
+
+class Delete_OBJ_structure
+{
+
 };
 
 class Map
@@ -191,6 +197,8 @@ private:
 
 	multiOBJ_select_structure multiOBJ_s; // struktura
 	singleOBJmove_structure singleOBJmove_s;
+
+	Delete_OBJ_structure deleteOBJ_s;
 
 	Enemy * current_enemy;
 

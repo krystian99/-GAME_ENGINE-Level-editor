@@ -4,10 +4,13 @@
 #include <string>
 #include <SDL_render.h>
 #include "Texture.h"
+#include "Map.h"
 
 class Map_manager
 {
 public:
+	static void INIT(multiOBJ_select_structure* multi, singleOBJmove_structure* single, Delete_OBJ_structure * dlt);
+
 	static const Map_state & getMain_state() { return main_state; }
 
 	static bool isState(Map_state state) {
@@ -20,7 +23,7 @@ public:
 	static const SDL_RendererFlip & get_OBJ_orient() { return object_flip; }
 	static const OBJ_type & get_OBJ_type() { return object_type; }
 	static const Map_Update_state & get_Update_state() { return update_state; }
-	static const Current_MapModule & get_currentModule() { return current_module; }
+	//static const Current_MapModule & get_currentModule() { return current_module; }
 	static const SDL_Rect & get_tempRender_area() { return temp_renderOBJ; }
 
 	static void setMain_state(const Map_state & st);
@@ -62,11 +65,18 @@ public:
 
 	static void Update_OBJ_sizes();
 private:
+	static Module_base* current_module;
+
+	static singleOBJmove_structure* singleOBJ_s;
+	static multiOBJ_select_structure* multiOBJ_s;
+
+	static Delete_OBJ_structure* deleteOBJ_s;
+
 	static Map_state prev_main_state;
 	static Map_state main_state;
 
 	static Map_Update_state update_state;
-	static Current_MapModule current_module;
+	//static Current_MapModule current_module;
 
 	static int edit_W, edit_H;
 
