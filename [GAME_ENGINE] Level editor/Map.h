@@ -3,7 +3,7 @@
 #include <fstream>
 #include "Texture.h"
 #include <vector>
-#include "Enemy.h" // umieszczanie wrogów
+#include "Enemy.h"
 #include "Block.h"
 #include "Enemies_placer.h"
 #include "BlockPlacer_module.h"
@@ -36,10 +36,7 @@ class multiOBJ_select_structure : public Rect, public Module_base // struktura p
 private:
 	using Enemies = std::vector<Enemy_ptr>;
 public:
-	multiOBJ_select_structure(){}
 	multiOBJ_select_structure(const Rect* edit_a, const Rect* mapBG_a);
-
-	void set_borderOBJ(const Rect& pos, Enemy* enemy); //ustaw graniczne obiekty i dodaj do kontenera obiektow przenoszonych
 
 	void render();
 
@@ -47,12 +44,14 @@ public:
 	// uruchamiane gdy zostanie zaznacozny obszar z obiektami do przeniesienia
 	void OBJs_set(Enemies& enemy, const Rect & edit_area);
 
-	void events(const Rect& edit_area, Enemies & enemies);
+	void events(Enemies & enemies);
+
+	void events();
 
 	// wciœniêty lewy przycisk myszy
 	void mouse_events(bool, const Map_mouseHandler &);
 	// zakoñczone przenoszenie i ustawienie obiektow na mapie
-	void moveEvent_mouseR(Enemies&, const Rect&, const Rect&, const Map_mouseHandler& map_mouseHandler);
+	void moveEvent_mouseR();
 
 	void events_moving(bool mouse_over, const SDL_Rect& edit_area);
 	void moveMap_Event();
@@ -79,6 +78,8 @@ public:
 	void updateOBJs(SDL_Point clicked_point);
 private:
 	void setState_movingOBJs(bool);
+	void set_borderOBJ(const Rect& pos, Enemy* enemy); //ustaw graniczne obiekty i dodaj do kontenera obiektow przenoszonych
+
 	//bool isMoving() const { return is_movingOBJs; }
 private:
 	struct Move_OBJ
@@ -104,8 +105,14 @@ private:
 	const Rect* mapBG_area;
 };
 
-class Delete_OBJ_structure
+class Delete_OBJ_structure : public Module_base
 {
+public:
+	void events(){}
+	void events_indp(){}
+
+	void render(){}
+private:
 
 };
 
