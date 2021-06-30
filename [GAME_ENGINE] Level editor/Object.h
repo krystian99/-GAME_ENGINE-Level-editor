@@ -3,7 +3,7 @@
 #include "Mouse.h"
 #include "Keyboard.h"
 
-class Object // przechwytywanie zdarzeñ myszy i klawiatury -> opakowany interfejs, który mo¿e zostaæ wykorzystany przez wszystkie obiekty
+class Object : public Rect // przechwytywanie zdarzeñ myszy i klawiatury -> opakowany interfejs, który mo¿e zostaæ wykorzystany przez wszystkie obiekty
 {
 public:
 	// czy klikniêto ten konkrenty przycisk na obiekcie?
@@ -19,8 +19,10 @@ public:
 
 	void update_position(int renderX, int renderY);
 	void update_about(int x_udpt, int y_updt); // dodaj podan¹ iloœæ do x i y
+
 	void set_scaled_position(SDL_Rect pos);
 	void set_position(SDL_Rect pos);
+
 	SDL_Rect getPOS() const { return position; }
 
 	int left() const { return position.x; }
@@ -60,6 +62,7 @@ private: // funkcje
 	void keyboard_handler();
 private:
 	SDL_Rect position;
+
 	bool mouse_over;
 
 	Mouse_key mouse_key;

@@ -231,9 +231,9 @@ inline void ScrollBar<ScrollBar_orient::HORIZONTAL>::events()
 		for (auto& button : buttons) {
 
 			button->events();
+
 			if (button->is_mouseOver()) {
 				current_mouseOver_button = button.get();
-				break;
 			}
 			if (button->is_mouseKey_1hit(Mouse_key::L_BUTTON)) {
 				if (current_button)
@@ -265,10 +265,8 @@ inline void ScrollBar<ScrollBar_orient::VERTICAL>::events()
 		for (auto& button : buttons) {
 
 			button->events();
-			if (button->is_mouseOver()) {
+			if (button->is_mouseOver())
 				current_mouseOver_button = button.get();
-				break;
-			}
 			if (button->is_mouseKey_1hit(Mouse_key::L_BUTTON)) {
 				if (current_button)
 					current_button->set_active(false);

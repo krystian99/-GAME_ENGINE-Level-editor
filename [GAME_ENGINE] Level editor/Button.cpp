@@ -60,6 +60,7 @@ void Button::set_active(bool b)
 		on_Deactivate();
 	else 
 		on_Activate();
+
 	active = b;
 }
 
