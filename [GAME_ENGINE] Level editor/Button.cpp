@@ -46,7 +46,7 @@ Button::Button(const SDL_Rect & pos, const std::string & texture, Function on_cl
 
 void Button::render()
 {
-	tX.render(nullptr, &getPOS());
+	tX.render(nullptr, &get_position());
 }
 
 void Button::render(const SDL_Rect & tX_area, const SDL_Rect & destination_area)

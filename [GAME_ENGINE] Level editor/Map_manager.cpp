@@ -15,7 +15,9 @@ SDL_RendererFlip Map_manager::object_flip{ SDL_RendererFlip::SDL_FLIP_NONE };
 
 Module_base* Map_manager::current_module{ nullptr };
 
-Delete_OBJ_structure* Map_manager::deleteOBJ_s{};
+DeleteOBJ_structure* Map_manager::deleteOBJ_s{};
+
+Enemies_placer* Map_manager::enemyPlacerOBJ_s{};
 
 singleOBJmove_structure* Map_manager::singleOBJ_s{};
 multiOBJ_select_structure* Map_manager::multiOBJ_s{};
@@ -34,7 +36,7 @@ int Map_manager::edit_H{};
 int Map_manager::mapBG_W{};
 int Map_manager::mapBG_H{};
 
-void Map_manager::INIT(multiOBJ_select_structure* multi, singleOBJmove_structure* single, Delete_OBJ_structure* dlt)
+void Map_manager::INIT(multiOBJ_select_structure* multi, singleOBJmove_structure* single, DeleteOBJ_structure* dlt, Enemies_placer* epl)
 {
 	current_module = nullptr;
 
@@ -42,6 +44,8 @@ void Map_manager::INIT(multiOBJ_select_structure* multi, singleOBJmove_structure
 	singleOBJ_s = single;
 
 	deleteOBJ_s = dlt;
+
+	enemyPlacerOBJ_s = epl;
 }
 
 void Map_manager::Init()

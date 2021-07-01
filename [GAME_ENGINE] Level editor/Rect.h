@@ -7,18 +7,21 @@ class Rect
 public:
 	Rect(){}
 	Rect(Rect&& rect);
+	Rect(const Rect& rect);
 	Rect(SDL_Rect rect);
 	Rect(int x, int y, int w, int h);
 
 	Rect& operator=(Rect&&);
+	Rect& operator=(const Rect&);
 
-	void set(int x, int y);
-	void set(int x, int y, int w, int h);
-	void set(SDL_Rect tmp);
+	void set_position(int x, int y);
+	void set_position(int x, int y, int w, int h);
+	void set_position(SDL_Rect tmp);
 
 	bool is_inRect(const Rect& rect) const;
 
-	void update(int x, int y);
+	void update_position(int x_udpt, int y_updt);
+	void set_scaled_position(SDL_Rect pos);
 
 	int left() const { return pos.x; }
 	int right() const { return pos.x + pos.w; }
@@ -37,7 +40,8 @@ public:
 	void setW(int w) { pos.w = w; }
 	void setH(int h) { pos.h = h; }
 
-	const SDL_Rect & get() const { return pos; }
+	//const SDL_Rect & get() const { return pos; }
+	const SDL_Rect& get_position() const { return pos; }
 
 	~Rect() {}
 private:

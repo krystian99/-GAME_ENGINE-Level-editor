@@ -166,6 +166,7 @@
     <ClInclude Include="InputArea.h" />
     <ClInclude Include="Interact_OBJ.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MapOBJ.h" />
     <ClInclude Include="Map_events.h" />
     <ClInclude Include="Map_manager.h" />
     <ClInclude Include="Map_module.h" />
@@ -237,6 +238,7 @@
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="Interact_OBJ.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapOBJ.cpp" />
     <ClCompile Include="Map_events.cpp" />
     <ClCompile Include="Map_manager.cpp" />
     <ClCompile Include="Map_module.cpp" />

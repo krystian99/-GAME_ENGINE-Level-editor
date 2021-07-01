@@ -1,24 +1,31 @@
 #pragma once
 #include "Enemy.h"
 #include <vector>
-#include "Map_module.h"
+#include "Module_base.h"
+#include "Rect.h"
 
-class Enemies_placer : public Map_module
+class Enemies_placer : Module_base
 {
-	friend class Map;
+	using Enemies = std::vector<Enemy_ptr>;
 public:
-	Enemies_placer(std::vector<Enemy_ptr> & Enemies) : 
-		enemies{ Enemies }
+	Enemies_placer(Enemies& Enemies, const Rect& edit_a) :
+		enemies{ Enemies }, edit_area{ edit_a }
 	{}
 
-	void objects_events();
-	void objects_events_indp();
+	void events() override;
 
-	void placing_object_events(int map_x, int map_y, int render_x, int render_y) override;
-	virtual void single_objectSelecting_events() override {}
-	virtual void deleting_objects_events() override {}
+	void render() override;
+
+	//void objects_events();
+	//void objects_events_indp();
+
+	void placing_object_events(int map_x, int map_y, int render_x, int render_y);
+	virtual void single_objectSelecting_events() {}
+	virtual void deleting_objects_events() {}
 private:
 	Enemy * current_block;
+
+	const Rect& edit_area;
 
 	bool active_rendering{ true };
 

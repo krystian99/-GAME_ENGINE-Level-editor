@@ -1,9 +1,20 @@
 #include "Object.h"
 #include "Video_Info.h"
 
+Object::Object(Rect render_position)
+	: Rect{ render_position }
+{
+
+}
+
+Object::Object(int x, int y, int w, int h)
+{
+	set_position(x, y, w, h);
+}
+
 void Object::events()
 {
-	if (Mouse::is_inPOS(position))
+	if (Mouse::is_inPOS(get_position()))
 	{
 		reset_states();
 
@@ -25,29 +36,6 @@ void Object::events()
 void Object::mouseOver_deactivate()
 {
 	on_mouseOut();
-}
-
-void Object::update_position(int renderX, int renderY)
-{
-	position.x = renderX;
-	position.y = renderY;
-}
-
-void Object::update_about(int x_udpt, int y_updt)
-{
-	position.x += x_udpt;
-	position.y += y_updt;
-}
-
-void Object::set_scaled_position(SDL_Rect pos)
-{
-	position = pos;
-	Video_Info::set_scaledSize(position);
-}
-
-void Object::set_position(SDL_Rect pos)
-{
-	position = pos;
 }
 
 void Object::reset_states()

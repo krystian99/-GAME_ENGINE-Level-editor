@@ -12,7 +12,7 @@ public:
 	// rt - adres wzglêdem której pozycji aktualizowaæ dane
 	// ru - dane które wzglêdem rt bêd¹ aktualizowane
 	//Coordinates_bar(const SDL_Rect & pos, const SDL_Rect * rt, const SDL_Rect * ru);
-	CoordinateBar_mouse(const SDL_Rect & pos);
+	CoordinateBar_mouse(int x, int y, int w, int h);
 
 	void events();
 	void render();

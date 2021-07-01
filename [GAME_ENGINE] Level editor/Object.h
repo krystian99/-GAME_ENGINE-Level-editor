@@ -6,8 +6,12 @@
 class Object : public Rect // przechwytywanie zdarzeñ myszy i klawiatury -> opakowany interfejs, który mo¿e zostaæ wykorzystany przez wszystkie obiekty
 {
 public:
+	Object(){}
+	Object(Rect render_position);
+	Object(int x, int y, int w, int h);
+
 	// czy klikniêto ten konkrenty przycisk na obiekcie?
-	bool is_mouseKey_1hit(Mouse_key key) const { return key == mouse_key; };
+	bool is_mouseKey_1hit(Mouse_key key) const { return key == mouse_key; }
 	bool is_keyboardKey_1hit(Key key) const { return key == keyboard_key; }
 
 	// Czy myszka jest na pozycji tego obiektu?
@@ -16,19 +20,6 @@ public:
 	void events(); // nie ma potrzeby ustawiaonia tej funkcji jako wirtualnej, bo klasa ta nie bêdzie s³u¿y³a jako interfejs polimorficzny -> jednak, by dzia³a³y funkcje tutaj zawarte, musi byæ wywo³ana ta metoda w klasie pochodnej
 
 	void mouseOver_deactivate(); // deaktywuj flagê mouse_over -> rêczne wymuszenie deaktywacji
-
-	void update_position(int renderX, int renderY);
-	void update_about(int x_udpt, int y_updt); // dodaj podan¹ iloœæ do x i y
-
-	void set_scaled_position(SDL_Rect pos);
-	void set_position(SDL_Rect pos);
-
-	SDL_Rect getPOS() const { return position; }
-
-	int left() const { return position.x; }
-	int right() const { return position.x + position.w; }
-	int up() const { return position.y; }
-	int down() const { return position.y + position.h; }
 
 	virtual ~Object() {}
 protected:
@@ -61,8 +52,6 @@ private: // funkcje
 	void mouse_handler();
 	void keyboard_handler();
 private:
-	SDL_Rect position;
-
 	bool mouse_over;
 
 	Mouse_key mouse_key;

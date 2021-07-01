@@ -2,14 +2,14 @@
 #include "Renderer.h"
 #include "Video_Info.h"
 
-CoordinateBar_mouse::CoordinateBar_mouse(const SDL_Rect & pos)
+CoordinateBar_mouse::CoordinateBar_mouse(int x, int y, int w, int h)
 {
-	position.x = round(pos.x * Video_Info::get_scaleW());
-	position.y = round(pos.y * Video_Info::get_scaleH());
-	position.w = round(pos.w * Video_Info::get_scaleW());
-	position.h = round(pos.h * Video_Info::get_scaleH());
+	position.x = round(x * Video_Info::get_scaleW());
+	position.y = round(y * Video_Info::get_scaleH());
+	position.w = round(w * Video_Info::get_scaleW());
+	position.h = round(h * Video_Info::get_scaleH());
 
-	text_to_render = std::unique_ptr<Text>{ new Text{ pos.x + 50, pos.y + 10, "data/fonts/standard_font.ttf", 20,{ 255, 255, 255, 255 } } };
+	text_to_render = std::unique_ptr<Text>{ new Text{ x + 50, y + 10, "data/fonts/standard_font.ttf", 20, { 255, 255, 255, 255 } } };
 }
 
 void CoordinateBar_mouse::events()

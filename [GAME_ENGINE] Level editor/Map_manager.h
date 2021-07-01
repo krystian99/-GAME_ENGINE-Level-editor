@@ -5,11 +5,12 @@
 #include <SDL_render.h>
 #include "Texture.h"
 #include "Map.h"
+#include "Enemies_placer.h"
 
 class Map_manager
 {
 public:
-	static void INIT(multiOBJ_select_structure* multi, singleOBJmove_structure* single, Delete_OBJ_structure * dlt);
+	static void INIT(multiOBJ_select_structure* multi, singleOBJmove_structure* single, DeleteOBJ_structure * dlt, Enemies_placer * epl);
 
 	static const Map_state & getMain_state() { return main_state; }
 
@@ -69,8 +70,8 @@ private:
 
 	static singleOBJmove_structure* singleOBJ_s;
 	static multiOBJ_select_structure* multiOBJ_s;
-
-	static Delete_OBJ_structure* deleteOBJ_s;
+	static Enemies_placer* enemyPlacerOBJ_s;
+	static DeleteOBJ_structure* deleteOBJ_s;
 
 	static Map_state prev_main_state;
 	static Map_state main_state;

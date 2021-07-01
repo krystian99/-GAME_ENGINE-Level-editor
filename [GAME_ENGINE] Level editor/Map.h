@@ -36,7 +36,7 @@ class multiOBJ_select_structure : public Rect, public Module_base // struktura p
 private:
 	using Enemies = std::vector<Enemy_ptr>;
 public:
-	multiOBJ_select_structure(const Rect* edit_a, const Rect* mapBG_a);
+	multiOBJ_select_structure(Enemies & en, const Map_mouseHandler& map_mouse, const Rect* edit_a, const Rect* mapBG_a);
 
 	void render();
 
@@ -44,12 +44,10 @@ public:
 	// uruchamiane gdy zostanie zaznacozny obszar z obiektami do przeniesienia
 	void OBJs_set(Enemies& enemy, const Rect & edit_area);
 
-	void events(Enemies & enemies);
-
 	void events();
 
 	// wciœniêty lewy przycisk myszy
-	void mouse_events(bool, const Map_mouseHandler &);
+	void mouse_events();
 	// zakoñczone przenoszenie i ustawienie obiektow na mapie
 	void moveEvent_mouseR();
 
@@ -58,8 +56,8 @@ public:
 
 	void update_renderPOS(int x, int y);
 
-	void update_mapX(int moveS);
-	void update_mapY(int moveS);
+	//void update_mapX(int moveS);
+	//void update_mapY(int moveS);
 
 	int get_mapX() const { return mapPos.left(); }
 	int get_mapY() const { return mapPos.up(); }
@@ -101,19 +99,26 @@ private:
 	Enemy* enemy_left{ nullptr };
 	Enemy* enemy_right{ nullptr };
 
+	Enemies& enemies;
+
+	const Map_mouseHandler& map_mouseHandler;
+
 	const Rect* edit_area;
 	const Rect* mapBG_area;
 };
 
-class Delete_OBJ_structure : public Module_base
+class DeleteOBJ_structure : public Module_base
 {
+	using Enemies = std::vector<Enemy_ptr>;
 public:
+	DeleteOBJ_structure(Enemies& en);
+
 	void events(){}
 	void events_indp(){}
 
 	void render(){}
 private:
-
+	Enemies& enemies;
 };
 
 class PlacingOBJ_structure
@@ -122,6 +127,8 @@ public:
 
 };
 
+
+// klasa steruj¹ca wszystkimi zdarzeniami na mapie
 class Map
 {
 	friend void Map_events::render_enemies(Map* map);
@@ -129,7 +136,7 @@ class Map
 
 	friend void Map_events::events_enemies(Map* map);
 public:
-	Map(const SDL_Rect & pos);
+	Map(int x, int y, int w, int h);
 
 	bool isUpdated() const { return updated; }
 
@@ -149,9 +156,9 @@ public:
 
 	void set_background(const std::string & bg);
 
-	const SDL_Rect & get_position() const { return edit_area.get(); }
+	const SDL_Rect & get_position() const { return edit_area.get_position(); }
 	// zwróæ obszar czêœci textury renderowanej na ekranie
-	const SDL_Rect & get_backgroundArea() const { return mapBG_area.get(); }
+	const SDL_Rect & get_backgroundArea() const { return mapBG_area.get_position(); }
 private:
 	void set_ScaledSize();
 
@@ -163,7 +170,7 @@ private:
 	void Init_objectsSize();
 
 	void update_events();
-	void update_ObjectsSize();
+	//void update_ObjectsSize();
 
 	void multi_selectingObject_mouseEvents();
 	void multi_selecingOBJ_mouseR();
@@ -176,7 +183,7 @@ private:
 	void multiSelect_OBJs_set();
 
 	void placing_mouseL_Events();
-	void placing_mouseR_Events();
+	//void placing_mouseR_Events();
 
 	void create_EnemyOBJ(const int & X, const int & Y, const Enemy_ID & id, const SDL_RendererFlip & flip = SDL_FLIP_NONE);
 	void create_EnemyOBJ(const SDL_Rect & mapPOS, const Enemy_ID & id, const SDL_RendererFlip & flip = SDL_FLIP_NONE);
@@ -208,21 +215,19 @@ private:
 
 	bool pressing_mouseL_multiOBJ_select{ false };
 
-	multiOBJ_select_structure multiOBJ_s;
-	singleOBJmove_structure singleOBJmove_s;
-
-	Delete_OBJ_structure deleteOBJ_s;
-
-	Enemy * current_enemy;
+	DeleteOBJ_structure deleteOBJ_s;
 
 	Enemies_placer enemy_placerModule;
 
-	Map_module * current_module{ &enemy_placerModule };
+	multiOBJ_select_structure multiOBJ_s;
+	singleOBJmove_structure singleOBJmove_s;
+
+	Enemies_placer * current_module{ &enemy_placerModule };
+
+	Enemy* current_enemy;
 
 	Rect edit_area;
 	Rect mapBG_area;
-
-	//Enemy_data enemy_data;
 
 	Texture mapBG;
 };

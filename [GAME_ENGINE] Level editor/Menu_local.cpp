@@ -2,7 +2,7 @@
 #include "Video_Info.h"
 #include "Mouse.h"
 
-Menu_local::Menu_local(SDL_Rect rt, const std::string & tx_str, bool Active, bool Can_hide, int expand_size_button) :
+Menu_local::Menu_local(SDL_Rect rt, const std::string& tx_str, bool Active, bool Can_hide, int expand_size_button) :
 	Button{ rt, tx_str }, can_hide{ Can_hide }, script_test{ 10 }
 {
 	set_active(Active);
@@ -17,11 +17,11 @@ void Menu_local::render()
 	Button::render();
 
 	if (!script_test.is_finished())
-		script_test.render_buttons(buttons, getPOS().y + getPOS().h);
+		script_test.render_buttons(buttons, get_position().y + get_position().h);
 
 	else if (is_active())
 	{
-		for (auto & button : buttons)
+		for (auto& button : buttons)
 			button->render();
 	}
 }
@@ -32,7 +32,7 @@ void Menu_local::events()
 
 	if (script_test.is_finished() && is_active())
 	{
-		for (auto & button : buttons) {
+		for (auto& button : buttons) {
 			button->events();
 			if (button->is_mouseKey_1hit(Mouse_key::L_BUTTON)) {
 				current_button = button.get();
@@ -48,25 +48,25 @@ void Menu_local::events_indp()
 		script_test.events_buttons(buttons);
 }
 
-void Menu_local::operator=(const std::vector<BButton_ptr> & Buttons)
+void Menu_local::operator=(const std::vector<BButton_ptr>& Buttons)
 {
 	buttons = std::move(Buttons);
 
-	auto pos = getPOS();
+	auto pos = get_position();
 
 	int x = pos.x;
 	int y = pos.y + pos.h;
 
-	for (auto & button : buttons) {
+	for (auto& button : buttons) {
 		button->set_position({ x, y, pos.w, button_height });
 		y += button_height;
 	}
 
-	auto back_pos = buttons.back()->getPOS();
+	auto back_pos = buttons.back()->get_position();
 	auto start_posY = back_pos.y + back_pos.h;
 
 	script_test.set_endPOS(back_pos.y);
-	script_test.set_startPOS(getPOS().y); // jak na razie punkt startowy dla testow
+	script_test.set_startPOS(get_position().y); // jak na razie punkt startowy dla testow
 }
 
 void Menu_local::on_mouseL1hit()
@@ -103,15 +103,15 @@ void Script::leave()
 	finished = false;
 }
 
-void Script::entering_events(std::vector<BButton_ptr> & buttons)
+void Script::entering_events(std::vector<BButton_ptr>& buttons)
 // skrypt jest w trakcie otworzenia i jest wywo³ywany do momentu ustlonego warunku -> wartosæ finished zostaje wtedy zmieniona na true
 {
-	if (buttons.back()->getPOS().y < end_posY) {
-		if (buttons.back()->getPOS().y + move_speed < end_posY)
+	if (buttons.back()->get_position().y < end_posY) {
+		if (buttons.back()->get_position().y + move_speed < end_posY)
 			move_buttons(buttons, move_speed);
 		else
 		{
-			int temp_speed = end_posY - buttons.back()->getPOS().y;
+			int temp_speed = end_posY - buttons.back()->get_position().y;
 			move_buttons(buttons, temp_speed);
 		}
 	}
@@ -119,15 +119,15 @@ void Script::entering_events(std::vector<BButton_ptr> & buttons)
 		finished = true;
 }
 
-void Script::leaving_events(std::vector<BButton_ptr> & buttons)
+void Script::leaving_events(std::vector<BButton_ptr>& buttons)
 //  skrypt jest w trakcie wy³¹czania i jest wywo³ywany do danego warunku -> --||--
 {
-	if (buttons.back()->getPOS().y > start_posY) {
-		if (buttons.back()->getPOS().y - move_speed > start_posY)
+	if (buttons.back()->get_position().y > start_posY) {
+		if (buttons.back()->get_position().y - move_speed > start_posY)
 			move_buttons(buttons, -move_speed);
 		else
 		{
-			int temp_speed = std::abs(start_posY - buttons.back()->getPOS().y);
+			int temp_speed = std::abs(start_posY - buttons.back()->get_position().y);
 			move_buttons(buttons, -temp_speed);
 		}
 	}
@@ -135,7 +135,7 @@ void Script::leaving_events(std::vector<BButton_ptr> & buttons)
 		finished = true;
 }
 
-void Script::events_buttons(std::vector<BButton_ptr> & buttons)
+void Script::events_buttons(std::vector<BButton_ptr>& buttons)
 {
 	switch (script_state) {
 	case Script_state::SCRIPT_ENTERING:
@@ -147,19 +147,19 @@ void Script::events_buttons(std::vector<BButton_ptr> & buttons)
 	}
 }
 
-void Script::render_buttons(std::vector<BButton_ptr> & buttons, const int & render_fromY) // cos podobnego do skryptu domyslnei wgranego w ScrollBar'u
+void Script::render_buttons(std::vector<BButton_ptr>& buttons, const int& render_fromY) // cos podobnego do skryptu domyslnei wgranego w ScrollBar'u
 {
 	static SDL_Rect temp_pos, texture_area;
 
-	for (auto & button : buttons) {
-		auto & pos = button->getPOS();
+	for (auto& button : buttons) {
+		auto& pos = button->get_position();
 
 		if (pos.y >= render_fromY)
 			button->render();
 		else if (pos.y < render_fromY && pos.y + pos.h > render_fromY) {
 			temp_pos = { pos.x, render_fromY, pos.w, pos.y + pos.h - render_fromY };
 
-			auto & tX = button->getTX();
+			auto& tX = button->getTX();
 
 			double scale = double(temp_pos.h) / double(pos.h);
 
@@ -185,6 +185,6 @@ void Script::set_endPOS(int end)
 
 void Script::move_buttons(std::vector<BButton_ptr>& buttons, int size)
 {
-	for (auto & button : buttons)
-		button->update_about(0, size);
+	for (auto& button : buttons)
+		button->updateY(size);
 }

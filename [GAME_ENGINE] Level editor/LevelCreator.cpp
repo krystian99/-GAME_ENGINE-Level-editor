@@ -12,8 +12,8 @@
 #include <fstream>
 
 LevelCreator::LevelCreator() : // inicjuje wszystkie dane Level Creatora - ustala funkcje przycisków itd.
-	map_edit_area{ { 160, 128, 1200, 600 } },
-	mouse_cord{ { 115, 40, 100, 50 } },
+	map_edit_area{ 160, 128, 1200, 600 },
+	mouse_cord{ 115, 40, 100, 50 },
 	scrollBar_folders{ { 1089, 141, 80, 750 }, SDL_Color{ 60, 60, 60, 255 }, 80 },
 	objectType_optionsBar{ { 745, 90, 313, 38 }, SDL_Color{ 50, 100, 170, 255 }, 55 },
 	map_optionsBar{ { 115, 90, 500, 38 }, SDL_Color{ 0, 156, 125, 255 }, 55 },
@@ -101,7 +101,7 @@ void LevelCreator::events()
 	// tymczasowe brzydkie rozwi¹zanie -> do zmiany w przysz³oœci
 
 	if (scrollBar_folders.is_buttonClicked()) {
-		//objectType_optionsBar.deactivate_buttons();
+		objectType_optionsBar.deactivate_buttons();
 		map_optionsBar.deactivate_buttons();
 	}
 	else if (objectType_optionsBar.is_buttonClicked()) {
@@ -110,7 +110,7 @@ void LevelCreator::events()
 	}
 	else if (map_optionsBar.is_buttonClicked()) {
 		scrollBar_folders.deactivate_buttons();
-		//objectType_optionsBar.deactivate_buttons();
+		objectType_optionsBar.deactivate_buttons();
 	}
 }
 

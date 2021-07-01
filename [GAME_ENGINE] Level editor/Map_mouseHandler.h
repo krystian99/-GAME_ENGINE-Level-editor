@@ -6,7 +6,7 @@ class Map_mouseHandler
 public:
 	Map_mouseHandler(){}
 
-	void events(bool mouse_over);
+	void events();
 
 	int getX_point() const { return clicked_point.getX(); }
 	int getY_point() const { return clicked_point.getY(); }

@@ -19,7 +19,7 @@ void Folder_button::events()
 
 void Folder_button::render()
 {
-	button_fill.render(nullptr, &getPOS()); // renderuj t³o
+	button_fill.render(nullptr, &get_position()); // renderuj t³o
 	Button::render();
 }
 

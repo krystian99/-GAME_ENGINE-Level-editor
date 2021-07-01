@@ -28,7 +28,7 @@ private:
 
 	void reset_mapStates(); // zresetuj tak¿e przyciski, które wymagane s¹ do mapy
 
-	void leftBar_module_events(); // zamiast osobnej klasy, bedzie do tego specjalna funkcja -> nie ma sensu tworzyæ klasy
+	//void leftBar_module_events(); // zamiast osobnej klasy, bedzie do tego specjalna funkcja -> nie ma sensu tworzyæ klasy
 
 	void keyboardHandler();
 

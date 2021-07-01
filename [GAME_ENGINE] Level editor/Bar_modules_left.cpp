@@ -52,8 +52,8 @@ void Bar_modules_left::events_indp()
 	menu_options.events_indp();
 	if (!menu_options.get_scriptInfo().is_finished()) {
 		moving_objects = true;
-		auto & script_info = menu_options.get_scriptInfo();
-		modules_list.update_about(script_info.get_moveSpeedX(), script_info.get_moveSpeedY());
+		auto& script_info = menu_options.get_scriptInfo();
+		modules_list.update(script_info.get_moveSpeedX(), script_info.get_moveSpeedY());
 	}
 	else {
 		moving_objects = false;

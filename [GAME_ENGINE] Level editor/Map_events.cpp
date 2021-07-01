@@ -15,7 +15,7 @@ void Map_events::render_enemies(Map* map)
 		//auto & pos = enemy->get_renderPOS();
 		auto& pos_temp = enemy->get_renderPOS();
 		Rect pos;
-		pos.set(pos_temp);
+		pos.set_position(pos_temp);
 
 		if (pos.left() >= map->edit_area.left() && pos.right() <= map->edit_area.right())
 			enemy->render(); // renderuj ca³y obiekt
@@ -62,9 +62,9 @@ void Map_events::render_enemies(Map* map)
 
 void Map_events::render_map(Map* map)
 {
-	map->mapBG.render(&map->mapBG_area.get(), &map->edit_area.get());
+	map->mapBG.render(&map->mapBG_area.get_position(), &map->edit_area.get_position());
 
 	SDL_SetRenderDrawColor(Renderer::get(), 120, 120, 120, 255);
-	SDL_RenderDrawRect(Renderer::get(), &map->edit_area.get());
+	SDL_RenderDrawRect(Renderer::get(), &map->edit_area.get_position());
 	SDL_SetRenderDrawColor(Renderer::get(), 255, 255, 255, 255);
 }
