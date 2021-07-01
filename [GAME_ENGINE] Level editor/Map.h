@@ -17,6 +17,7 @@
 #include "multiOBJ_select_structure.h"
 #include "DeleteOBJ_structure.h"
 #include "singleOBJmove_structure.h"
+#include "Map_moveMouse_module.h"
 
 // klasa steruj¹ca wszystkimi zdarzeniami na mapie
 class Map
@@ -111,6 +112,8 @@ private:
 
 	multiOBJ_select_structure multiOBJ_s;
 	singleOBJmove_structure singleOBJmove_s;
+
+	Map_moveMouse_module map_MOVE_mouse_s;
 
 	Module_base* current{ &multiOBJ_s };
 

@@ -291,6 +291,9 @@
     <ClInclude Include="singleOBJmove_structure.h">
       <Filter>Level Editor\Modules.h</Filter>
     </ClInclude>
+    <ClInclude Include="Map_moveMouse_module.h">
+      <Filter>Level Editor\Modules.h</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Texture.cpp">
@@ -489,6 +492,9 @@
       <Filter>Level Editor\Modules.cpp</Filter>
     </ClCompile>
     <ClCompile Include="singleOBJmove_structure.cpp">
+      <Filter>Level Editor\Modules.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Map_moveMouse_module.cpp">
       <Filter>Level Editor\Modules.cpp</Filter>
     </ClCompile>
   </ItemGroup>

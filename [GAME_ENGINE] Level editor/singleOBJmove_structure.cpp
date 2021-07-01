@@ -8,6 +8,11 @@ void singleOBJmove_structure::set(Enemy* enemy)
 	px_up = Mouse::getY() - enemy->up();
 }
 
+void singleOBJmove_structure::setState(SingleOBJmove_events st)
+{
+	state = st;
+}
+
 void singleOBJmove_structure::events(bool mouse_over, SDL_Rect edit_a)
 {
 	Rect edit_area{ edit_a };

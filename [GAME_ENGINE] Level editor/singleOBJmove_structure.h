@@ -3,7 +3,7 @@
 #include "Enemy.h"
 #include <SDL_rect.h>
 
-enum SingleOBJmove_events
+enum class SingleOBJmove_events
 {
 	SELECTING,
 	MOVING_OBJ,
@@ -20,9 +20,12 @@ public:
 		current_enemy = nullptr;
 	}
 	
+	void setState(SingleOBJmove_events st);
+
 	void events(bool mouse_over, SDL_Rect edit_area);
 
 	void events();
+
 	void render();
 
 	Enemy* current_enemy;

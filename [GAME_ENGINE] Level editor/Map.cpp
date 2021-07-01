@@ -14,8 +14,11 @@
 Map::Map(int x, int y, int w, int h) :
 	enemy_placerModule{ enemies, edit_area },
 	multiOBJ_s{ enemies, map_mouseHandler, &edit_area, &mapBG_area },
-	deleteOBJ_s{ enemies }
+	deleteOBJ_s{ enemies },
+	map_MOVE_mouse_s(enemies, mapBG_area, edit_area, mapBG)
 {
+	Map_manager::INIT(&multiOBJ_s, &singleOBJmove_s, &deleteOBJ_s, &enemy_placerModule, &map_MOVE_mouse_s);
+
 	edit_area.set_position(x, y, w, h);
 
 	Map_manager::set_edit_area(edit_area.getW(), edit_area.getH());
@@ -60,26 +63,24 @@ void Map::load_Objects(const std::string& name)
 
 void Map::events() // zdarzenia zale¿ne od myszki(przyciski myszki: lewy, prawy, kó³ko)
 {
+	updated = false;
+	mouse_over = false;
+
 	events_enemies();
 
-	//Event_handler::push(new Event_handlerOBJ_map{ this, Map_events::events_enemies });
+	if (Mouse::is_inPOS(edit_area.get_position()))
+	{
+		if (Map_manager::get_currentModule())
+			Map_manager::get_currentModule()->events();
 
-	//map_mouseHandler.events(is_mouseOver());
+		mouse_over = true;
+		map_mouseHandler.events();
 
-	switch (Map_manager::getMain_state()) {
-	case Map_state::SELECTING_OBJECTS:
-		switch (Map_manager::getSelect_satate()) {
-		case Selecting_Obj_state::SINGLE:
-			single_selectingObject_events();
-			break;
-		}
-		break;
-	case Map_state::DELETE_OBJECTS:
-		deleting_objects_events();
-		break;
+		mouseR_events();
+		mouseWheel_events();
 	}
 
-	mouse_handler(); // wszystkie zale¿ne zdarzenia od myszki i klawiatury
+	//Event_handler::push(new Event_handlerOBJ_map{ this, Map_events::events_enemies });
 }
 
 void Map::events_indp()
@@ -87,25 +88,9 @@ void Map::events_indp()
 	if (Map_manager::get_Update_state() != Map_Update_state::NONE)
 		update_events();
 
-	switch (Map_manager::getMain_state()) {
-	case Map_state::SELECTING_OBJECTS:
-		switch (Map_manager::getSelect_satate()) {
-		case Selecting_Obj_state::MULTI:
-			multiOBJ_s.events();
-			break;
-		}
-		break;
-	case Map_state::MOVING_OBJECT:
-		singleOBJmove_s.events(mouse_over, edit_area.get_position());
-		break;
-	case Map_state::MULTI_MOVING_OBJECTS:
-		// zdarzenia po nacisnieciu prawym klawiszem myszy na obszar zaznaczony do przeniesienia
-		multiOBJ_s.events_moving(mouse_over, edit_area.get_position());
-		break;
-	case Map_state::SELECTING_OBJECTS_FINISHED:
-		multiSelect_OBJs_set();
-		break;
-	}
+	if (Map_manager::get_currentModule())
+		Map_manager::get_currentModule()->events_indp();
+
 }
 
 void Map::set_cord(const CoordinateBar_mouse* mouse_cord)
@@ -120,25 +105,9 @@ void Map::render()
 
 	//Event_handler::push(new EventOBJ<Map>{ this, Map_events::render_map }); // testowe renderowanie
 	//Event_handler::push(new EventOBJ<Map>{ this, Map_events::render_enemies }); // testowe renderowanie
-
-	switch (Map_manager::getMain_state()) {
-	case Map_state::PLACING_OBJECTS:
-		Map_manager::render_tempOBJ(edit_area.left(), edit_area.up());
-		break;
-	case Map_state::MOVING_OBJECT:
-		singleOBJmove_s.current_enemy->render();
-		break;
-	case Map_state::SELECTING_OBJECTS:
-		switch (Map_manager::getSelect_satate()) {
-		case Selecting_Obj_state::MULTI:
-			multiOBJ_s.render();
-			break;
-		}
-		break;
-	case Map_state::MULTI_MOVING_OBJECTS:
-		multiOBJ_s.render();
-		break;
-	}
+	
+	if (Map_manager::get_currentModule())
+		Map_manager::get_currentModule()->render();
 }
 
 void Map::set_background(const std::string& bg)
@@ -146,10 +115,6 @@ void Map::set_background(const std::string& bg)
 	Map_manager::set_Background_name(bg);
 
 	mapBG.loadFromFile(bg);
-
-	/*mapBG_area.x = 0;
-	mapBG_area.y = 0;
-	mapBG_area.h = mapBG.getHeight();*/
 
 	mapBG_area.set_position(0, 0, -1, mapBG.getHeight());
 
@@ -214,15 +179,6 @@ void Map::mouseWheel_events()
 	if (Mouse::getWheelState() != Mouse_wheel::NONE) {
 		updated = true;
 		move_map_Wheel();
-		switch (Map_manager::getMain_state()) {
-		case Map_state::SELECTING_OBJECTS:
-			switch (Map_manager::getSelect_satate()) {
-			case Selecting_Obj_state::MULTI:
-				//multiOBJ_s.mouseWheel_events(MAP_MOVE_SIZE);
-				break;
-			}
-			break;
-		}
 	}
 }
 
@@ -235,62 +191,6 @@ void Map::mouse_handler()
 	{
 		mouse_over = true;
 		map_mouseHandler.events();
-
-		if (Mouse::getBt_state() == Mouse_key::L_BUTTON) { // pojedyncze klikniêcie
-			updated = true;
-			switch (Map_manager::getMain_state())
-			{
-			case Map_state::PLACING_OBJECTS:
-				placing_mouseL_Events(); // zdarzenia dla klikniêcia lewego przycisku myszy
-				break;
-			case Map_state::MOVING_OBJECT:
-				movingObject_mouseL_event();
-				break;
-			case Map_state::SELECTING_OBJECTS:
-				switch (Map_manager::getSelect_satate()) {
-				case Selecting_Obj_state::MULTI:
-					multiOBJ_s.reset(edit_area.get_position());
-					break;
-				}
-				break;
-			}
-		}
-
-		if (Mouse::is_pressedL()) { // przytrzymanie lewego klawisza myszy
-			updated = true;
-			switch (Map_manager::getMain_state()) {
-			case Map_state::MOVING_MAP:
-				move_map_Mouse();
-				break;
-			case Map_state::SELECTING_OBJECTS:
-				switch (Map_manager::getSelect_satate()) {
-				case Selecting_Obj_state::MULTI:
-					pressing_mouseL_multiOBJ_select = true;
-					multi_selectingObject_mouseEvents();
-					//map_mouseHandler.events(is_mouseOver());
-					break;
-				}
-
-				break;
-			}
-		}
-		else
-		{
-			switch (Map_manager::getMain_state()) {
-			case Map_state::SELECTING_OBJECTS:
-				switch (Map_manager::getSelect_satate()) {
-				case Selecting_Obj_state::MULTI:
-					if (pressing_mouseL_multiOBJ_select)
-					{
-						Map_manager::setMain_state(Map_state::SELECTING_OBJECTS_FINISHED);
-						pressing_mouseL_multiOBJ_select = false;
-					}
-					break;
-				}
-
-				break;
-			}
-		}
 
 		mouseR_events();
 		mouseWheel_events();
@@ -315,14 +215,8 @@ void Map::update_events()
 		for (auto& enemy : enemies)
 			enemy->update_Size();
 		break;
-		/*case Map_Update_state::MODULE_CHANGED:
-			switch (Map_manager::get_currentModule()) {
-			case Current_MapModule::BLOCK_PLACER:
-				break;
-			case Current_MapModule::ENEMIES_PLACER:
-				break;
-			}*/
 	}
+
 	Map_manager::reset_UpdateState();
 }
 

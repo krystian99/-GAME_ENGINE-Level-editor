@@ -171,6 +171,7 @@
     <ClInclude Include="Map_manager.h" />
     <ClInclude Include="Map_module.h" />
     <ClInclude Include="Map_mouseHandler.h" />
+    <ClInclude Include="Map_moveMouse_module.h" />
     <ClInclude Include="Map_states.h" />
     <ClInclude Include="MenuLocal_func.h" />
     <ClInclude Include="Menu_Animation.h" />
@@ -244,6 +245,7 @@
     <ClCompile Include="Map_manager.cpp" />
     <ClCompile Include="Map_module.cpp" />
     <ClCompile Include="Map_mouseHandler.cpp" />
+    <ClCompile Include="Map_moveMouse_module.cpp" />
     <ClCompile Include="MenuLocal_func.cpp" />
     <ClCompile Include="Menu_Animation.cpp" />
     <ClCompile Include="Menu_base.cpp" />

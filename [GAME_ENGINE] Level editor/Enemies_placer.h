@@ -4,6 +4,10 @@
 #include "Module_base.h"
 #include "Rect.h"
 
+enum class Object_placerEvents {
+
+};
+
 class Enemies_placer : Module_base
 {
 	using Enemies = std::vector<Enemy_ptr>;

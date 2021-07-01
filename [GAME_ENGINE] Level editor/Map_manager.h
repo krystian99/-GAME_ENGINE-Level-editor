@@ -6,11 +6,14 @@
 #include "Texture.h"
 #include "Map.h"
 #include "Enemies_placer.h"
+#include "Map_moveMouse_module.h"
 
 class Map_manager
 {
 public:
-	static void INIT(multiOBJ_select_structure* multi, singleOBJmove_structure* single, DeleteOBJ_structure * dlt, Enemies_placer * epl);
+	static void INIT(multiOBJ_select_structure* multi, singleOBJmove_structure* single, DeleteOBJ_structure * dlt, Enemies_placer * epl, Map_moveMouse_module * mvmap_mouse);
+
+	static Module_base* get_currentModule() { return current_module; }
 
 	static const Map_state & getMain_state() { return main_state; }
 
@@ -21,10 +24,13 @@ public:
 	static void Init();
 
 	static const Selecting_Obj_state & getSelect_satate() { return select_state; }
+
 	static const SDL_RendererFlip & get_OBJ_orient() { return object_flip; }
+
 	static const OBJ_type & get_OBJ_type() { return object_type; }
+
 	static const Map_Update_state & get_Update_state() { return update_state; }
-	//static const Current_MapModule & get_currentModule() { return current_module; }
+
 	static const SDL_Rect & get_tempRender_area() { return temp_renderOBJ; }
 
 	static void setMain_state(const Map_state & st);
@@ -72,7 +78,7 @@ private:
 	static multiOBJ_select_structure* multiOBJ_s;
 	static Enemies_placer* enemyPlacerOBJ_s;
 	static DeleteOBJ_structure* deleteOBJ_s;
-
+	static Map_moveMouse_module* mapMOVE_mouse_s;
 	static Map_state prev_main_state;
 	static Map_state main_state;
 

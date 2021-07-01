@@ -14,17 +14,6 @@ void Enemies_placer::render()
 	Map_manager::render_tempOBJ(edit_area.left(), edit_area.up());
 }
 
-/*void Enemies_placer::objects_events()
-{
-	for (auto & enemy : enemies)
-		enemy->events();
-}
-
-void Enemies_placer::objects_events_indp()
-{
-
-}*/
-
 void Enemies_placer::placing_object_events(int map_x, int map_y, int render_x, int render_y)
 {
 	using namespace Enemy_Types;

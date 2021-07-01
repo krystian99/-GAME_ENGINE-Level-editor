@@ -22,6 +22,8 @@ Enemies_placer* Map_manager::enemyPlacerOBJ_s{};
 singleOBJmove_structure* Map_manager::singleOBJ_s{};
 multiOBJ_select_structure* Map_manager::multiOBJ_s{};
 
+Map_moveMouse_module* Map_manager::mapMOVE_mouse_s{};
+
 Enemy_ID Map_manager::current_enemyID{ Enemy_ID::NONE };
 
 SDL_Rect Map_manager::temp_renderOBJ{};
@@ -36,7 +38,7 @@ int Map_manager::edit_H{};
 int Map_manager::mapBG_W{};
 int Map_manager::mapBG_H{};
 
-void Map_manager::INIT(multiOBJ_select_structure* multi, singleOBJmove_structure* single, DeleteOBJ_structure* dlt, Enemies_placer* epl)
+void Map_manager::INIT(multiOBJ_select_structure* multi, singleOBJmove_structure* single, DeleteOBJ_structure* dlt, Enemies_placer* epl, Map_moveMouse_module* mvmap_mouse)
 {
 	current_module = nullptr;
 
@@ -46,6 +48,8 @@ void Map_manager::INIT(multiOBJ_select_structure* multi, singleOBJmove_structure
 	deleteOBJ_s = dlt;
 
 	enemyPlacerOBJ_s = epl;
+
+	mapMOVE_mouse_s = mvmap_mouse;
 }
 
 void Map_manager::Init()
@@ -67,7 +71,7 @@ void Map_manager::setMain_state(const Map_state & st)
 	else if (main_state == Map_state::DELETE_OBJECTS)
 		current_module = deleteOBJ_s;
 	else if (main_state == Map_state::MOVING_MAP)
-		current_module = nullptr;
+		current_module = mapMOVE_mouse_s;
 }
 
 void Map_manager::set_Update_state(Map_Update_state state)
