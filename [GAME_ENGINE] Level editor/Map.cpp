@@ -15,7 +15,8 @@ Map::Map(int x, int y, int w, int h) :
 	enemy_placerModule{ enemies, edit_area },
 	multiOBJ_s{ enemies, map_mouseHandler, &edit_area, &mapBG_area },
 	deleteOBJ_s{ enemies },
-	map_MOVE_mouse_s(enemies, mapBG_area, edit_area, mapBG)
+	map_MOVE_mouse_s(enemies, mapBG_area, edit_area, mapBG),
+	singleOBJmove_s{ enemies, edit_area, mapBG_area }
 {
 	Map_manager::INIT(&multiOBJ_s, &singleOBJmove_s, &deleteOBJ_s, &enemy_placerModule, &map_MOVE_mouse_s);
 
@@ -154,7 +155,7 @@ void Map::set_ScaledSize()
 
 void Map::mouseR_events()
 {
-	if (Mouse::getBt_state() == Mouse_key::R_BUTTON) {
+	/*if (Mouse::getBt_state() == Mouse_key::R_BUTTON) {
 		updated = true;
 		switch (Map_manager::getMain_state()) {
 		case Map_state::PLACING_OBJECTS:
@@ -171,7 +172,7 @@ void Map::mouseR_events()
 			multi_movingObject_mouseR_event();
 			break;
 		}
-	}
+	}*/
 }
 
 void Map::mouseWheel_events()

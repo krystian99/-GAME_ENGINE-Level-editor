@@ -106,16 +106,14 @@ private:
 
 	bool pressing_mouseL_multiOBJ_select{ false };
 
+	// modu³y mapy
 	DeleteOBJ_structure deleteOBJ_s;
-
 	Enemies_placer enemy_placerModule;
-
 	multiOBJ_select_structure multiOBJ_s;
 	singleOBJmove_structure singleOBJmove_s;
-
 	Map_moveMouse_module map_MOVE_mouse_s;
 
-	Module_base* current{ &multiOBJ_s };
+	//Module_base* current{ &multiOBJ_s };
 
 	Enemies_placer * current_module{ &enemy_placerModule };
 

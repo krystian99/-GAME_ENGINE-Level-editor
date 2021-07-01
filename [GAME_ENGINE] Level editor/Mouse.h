@@ -23,6 +23,8 @@ public:
 	static const int & getR_x() { return mX_r; }
 	static const int & getR_y() { return mY_r; }
 
+	static bool is_inState(Mouse_key key) { return key_state == key; }
+
 	static const bool & is_pressedL() { return l_pressed; }
 
 	static bool pressed_Lbutton() { return l_pressed; }
