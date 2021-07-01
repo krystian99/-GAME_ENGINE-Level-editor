@@ -131,29 +131,29 @@ void Map_manager::Update_OBJ_sizes()
 	case OBJ_type::ENEMY:
 		switch (get_EnemyID()) {
 		case Enemy_ID::TEST:
-			scaleX = std::round(Enemy_Test::W * Base_OBJ::get_multiplier()) / double(Map_manager::get_mapBG_W());
-			scaleY = std::round(Enemy_Test::H * Base_OBJ::get_multiplier()) / double(Map_manager::get_mapBG_H());
+			scaleX = std::round(Enemy_Test::W * MapOBJ::get_multiplier()) / double(Map_manager::get_mapBG_W());
+			scaleY = std::round(Enemy_Test::H * MapOBJ::get_multiplier()) / double(Map_manager::get_mapBG_H());
 
 			temp_renderOBJ.w = round(scaleX * Map_manager::get_editW());
 			temp_renderOBJ.h = round(scaleY * Map_manager::get_editH());
 			break;
 		case Enemy_ID::TEST2:
-			scaleX = std::round(Enemy_Test2::W * Base_OBJ::get_multiplier()) / double(Map_manager::get_mapBG_W());
-			scaleY = std::round(Enemy_Test2::H * Base_OBJ::get_multiplier()) / double(Map_manager::get_mapBG_H());
+			scaleX = std::round(Enemy_Test2::W * MapOBJ::get_multiplier()) / double(Map_manager::get_mapBG_W());
+			scaleY = std::round(Enemy_Test2::H * MapOBJ::get_multiplier()) / double(Map_manager::get_mapBG_H());
 
 			temp_renderOBJ.w = round(scaleX * Map_manager::get_editW());
 			temp_renderOBJ.h = round(scaleY * Map_manager::get_editH());
 			break;
 		case Enemy_ID::TEST3:
-			scaleX = std::round(Enemy_Test3::W * Base_OBJ::get_multiplier()) / double(Map_manager::get_mapBG_W());
-			scaleY = std::round(Enemy_Test3::H * Base_OBJ::get_multiplier()) / double(Map_manager::get_mapBG_H());
+			scaleX = std::round(Enemy_Test3::W * MapOBJ::get_multiplier()) / double(Map_manager::get_mapBG_W());
+			scaleY = std::round(Enemy_Test3::H * MapOBJ::get_multiplier()) / double(Map_manager::get_mapBG_H());
 
 			temp_renderOBJ.w = round(scaleX * Map_manager::get_editW());
 			temp_renderOBJ.h = round(scaleY * Map_manager::get_editH());
 			break;
 		case Enemy_ID::TEST4:
-			scaleX = std::round(Enemy_Test4::W * Base_OBJ::get_multiplier()) / double(Map_manager::get_mapBG_W());
-			scaleY = std::round(Enemy_Test4::H * Base_OBJ::get_multiplier()) / double(Map_manager::get_mapBG_H());
+			scaleX = std::round(Enemy_Test4::W * MapOBJ::get_multiplier()) / double(Map_manager::get_mapBG_W());
+			scaleY = std::round(Enemy_Test4::H * MapOBJ::get_multiplier()) / double(Map_manager::get_mapBG_H());
 
 			temp_renderOBJ.w = round(scaleX * Map_manager::get_editW());
 			temp_renderOBJ.h = round(scaleY * Map_manager::get_editH());

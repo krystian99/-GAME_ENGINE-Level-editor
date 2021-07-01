@@ -46,5 +46,5 @@ void Enemies_placer::placing_object_events(int map_x, int map_y, int render_x, i
 		enemies.push_back(Enemy_ptr{ new Enemy_Test4{ map_x, map_y, flip } });
 		break;
 	}
-	enemies.back()->set_renderPOS(render_x, render_y, Map_manager::get_tempRenderW(), Map_manager::get_tempRenderH());
+	enemies.back()->set_position(render_x, render_y, Map_manager::get_tempRenderW(), Map_manager::get_tempRenderH());
 }

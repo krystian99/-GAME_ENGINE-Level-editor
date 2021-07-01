@@ -383,7 +383,7 @@ void Map::create_EnemyOBJ(const int& X, const int& Y, const Enemy_ID& id, const 
 		enemies.push_back(Enemy_ptr{ new Enemy_Test4{ X, Y, flip } });
 		break;
 	}
-	enemies.back()->set_renderPOS(RenderPOS_X, RenderPOS_Y, Map_manager::get_tempRenderW(), Map_manager::get_tempRenderH());
+	enemies.back()->set_position(RenderPOS_X, RenderPOS_Y, Map_manager::get_tempRenderW(), Map_manager::get_tempRenderH());
 }
 
 void Map::create_EnemyOBJ(const SDL_Rect& mapPOS, const Enemy_ID& id, const SDL_RendererFlip& flip)
@@ -421,7 +421,7 @@ void Map::create_EnemyOBJ(const SDL_Rect& mapPOS, const Enemy_ID& id, const SDL_
 	RenderPOS_W = round(scaleX * edit_area.getW());
 	RenderPOS_H = round(scaleY * edit_area.getH());
 
-	enemies.back()->set_renderPOS(RenderPOS_X, RenderPOS_Y, RenderPOS_W, RenderPOS_H);
+	enemies.back()->set_position(RenderPOS_X, RenderPOS_Y, RenderPOS_W, RenderPOS_H);
 }
 
 void Map::events_enemies()
@@ -454,7 +454,7 @@ void Map::render_enemies()
 	static SDL_Rect temp_pos, texture_area;
 
 	for (auto& enemy : enemies) {
-		auto& pos_temp = enemy->get_renderPOS();
+		auto& pos_temp = enemy->get_position();
 		Rect pos;
 		pos.set_position(pos_temp);
 
@@ -563,8 +563,8 @@ void Map::movingObject_mouseL_event()
 	RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
 	RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
 
-	singleOBJmove_s.current_enemy->update_mapPOS(x, y);
-	singleOBJmove_s.current_enemy->update_renderPOS(RenderPOS_X, RenderPOS_Y);
+	singleOBJmove_s.current_enemy->set_mapPOS(x, y);
+	singleOBJmove_s.current_enemy->set_position(RenderPOS_X, RenderPOS_Y);
 
 	singleOBJmove_s.reset();
 
@@ -616,7 +616,7 @@ void Map::move_map_Wheel()
 		RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
 		RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
 
-		enemy->update_renderPOS(RenderPOS_X, RenderPOS_Y);
+		enemy->set_position(RenderPOS_X, RenderPOS_Y);
 	}
 
 	if (Map_manager::getSelect_satate() == Selecting_Obj_state::MULTI && Map_manager::getMain_state() != Map_state::MULTI_MOVING_OBJECTS)
@@ -635,7 +635,7 @@ void Map::update_OBJs_renderPOS()
 		RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
 		RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
 
-		enemy->update_renderPOS(RenderPOS_X, RenderPOS_Y);
+		enemy->set_position(RenderPOS_X, RenderPOS_Y);
 	}
 }
 
@@ -681,7 +681,7 @@ void Map::move_map_Mouse()
 			RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
 			RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
 
-			enemy->update_renderPOS(RenderPOS_X, RenderPOS_Y);
+			enemy->set_position(RenderPOS_X, RenderPOS_Y);
 		}
 	}
 
@@ -771,7 +771,7 @@ void multiOBJ_select_structure::render()
 void multiOBJ_select_structure::OBJs_set(Enemies& enemies, const Rect& edit_area)
 {
 	for (auto& enemy : enemies) {
-		auto& pos_temp = enemy->get_renderPOS();
+		auto& pos_temp = enemy->get_position();
 
 		Rect pos;
 		pos.set_position(pos_temp);
@@ -884,8 +884,8 @@ void multiOBJ_select_structure::moveEvent_mouseR()
 		RenderPOS_X = round(scaleX * edit_area->getW()) + edit_area->left();
 		RenderPOS_Y = round(scaleY * edit_area->getH()) + edit_area->up();
 
-		moveOBJ.enemy->update_mapPOS(x, y);
-		moveOBJ.enemy->update_renderPOS(RenderPOS_X, RenderPOS_Y);
+		moveOBJ.enemy->set_mapPOS(x, y);
+		moveOBJ.enemy->set_position(RenderPOS_X, RenderPOS_Y);
 	}
 
 	int RenderPOS_X, RenderPOS_Y;
@@ -924,18 +924,18 @@ void multiOBJ_select_structure::events_moving(bool mouse_over, const SDL_Rect& e
 
 	// nie wiem o co kaman ale cos zmienia pozycje renderowania i musi byæ najpierw ta pêtla
 	for (auto& enemy : moving_objects)
-		enemy.enemy->update_renderPOS(Mouse::getX() - enemy.px_left, Mouse::getY() - enemy.px_up);
+		enemy.enemy->set_position(Mouse::getX() - enemy.px_left, Mouse::getY() - enemy.px_up);
 
 	if (mouse_over) {
 
 		if (enemy_up->up() < edit_area.up())
-			tmp_px_up = edit_area.up() - enemy_up->get_renderPOS().y;
+			tmp_px_up = edit_area.up() - enemy_up->up();
 
 		else if (enemy_down->down() > edit_area.down())
 			tmp_px_up = edit_area.down() - enemy_down->down();
 
-		if (enemy_left->get_renderPOS().x < edit_area.left())
-			tmp_px_left = edit_area.left() - enemy_left->get_renderPOS().x;
+		if (enemy_left->left() < edit_area.left())
+			tmp_px_left = edit_area.left() - enemy_left->left();
 
 		else if (enemy_right->right() > edit_area.right())
 			tmp_px_left = edit_area.right() - enemy_right->right();
@@ -944,7 +944,7 @@ void multiOBJ_select_structure::events_moving(bool mouse_over, const SDL_Rect& e
 		updateY(tmp_px_up);
 
 		for (auto& moveOBJ : moving_objects)
-			moveOBJ.enemy->update_about(tmp_px_left, tmp_px_up);
+			moveOBJ.enemy->update_position(tmp_px_left, tmp_px_up);
 	}
 }
 void multiOBJ_select_structure::moveMap_Event()
@@ -997,8 +997,8 @@ void multiOBJ_select_structure::updateOBJs(SDL_Point clicked_point)
 
 	for (auto& enemy : moving_objects)
 	{
-		enemy.px_left = clicked_point.x - enemy.enemy->get_renderPOS().x;
-		enemy.px_up = clicked_point.y - enemy.enemy->get_renderPOS().y;
+		enemy.px_left = clicked_point.x - enemy.enemy->get_position().x;
+		enemy.px_up = clicked_point.y - enemy.enemy->get_position().y;
 	}
 }
 
@@ -1011,8 +1011,8 @@ void singleOBJmove_structure::set(Enemy* enemy)
 {
 	current_enemy = enemy;
 
-	px_left = Mouse::getX() - enemy->get_renderPOS().x;
-	px_up = Mouse::getY() - enemy->get_renderPOS().y;
+	px_left = Mouse::getX() - enemy->left();
+	px_up = Mouse::getY() - enemy->up();
 }
 
 void singleOBJmove_structure::events(bool mouse_over, SDL_Rect edit_a)
@@ -1023,14 +1023,14 @@ void singleOBJmove_structure::events(bool mouse_over, SDL_Rect edit_a)
 
 	tmp_px_left = tmp_px_up = 0;
 
-	current_enemy->update_renderPOS(Mouse::getX() - px_left, Mouse::getY() - px_up);
+	current_enemy->update_position(Mouse::getX() - px_left, Mouse::getY() - px_up);
 
-	const Rect pos = Rect{ current_enemy->get_renderPOS() };
+	const Rect pos = Rect{ current_enemy->get_position() };
 
 	if (mouse_over)
 	{
 		if (pos.up() < edit_area.up())
-			tmp_px_up = edit_area.up() - current_enemy->get_renderPOS().y;
+			tmp_px_up = edit_area.up() - current_enemy->get_position().y;
 
 		else if (pos.down() > edit_area.down())
 			tmp_px_up = edit_area.down() - pos.down();
@@ -1041,7 +1041,7 @@ void singleOBJmove_structure::events(bool mouse_over, SDL_Rect edit_a)
 		else if (pos.right() > edit_area.right())
 			tmp_px_left = edit_area.right() - pos.right();
 
-		current_enemy->update_about(tmp_px_left, tmp_px_up);
+		current_enemy->update_position(tmp_px_left, tmp_px_up);
 	}
 }
 

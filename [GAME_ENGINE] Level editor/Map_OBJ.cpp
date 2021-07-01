@@ -1,4 +1,4 @@
-#include "Map_OBJ.h"
+/*#include "Map_OBJ.h"
 #include <algorithm>
 #include <cmath>
 
@@ -31,4 +31,4 @@ void Map_OBJ::update_Size()
 	mapPOS.h = std::round(object_size->mapH * Base_OBJ::SIZE_MULTIPLIER);
 	render_position.w = std::round(object_size->renderW * Base_OBJ::SIZE_MULTIPLIER);
 	render_position.h = std::round(object_size->renderH * Base_OBJ::SIZE_MULTIPLIER);
-}
+}*/

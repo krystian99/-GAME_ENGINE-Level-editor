@@ -34,6 +34,9 @@ public:
 	void setX(int x) { pos.x = x; }
 	void setY(int y) { pos.y = y; }
 
+	int getX() const { return pos.x; }
+	int getY() const { return pos.y; }
+
 	const int & getW() const { return pos.w; }
 	const int & getH() const { return pos.h; }
 

@@ -2,7 +2,7 @@
 
 void Dynamic_OBJ::render()
 {
-	tX->render(nullptr, &render_position, flip);
+	tX->render(nullptr, &get_position(), flip);
 }
 
 void Dynamic_OBJ::render(const SDL_Rect & tX_area, const SDL_Rect & destination_area)

@@ -13,7 +13,7 @@ void Map_events::render_enemies(Map* map)
 
 	for (auto& enemy : map->enemies) {
 		//auto & pos = enemy->get_renderPOS();
-		auto& pos_temp = enemy->get_renderPOS();
+		auto& pos_temp = enemy->get_position();
 		Rect pos;
 		pos.set_position(pos_temp);
 

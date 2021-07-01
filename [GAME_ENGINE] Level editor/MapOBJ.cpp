@@ -8,6 +8,16 @@ MapOBJ::MapOBJ(const Rect & render_position, const Rect & map_position) : Object
 	mapPOS = map_position;
 }
 
+MapOBJ::MapOBJ(SDL_Rect map_pos, const Size* sz) : object_size{ sz }
+{
+	mapPOS = map_pos;
+}
+
+MapOBJ::MapOBJ(const int& x, const int& y, const Size* sz) : object_size{ sz }
+{
+	set_mapPOS(x, y);
+}
+
 void MapOBJ::events()
 {
 	Object::events();
@@ -48,11 +58,29 @@ void MapOBJ::switch_selected_state()
 	selected = !selected;
 }
 
+void MapOBJ::update_Size()
+{
+	mapPOS.setW(std::round(object_size->mapW * SIZE_MULTIPLIER));
+	mapPOS.setH(std::round(object_size->mapH * SIZE_MULTIPLIER));
+	setW(std::round(object_size->renderW * SIZE_MULTIPLIER));
+	setH(std::round(object_size->renderH * SIZE_MULTIPLIER));
+}
+
 void MapOBJ::update_mapPOS(int x, int y)
 {
 	mapPOS.update_position(x, y);
 }
 
+
+void MapOBJ::set_mapW(int w)
+{
+	mapPOS.setW(w);
+}
+
+void MapOBJ::set_mapH(int h)
+{
+	mapPOS.setH(h);
+}
 
 bool MapOBJ::set_size_multiplier(double size)
 {

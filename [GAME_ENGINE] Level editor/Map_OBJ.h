@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include <SDL_rect.h>
 #include "Base_OBJ.h"
 
@@ -36,4 +36,4 @@ protected:
 	SDL_Rect mapPOS;
 private:
 	const Size * object_size;
-};
+};*/

@@ -19,8 +19,8 @@ LevelCreator::LevelCreator() : // inicjuje wszystkie dane Level Creatora - ustal
 	map_optionsBar{ { 115, 90, 500, 38 }, SDL_Color{ 0, 156, 125, 255 }, 55 },
 	Level_name{ 130, 15, "data/fonts/standard_font.ttf", 30, { 255, 255, 255, 255 } },
 	Map_name{ 400, 15, "data/fonts/standard_font.ttf", 30, { 255, 255, 255, 255 } },
-	plus{ { 1080, 30, 40, 30 }, "data/engine_files/plus.png", &Base_OBJ::update_multiplierUP },
-	minus{ { 1080, 80, 40, 30 }, "data/engine_files/minus.png", &Base_OBJ::update_multiplierDOWN }
+	plus{ { 1080, 30, 40, 30 }, "data/engine_files/plus.png", &MapOBJ::update_multiplierUP },
+	minus{ { 1080, 80, 40, 30 }, "data/engine_files/minus.png", &MapOBJ::update_multiplierDOWN }
 {
 	CoordinateBar_map::Init({ 300, 40, 100, 50 }, &map_edit_area.get_position(), &map_edit_area.get_backgroundArea());
 
@@ -160,7 +160,7 @@ void LevelCreator::save_level()
 	level_save.close();
 
 	level_save.open((LevelEditor_manager::get_levelsPath() + LevelEditor_manager::get_levelName() + ".config").c_str(), ios_base::out | ios_base::binary);
-	level_save.write(reinterpret_cast<const char *>(&Base_OBJ::get_multiplier()), sizeof(Base_OBJ::get_multiplier()));
+	level_save.write(reinterpret_cast<const char *>(&MapOBJ::get_multiplier()), sizeof(MapOBJ::get_multiplier()));
 	level_save.close();
 }
 
@@ -186,7 +186,7 @@ void LevelCreator::load_Level()
 	level_load.open((LevelEditor_manager::get_levelsPath() + LevelEditor_manager::get_levelName() + ".config").c_str(), ios_base::in | ios_base::binary);
 	level_load.read(reinterpret_cast<char*>(&multiplier), sizeof(double));
 	level_load.close();
-	Base_OBJ::set_size_multiplier(multiplier);
+	MapOBJ::set_size_multiplier(multiplier);
 
 	map_edit_area.load_Objects(LevelEditor_manager::get_levelsPath() + LevelEditor_manager::get_levelName());
 }
@@ -194,7 +194,7 @@ void LevelCreator::load_Level()
 void LevelCreator::new_Level()
 {
 	reset_states();
-	Base_OBJ::reset_multiplier();
+	MapOBJ::reset_multiplier();
 	map_edit_area.reset();
 	map_edit_area.set_background(LevelEditor_manager::get_levels_mapsPath() + LevelEditor_manager::get_backgroundName() + ".png");
 }

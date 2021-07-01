@@ -130,7 +130,6 @@
     <ClInclude Include="Animation_management.h" />
     <ClInclude Include="Animation_manager.h" />
     <ClInclude Include="Bar_modules_left.h" />
-    <ClInclude Include="Base_OBJ.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="BlockPlacer_module.h" />
     <ClInclude Include="Block_module_Manager.h" />
@@ -211,7 +210,6 @@
     <ClCompile Include="Animation_management.cpp" />
     <ClCompile Include="Animation_manager.cpp" />
     <ClCompile Include="Bar_modules_left.cpp" />
-    <ClCompile Include="Base_OBJ.cpp" />
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="BlockPlacer_module.cpp" />
     <ClCompile Include="Block_module_Manager.cpp" />

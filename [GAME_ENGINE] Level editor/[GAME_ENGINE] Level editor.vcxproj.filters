@@ -75,9 +75,6 @@
     <ClInclude Include="Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Base_OBJ.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Engine_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -312,9 +309,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Renderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Base_OBJ.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Engine_manager.cpp">

@@ -47,8 +47,8 @@ template<Enemy_ID id, int w, int h>
 inline Enemy_OBJ<id, w, h>::Enemy_OBJ(const int & x, const int & y, SDL_RendererFlip flip) :
 	Enemy{ x, y, id, &texture, &size, flip } // przekazanie id do interfejsu klasy bazowej
 {
-	mapPOS.w = std::round(W * SIZE_MULTIPLIER);
-	mapPOS.h = std::round(H * SIZE_MULTIPLIER);
+	set_mapW(std::round(W * SIZE_MULTIPLIER));
+	set_mapH(std::round(H * SIZE_MULTIPLIER));
 }
 
 template<Enemy_ID id, int w, int h>

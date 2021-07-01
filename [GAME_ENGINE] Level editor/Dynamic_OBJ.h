@@ -1,5 +1,5 @@
 #pragma once
-#include "Map_OBJ.h"
+#include "MapOBJ.h"
 #include <SDL_render.h>
 #include "Texture.h"
 
@@ -9,14 +9,14 @@ struct OBJ_data : MapOBJ_data
 };
 
 // Dynamic - dynamiczny, poruszaj¹cy siê
-class Dynamic_OBJ : public Map_OBJ
+class Dynamic_OBJ : public MapOBJ
 {
 public:
 	Dynamic_OBJ(const int & x, const int & y, Texture * texture, const Size * size, SDL_RendererFlip Flip = SDL_RendererFlip::SDL_FLIP_NONE) :
-		Map_OBJ{ x, y, size }, flip{ Flip }, tX{ texture }
+		MapOBJ{ x, y, size }, flip{ Flip }, tX{ texture }
 	{}
 	Dynamic_OBJ(SDL_Rect mappos, Texture * texture, const Size * size, SDL_RendererFlip Flip = SDL_RendererFlip::SDL_FLIP_NONE) :
-		Map_OBJ{ mappos, size }, flip{ Flip }, tX{ texture }
+		MapOBJ{ mappos, size }, flip{ Flip }, tX{ texture }
 	{}
 
 	void render();
@@ -31,8 +31,8 @@ public:
 
 	virtual ~Dynamic_OBJ() {}
 protected:
-	virtual void onMouseOver() = 0;
-	virtual void onClick() = 0;
+	//virtual void onMouseOver() = 0;
+	//virtual void onClick() = 0;
 protected:
 	Texture * tX;
 	SDL_RendererFlip flip;
