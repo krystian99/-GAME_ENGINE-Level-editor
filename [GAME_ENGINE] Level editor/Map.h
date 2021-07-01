@@ -65,9 +65,9 @@ private:
 
 	void multi_selectingObject_mouseEvents();
 	void multi_selecingOBJ_mouseR();
-	void single_selectingObject_events();
+
 	void deleting_objects_events();
-	void movingObject_mouseL_event();
+
 	void multi_movingObject_mouseR_event();
 	void multiMoving_objects_events();
 

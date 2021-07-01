@@ -2,6 +2,7 @@
 #include "Rect.h"
 #include <SDL_rect.h>
 #include <SDL_events.h>
+#include <vector>
 
 enum class Mouse_key {
 	NONE,
@@ -25,9 +26,13 @@ public:
 
 	static bool is_inState(Mouse_key key) { return key_state == key; }
 
-	static const bool & is_pressedL() { return l_pressed; }
+	static const bool & is_pressedL() { return keys[int(Mouse_key::L_BUTTON)]; }
 
-	static bool pressed_Lbutton() { return l_pressed; }
+	static bool pressedOnce(Mouse_key key);
+
+	static bool is_pressedL_once() { return lButton_pressOnce.pressedOnce(); }
+
+	static bool pressed_Lbutton() { return keys[int(Mouse_key::L_BUTTON)]; }
 
 	static bool is_inPOS(const SDL_Rect & pos);
 	static bool clickedPoint_inPOS(const Rect &);
@@ -47,12 +52,41 @@ private:
 
 	static void switch_motion_wheel_FLAG(SDL_Event *);
 private:
+	class Key_pressOnce
+	{
+	public:
+		Key_pressOnce(const std::vector<Mouse_key>& keys, const bool * mouse_ks);
+
+		void events();
+
+		bool is_pressed() const { return pressed; }
+
+		bool pressedOnce();
+
+		void reset();
+	private:
+		bool isPressed() const;
+	private:
+		bool pressed{ false };
+
+		std::vector<Mouse_key> keys;
+
+		bool flag_pressed_once{ false };
+		bool pressed_once{ false };
+
+		const bool * mouse_keys;
+	};
+
+	static Key_pressOnce lButton_pressOnce, rButton_pressOnce, midButton_pressOnce;
+
 	static Mouse_key key_state;
 	static Mouse_wheel wheel_state;
 
 	static SDL_Point clicked_point; // gdy zostanie klikniêty lewy klawisz i jest trzymany, to zapisz wspó³rzêdne punktu 
 
-	static bool l_pressed;
+	static bool keys[1000];
+
+	static bool l_pressed, r_pressed, m_pressed;
 
 	static bool updated;
 

@@ -35,8 +35,7 @@ void singleOBJmove_structure::events()
 
 void singleOBJmove_structure::render()
 {
-	if (current_enemy)
-		current_enemy->render();
+
 }
 
 void singleOBJmove_structure::movingOBJ_events()
@@ -52,8 +51,10 @@ void singleOBJmove_structure::movingOBJ_events()
 
 	int RenderPOS_X, RenderPOS_Y;
 	double scaleX, scaleY;
+
 	scaleX = double(x - mapBG_area.left()) / double(mapBG_area.getW());
 	scaleY = double(y - mapBG_area.up()) / double(mapBG_area.getH());
+
 	RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
 	RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
 
@@ -69,10 +70,14 @@ void singleOBJmove_structure::movingOBJ_events()
 	current_enemy->set_position(Mouse::getX() - px_left, Mouse::getY() - px_up);
 	current_enemy->set_mapPOS(CoordinateBar_map::getX(), CoordinateBar_map::getY());*/
 
+	if (Mouse::is_pressedL_once())
+		setState(SingleOBJmove_events::SET_OBJ);
 
-	mouseL_event();
+	int tmp_px_left, tmp_px_up;
 
-	/*const Rect pos = Rect{ current_enemy->get_position() };
+	tmp_px_left = tmp_px_up = 0;
+
+	const Rect pos = Rect{ current_enemy->get_position() };
 
 	if (pos.up() < edit_area.up())
 		tmp_px_up = edit_area.up() - current_enemy->get_position().y;
@@ -86,7 +91,7 @@ void singleOBJmove_structure::movingOBJ_events()
 	else if (pos.right() > edit_area.right())
 		tmp_px_left = edit_area.right() - pos.right();
 
-	current_enemy->update_position(tmp_px_left, tmp_px_up);*/
+	current_enemy->update_position(tmp_px_left, tmp_px_up);
 }
 
 void singleOBJmove_structure::selectingObject_events()
@@ -110,7 +115,7 @@ void singleOBJmove_structure::selectingObject_events()
 
 void singleOBJmove_structure::setOBJ_onMap()
 {
-	if (Mouse::is_inState(Mouse_key::L_BUTTON))
+	if (Mouse::is_pressedL_once())
 	{
 		double scaleTX_w, scaleTX_h;
 		int x, y;
@@ -141,12 +146,6 @@ void singleOBJmove_structure::mouseR_event()
 {
 	if (Mouse::is_inState(Mouse_key::R_BUTTON))
 		current_enemy->switch_orient();
-}
-
-void singleOBJmove_structure::mouseL_event()
-{
-	if (Mouse::is_inState(Mouse_key::L_BUTTON))
-		setState(SingleOBJmove_events::SET_OBJ);
 }
 
 void singleOBJmove_structure::mouse_handler()
