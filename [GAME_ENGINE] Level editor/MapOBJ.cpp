@@ -20,6 +20,8 @@ MapOBJ::MapOBJ(const int& x, const int& y, const Size* sz) : object_size{ sz }
 
 void MapOBJ::events()
 {
+	reset_states();
+
 	Object::events();
 }
 
@@ -110,4 +112,14 @@ void MapOBJ::update_multiplierDOWN()
 void MapOBJ::reset_multiplier()
 {
 	SIZE_MULTIPLIER = 1.0;
+}
+
+void MapOBJ::reset_states()
+{
+	clicked = false;
+}
+
+void MapOBJ::on_mouseL1hit()
+{
+	clicked = true;
 }

@@ -57,12 +57,17 @@ void Map_manager::setMain_state(const Map_state & st)
 	prev_main_state = main_state;
 	main_state = st;
 
-	switch (st)
+	if (main_state == Map_state::SELECTING_OBJECTS)
 	{
-	case Map_state::MULTI_MOVING_OBJECTS:
-		current_module = multiOBJ_s;
-		break;
+		if (select_state == Selecting_Obj_state::SINGLE)
+			current_module = singleOBJ_s;
+		else
+			current_module = multiOBJ_s;
 	}
+	else if (main_state == Map_state::DELETE_OBJECTS)
+		current_module = deleteOBJ_s;
+	else if (main_state == Map_state::MOVING_MAP)
+		current_module = nullptr;
 }
 
 void Map_manager::set_Update_state(Map_Update_state state)

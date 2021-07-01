@@ -183,9 +183,6 @@
     <ClInclude Include="Enemy_OBJ.h">
       <Filter>Level Editor\Map module\objects.h</Filter>
     </ClInclude>
-    <ClInclude Include="Map_OBJ.h">
-      <Filter>Level Editor\Map module\objects.h</Filter>
-    </ClInclude>
     <ClInclude Include="Block.h">
       <Filter>Level Editor\Map module\objects.h</Filter>
     </ClInclude>
@@ -234,9 +231,6 @@
     <ClInclude Include="BlockPlacer_module.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Enemies_placer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Map_module.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -283,7 +277,19 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MapOBJ.h">
-      <Filter>Header Files</Filter>
+      <Filter>Level Editor\Map module\objects.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemies_placer.h">
+      <Filter>Level Editor\Modules.h</Filter>
+    </ClInclude>
+    <ClInclude Include="multiOBJ_select_structure.h">
+      <Filter>Level Editor\Modules.h</Filter>
+    </ClInclude>
+    <ClInclude Include="DeleteOBJ_structure.h">
+      <Filter>Level Editor\Modules.h</Filter>
+    </ClInclude>
+    <ClInclude Include="singleOBJmove_structure.h">
+      <Filter>Level Editor\Modules.h</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -398,9 +404,6 @@
     <ClCompile Include="Dynamic_OBJ.cpp">
       <Filter>Level Editor\Map module\objects.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Map_OBJ.cpp">
-      <Filter>Level Editor\Map module\objects.cpp</Filter>
-    </ClCompile>
     <ClCompile Include="Timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -426,9 +429,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BlockPlacer_module.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemies_placer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Map_module.cpp">
@@ -477,7 +477,19 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MapOBJ.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Level Editor\Map module\objects.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemies_placer.cpp">
+      <Filter>Level Editor\Modules.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="multiOBJ_select_structure.cpp">
+      <Filter>Level Editor\Modules.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="DeleteOBJ_structure.cpp">
+      <Filter>Level Editor\Modules.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="singleOBJmove_structure.cpp">
+      <Filter>Level Editor\Modules.cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

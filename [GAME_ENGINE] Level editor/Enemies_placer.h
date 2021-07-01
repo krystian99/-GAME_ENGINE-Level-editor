@@ -20,8 +20,6 @@ public:
 	//void objects_events_indp();
 
 	void placing_object_events(int map_x, int map_y, int render_x, int render_y);
-	virtual void single_objectSelecting_events() {}
-	virtual void deleting_objects_events() {}
 private:
 	Enemy * current_block;
 

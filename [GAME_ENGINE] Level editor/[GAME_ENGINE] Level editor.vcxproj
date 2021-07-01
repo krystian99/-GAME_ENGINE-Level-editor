@@ -144,6 +144,7 @@
     <ClInclude Include="Button_TEXT.h" />
     <ClInclude Include="CoordinateBar_map.h" />
     <ClInclude Include="CoordinateBar_mouse.h" />
+    <ClInclude Include="DeleteOBJ_structure.h" />
     <ClInclude Include="Dynamic_OBJ.h" />
     <ClInclude Include="Enemies_placer.h" />
     <ClInclude Include="Enemy.h" />
@@ -178,6 +179,7 @@
     <ClInclude Include="Menu_local.h" />
     <ClInclude Include="MENU_Module_base.h" />
     <ClInclude Include="Module_base.h" />
+    <ClInclude Include="multiOBJ_select_structure.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="OBJ_TYPES.h" />
     <ClInclude Include="Others_ID.h" />
@@ -187,10 +189,10 @@
     <ClInclude Include="Script_Editor.h" />
     <ClInclude Include="ScrollBar.h" />
     <ClInclude Include="ScroolBar_mapModules.h" />
+    <ClInclude Include="singleOBJmove_structure.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="LevelEditor_manager.h" />
     <ClInclude Include="LevelEditor_state.h" />
-    <ClInclude Include="Map_OBJ.h" />
     <ClInclude Include="MENU.h" />
     <ClInclude Include="LevelCreator.h" />
     <ClInclude Include="Engine.h" />
@@ -222,6 +224,7 @@
     <ClCompile Include="Button_TEXT.cpp" />
     <ClCompile Include="CoordinateBar_map.cpp" />
     <ClCompile Include="CoordinateBar_mouse.cpp" />
+    <ClCompile Include="DeleteOBJ_structure.cpp" />
     <ClCompile Include="Dynamic_OBJ.cpp" />
     <ClCompile Include="Enemies_placer.cpp" />
     <ClCompile Include="Enemy.cpp" />
@@ -248,15 +251,16 @@
     <ClCompile Include="Menu_local.cpp" />
     <ClCompile Include="MENU_Module_base.cpp" />
     <ClCompile Include="Module_base.cpp" />
+    <ClCompile Include="multiOBJ_select_structure.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Rect.cpp" />
     <ClCompile Include="Script_Editor.cpp" />
     <ClCompile Include="ScroolBar_mapModules.cpp" />
+    <ClCompile Include="singleOBJmove_structure.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="InputArea.cpp" />
     <ClCompile Include="LevelEditor_manager.cpp" />
-    <ClCompile Include="Map_OBJ.cpp" />
     <ClCompile Include="MENU.cpp" />
     <ClCompile Include="LevelCreator.cpp" />
     <ClCompile Include="Engine.cpp" />

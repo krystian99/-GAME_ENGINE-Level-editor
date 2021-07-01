@@ -66,8 +66,10 @@ public:
 	static const double& get_multiplier() { return SIZE_MULTIPLIER; }
 
 	static void reset_multiplier();
+private:
+	void reset_states();
 protected:
-	virtual void on_mouseL1hit() {}
+	void on_mouseL1hit() override;
 	virtual void on_mouseR1hit() {}
 	virtual void on_mouseW1hit() {} // kó³ko nacisniete raz przyciœniête
 
@@ -82,6 +84,9 @@ protected:
 	static double SIZE_MULTIPLIER;
 
 	static constexpr double MULTIPLIER_ADD = 0.2;
+
+	virtual void onMouseOver(){}
+	virtual void onClick(){}
 private:
 
 	bool clicked{ false };
