@@ -23,29 +23,28 @@ void Engine::run()
 void Engine::events()
 {
 	// zdarzenia zale¿ne od myszki oraz klawiatury
-	while (SDL_PollEvent(&event_handler))
-	{
-		Keyboard::events(&event_handler);
-		Mouse::update(&event_handler);
+	SDL_PollEvent(&event_handler);
 
-		if (event_handler.type == SDL_WINDOWEVENT && event_handler.window.windowID == Renderer::get_mainWindow_ID()) {
-			switch (event_handler.window.event) {
-			case SDL_WINDOWEVENT_CLOSE:
-				Engine_manager::Quit();
-				break;
-			}
+	Keyboard::events(&event_handler);
+	Mouse::update(&event_handler);
+
+	if (event_handler.type == SDL_WINDOWEVENT && event_handler.window.windowID == Renderer::get_mainWindow_ID()) {
+		switch (event_handler.window.event) {
+		case SDL_WINDOWEVENT_CLOSE:
+			Engine_manager::Quit();
+			break;
 		}
+	}
 
-		if (event_handler.window.windowID == Renderer::get_mainWindow_ID())
-			events_dpnd();
+	if (event_handler.window.windowID == Renderer::get_mainWindow_ID())
+		events_dpnd();
 
-		// wykonaj eventy dla pozostalych okien
-		else {
-			switch (Engine_manager::getState()) {
-			case Engine_state::IS_IN_LC:
-				level_editor.events_multiwindow();
-				break;
-			}
+	// wykonaj eventy dla pozostalych okien
+	else {
+		switch (Engine_manager::getState()) {
+		case Engine_state::IS_IN_LC:
+			level_editor.events_multiwindow();
+			break;
 		}
 	}
 
