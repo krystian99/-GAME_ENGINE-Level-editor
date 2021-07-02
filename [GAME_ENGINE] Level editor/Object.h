@@ -6,12 +6,12 @@
 class Object : public Rect // przechwytywanie zdarzeñ myszy i klawiatury -> opakowany interfejs, który mo¿e zostaæ wykorzystany przez wszystkie obiekty
 {
 public:
-	Object(){}
+	Object();
 	Object(Rect render_position);
 	Object(int x, int y, int w, int h);
 
 	// czy klikniêto ten konkrenty przycisk na obiekcie?
-	bool is_mouseKey_1hit(Mouse_key key) const { return key == mouse_key && is_mouseOver(); }
+	bool is_mouseKey_1hit(Mouse_key key) const { return key == mouse_key; }
 	bool is_keyboardKey_1hit(Key key) const { return key == keyboard_key; }
 
 	// Czy myszka jest na pozycji tego obiektu?
@@ -53,6 +53,10 @@ private: // funkcje
 	void keyboard_handler();
 private:
 	bool mouse_over;
+
+	Key_pressOnce mouseL_button;
+	Key_pressOnce mouseR_button;
+	Key_pressOnce mouseM_button;
 
 	Mouse_key mouse_key;
 	Key keyboard_key;

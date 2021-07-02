@@ -19,6 +19,9 @@ void singleOBJmove_structure::setState(SingleOBJmove_events st)
 
 void singleOBJmove_structure::events()
 {
+	mouseL_button.events();
+	mouseR_button.events();
+
 	switch (state)
 	{
 	case SingleOBJmove_events::SELECTING:
@@ -70,7 +73,7 @@ void singleOBJmove_structure::movingOBJ_events()
 	current_enemy->set_position(Mouse::getX() - px_left, Mouse::getY() - px_up);
 	current_enemy->set_mapPOS(CoordinateBar_map::getX(), CoordinateBar_map::getY());*/
 
-	if (Mouse::is_pressedL_once())
+	if (mouseL_button.pressedOnce())
 		setState(SingleOBJmove_events::SET_OBJ);
 
 	int tmp_px_left, tmp_px_up;
@@ -115,7 +118,7 @@ void singleOBJmove_structure::selectingObject_events()
 
 void singleOBJmove_structure::setOBJ_onMap()
 {
-	if (Mouse::is_pressedL_once())
+	if (mouseL_button.pressedOnce())
 	{
 		double scaleTX_w, scaleTX_h;
 		int x, y;
@@ -144,7 +147,7 @@ void singleOBJmove_structure::setOBJ_onMap()
 
 void singleOBJmove_structure::mouseR_event()
 {
-	if (Mouse::is_inState(Mouse_key::R_BUTTON))
+	if (mouseR_button.pressedOnce())
 		current_enemy->switch_orient();
 }
 

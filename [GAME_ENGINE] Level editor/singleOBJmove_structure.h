@@ -2,6 +2,8 @@
 #include "Module_base.h"
 #include "Enemy.h"
 #include <SDL_rect.h>
+#include "Key_pressOnce.h"
+#include "Mouse.h"
 
 enum class SingleOBJmove_events
 {
@@ -16,7 +18,8 @@ class singleOBJmove_structure : public Module_base
 	using Enemies = std::vector<Enemy_ptr>;
 public:
 	singleOBJmove_structure(Enemies& en, const Rect& edit_a, const Rect& mapBG_a) :
-		edit_area{ edit_a }, enemies{ en }, mapBG_area{ mapBG_a }
+		edit_area{ edit_a }, enemies{ en }, mapBG_area{ mapBG_a }, mouseL_button{ { Mouse_key::L_BUTTON } },
+		mouseR_button{ { Mouse_key::R_BUTTON } }
 	{}
 
 	void set(Enemy* enemy);
@@ -49,6 +52,9 @@ private:
 
 	void mouse_handler();
 private:
+	Key_pressOnce mouseL_button;
+	Key_pressOnce mouseR_button;
+
 	const Rect& edit_area;
 	const Rect& mapBG_area;
 

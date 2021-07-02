@@ -3,11 +3,9 @@
 #include <SDL_rect.h>
 #include <SDL_events.h>
 #include <vector>
+#include "Key_pressOnce.h"
+#include "Mouse_keys.h"
 
-enum class Mouse_key {
-	NONE,
-	L_BUTTON, R_BUTTON, MID_BUTTON
-};
 enum class Mouse_wheel {
 	NONE,
 	UP, DOWN
@@ -25,6 +23,8 @@ public:
 	static const int & getR_y() { return mY_r; }
 
 	static bool is_inState(Mouse_key key) { return key_state == key; }
+
+	static bool* getKEYS() { return keys; }
 
 	static const bool & is_pressedL() { return keys[int(Mouse_key::L_BUTTON)]; }
 
@@ -52,30 +52,6 @@ private:
 
 	static void switch_motion_wheel_FLAG(SDL_Event *);
 private:
-	class Key_pressOnce
-	{
-	public:
-		Key_pressOnce(const std::vector<Mouse_key>& keys, const bool * mouse_ks);
-
-		void events();
-
-		bool is_pressed() const { return pressed; }
-
-		bool pressedOnce();
-
-		void reset();
-	private:
-		bool isPressed() const;
-	private:
-		bool pressed{ false };
-
-		std::vector<Mouse_key> keys;
-
-		bool flag_pressed_once{ false };
-		bool pressed_once{ false };
-
-		const bool * mouse_keys;
-	};
 
 	static Key_pressOnce lButton_pressOnce, rButton_pressOnce, midButton_pressOnce;
 

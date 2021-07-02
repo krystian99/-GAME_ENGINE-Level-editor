@@ -165,6 +165,7 @@
     <ClInclude Include="Image.h" />
     <ClInclude Include="InputArea.h" />
     <ClInclude Include="Interact_OBJ.h" />
+    <ClInclude Include="Key_pressOnce.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapOBJ.h" />
     <ClInclude Include="Map_events.h" />
@@ -180,6 +181,7 @@
     <ClInclude Include="Menu_local.h" />
     <ClInclude Include="MENU_Module_base.h" />
     <ClInclude Include="Module_base.h" />
+    <ClInclude Include="Mouse_keys.h" />
     <ClInclude Include="multiOBJ_select_structure.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="OBJ_TYPES.h" />
@@ -239,6 +241,7 @@
     <ClCompile Include="HitBox.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="Interact_OBJ.cpp" />
+    <ClCompile Include="Key_pressOnce.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapOBJ.cpp" />
     <ClCompile Include="Map_events.cpp" />

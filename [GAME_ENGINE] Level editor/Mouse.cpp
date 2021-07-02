@@ -12,9 +12,9 @@ SDL_Point Mouse::clicked_point{};
 
 bool Mouse::keys[1000]{};
 
-Mouse::Key_pressOnce Mouse::lButton_pressOnce{ { Mouse_key::L_BUTTON }, Mouse::keys };
-Mouse::Key_pressOnce Mouse::rButton_pressOnce{ { Mouse_key::R_BUTTON }, Mouse::keys };
-Mouse::Key_pressOnce Mouse::midButton_pressOnce{ { Mouse_key::MID_BUTTON }, Mouse::keys };
+Key_pressOnce Mouse::lButton_pressOnce{ { Mouse_key::L_BUTTON }};
+Key_pressOnce Mouse::rButton_pressOnce{ { Mouse_key::R_BUTTON } };
+Key_pressOnce Mouse::midButton_pressOnce{ { Mouse_key::MID_BUTTON } };
 
 Mouse_key Mouse::key_state{ Mouse_key::NONE };
 Mouse_wheel Mouse::wheel_state{ Mouse_wheel::NONE };
@@ -130,51 +130,4 @@ void Mouse::switch_motion_wheel_FLAG(SDL_Event * ev)
 
 		break;
 	}
-}
-
-Mouse::Key_pressOnce::Key_pressOnce(const std::vector<Mouse_key>& keys, const bool * mouse_ks) :
-	mouse_keys{ mouse_ks }
-{
-	this->keys = std::move(keys);
-}
-
-void Mouse::Key_pressOnce::events()
-{
-	pressed = false;
-
-	if (isPressed())
-		pressed = true;
-}
-
-bool Mouse::Key_pressOnce::pressedOnce()
-{
-	if (!flag_pressed_once && pressed)
-	{
-		pressed_once = true;
-		flag_pressed_once = true;
-
-	}
-	else if (flag_pressed_once)
-	{
-		pressed_once = false;
-
-		if (!pressed)
-			flag_pressed_once = false;
-	}
-
-	return pressed_once;
-}
-
-void Mouse::Key_pressOnce::reset()
-{
-
-}
-
-bool Mouse::Key_pressOnce::isPressed() const
-{
-	for (auto& i : keys)
-		if (!mouse_keys[int(i)])
-			return false;
-
-	return true;
 }

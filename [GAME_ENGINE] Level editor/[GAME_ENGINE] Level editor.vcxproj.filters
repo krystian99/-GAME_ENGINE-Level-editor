@@ -49,6 +49,9 @@
     <Filter Include="Level Editor\Modules.cpp">
       <UniqueIdentifier>{0dbdb3f8-bb34-4ea9-ae54-2c5cf0713f98}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mouse">
+      <UniqueIdentifier>{753f14f4-159d-487e-b061-e53cf589c212}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Texture.h">
@@ -294,6 +297,12 @@
     <ClInclude Include="Map_moveMouse_module.h">
       <Filter>Level Editor\Modules.h</Filter>
     </ClInclude>
+    <ClInclude Include="Key_pressOnce.h">
+      <Filter>Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse_keys.h">
+      <Filter>Mouse</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Texture.cpp">
@@ -496,6 +505,9 @@
     </ClCompile>
     <ClCompile Include="Map_moveMouse_module.cpp">
       <Filter>Level Editor\Modules.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Key_pressOnce.cpp">
+      <Filter>Mouse</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

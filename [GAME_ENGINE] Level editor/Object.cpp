@@ -1,13 +1,19 @@
 #include "Object.h"
 #include "Video_Info.h"
 
+Object::Object() :
+	mouseL_button{ {Mouse_key::L_BUTTON} }, mouseR_button{ {Mouse_key::R_BUTTON} }, mouseM_button{ {Mouse_key::MID_BUTTON} }
+{
+}
+
 Object::Object(Rect render_position)
-	: Rect{ render_position }
+	: Rect{ render_position }, mouseL_button{ {Mouse_key::L_BUTTON} }, mouseR_button{ {Mouse_key::R_BUTTON} }, mouseM_button{ {Mouse_key::MID_BUTTON} }
 {
 
 }
 
-Object::Object(int x, int y, int w, int h)
+Object::Object(int x, int y, int w, int h) :
+	mouseL_button{ {Mouse_key::L_BUTTON} }, mouseR_button{ {Mouse_key::R_BUTTON} }, mouseM_button{ {Mouse_key::MID_BUTTON} }
 {
 	set_position(x, y, w, h);
 }
@@ -46,7 +52,14 @@ void Object::reset_states()
 
 void Object::mouseEvents_1hit() // jakieœ eventy dla wciœniêtego raz klawisza myszy
 {
-	switch (mouse_key) {
+	if (Mouse::pressedOnce(Mouse_key::L_BUTTON))
+		on_mouseL1hit();
+	else if (Mouse::pressedOnce(Mouse_key::R_BUTTON))
+		on_mouseR1hit();
+	else if (Mouse::pressedOnce(Mouse_key::MID_BUTTON))
+		on_mouseW1hit();
+
+	/*switch (mouse_key) {
 	case Mouse_key::L_BUTTON:
 		on_mouseL1hit();
 		break;
@@ -56,7 +69,7 @@ void Object::mouseEvents_1hit() // jakieœ eventy dla wciœniêtego raz klawisza my
 	case Mouse_key::MID_BUTTON:
 		on_mouseW1hit();
 		break;
-	}
+	}*/
 }
 
 void Object::keyboardEvents_1hit()
