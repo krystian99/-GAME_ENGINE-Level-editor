@@ -10,8 +10,6 @@ public:
 
 	void events();
 
-	//bool is_pressed() const { return pressed; }
-
 	bool pressedOnce();
 
 	void reset();
@@ -22,7 +20,7 @@ private:
 
 	int count{ 0 };
 
-	std::vector<Mouse_key> keys;
+	std::vector<Mouse_key> check_keys;
 
 	bool flag_pressed_once{ false };
 	bool pressed_once{ false };

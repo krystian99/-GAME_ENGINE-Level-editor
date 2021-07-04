@@ -96,6 +96,7 @@ void singleOBJmove_structure::selectingObject_events()
 			set(enemy.get());
 
 			state = SingleOBJmove_events::MOVING_OBJ;
+			break;
 		}
 	}
 }

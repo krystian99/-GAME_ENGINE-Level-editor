@@ -44,6 +44,8 @@ public:
 
 	static bool is_pressedKey(Key k) { return keyboard[int(k)]; }
 
+	static const Uint8* getKeys() { return keyboard; }
+
 	static bool is_pressedKey_once(Key k) { return key_state == k; }
 
 	static const Key & get_currentKey() { return key_state; }
@@ -76,6 +78,10 @@ private:
 		bool isPressed() const;
 	private:
 		bool pressed{ false };
+
+		int count{ 0 };
+
+		const Uint8* keyboard_keys;
 
 		std::vector<Key> keys;
 

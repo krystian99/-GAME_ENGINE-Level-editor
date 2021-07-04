@@ -26,7 +26,7 @@ public:
 	static const int & getR_x() { return mX_r; }
 	static const int & getR_y() { return mY_r; }
 
-	static bool * getKeys() { return keys; }
+	static const bool * getKeys() { return keys; }
 
 	static bool is_inState(Mouse_key key) { return key_state == key; }
 

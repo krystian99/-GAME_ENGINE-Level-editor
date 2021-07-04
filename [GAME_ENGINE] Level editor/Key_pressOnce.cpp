@@ -4,7 +4,7 @@
 Key_pressOnce::Key_pressOnce(const std::vector<Mouse_key>& keys) :
 	mouse_keys{ Mouse::getKeys() }
 {
-	this->keys = std::move(keys);
+	this->check_keys = keys;
 }
 
 void Key_pressOnce::events()
@@ -36,7 +36,7 @@ void Key_pressOnce::reset()
 
 bool Key_pressOnce::isPressed() const
 {
-	for (auto& i : keys)
+	for (auto& i : check_keys)
 		if (!mouse_keys[int(i)])
 			return false;
 
