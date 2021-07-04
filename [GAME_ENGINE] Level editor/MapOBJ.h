@@ -20,9 +20,9 @@ public:
 	MapOBJ(SDL_Rect map_pos, const Size* sz);
 	MapOBJ(const int& x, const int& y, const Size* sz);
 
-	virtual void events();
+	void events();
 
-	virtual void render();
+	void render();
 
 	void set_mapPOS(int x, int y);
 	void set_mapPOS(int x, int y, int w, int h);

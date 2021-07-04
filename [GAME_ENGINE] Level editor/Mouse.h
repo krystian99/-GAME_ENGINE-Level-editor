@@ -88,6 +88,8 @@ private:
 
 	static bool l_pressed, r_pressed, m_pressed;
 
+	static bool l_pressedOnce, r_pressedOnce, m_pressedOnce;
+
 	static bool updated;
 
 	static int mX_r, mY_r; // kordynaty poprzednie przed zaktualizowaniem zdarzeñ - SDL_PollEvent(&event_handler);

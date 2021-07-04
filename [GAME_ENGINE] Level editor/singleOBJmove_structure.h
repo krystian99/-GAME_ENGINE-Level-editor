@@ -8,6 +8,7 @@ enum class SingleOBJmove_events
 	NONE,
 	SELECTING,
 	MOVING_OBJ,
+	READY_TO_SET,
 	SET_OBJ
 };
 
@@ -29,6 +30,7 @@ public:
 	static void setState(SingleOBJmove_events st);
 
 	void events();
+	void events_indp();
 
 	void render();
 

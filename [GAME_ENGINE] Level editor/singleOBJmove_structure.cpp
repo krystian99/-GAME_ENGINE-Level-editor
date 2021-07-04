@@ -27,10 +27,18 @@ void singleOBJmove_structure::events()
 	case SingleOBJmove_events::MOVING_OBJ:
 		movingOBJ_events();
 		break;
+	case SingleOBJmove_events::READY_TO_SET:
+		setState(SingleOBJmove_events::SET_OBJ);
+		break;
 	case SingleOBJmove_events::SET_OBJ:
 		setOBJ_onMap();
 		break;
 	}
+}
+
+void singleOBJmove_structure::events_indp()
+{
+
 }
 
 void singleOBJmove_structure::render()
@@ -70,8 +78,8 @@ void singleOBJmove_structure::movingOBJ_events()
 	current_enemy->set_position(Mouse::getX() - px_left, Mouse::getY() - px_up);
 	current_enemy->set_mapPOS(CoordinateBar_map::getX(), CoordinateBar_map::getY());*/
 
-	if (Mouse::is_pressedL_once())
-		setState(SingleOBJmove_events::SET_OBJ);
+	if (current_enemy->is_mouseKey_1hit(Mouse_key::L_BUTTON))
+		setState(SingleOBJmove_events::READY_TO_SET);
 
 	int tmp_px_left, tmp_px_up;
 
@@ -96,18 +104,29 @@ void singleOBJmove_structure::movingOBJ_events()
 
 void singleOBJmove_structure::selectingObject_events()
 {
+	for (auto& enemy : enemies)
+	{
+		if (enemy->is_clicked())
+		{
+			current_enemy = enemy.get();
+		}
+	}
+
+
 	for (auto& enemy : enemies) {
 		if (enemy->is_clicked()) {
-			if (!enemy->is_selected())
-			{
+			//if (!enemy->is_selected())
+			//{
+				//enemy->deactivate_clickFlag();
+
 				enemy->switch_selected_state();
 
 				set(enemy.get());
 
 				state = SingleOBJmove_events::MOVING_OBJ;
-			}
-			else
-				enemy->switch_selected_state();
+			//}
+			//else
+				//enemy->switch_selected_state();
 			break;
 		}
 	}
@@ -136,6 +155,8 @@ void singleOBJmove_structure::setOBJ_onMap()
 		current_enemy->set_mapPOS(x, y);
 		current_enemy->set_position(RenderPOS_X, RenderPOS_Y);
 
+		//current_enemy->activate_clickFlag();
+
 		reset();
 
 		setState(SingleOBJmove_events::SELECTING);
@@ -144,7 +165,7 @@ void singleOBJmove_structure::setOBJ_onMap()
 
 void singleOBJmove_structure::mouseR_event()
 {
-	if (Mouse::is_inState(Mouse_key::R_BUTTON))
+	if (current_enemy->is_mouseKey_1hit(Mouse_key::R_BUTTON))
 		current_enemy->switch_orient();
 }
 

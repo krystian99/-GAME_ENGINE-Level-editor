@@ -67,12 +67,12 @@ void Map::events() // zdarzenia zale¿ne od myszki(przyciski myszki: lewy, prawy,
 	updated = false;
 	mouse_over = false;
 
-	events_enemies();
-
 	if (Mouse::is_inPOS(edit_area.get_position()))
 	{
 		if (Map_manager::get_currentModule())
 			Map_manager::get_currentModule()->events();
+
+		events_enemies();
 
 		mouse_over = true;
 		map_mouseHandler.events();

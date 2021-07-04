@@ -6,6 +6,8 @@ int Mouse::mY = 0; // obecna pozycja
 int Mouse::mX_r = 0; // poprzednia pozycja
 int Mouse::mY_r = 0; // poprzednia pozycja
 
+bool Mouse::l_pressedOnce{}, Mouse::r_pressedOnce{}, Mouse::m_pressedOnce{};
+
 bool Mouse::updated{ false };
 
 SDL_Point Mouse::clicked_point{};
@@ -30,6 +32,8 @@ void Mouse::update(SDL_Event * ev)
 	lButton_pressOnce.events();
 	rButton_pressOnce.events();
 	midButton_pressOnce.events();
+
+	if (l_pressedOnce > 1)
 
 	SDL_GetMouseState(&mX, &mY);
 
@@ -96,6 +100,9 @@ void Mouse::switch_buttons_down(SDL_Event * ev)
 {
 	switch (ev->button.button) {
 	case SDL_BUTTON_LEFT:
+		if (!l_pressedOnce) {
+			l_pressedOnce = true;
+		}
 		key_state = Mouse_key::L_BUTTON;
 		clicked_point = { mX, mY };
 		keys[int(Mouse_key::L_BUTTON)] = true;
