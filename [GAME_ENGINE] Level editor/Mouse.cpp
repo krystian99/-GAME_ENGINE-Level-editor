@@ -1,5 +1,6 @@
 #include "Mouse.h"
 #include <SDL_mouse.h>
+#include "Key_pressOnce.h"
 
 int Mouse::mX = 0; // obecna pozycja
 int Mouse::mY = 0; // obecna pozycja
@@ -12,9 +13,9 @@ SDL_Point Mouse::clicked_point{};
 
 bool Mouse::keys[1000]{};
 
-Mouse::Key_pressOnce Mouse::lButton_pressOnce{ { Mouse_key::L_BUTTON }, Mouse::keys };
-Mouse::Key_pressOnce Mouse::rButton_pressOnce{ { Mouse_key::R_BUTTON }, Mouse::keys };
-Mouse::Key_pressOnce Mouse::midButton_pressOnce{ { Mouse_key::MID_BUTTON }, Mouse::keys };
+Key_pressOnce Mouse::lButton_pressOnce{ { Mouse_key::L_BUTTON }};
+Key_pressOnce Mouse::rButton_pressOnce{ { Mouse_key::R_BUTTON } };
+Key_pressOnce Mouse::midButton_pressOnce{ { Mouse_key::MID_BUTTON }};
 
 Mouse_key Mouse::key_state{ Mouse_key::NONE };
 Mouse_wheel Mouse::wheel_state{ Mouse_wheel::NONE };
@@ -68,6 +69,11 @@ bool Mouse::pressedOnce(Mouse_key key)
 		return midButton_pressOnce.pressedOnce();
 		break;
 	}
+}
+
+bool Mouse::is_pressedL_once()
+{
+	return lButton_pressOnce.pressedOnce();
 }
 
 bool Mouse::is_inPOS(const SDL_Rect & pos)
@@ -132,7 +138,7 @@ void Mouse::switch_motion_wheel_FLAG(SDL_Event * ev)
 	}
 }
 
-Mouse::Key_pressOnce::Key_pressOnce(const std::vector<Mouse_key>& keys, const bool * mouse_ks) :
+/*Mouse::Key_pressOnce::Key_pressOnce(const std::vector<Mouse_key>& keys, const bool * mouse_ks) :
 	mouse_keys{ mouse_ks }
 {
 	this->keys = std::move(keys);
@@ -177,4 +183,4 @@ bool Mouse::Key_pressOnce::isPressed() const
 			return false;
 
 	return true;
-}
+}*/

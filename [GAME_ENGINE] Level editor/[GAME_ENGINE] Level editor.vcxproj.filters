@@ -294,6 +294,9 @@
     <ClInclude Include="Map_moveMouse_module.h">
       <Filter>Level Editor\Modules.h</Filter>
     </ClInclude>
+    <ClInclude Include="Key_pressOnce.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Texture.cpp">
@@ -496,6 +499,9 @@
     </ClCompile>
     <ClCompile Include="Map_moveMouse_module.cpp">
       <Filter>Level Editor\Modules.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Key_pressOnce.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
