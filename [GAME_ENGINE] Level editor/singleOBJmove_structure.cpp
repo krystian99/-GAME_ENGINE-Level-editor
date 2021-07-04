@@ -40,6 +40,13 @@ void singleOBJmove_structure::render()
 
 void singleOBJmove_structure::movingOBJ_events()
 {
+	if (Mouse::is_pressedL_once()) {
+		setState(SingleOBJmove_events::SET_OBJ);
+		return;
+	}
+	else if (Mouse::is_pressedR_once())
+		current_enemy->switch_orient();
+
 	double scaleTX_w, scaleTX_h;
 	int x, y;
 
@@ -60,18 +67,6 @@ void singleOBJmove_structure::movingOBJ_events()
 
 	current_enemy->set_mapPOS(x, y);
 	current_enemy->set_position(RenderPOS_X, RenderPOS_Y);
-
-	mouseR_event();
-
-	/*int tmp_px_left, tmp_px_up;
-
-	tmp_px_left = tmp_px_up = 0;
-
-	current_enemy->set_position(Mouse::getX() - px_left, Mouse::getY() - px_up);
-	current_enemy->set_mapPOS(CoordinateBar_map::getX(), CoordinateBar_map::getY());*/
-
-	if (Mouse::is_pressedL_once())
-		setState(SingleOBJmove_events::SET_OBJ);
 
 	int tmp_px_left, tmp_px_up;
 
@@ -97,49 +92,38 @@ void singleOBJmove_structure::movingOBJ_events()
 void singleOBJmove_structure::selectingObject_events()
 {
 	for (auto& enemy : enemies) {
-		if (enemy->is_clicked()) {
-			if (!enemy->is_selected())
-			{
-				enemy->switch_selected_state();
+		if (enemy->is_mouseKey_1hit(Mouse_key::L_BUTTON)) {
+			set(enemy.get());
 
-				set(enemy.get());
-
-				state = SingleOBJmove_events::MOVING_OBJ;
-			}
-			else
-				enemy->switch_selected_state();
-			break;
+			state = SingleOBJmove_events::MOVING_OBJ;
 		}
 	}
 }
 
 void singleOBJmove_structure::setOBJ_onMap()
 {
-	if (Mouse::is_pressedL_once())
-	{
-		double scaleTX_w, scaleTX_h;
-		int x, y;
+	double scaleTX_w, scaleTX_h;
+	int x, y;
 
-		scaleTX_w = double(current_enemy->left() - edit_area.left()) / edit_area.getW();
-		scaleTX_h = double(current_enemy->up() - edit_area.up()) / edit_area.getH();
+	scaleTX_w = double(current_enemy->left() - edit_area.left()) / edit_area.getW();
+	scaleTX_h = double(current_enemy->up() - edit_area.up()) / edit_area.getH();
 
-		x = mapBG_area.left() + round(mapBG_area.getW() * scaleTX_w);
-		y = mapBG_area.up() + round(mapBG_area.getH() * scaleTX_h);
+	x = mapBG_area.left() + round(mapBG_area.getW() * scaleTX_w);
+	y = mapBG_area.up() + round(mapBG_area.getH() * scaleTX_h);
 
-		int RenderPOS_X, RenderPOS_Y;
-		double scaleX, scaleY;
-		scaleX = double(x - mapBG_area.left()) / double(mapBG_area.getW());
-		scaleY = double(y - mapBG_area.up()) / double(mapBG_area.getH());
-		RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
-		RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
+	int RenderPOS_X, RenderPOS_Y;
+	double scaleX, scaleY;
+	scaleX = double(x - mapBG_area.left()) / double(mapBG_area.getW());
+	scaleY = double(y - mapBG_area.up()) / double(mapBG_area.getH());
+	RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
+	RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
 
-		current_enemy->set_mapPOS(x, y);
-		current_enemy->set_position(RenderPOS_X, RenderPOS_Y);
+	current_enemy->set_mapPOS(x, y);
+	current_enemy->set_position(RenderPOS_X, RenderPOS_Y);
 
-		reset();
+	reset();
 
-		setState(SingleOBJmove_events::SELECTING);
-	}
+	setState(SingleOBJmove_events::SELECTING);
 }
 
 void singleOBJmove_structure::mouseR_event()

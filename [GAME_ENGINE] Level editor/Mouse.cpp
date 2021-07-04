@@ -76,6 +76,11 @@ bool Mouse::is_pressedL_once()
 	return lButton_pressOnce.pressedOnce();
 }
 
+bool Mouse::is_pressedR_once()
+{
+	return rButton_pressOnce.pressedOnce();
+}
+
 bool Mouse::is_inPOS(const SDL_Rect & pos)
 {
 	if (Mouse::getX() >= pos.x && Mouse::getX() <= pos.x + pos.w

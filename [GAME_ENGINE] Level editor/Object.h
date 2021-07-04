@@ -11,8 +11,8 @@ public:
 	Object(int x, int y, int w, int h);
 
 	// czy klikniêto ten konkrenty przycisk na obiekcie?
-	bool is_mouseKey_1hit(Mouse_key key) const { return key == mouse_key && is_mouseOver(); }
-	bool is_keyboardKey_1hit(Key key) const { return key == keyboard_key; }
+	bool is_mouseKey_1hit(Mouse_key key) const { return Mouse::pressedOnce(key) && is_mouseOver(); }
+	bool is_keyboardKey_1hit(Key key) const { return key == keyboard_key && is_mouseOver(); }
 
 	// Czy myszka jest na pozycji tego obiektu?
 	bool is_mouseOver() const { return mouse_over; }

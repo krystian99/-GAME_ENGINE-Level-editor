@@ -10,7 +10,7 @@ public:
 
 	void events();
 
-	bool is_pressed() const { return pressed; }
+	//bool is_pressed() const { return pressed; }
 
 	bool pressedOnce();
 

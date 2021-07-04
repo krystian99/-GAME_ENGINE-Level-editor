@@ -35,6 +35,7 @@ public:
 	static bool pressedOnce(Mouse_key key);
 
 	static bool is_pressedL_once();
+	static bool is_pressedR_once();
 
 	static bool pressed_Lbutton() { return keys[int(Mouse_key::L_BUTTON)]; }
 
@@ -56,31 +57,6 @@ private:
 
 	static void switch_motion_wheel_FLAG(SDL_Event *);
 private:
-	/*class Key_pressOnce
-	{
-	public:
-		Key_pressOnce(const std::vector<Mouse_key>& keys, const bool * mouse_ks);
-
-		void events();
-
-		bool is_pressed() const { return pressed; }
-
-		bool pressedOnce();
-
-		void reset();
-	private:
-		bool isPressed() const;
-	private:
-		bool pressed{ false };
-
-		std::vector<Mouse_key> keys;
-
-		bool flag_pressed_once{ false };
-		bool pressed_once{ false };
-
-		const bool * mouse_keys;
-	};*/
-
 	static Key_pressOnce lButton_pressOnce, rButton_pressOnce, midButton_pressOnce;
 
 	static Mouse_key key_state;
@@ -91,6 +67,8 @@ private:
 	static bool keys[1000];
 
 	static bool l_pressed, r_pressed, m_pressed;
+
+	//static bool buttonDown;
 
 	static bool updated;
 

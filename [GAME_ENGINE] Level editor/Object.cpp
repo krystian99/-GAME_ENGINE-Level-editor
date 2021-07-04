@@ -22,6 +22,8 @@ void Object::events()
 
 		on_mouseOver();
 
+		//mouseEvents_1hit();
+
 		mouse_handler();
 		keyboard_handler();
 	}
@@ -46,6 +48,13 @@ void Object::reset_states()
 
 void Object::mouseEvents_1hit() // jakieœ eventy dla wciœniêtego raz klawisza myszy
 {
+	/*if (Mouse::is_pressedL_once())
+		on_mouseL1hit();
+	else if (Mouse::pressedOnce(Mouse_key::R_BUTTON))
+		on_mouseR1hit();
+	else if (Mouse::pressedOnce(Mouse_key::MID_BUTTON))
+		on_mouseW1hit();*/
+
 	switch (mouse_key) {
 	case Mouse_key::L_BUTTON:
 		on_mouseL1hit();
@@ -66,10 +75,17 @@ void Object::keyboardEvents_1hit()
 
 void Object::mouse_handler()
 {
-	mouse_key = Mouse::getBt_state();
+	if (Mouse::is_pressedL_once())
+		on_mouseL1hit();
+	else if (Mouse::pressedOnce(Mouse_key::R_BUTTON))
+		on_mouseR1hit();
+	else if (Mouse::pressedOnce(Mouse_key::MID_BUTTON))
+		on_mouseW1hit();
+
+	/*mouse_key = Mouse::getBt_state();
 
 	if (mouse_key != Mouse_key::NONE)
-		mouseEvents_1hit();
+		mouseEvents_1hit();*/
 }
 
 void Object::keyboard_handler()
