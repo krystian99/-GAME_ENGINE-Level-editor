@@ -38,6 +38,7 @@ public:
 	static const bool & is_pressedL() { return keys[int(Mouse_key::L_BUTTON)]; }
 
 	static bool pressedOnce(Mouse_key key);
+	static bool pressedOnce(int code);
 
 	static bool is_pressedL_once();
 	static bool is_pressedR_once();

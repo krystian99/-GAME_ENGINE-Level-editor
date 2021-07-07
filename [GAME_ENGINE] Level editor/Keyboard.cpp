@@ -155,8 +155,12 @@ void Keyboard::switch_others(SDL_Keycode & code)
 		break;
 	case SDLK_KP_ENTER:
 		key_state = Key::ENTER;
+		break;
 	case SDLK_BACKSPACE:
 		key_state = Key::BACKSPACE;
+		break;
+	case SDLK_DELETE:
+		key_state = Key::DELETE;
 		break;
 	}
 }

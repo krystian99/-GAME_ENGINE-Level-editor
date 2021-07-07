@@ -13,10 +13,10 @@ class Dynamic_OBJ : public MapOBJ
 {
 public:
 	Dynamic_OBJ(const int & x, const int & y, Texture * texture, const Size * size, SDL_RendererFlip Flip = SDL_RendererFlip::SDL_FLIP_NONE) :
-		MapOBJ{ x, y, size }, flip{ Flip }, tX{ texture }
+		MapOBJ{ x, y, size, texture }, flip{ Flip }, tX{ texture }
 	{}
 	Dynamic_OBJ(SDL_Rect mappos, Texture * texture, const Size * size, SDL_RendererFlip Flip = SDL_RendererFlip::SDL_FLIP_NONE) :
-		MapOBJ{ mappos, size }, flip{ Flip }, tX{ texture }
+		MapOBJ{ mappos, size, texture }, flip{ Flip }, tX{ texture }
 	{}
 
 	void render();
@@ -31,8 +31,10 @@ public:
 
 	virtual ~Dynamic_OBJ() {}
 protected:
-	//virtual void onMouseOver() = 0;
-	//virtual void onClick() = 0;
+	virtual void on_mouseOver();
+	virtual void on_mouseOut();
+
+	virtual void onClick(){}
 protected:
 	Texture * tX;
 	SDL_RendererFlip flip;

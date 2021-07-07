@@ -12,6 +12,7 @@
 #include "EventOBJ.h"
 
 Map::Map(int x, int y, int w, int h) :
+	Object{ x, y, w, h },
 	enemy_placerModule{ enemies, edit_area },
 	multiOBJ_s{ enemies, map_mouseHandler, &edit_area, &mapBG_area },
 	deleteOBJ_s{ enemies },
@@ -61,11 +62,20 @@ void Map::load_Objects(const std::string& name)
 
 	load.close();
 }
+#include <iostream>
+using std::cout;
 
 void Map::events() // zdarzenia zale¿ne od myszki(przyciski myszki: lewy, prawy, kó³ko)
 {
 	updated = false;
 	mouse_over = false;
+
+	Object::events();
+
+	if (is_keyboardKey_1hit(Key::D))
+	{
+		cout << "Wcisniet na mapie przycisk: D\n";
+	}
 
 	events_enemies();
 
@@ -139,6 +149,11 @@ void Map::set_background(const std::string& bg)
 	Init_objectsSize();
 
 	Engine_manager::set_updateState(Engine_updateState::RENDER_READY);
+}
+
+void Map::on_mouseR1hit()
+{
+	cout << "Wcisnieto prawy przycisk myszy!\n";
 }
 
 void Map::set_ScaledSize()
@@ -329,8 +344,9 @@ void Map::create_EnemyOBJ(const SDL_Rect& mapPOS, const Enemy_ID& id, const SDL_
 
 void Map::events_enemies()
 {
-	for (auto& enemy : enemies)
+	for (auto& enemy : enemies) {
 		enemy->events();
+	}
 }
 
 void Map::events_delete_enemies()

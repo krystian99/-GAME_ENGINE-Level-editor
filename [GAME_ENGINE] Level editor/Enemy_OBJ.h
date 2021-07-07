@@ -28,9 +28,9 @@ public:
 	static void setTexture(const std::string & str);
 
 	static void Init_renderSize();
-protected:
-	void onMouseOver();
-	void onClick();
+//protected:
+	//void onMouseOver();
+	//void onClick();
 private:
 	static Texture texture;
 	static Size size;
@@ -82,7 +82,7 @@ inline Texture & Enemy_OBJ<id, w, h>::getTexture()
 	return texture;
 }
 
-template<Enemy_ID id, int w, int h>
+/*template<Enemy_ID id, int w, int h>
 inline void Enemy_OBJ<id, w, h>::onMouseOver()
 {
 
@@ -92,4 +92,4 @@ template<Enemy_ID id, int w, int h>
 inline void Enemy_OBJ<id, w, h>::onClick()
 {
 
-}
+}*/

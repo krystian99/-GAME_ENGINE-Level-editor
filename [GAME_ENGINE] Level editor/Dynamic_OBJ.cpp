@@ -22,3 +22,13 @@ void Dynamic_OBJ::switch_orient()
 	else
 		flip = SDL_FLIP_NONE;
 }
+
+void Dynamic_OBJ::on_mouseOver()
+{
+	MapOBJ::on_mouseOver();
+}
+
+void Dynamic_OBJ::on_mouseOut()
+{
+	MapOBJ::on_mouseOut();
+}

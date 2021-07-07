@@ -20,18 +20,12 @@ public:
 private:
 	bool pressed{ false };
 
-	//int count{ 0 };
-
-	int code;
-
-	//int* counts;
+	int code{ 0 };
 
 	std::vector<Mouse_key> check_keys;
 
 	bool flag_pressed_once{ false };
-	//bool pressed_once{ false };
 
 	const bool* mouse_keys;
 	bool* pressed_once;
 };
-

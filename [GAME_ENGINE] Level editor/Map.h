@@ -18,9 +18,10 @@
 #include "DeleteOBJ_structure.h"
 #include "singleOBJmove_structure.h"
 #include "Map_moveMouse_module.h"
+#include "Object.h"
 
 // klasa steruj¹ca wszystkimi zdarzeniami na mapie
-class Map
+class Map : public Object
 {
 	friend void Map_events::render_enemies(Map* map);
 	friend void Map_events::render_map(Map* map);
@@ -51,6 +52,8 @@ public:
 	// zwróæ obszar czêœci textury renderowanej na ekranie
 	const SDL_Rect & get_backgroundArea() const { return mapBG_area.get_position(); }
 private:
+	void on_mouseR1hit() override;
+
 	void set_ScaledSize();
 
 	void mouseR_events();

@@ -8,3 +8,13 @@ const Enemy_data & Enemy::getData()
 
 	return data;
 }
+
+void Enemy::on_mouseOver()
+{
+	Dynamic_OBJ::on_mouseOver();
+}
+
+void Enemy::on_mouseOut()
+{
+	Dynamic_OBJ::on_mouseOut();
+}

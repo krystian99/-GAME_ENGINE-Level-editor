@@ -30,8 +30,10 @@ public:
 
 	virtual ~Enemy() {}
 protected:
-	virtual void onMouseOver() = 0;
-	virtual void onClick() = 0;
+	virtual void on_mouseOver();
+	virtual void on_mouseOut();
+
+	//virtual void onClick() = 0;
 private:
 	Enemy_ID id_enemy;
 	Enemy_data data;

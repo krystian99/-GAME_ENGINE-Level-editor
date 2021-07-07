@@ -16,9 +16,9 @@ class MapOBJ : public Object
 {
 public:
 	MapOBJ(){}
-	MapOBJ(const Rect & render_position, const Rect & map_position);
-	MapOBJ(SDL_Rect map_pos, const Size* sz);
-	MapOBJ(const int& x, const int& y, const Size* sz);
+	MapOBJ(const Rect & render_position, const Rect & map_position, Texture* tx);
+	MapOBJ(SDL_Rect map_pos, const Size* sz, Texture* tx);
+	MapOBJ(const int& x, const int& y, const Size* sz, Texture* tx);
 
 	virtual void events();
 
@@ -73,8 +73,8 @@ protected:
 	virtual void on_mouseR1hit() {}
 	virtual void on_mouseW1hit() {} // kó³ko nacisniete raz przyciœniête
 
-	virtual void on_mouseOver() {} // gdy myszka na pozycji obiektu
-	virtual void on_mouseOut() {} // gdy myszka nie jest ju¿ na pozycji przycisku
+	virtual void on_mouseOver(); // gdy myszka na pozycji obiektu
+	virtual void on_mouseOut(); // gdy myszka nie jest ju¿ na pozycji przycisku
 
 	// gdy trzymany przez jakiœ czas przycisk myszy
 	virtual void on_mouseL_press() {}
@@ -85,7 +85,6 @@ protected:
 
 	static constexpr double MULTIPLIER_ADD = 0.2;
 
-	virtual void onMouseOver(){}
 	virtual void onClick(){}
 private:
 
@@ -94,6 +93,11 @@ private:
 	Rect mapPOS{};
 
 	bool selected{ false }; // czy wybrany obiekt
+
+	Texture* tx;
+
+	Uint8 alpha_mod_mouseOut{ 255 };
+	Uint8 alpha_mod_mouseOver{ 100 };
 
 	const Size* object_size;
 };

@@ -68,6 +68,11 @@ bool Mouse::pressedOnce(Mouse_key key)
 	return pressed_once[int(key)];
 }
 
+bool Mouse::pressedOnce(int code)
+{
+	return pressed_once[code];
+}
+
 bool Mouse::is_pressedL_once()
 {
 	return lButton_pressOnce.pressedOnce();
@@ -133,6 +138,8 @@ void Mouse::reset_states()
 	wheel_state = Mouse_wheel::NONE;
 
 	l_pressed_once = false;
+
+	updated = true;
 
 	keys[int(Mouse_key::WHEEL_UP)] = false;
 	keys[int(Mouse_key::WHEEL_DOWN)] = false;

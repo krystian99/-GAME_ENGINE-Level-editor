@@ -7,12 +7,16 @@ class Object : public Rect // przechwytywanie zdarzeñ myszy i klawiatury -> opak
 {
 public:
 	Object(){}
-	Object(Rect render_position);
-	Object(int x, int y, int w, int h);
+	Object(Rect render_position) : 
+		Rect{ render_position }
+	{}
+	Object(int x, int y, int w, int h) :
+		Rect{ x, y, w, h }
+	{}
 
 	// czy klikniêto ten konkrenty przycisk na obiekcie?
-	bool is_mouseKey_1hit(Mouse_key key) const { return Mouse::pressedOnce(key) && is_mouseOver(); }
-	bool is_keyboardKey_1hit(Key key) const { return key == keyboard_key && is_mouseOver(); }
+	bool is_mouseKey_1hit(Mouse_key key) const { return is_mouseOver() && Mouse::pressedOnce(key); }
+	bool is_keyboardKey_1hit(Key key) const { return is_mouseOver() && key == Keyboard::get_currentKey(); }
 
 	// Czy myszka jest na pozycji tego obiektu?
 	bool is_mouseOver() const { return mouse_over; }
@@ -46,17 +50,41 @@ protected:
 	virtual void on_mouseL_press() {}
 	virtual void on_mouseR_press() {}
 	virtual void on_mouseW_press() {}
-private: // funkcje
-	//void reset_states();
 
-	//void mouseEvents_1hit();
+	// klawisze klawiatury wcisniete na obiekcie
+	virtual void on_keyboardKey_A_1hit(){}
+	virtual void on_keyboardKey_B_1hit(){}
+	virtual void on_keyboardKey_C_1hit(){}
+	virtual void on_keyboardKey_D_1hit(){}
+	virtual void on_keyboardKey_E_1hit() {}
+	virtual void on_keyboardKey_F_1hit() {}
+	virtual void on_keyboardKey_G_1hit() {}
+	virtual void on_keyboardKey_H_1hit() {}
+	virtual void on_keyboardKey_I_1hit() {}
+	virtual void on_keyboardKey_J_1hit() {}
+	virtual void on_keyboardKey_K_1hit() {}
+	virtual void on_keyboardKey_L_1hit() {}
+	virtual void on_keyboardKey_M_1hit() {}
+	virtual void on_keyboardKey_N_1hit() {}
+	virtual void on_keyboardKey_O_1hit() {}
+	virtual void on_keyboardKey_P_1hit() {}
+	virtual void on_keyboardKey_Q_1hit() {}
+	virtual void on_keyboardKey_R_1hit() {}
+	virtual void on_keyboardKey_S_1hit() {}
+	virtual void on_keyboardKey_T_1hit() {}
+	virtual void on_keyboardKey_U_1hit() {}
+	virtual void on_keyboardKey_V_1hit() {}
+	virtual void on_keyboardKey_W_1hit() {}
+	virtual void on_keyboardKey_X_1hit() {}
+	virtual void on_keyboardKey_Y_1hit() {}
+	virtual void on_keyboardKey_Z_1hit() {}
+
+	virtual void on_keyboardKey_DELETE_1hit() {}
+private:
 	void keyboardEvents_1hit();
 
 	void mouse_handler();
 	void keyboard_handler();
 private:
 	bool mouse_over;
-
-	//Mouse_key mouse_key;
-	Key keyboard_key;
 };

@@ -3,18 +3,23 @@
 
 double MapOBJ::SIZE_MULTIPLIER{ 1.0 };
 
-MapOBJ::MapOBJ(const Rect & render_position, const Rect & map_position) : Object{ render_position }
+MapOBJ::MapOBJ(const Rect & render_position, const Rect & map_position, Texture* tx) : Object{ render_position }
 {
+	this->tx = tx;
+
 	mapPOS = map_position;
 }
 
-MapOBJ::MapOBJ(SDL_Rect map_pos, const Size* sz) : object_size{ sz }
+MapOBJ::MapOBJ(SDL_Rect map_pos, const Size* sz, Texture* tx) : object_size{ sz }
 {
+	this->tx = tx;
+
 	mapPOS = map_pos;
 }
 
-MapOBJ::MapOBJ(const int& x, const int& y, const Size* sz) : object_size{ sz }
+MapOBJ::MapOBJ(const int& x, const int& y, const Size* sz, Texture* tx) : object_size{ sz }
 {
+	this->tx = tx;
 	set_mapPOS(x, y);
 }
 
@@ -122,4 +127,18 @@ void MapOBJ::reset_states()
 void MapOBJ::on_mouseL1hit()
 {
 	clicked = true;
+}
+
+void MapOBJ::on_mouseOut()
+{
+	//Object::on_mouseOut();
+
+	tx->set_blendAlpha(alpha_mod_mouseOut);
+}
+
+void MapOBJ::on_mouseOver()
+{
+	//Object::on_mouseOver();
+
+	tx->set_blendAlpha(alpha_mod_mouseOver);
 }
