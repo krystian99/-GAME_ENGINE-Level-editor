@@ -1,5 +1,6 @@
 #include "Key_pressOnce.h"
 #include "Mouse.h"
+#include <iostream>
 
 Key_pressOnce::Key_pressOnce(const std::vector<Mouse_key>& keys)
 {

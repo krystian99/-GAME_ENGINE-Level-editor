@@ -4,6 +4,7 @@ Key Keyboard::key_state{ Key::NONE };
 Key Keyboard::mod_state{ Key::NONE };
 
 const Uint8* Keyboard::keyboard{ SDL_GetKeyboardState(nullptr) };
+bool Keyboard::pressed_once[1000];
 
 Keyboard::Shortcut_keys Keyboard::cntrl_z{
 	{ Key::LCNTRL, Key::Z }
@@ -41,10 +42,6 @@ void Keyboard::events(SDL_Event* ev)
 {
 	key_state = Key::NONE;
 
-	cntrl_z.events();
-	cntrl_y.events();
-	escape.events();
-
 	switch (ev->type) {
 	case SDL_KEYDOWN:
 		switch_keys_down(ev);
@@ -53,6 +50,11 @@ void Keyboard::events(SDL_Event* ev)
 		switch_keys_up(ev);
 		break;
 	}
+
+	cntrl_z.events();
+	cntrl_y.events();
+	escape.events();
+
 }
 
 
@@ -217,10 +219,16 @@ bool Keyboard::is_CapsLock_toggled()
 }
 
 
-Keyboard::Shortcut_keys::Shortcut_keys(const std::vector<Key>& keys) :
-	keyboard_keys{ Keyboard::getKeys() }
+Keyboard::Shortcut_keys::Shortcut_keys(const std::vector<Key>& k)
 {
-	this->keys = keys;
+	keyboard_keys = Keyboard::getKeys();
+	keys = k;
+	pressed_once = Keyboard::getPressedOnce();
+
+	for (auto& i : this->keys)
+	{
+		code |= int(i);
+	}
 }
 
 void Keyboard::Shortcut_keys::events()
@@ -233,7 +241,7 @@ void Keyboard::Shortcut_keys::events()
 		if (!flag_pressed_once) {
 			flag_pressed_once = true;
 
-			pressed_once = true;
+			pressed_once[code] = true;
 		}
 	}
 	else
@@ -242,27 +250,13 @@ void Keyboard::Shortcut_keys::events()
 
 bool Keyboard::Shortcut_keys::pressedOnce()
 {
-	/*if (!flag_pressed_once && pressed)
-	{
-		pressed_once = true;
-		flag_pressed_once = true;
-
-	}
-	else if (flag_pressed_once)
-	{
-		pressed_once = false;
-
-		if (!pressed)
-			flag_pressed_once = false;
-	}*/
-
-	return pressed_once;
+	return pressed_once[code];
 }
 
 void Keyboard::Shortcut_keys::reset()
 {
 	pressed = false;
-	pressed_once = false;
+	pressed_once[code] = false;
 }
 
 bool Keyboard::Shortcut_keys::isPressed() const

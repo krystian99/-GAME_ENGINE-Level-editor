@@ -31,7 +31,7 @@ public:
 
 	static bool* get_pressedOnce() { return pressed_once; }
 
-	static bool is_WheelState(Mouse_wheel st) { return wheel_state == st; }
+	static bool is_WheelState(Mouse_key st) { return keys[int(st)]; }
 
 	static bool is_inState(Mouse_key key) { return key_state == key; }
 
@@ -73,13 +73,9 @@ private:
 
 	static bool keys[100];
 
-	//static int counts[100];
-
 	static bool pressed_once[100];
 
 	static bool l_pressed, r_pressed, m_pressed;
-
-	//static bool buttonDown;
 
 	static bool updated;
 

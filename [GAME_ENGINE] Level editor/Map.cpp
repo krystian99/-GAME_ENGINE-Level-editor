@@ -452,7 +452,7 @@ void Map::move_map_Wheel()
 {
 	bool upd = false;
 
-	if (Mouse::is_WheelState(Mouse_wheel::UP))
+	if (Mouse::is_WheelState(Mouse_key::WHEEL_UP))
 	{
 		upd = true;
 		if (mapBG_area.right() < mapBG.getWidth()) {
@@ -462,7 +462,7 @@ void Map::move_map_Wheel()
 				mapBG_area.setX(mapBG.getWidth() - mapBG_area.getW());
 		}
 	}
-	if (Mouse::is_WheelState(Mouse_wheel::DOWN))
+	if (Mouse::is_WheelState(Mouse_key::WHEEL_DOWN))
 	{
 		upd = true;
 		if(mapBG_area.left() > 0) {

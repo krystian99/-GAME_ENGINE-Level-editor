@@ -23,31 +23,58 @@ void Engine::run()
 void Engine::events()
 {
 	// zdarzenia zale¿ne od myszki oraz klawiatury
-	SDL_PollEvent(&event_handler);
+	while (SDL_PollEvent(&event_handler)) {
 
-	Keyboard::events(&event_handler);
-	Mouse::update(&event_handler);
+		Keyboard::events(&event_handler);
+		Mouse::update(&event_handler);
 
-	if (event_handler.type == SDL_WINDOWEVENT && event_handler.window.windowID == Renderer::get_mainWindow_ID()) {
-		switch (event_handler.window.event) {
-		case SDL_WINDOWEVENT_CLOSE:
-			Engine_manager::Quit();
-			break;
+		if (event_handler.type == SDL_WINDOWEVENT && event_handler.window.windowID == Renderer::get_mainWindow_ID()) {
+			switch (event_handler.window.event) {
+			case SDL_WINDOWEVENT_CLOSE:
+				Engine_manager::Quit();
+				break;
+			}
+		}
+
+		if (event_handler.window.windowID == Renderer::get_mainWindow_ID())
+			events_dpnd();
+
+		// wykonaj eventy dla pozostalych okien
+		else {
+			switch (Engine_manager::getState()) {
+			case Engine_state::IS_IN_LC:
+				level_editor.events_multiwindow();
+				break;
+			}
+		}
+
+		if (Keyboard::is_pressedEscape() || Keyboard::is_pressed_LCNTRL_Z()) {
+			switch (Engine_manager::getState()) {
+			case Engine_state::IS_IN_LC:
+				Engine_manager::setState(Engine_state::IS_IN_MENU);
+				Menu_manager::set_Menu(Menu_ID::LEVEL_MENU);
+				level_editor.reset_states();
+				break;
+			case Engine_state::IS_IN_ANIMATION_MANAGEMENT:
+				Engine_manager::setState(Engine_state::IS_IN_MENU);
+				Menu_manager::set_Menu(Menu_ID::ANIMATION_MENU);
+				break;
+			case Engine_state::IS_IN_MENU:
+				switch (Menu_manager::getState()) {
+				case Menu_ID::START:
+					Engine_manager::Quit();
+					break;
+				case Menu_ID::LEVEL_MENU:
+					Menu_manager::set_Menu(Menu_ID::START);
+					break;
+				case Menu_ID::ANIMATION_MENU:
+					Menu_manager::set_Menu(Menu_ID::START);
+					break;
+				}
+				break;
+			}
 		}
 	}
-
-	if (event_handler.window.windowID == Renderer::get_mainWindow_ID())
-		events_dpnd();
-
-	// wykonaj eventy dla pozostalych okien
-	else {
-		switch (Engine_manager::getState()) {
-		case Engine_state::IS_IN_LC:
-			level_editor.events_multiwindow();
-			break;
-		}
-	}
-
 	// zdarzenia niezale¿ne od myszki i klawiatury
 	events_indp();
 }
@@ -55,34 +82,6 @@ void Engine::events()
 void Engine::events_indp()
 {
 	Engine_manager::getModule()->events_indp();
-
-
-	if (Keyboard::is_pressedEscape() || Keyboard::is_pressed_LCNTRL_Z()) {
-		switch (Engine_manager::getState()) {
-		case Engine_state::IS_IN_LC:
-			Engine_manager::setState(Engine_state::IS_IN_MENU);
-			Menu_manager::set_Menu(Menu_ID::LEVEL_MENU);
-			level_editor.reset_states();
-			break;
-		case Engine_state::IS_IN_ANIMATION_MANAGEMENT:
-			Engine_manager::setState(Engine_state::IS_IN_MENU);
-			Menu_manager::set_Menu(Menu_ID::ANIMATION_MENU);
-			break;
-		case Engine_state::IS_IN_MENU:
-			switch (Menu_manager::getState()) {
-			case Menu_ID::START:
-				Engine_manager::Quit();
-				break;
-			case Menu_ID::LEVEL_MENU:
-				Menu_manager::set_Menu(Menu_ID::START);
-				break;
-			case Menu_ID::ANIMATION_MENU:
-				Menu_manager::set_Menu(Menu_ID::START);
-				break;
-			}
-			break;
-		}
-	}
 }
 
 void Engine::events_dpnd()

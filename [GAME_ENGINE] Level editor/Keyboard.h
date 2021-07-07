@@ -26,6 +26,8 @@ public:
 
 	static bool is_CapsLock_toggled();
 
+	static bool* getPressedOnce() { return pressed_once; }
+
 	/* Musi zostaæ wywo³ane przez klasê zarz¹dzaj¹ca daym stanem
 	przyk³ad: MenuStart->events()
 	Wtedy klasa zarz¹dzaj¹ca przekierowuje dalej stany*/
@@ -35,6 +37,8 @@ public:
 	przyk³ad: MenuStart->events()
 	Wtedy klasa zarz¹dzaj¹ca przekierowuje dalej stany*/
 	static bool is_pressed_LCNTRL_Y() { return cntrl_y.pressedOnce(); }
+
+	static bool pressedOnce(int key) { return pressed_once[key]; }
 
 	static bool is_pressedEscape() { return escape.pressedOnce(); }
 
@@ -79,17 +83,19 @@ private:
 	private:
 		bool pressed{ false };
 
-		int count{ 0 };
+		int code{0};
 
 		const Uint8* keyboard_keys;
 
 		std::vector<Key> keys;
 
 		bool flag_pressed_once{ false };
-		bool pressed_once{ false };
+		bool * pressed_once;
 	};
 
 	static Shortcut_keys cntrl_z, cntrl_y, escape;
+
+	static bool pressed_once[1000];
 
 	static const Uint8* keyboard;
 

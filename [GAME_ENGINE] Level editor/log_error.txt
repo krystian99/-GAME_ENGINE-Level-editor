@@ -1,2 +1,2 @@
-Unable to render text surface! SDL_ttf Error: 
-Text has zero width
+Unable to create texture from rendered text! SDL Error: 
+Texture dimensions are limited to 8192x8192
