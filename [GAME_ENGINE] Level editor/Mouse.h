@@ -60,6 +60,8 @@ public:
 private:
 	static void switch_buttons_down(SDL_Event *);
 
+	static void reset_states();
+
 	static void switch_motion_wheel_FLAG(SDL_Event *);
 private:
 	static Key_pressOnce lButton_pressOnce, rButton_pressOnce, midButton_pressOnce;
@@ -74,6 +76,8 @@ private:
 	static bool keys[100];
 
 	static bool pressed_once[100];
+
+	static bool l_pressed_once;
 
 	static bool l_pressed, r_pressed, m_pressed;
 

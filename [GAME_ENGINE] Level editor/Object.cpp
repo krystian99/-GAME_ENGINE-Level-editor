@@ -45,7 +45,7 @@ void Object::keyboardEvents_1hit()
 
 void Object::mouse_handler()
 {
-	if (Mouse::is_pressedL_once())
+	if (Mouse::pressedOnce(Mouse_key::L_BUTTON))
 		on_mouseL1hit();
 	else if (Mouse::pressedOnce(Mouse_key::R_BUTTON))
 		on_mouseR1hit();

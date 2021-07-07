@@ -9,6 +9,8 @@ int Mouse::mY_r = 0; // poprzednia pozycja
 
 bool Mouse::updated{ false };
 
+bool Mouse::l_pressed_once{ false };
+
 SDL_Point Mouse::clicked_point{};
 
 bool Mouse::keys[100]{};
@@ -26,11 +28,7 @@ Mouse_wheel Mouse::wheel_state{ Mouse_wheel::NONE };
 
 void Mouse::update(SDL_Event * ev)
 {
-	key_state = Mouse_key::NONE;
-	wheel_state = Mouse_wheel::NONE;
-
-	keys[int(Mouse_key::WHEEL_UP)] = false;
-	keys[int(Mouse_key::WHEEL_DOWN)] = false;
+	reset_states();
 
 	mY_r = mY;
 	mX_r = mX;
@@ -108,6 +106,8 @@ void Mouse::switch_buttons_down(SDL_Event * ev)
 	case SDL_BUTTON_LEFT:
 		key_state = Mouse_key::L_BUTTON;
 		clicked_point = { mX, mY };
+		l_pressed_once = true;
+
 		keys[int(Mouse_key::L_BUTTON)] = true;
 		updated = true;
 		break;
@@ -125,6 +125,17 @@ void Mouse::switch_buttons_down(SDL_Event * ev)
 	default:
 		updated = false;
 	}
+}
+
+void Mouse::reset_states()
+{
+	key_state = Mouse_key::NONE;
+	wheel_state = Mouse_wheel::NONE;
+
+	l_pressed_once = false;
+
+	keys[int(Mouse_key::WHEEL_UP)] = false;
+	keys[int(Mouse_key::WHEEL_DOWN)] = false;
 }
 
 void Mouse::switch_motion_wheel_FLAG(SDL_Event * ev)
