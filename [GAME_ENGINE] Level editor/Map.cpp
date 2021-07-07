@@ -177,10 +177,18 @@ void Map::mouseR_events()
 
 void Map::mouseWheel_events()
 {
-	if (Mouse::getWheelState() != Mouse_wheel::NONE) {
+	move_map_Wheel();
+
+	/*Mouse_wheel state = Mouse::getWheelState();
+
+	if (state != Mouse_wheel::NONE) {
 		updated = true;
-		move_map_Wheel();
-	}
+
+		//Mouse_wheel state = 
+
+		if (Mouse::pressedOnce(Mouse_key::WHEEL_UP) || Mouse::pressedOnce(Mouse_key::WHEEL_DOWN))
+			move_map_Wheel();
+	}*/
 }
 
 void Map::mouse_handler()
@@ -442,35 +450,67 @@ void Map::multiSelect_OBJs_set()
 
 void Map::move_map_Wheel()
 {
-	if (Mouse::getWheelState() == Mouse_wheel::UP && mapBG_area.right() < mapBG.getWidth()) {
+	bool upd = false;
+
+	if (Mouse::is_WheelState(Mouse_wheel::UP))
+	{
+		upd = true;
+		if (mapBG_area.right() < mapBG.getWidth()) {
+			if (mapBG_area.right() + MAP_MOVE_SIZE <= mapBG.getWidth())
+				mapBG_area.updateX(MAP_MOVE_SIZE);
+			else
+				mapBG_area.setX(mapBG.getWidth() - mapBG_area.getW());
+		}
+	}
+	if (Mouse::is_WheelState(Mouse_wheel::DOWN))
+	{
+		upd = true;
+		if(mapBG_area.left() > 0) {
+			if (mapBG_area.left() - MAP_MOVE_SIZE >= 0)
+				mapBG_area.updateX(-MAP_MOVE_SIZE);
+			else
+				mapBG_area.setX(0);
+		}
+	}
+
+	/*if (state == Mouse_wheel::UP && mapBG_area.right() < mapBG.getWidth()) {
 		if (mapBG_area.right() + MAP_MOVE_SIZE <= mapBG.getWidth())
 			mapBG_area.updateX(MAP_MOVE_SIZE);
 		else
 			mapBG_area.setX(mapBG.getWidth() - mapBG_area.getW());
 	}
-	else if (Mouse::getWheelState() == Mouse_wheel::DOWN && mapBG_area.left() >= 0) {
+	else if (state == Mouse_wheel::DOWN && mapBG_area.left() >= 0) {
 
 		if (mapBG_area.left() - MAP_MOVE_SIZE > 0)
 			mapBG_area.updateX(-MAP_MOVE_SIZE);
 		else
 			mapBG_area.setX(0);
+	}*/
+	if (upd) {
+		int RenderPOS_X, RenderPOS_Y;
+		double scaleX, scaleY;
+
+		for (auto& enemy : enemies) {
+			scaleX = double(enemy->get_mapX() - mapBG_area.left()) / double(mapBG_area.getW());
+			scaleY = double(enemy->get_mapY() - mapBG_area.up()) / double(mapBG_area.getH());
+
+			RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
+			RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
+
+			enemy->set_position(RenderPOS_X, RenderPOS_Y);
+		}
+
+		if (Map_manager::getSelect_satate() == Selecting_Obj_state::MULTI && Map_manager::getMain_state() != Map_state::MULTI_MOVING_OBJECTS)
+			multiOBJ_s.moveMap_Event();
 	}
+}
 
-	int RenderPOS_X, RenderPOS_Y;
-	double scaleX, scaleY;
+void Map::moveMap_eventWheelUP()
+{
+}
 
-	for (auto& enemy : enemies) {
-		scaleX = double(enemy->get_mapX() - mapBG_area.left()) / double(mapBG_area.getW());
-		scaleY = double(enemy->get_mapY() - mapBG_area.up()) / double(mapBG_area.getH());
-
-		RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
-		RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
-
-		enemy->set_position(RenderPOS_X, RenderPOS_Y);
-	}
-
-	if (Map_manager::getSelect_satate() == Selecting_Obj_state::MULTI && Map_manager::getMain_state() != Map_state::MULTI_MOVING_OBJECTS)
-		multiOBJ_s.moveMap_Event();
+void Map::moveMap_eventWheelDOWN()
+{
 }
 
 void Map::update_OBJs_renderPOS()

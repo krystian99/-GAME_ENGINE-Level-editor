@@ -36,6 +36,9 @@ protected:
 	virtual void on_mouseR1hit() {}
 	virtual void on_mouseW1hit() {} // kó³ko nacisniete raz przyciœniête
 
+	virtual void on_mouseWheel_down_1hit() {}
+	virtual void on_mouseWheel_up_1hit(){}
+
 	virtual void on_mouseOver() {} // gdy myszka na pozycji obiektu
 	virtual void on_mouseOut() {} // gdy myszka nie jest ju¿ na pozycji przycisku
 
@@ -44,9 +47,9 @@ protected:
 	virtual void on_mouseR_press() {}
 	virtual void on_mouseW_press() {}
 private: // funkcje
-	void reset_states();
+	//void reset_states();
 
-	void mouseEvents_1hit();
+	//void mouseEvents_1hit();
 	void keyboardEvents_1hit();
 
 	void mouse_handler();
@@ -54,6 +57,6 @@ private: // funkcje
 private:
 	bool mouse_over;
 
-	Mouse_key mouse_key;
+	//Mouse_key mouse_key;
 	Key keyboard_key;
 };

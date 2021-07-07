@@ -1,10 +1,20 @@
 #include "Key_pressOnce.h"
 #include "Mouse.h"
 
-Key_pressOnce::Key_pressOnce(const std::vector<Mouse_key>& keys) :
-	mouse_keys{ Mouse::getKeys() }
+Key_pressOnce::Key_pressOnce(const std::vector<Mouse_key>& keys)
 {
-	this->check_keys = keys;
+	check_keys = keys;
+
+	mouse_keys = Mouse::getKeys();
+
+	//counts = Mouse::getCounts();
+
+	pressed_once = Mouse::get_pressedOnce();
+
+	for (auto& i : keys)
+	{
+		code |= int(i);
+	}
 }
 
 void Key_pressOnce::events()
@@ -13,25 +23,26 @@ void Key_pressOnce::events()
 
 	if (isPressed()) {
 		pressed = true;
-		++count;
 
-		if (count > 1)
-			pressed_once = false;
-		else
-			pressed_once = true;
+		if (!flag_pressed_once) {
+			flag_pressed_once = true;
+
+			pressed_once[code] = true;
+		}
 	}
-	else if (!pressed)
-		count = 0;
+	else
+		flag_pressed_once = false;
 }
 
 bool Key_pressOnce::pressedOnce()
 {
-	return pressed_once;
+	return pressed_once[code];
 }
 
 void Key_pressOnce::reset()
 {
 	pressed = false;
+	pressed_once[code] = false;
 }
 
 bool Key_pressOnce::isPressed() const

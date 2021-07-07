@@ -1,6 +1,7 @@
 #include "Menu_local.h"
 #include "Video_Info.h"
 #include "Mouse.h"
+#include <cmath>
 
 Menu_local::Menu_local(SDL_Rect rt, const std::string& tx_str, bool Active, bool Can_hide, int expand_size_button) :
 	Button{ rt, tx_str }, can_hide{ Can_hide }, script_test{ 10 }

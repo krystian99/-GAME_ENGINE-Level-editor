@@ -12,19 +12,26 @@ public:
 
 	bool pressedOnce();
 
-	void reset();
-private:
 	bool isPressed() const;
+
+	int getCode() const { return code; }
+
+	void reset();
 private:
 	bool pressed{ false };
 
-	int count{ 0 };
+	//int count{ 0 };
+
+	int code;
+
+	//int* counts;
 
 	std::vector<Mouse_key> check_keys;
 
 	bool flag_pressed_once{ false };
-	bool pressed_once{ false };
+	//bool pressed_once{ false };
 
 	const bool* mouse_keys;
+	bool* pressed_once;
 };
 

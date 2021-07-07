@@ -7,8 +7,8 @@
 class Key_pressOnce;
 
 enum class Mouse_key {
-	NONE,
-	L_BUTTON, R_BUTTON, MID_BUTTON
+	NONE = 1,
+	L_BUTTON = 2, R_BUTTON = 4, MID_BUTTON = 8, WHEEL_UP = 16, WHEEL_DOWN = 32
 };
 enum class Mouse_wheel {
 	NONE,
@@ -27,6 +27,11 @@ public:
 	static const int & getR_y() { return mY_r; }
 
 	static const bool * getKeys() { return keys; }
+	//static int* getCounts() { return counts; }
+
+	static bool* get_pressedOnce() { return pressed_once; }
+
+	static bool is_WheelState(Mouse_wheel st) { return wheel_state == st; }
 
 	static bool is_inState(Mouse_key key) { return key_state == key; }
 
@@ -59,12 +64,18 @@ private:
 private:
 	static Key_pressOnce lButton_pressOnce, rButton_pressOnce, midButton_pressOnce;
 
+	static Key_pressOnce wheelUP_pressOnce, wheelDOWN_pressOnce;
+
 	static Mouse_key key_state;
 	static Mouse_wheel wheel_state;
 
 	static SDL_Point clicked_point; // gdy zostanie klikniêty lewy klawisz i jest trzymany, to zapisz wspó³rzêdne punktu 
 
-	static bool keys[1000];
+	static bool keys[100];
+
+	//static int counts[100];
+
+	static bool pressed_once[100];
 
 	static bool l_pressed, r_pressed, m_pressed;
 

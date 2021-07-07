@@ -218,28 +218,26 @@ bool Keyboard::is_CapsLock_toggled()
 
 
 Keyboard::Shortcut_keys::Shortcut_keys(const std::vector<Key>& keys) :
-	keyboard_keys{Keyboard::getKeys()}
+	keyboard_keys{ Keyboard::getKeys() }
 {
-	this->keys = std::move(keys);
+	this->keys = keys;
 }
 
 void Keyboard::Shortcut_keys::events()
 {
-	//pressed = false;
-
 	reset();
 
 	if (isPressed()) {
 		pressed = true;
-		++count;
 
-		if (count > 1)
-			pressed_once = false;
-		else
+		if (!flag_pressed_once) {
+			flag_pressed_once = true;
+
 			pressed_once = true;
+		}
 	}
-	else if (!pressed)
-		count = 0;
+	else
+		flag_pressed_once = false;
 }
 
 bool Keyboard::Shortcut_keys::pressedOnce()
@@ -264,6 +262,7 @@ bool Keyboard::Shortcut_keys::pressedOnce()
 void Keyboard::Shortcut_keys::reset()
 {
 	pressed = false;
+	pressed_once = false;
 }
 
 bool Keyboard::Shortcut_keys::isPressed() const

@@ -86,6 +86,10 @@ private:
 	void render_enemies();
 
 	void move_map_Wheel();
+
+	void moveMap_eventWheelUP();
+	void moveMap_eventWheelDOWN();
+
 	void update_OBJs_renderPOS();
 	void move_map_Mouse();
 private:
