@@ -162,14 +162,19 @@ void Animation_management::mouse_handler_dpnd()
 
 void Animation_management::keyboard_handler_indp()
 {
-	if (Keyboard::is_pressed_LCNTRL_Z()) {
+	/*if (Keyboard::is_pressed_LCNTRL_Z()) {
 		if (hitboxes.size())
 			hitboxes.pop_back();
-	}
+	}*/
 }
 
 void Animation_management::keyboard_handler_dpnd()
 {
+	if (Keyboard::is_pressed_LCNTRL_Z()) {
+		if (hitboxes.size())
+			hitboxes.pop_back();
+	}
+
 	if (Keyboard::is_pressedKey_once(Key::ESCAPE))
 	{
 		Engine_manager::setState(Engine_state::IS_IN_MENU);
