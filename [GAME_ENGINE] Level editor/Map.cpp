@@ -23,6 +23,8 @@ Map::Map(int x, int y, int w, int h) :
 
 	edit_area.set_position(x, y, w, h);
 
+	singleOBJmove_s.set_position(edit_area.get_position());
+
 	Map_manager::set_edit_area(edit_area.getW(), edit_area.getH());
 	multiOBJ_s.set_position(edit_area.get_position());
 }

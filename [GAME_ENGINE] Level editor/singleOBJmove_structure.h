@@ -2,6 +2,7 @@
 #include "Module_base.h"
 #include "Enemy.h"
 #include <SDL_rect.h>
+#include "Object.h"
 
 enum class SingleOBJmove_events
 {
@@ -11,7 +12,7 @@ enum class SingleOBJmove_events
 	SET_OBJ
 };
 
-class singleOBJmove_structure : public Module_base
+class singleOBJmove_structure : public Module_base, public Object
 {
 	using Enemies = std::vector<Enemy_ptr>;
 public:
@@ -25,29 +26,27 @@ public:
 	{
 		current_enemy = nullptr;
 	}
-	
+
 	static void setState(SingleOBJmove_events st);
 
 	void events();
 
-	void render();
+	void render(){}
 
 	Enemy* current_enemy{};
 
 	int px_left{};
 	int px_up{};
 private:
-	void reset_states(){}
+	void reset_states() {}
 
 	void movingOBJ_events();
 	void selectingObject_events();
 
 	void setOBJ_onMap();
 
-	void mouseR_event();
-	void mouseL_event();
-
-	void mouse_handler();
+	void on_mouseL1hit() override;
+	void on_mouseR1hit() override;
 private:
 	const Rect& edit_area;
 	const Rect& mapBG_area;

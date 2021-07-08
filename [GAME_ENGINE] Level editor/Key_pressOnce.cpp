@@ -8,8 +8,6 @@ Key_pressOnce::Key_pressOnce(const std::vector<Mouse_key>& keys)
 
 	mouse_keys = Mouse::getKeys();
 
-	//counts = Mouse::getCounts();
-
 	pressed_once = Mouse::get_pressedOnce();
 
 	for (auto& i : keys)

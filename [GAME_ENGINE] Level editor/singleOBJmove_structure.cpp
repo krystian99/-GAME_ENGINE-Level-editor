@@ -19,6 +19,8 @@ void singleOBJmove_structure::setState(SingleOBJmove_events st)
 
 void singleOBJmove_structure::events()
 {
+	Object::events();
+
 	switch (state)
 	{
 	case SingleOBJmove_events::SELECTING:
@@ -33,20 +35,8 @@ void singleOBJmove_structure::events()
 	}
 }
 
-void singleOBJmove_structure::render()
-{
-
-}
-
 void singleOBJmove_structure::movingOBJ_events()
 {
-	if (Mouse::is_pressedL_once()) {
-		setState(SingleOBJmove_events::SET_OBJ);
-		return;
-	}
-	else if (Mouse::is_pressedR_once())
-		current_enemy->switch_orient();
-
 	double scaleTX_w, scaleTX_h;
 	int x, y;
 
@@ -127,12 +117,21 @@ void singleOBJmove_structure::setOBJ_onMap()
 	setState(SingleOBJmove_events::SELECTING);
 }
 
-void singleOBJmove_structure::mouseR_event()
+void singleOBJmove_structure::on_mouseL1hit()
 {
-	if (Mouse::is_inState(Mouse_key::R_BUTTON))
-		current_enemy->switch_orient();
+	switch (state)
+	{
+	case SingleOBJmove_events::MOVING_OBJ:
+		setState(SingleOBJmove_events::SET_OBJ);
+		break;
+	}
 }
 
-void singleOBJmove_structure::mouse_handler()
+void singleOBJmove_structure::on_mouseR1hit()
 {
+	switch (state) {
+	case SingleOBJmove_events::MOVING_OBJ:
+		current_enemy->switch_orient();
+		break;
+	}
 }

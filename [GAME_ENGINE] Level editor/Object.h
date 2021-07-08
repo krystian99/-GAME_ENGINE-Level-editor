@@ -7,6 +7,7 @@ class Object : public Rect // przechwytywanie zdarzeñ myszy i klawiatury -> opak
 {
 public:
 	Object(){}
+	// render_position - obszar który ma byæ brany pod uwagê do zdarzeñ klawiatury i myszki
 	Object(Rect render_position) : 
 		Rect{ render_position }
 	{}
