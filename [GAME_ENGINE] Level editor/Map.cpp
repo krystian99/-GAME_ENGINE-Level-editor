@@ -26,6 +26,8 @@ Map::Map(int x, int y, int w, int h) :
 	singleOBJmove_s.set_position(edit_area.get_position());
 
 	Map_manager::set_edit_area(edit_area.getW(), edit_area.getH());
+
+	// ustaw pozycjê gdzie bêd¹ odbywa³y sie eventy na tej strukturze
 	multiOBJ_s.set_position(edit_area.get_position());
 }
 
@@ -64,8 +66,8 @@ void Map::load_Objects(const std::string& name)
 
 	load.close();
 }
-#include <iostream>
-using std::cout;
+//#include <iostream>
+//using std::cout;
 
 void Map::events() // zdarzenia zale¿ne od myszki(przyciski myszki: lewy, prawy, kó³ko)
 {
@@ -74,22 +76,16 @@ void Map::events() // zdarzenia zale¿ne od myszki(przyciski myszki: lewy, prawy,
 
 	Object::events();
 
-	if (is_keyboardKey_1hit(Key::D))
-	{
-		cout << "Wcisniet na mapie przycisk: D\n";
-	}
-
 	events_enemies();
 
 	if (Mouse::is_inPOS(edit_area.get_position()))
 	{
+		map_mouseHandler.events();
+		mouse_over = true;
+
 		if (Map_manager::get_currentModule())
 			Map_manager::get_currentModule()->events();
 
-		mouse_over = true;
-		map_mouseHandler.events();
-
-		mouseR_events();
 		mouseWheel_events();
 	}
 
@@ -155,7 +151,7 @@ void Map::set_background(const std::string& bg)
 
 void Map::on_mouseR1hit()
 {
-	cout << "Wcisnieto prawy przycisk myszy!\n";
+	//cout << "Wcisnieto prawy przycisk myszy!\n";
 }
 
 void Map::set_ScaledSize()
@@ -170,57 +166,9 @@ void Map::set_ScaledSize()
 	edit_area.set_position(rt);
 }
 
-void Map::mouseR_events()
-{
-	/*if (Mouse::getBt_state() == Mouse_key::R_BUTTON) {
-		updated = true;
-		switch (Map_manager::getMain_state()) {
-		case Map_state::PLACING_OBJECTS:
-			Map_manager::switch_OBJ_orient();
-			break;
-		case Map_state::MOVING_OBJECT:
-			singleOBJmove_s.current_enemy->switch_orient();
-			break;
-		case Map_state::SELECTING_OBJECTS:
-			if (Map_manager::getSelect_satate() == Selecting_Obj_state::MULTI)
-				multi_selecingOBJ_mouseR();
-			break;
-		case Map_state::MULTI_MOVING_OBJECTS:
-			multi_movingObject_mouseR_event();
-			break;
-		}
-	}*/
-}
-
 void Map::mouseWheel_events()
 {
 	move_map_Wheel();
-
-	/*Mouse_wheel state = Mouse::getWheelState();
-
-	if (state != Mouse_wheel::NONE) {
-		updated = true;
-
-		//Mouse_wheel state = 
-
-		if (Mouse::pressedOnce(Mouse_key::WHEEL_UP) || Mouse::pressedOnce(Mouse_key::WHEEL_DOWN))
-			move_map_Wheel();
-	}*/
-}
-
-void Map::mouse_handler()
-{
-	updated = false;
-	mouse_over = false;
-
-	if (Mouse::is_inPOS(edit_area.get_position()))
-	{
-		mouse_over = true;
-		map_mouseHandler.events();
-
-		mouseR_events();
-		mouseWheel_events();
-	}
 }
 
 void Map::Init_objectsSize() // uruchamiane po wczytaniu mapy
@@ -249,7 +197,7 @@ void Map::update_events()
 void Map::reset()
 {
 	enemies.clear();
-	multiOBJ_s.reset(edit_area.get_position());
+	multiOBJ_s.reset();
 	Map_manager::reset();
 }
 
@@ -422,50 +370,6 @@ void Map::render_enemies()
 	}
 }
 
-void Map::multi_selectingObject_mouseEvents()
-{
-	multiOBJ_s.mouse_events();
-}
-
-void Map::multi_selecingOBJ_mouseR()
-{
-	if (Mouse::is_inPOS(multiOBJ_s.get_position()))
-	{
-		multiOBJ_s.updateOBJs(Mouse::get_clickedPoint());
-		Map_manager::setMain_state(Map_state::MULTI_MOVING_OBJECTS);
-	}
-}
-
-void Map::deleting_objects_events()
-{
-	for (auto& enemy : enemies) {
-		if (enemy->is_clicked()) {
-			std::swap(enemy, enemies.back());
-			enemies.pop_back();
-			break;
-		}
-	}
-}
-
-void Map::multi_movingObject_mouseR_event()
-{
-	multiOBJ_s.moveEvent_mouseR();
-
-	Map_manager::setMain_state(Map_state::SELECTING_OBJECTS);
-}
-
-void Map::multiMoving_objects_events() // zdarzenia po nacisnieciu prawym klawiszem myszy na obszar zaznaczony do przeniesienia
-{
-	multiOBJ_s.events_moving(mouse_over, edit_area.get_position());
-}
-
-void Map::multiSelect_OBJs_set()
-{
-	multiOBJ_s.OBJs_set(enemies, edit_area);
-
-	Map_manager::setMain_state(Map_state::SELECTING_OBJECTS);
-}
-
 void Map::move_map_Wheel()
 {
 	bool upd = false;
@@ -490,20 +394,6 @@ void Map::move_map_Wheel()
 				mapBG_area.setX(0);
 		}
 	}
-
-	/*if (state == Mouse_wheel::UP && mapBG_area.right() < mapBG.getWidth()) {
-		if (mapBG_area.right() + MAP_MOVE_SIZE <= mapBG.getWidth())
-			mapBG_area.updateX(MAP_MOVE_SIZE);
-		else
-			mapBG_area.setX(mapBG.getWidth() - mapBG_area.getW());
-	}
-	else if (state == Mouse_wheel::DOWN && mapBG_area.left() >= 0) {
-
-		if (mapBG_area.left() - MAP_MOVE_SIZE > 0)
-			mapBG_area.updateX(-MAP_MOVE_SIZE);
-		else
-			mapBG_area.setX(0);
-	}*/
 	if (upd) {
 		int RenderPOS_X, RenderPOS_Y;
 		double scaleX, scaleY;
@@ -517,18 +407,7 @@ void Map::move_map_Wheel()
 
 			enemy->set_position(RenderPOS_X, RenderPOS_Y);
 		}
-
-		if (Map_manager::getSelect_satate() == Selecting_Obj_state::MULTI && Map_manager::getMain_state() != Map_state::MULTI_MOVING_OBJECTS)
-			multiOBJ_s.moveMap_Event();
 	}
-}
-
-void Map::moveMap_eventWheelUP()
-{
-}
-
-void Map::moveMap_eventWheelDOWN()
-{
 }
 
 void Map::update_OBJs_renderPOS()
@@ -545,10 +424,4 @@ void Map::update_OBJs_renderPOS()
 
 		enemy->set_position(RenderPOS_X, RenderPOS_Y);
 	}
-}
-
-void Map::move_map_Mouse()
-{
-	if (Map_manager::getSelect_satate() == Selecting_Obj_state::MULTI && Map_manager::getMain_state() != Map_state::MULTI_MOVING_OBJECTS)
-		multiOBJ_s.moveMap_Event();
 }

@@ -26,6 +26,7 @@ public:
 
 	void set_mapPOS(int x, int y);
 	void set_mapPOS(int x, int y, int w, int h);
+	void set_mapPOS(Rect&& area);
 
 	void set_mapX(int x);
 	void set_mapY(int y);
@@ -69,7 +70,7 @@ public:
 private:
 	void reset_states();
 protected:
-	void on_mouseL1hit() override;
+	virtual void on_mouseL1hit() override;
 	virtual void on_mouseR1hit() {}
 	virtual void on_mouseW1hit() {} // kó³ko nacisniete raz przyciœniête
 

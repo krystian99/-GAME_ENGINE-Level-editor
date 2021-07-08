@@ -1,5 +1,6 @@
 #pragma once
 #include <SDL_rect.h>
+
 class Point
 {
 public:
@@ -7,14 +8,17 @@ public:
 	Point(SDL_Point p);
 	Point(int x, int y);
 
-	void setX(int x) { this->x = x; }
-	void setY(int y) { this->y = y; }
+	void setX(int x) { this->point.x = x; }
+	void setY(int y) { this->point.y = y; }
 
 	void set(int x, int y);
 
-	int getX() const { return x; }
-	int getY() const { return y; }
+	const SDL_Point& get() const { return point; }
+
+	int getX() const { return point.x; }
+	int getY() const { return point.y; }
 private:
-	int x, y;
+	SDL_Point point{};
+	//int x{}, y{};
 };
 

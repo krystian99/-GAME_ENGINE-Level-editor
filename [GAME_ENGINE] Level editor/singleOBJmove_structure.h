@@ -4,16 +4,15 @@
 #include <SDL_rect.h>
 #include "Object.h"
 
-enum class SingleOBJmove_events
-{
-	NONE,
-	SELECTING,
-	MOVING_OBJ,
-	SET_OBJ
-};
-
 class singleOBJmove_structure : public Module_base, public Object
 {
+	enum class SingleOBJmove_events
+	{
+		NONE,
+		SELECTING,
+		MOVING_OBJ,
+		SET_OBJ
+	};
 	using Enemies = std::vector<Enemy_ptr>;
 public:
 	singleOBJmove_structure(Enemies& en, const Rect& edit_a, const Rect& mapBG_a) :

@@ -2,14 +2,15 @@
 #include <SDL_render.h>
 #include "Mouse.h"
 #include "Keyboard.h"
+#include "Point.h"
 
 class Object : public Rect // przechwytywanie zdarzeñ myszy i klawiatury -> opakowany interfejs, który mo¿e zostaæ wykorzystany przez wszystkie obiekty
 {
 public:
 	Object(){}
-	// render_position - obszar który ma byæ brany pod uwagê do zdarzeñ klawiatury i myszki
-	Object(Rect render_position) : 
-		Rect{ render_position }
+	// events_position - obszar który ma byæ brany pod uwagê do zdarzeñ klawiatury i myszki
+	Object(Rect events_position) : 
+		Rect{ events_position }
 	{}
 	Object(int x, int y, int w, int h) :
 		Rect{ x, y, w, h }
@@ -18,6 +19,8 @@ public:
 	// czy klikniêto ten konkrenty przycisk na obiekcie?
 	bool is_mouseKey_1hit(Mouse_key key) const { return is_mouseOver() && Mouse::pressedOnce(key); }
 	bool is_keyboardKey_1hit(Key key) const { return is_mouseOver() && key == Keyboard::get_currentKey(); }
+
+	Point get_clickedPoint() const { return clickedPoint; }
 
 	// Czy myszka jest na pozycji tego obiektu?
 	bool is_mouseOver() const { return mouse_over; }
@@ -52,11 +55,15 @@ protected:
 	virtual void on_mouseR_press() {}
 	virtual void on_mouseW_press() {}
 
+	virtual void on_mouseL_pressUP() {}
+	virtual void on_mouseR_pressUP() {}
+	virtual void on_mouseW_pressUP() {}
+
 	// klawisze klawiatury wcisniete na obiekcie
-	virtual void on_keyboardKey_A_1hit(){}
-	virtual void on_keyboardKey_B_1hit(){}
-	virtual void on_keyboardKey_C_1hit(){}
-	virtual void on_keyboardKey_D_1hit(){}
+	virtual void on_keyboardKey_A_1hit() {}
+	virtual void on_keyboardKey_B_1hit() {}
+	virtual void on_keyboardKey_C_1hit() {}
+	virtual void on_keyboardKey_D_1hit() {}
 	virtual void on_keyboardKey_E_1hit() {}
 	virtual void on_keyboardKey_F_1hit() {}
 	virtual void on_keyboardKey_G_1hit() {}
@@ -82,10 +89,16 @@ protected:
 
 	virtual void on_keyboardKey_DELETE_1hit() {}
 private:
+	void reset_states();
+
 	void keyboardEvents_1hit();
 
 	void mouse_handler();
 	void keyboard_handler();
 private:
 	bool mouse_over;
+
+	Point clickedPoint{};
+
+	bool flag_pressed[Mouse::MAX_KEY_ID]{};
 };

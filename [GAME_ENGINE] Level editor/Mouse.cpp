@@ -107,28 +107,25 @@ bool Mouse::moved()
 
 void Mouse::switch_buttons_down(SDL_Event * ev)
 {
+	clicked_point = { mX, mY };
+	updated = true;
+
 	switch (ev->button.button) {
 	case SDL_BUTTON_LEFT:
 		key_state = Mouse_key::L_BUTTON;
-		clicked_point = { mX, mY };
 		l_pressed_once = true;
 
 		keys[int(Mouse_key::L_BUTTON)] = true;
-		updated = true;
 		break;
 	case SDL_BUTTON_RIGHT:
 		key_state = Mouse_key::R_BUTTON;
-		clicked_point = { mX, mY };
+
 		keys[int(Mouse_key::R_BUTTON)] = true;
-		updated = true;
 		break;
 	case SDL_BUTTON_MIDDLE:
 		key_state = Mouse_key::MID_BUTTON;
 		keys[int(Mouse_key::MID_BUTTON)] = true;
-		updated = true;
 		break;
-	default:
-		updated = false;
 	}
 }
 

@@ -56,25 +56,11 @@ private:
 
 	void set_ScaledSize();
 
-	void mouseR_events();
 	void mouseWheel_events();
-
-	void mouse_handler();
 
 	void Init_objectsSize();
 
 	void update_events();
-	//void update_ObjectsSize();
-
-	void multi_selectingObject_mouseEvents();
-	void multi_selecingOBJ_mouseR();
-
-	void deleting_objects_events();
-
-	void multi_movingObject_mouseR_event();
-	void multiMoving_objects_events();
-
-	void multiSelect_OBJs_set();
 
 	void placing_mouseL_Events();
 	//void placing_mouseR_Events();
@@ -90,11 +76,7 @@ private:
 
 	void move_map_Wheel();
 
-	void moveMap_eventWheelUP();
-	void moveMap_eventWheelDOWN();
-
 	void update_OBJs_renderPOS();
-	void move_map_Mouse();
 private:
 	Map_mouseHandler map_mouseHandler;
 

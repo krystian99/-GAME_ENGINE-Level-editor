@@ -26,6 +26,8 @@ public:
 	static const int & getR_x() { return mX_r; }
 	static const int & getR_y() { return mY_r; }
 
+	static const int MAX_KEY_ID = 33;
+
 	static const bool * getKeys() { return keys; }
 	//static int* getCounts() { return counts; }
 
@@ -36,6 +38,8 @@ public:
 	static bool is_inState(Mouse_key key) { return key_state == key; }
 
 	static const bool & is_pressedL() { return keys[int(Mouse_key::L_BUTTON)]; }
+
+	static bool is_pressed(Mouse_key key) { return keys[int(key)]; }
 
 	static bool pressedOnce(Mouse_key key);
 	static bool pressedOnce(int code);

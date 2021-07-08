@@ -2,7 +2,7 @@
 #include "Mouse.h"
 #include "CoordinateBar_map.h"
 
-SingleOBJmove_events singleOBJmove_structure::state{ SingleOBJmove_events::SELECTING };
+singleOBJmove_structure::SingleOBJmove_events singleOBJmove_structure::state{ SingleOBJmove_events::SELECTING };
 
 void singleOBJmove_structure::set(Enemy* enemy)
 {

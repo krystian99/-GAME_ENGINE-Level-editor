@@ -2,18 +2,16 @@
 
 Point::Point(SDL_Point p)
 {
-	x = p.x;
-	y = p.y;
+	point = p;
 }
 
 Point::Point(int x, int y)
 {
-	this->x = x;
-	this->y = y;
+	set(x, y);
 }
 
 void Point::set(int x, int y)
 {
-	this->x = x;
-	this->y = y;
+	point.x = x;
+	point.y = y;
 }

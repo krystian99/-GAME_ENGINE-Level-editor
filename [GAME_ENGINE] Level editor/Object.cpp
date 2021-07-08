@@ -1,5 +1,4 @@
 #include "Object.h"
-#include "Video_Info.h"
 
 void Object::events()
 {
@@ -21,6 +20,11 @@ void Object::events()
 void Object::mouseOver_deactivate()
 {
 	on_mouseOut();
+}
+
+void Object::reset_states()
+{
+
 }
 
 void Object::keyboardEvents_1hit()
@@ -111,15 +115,66 @@ void Object::keyboardEvents_1hit()
 	}
 }
 
+//#include <iostream>
+//using std::cout;
+
 void Object::mouse_handler()
 {
 	if (Mouse::isUpdated()) {
-		if (Mouse::pressedOnce(Mouse_key::L_BUTTON))
+		if (Mouse::pressedOnce(Mouse_key::L_BUTTON)) {
 			on_mouseL1hit();
-		else if (Mouse::pressedOnce(Mouse_key::R_BUTTON))
+
+			clickedPoint.set(Mouse::getX(), Mouse::getY());
+
+			flag_pressed[int(Mouse_key::L_BUTTON)] = true;
+		}
+		else if (Mouse::pressedOnce(Mouse_key::R_BUTTON)) {
 			on_mouseR1hit();
-		else if (Mouse::pressedOnce(Mouse_key::MID_BUTTON))
+
+			clickedPoint.set(Mouse::getX(), Mouse::getY());
+
+			flag_pressed[int(Mouse_key::R_BUTTON)] = true;
+		}
+		else if (Mouse::pressedOnce(Mouse_key::MID_BUTTON)) {
 			on_mouseW1hit();
+
+			clickedPoint.set(Mouse::getX(), Mouse::getY());
+
+			flag_pressed[int(Mouse_key::MID_BUTTON)] = true;
+		}
+
+		if (flag_pressed[int(Mouse_key::L_BUTTON)])
+		{
+			if (Mouse::is_pressed(Mouse_key::L_BUTTON)) {
+				on_mouseL_press();
+				//cout << "trzymam lewy przycisk myszy!\n";
+			}
+			else {
+				on_mouseL_pressUP();
+				//cout << "puscilem lewy przycisk myszy!\n";
+				flag_pressed[int(Mouse_key::L_BUTTON)] = false;
+			}
+		}
+		else if (flag_pressed[int(Mouse_key::R_BUTTON)])
+		{
+			if (Mouse::is_pressed(Mouse_key::R_BUTTON)) {
+				on_mouseR_press();
+				//cout << "trzymam prawy przycisk myszy!\n";
+			}
+			else {
+				on_mouseR_pressUP();
+				flag_pressed[int(Mouse_key::R_BUTTON)] = false;
+			}
+		}
+		else if (flag_pressed[int(Mouse_key::MID_BUTTON)])
+		{
+			if (Mouse::is_pressed(Mouse_key::MID_BUTTON))
+				on_mouseW_press();
+			else {
+				on_mouseW_pressUP();
+				flag_pressed[int(Mouse_key::MID_BUTTON)] = false;
+			}
+		}
 	}
 }
 

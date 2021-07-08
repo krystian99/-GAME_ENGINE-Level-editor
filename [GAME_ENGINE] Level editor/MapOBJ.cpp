@@ -45,6 +45,11 @@ void MapOBJ::set_mapPOS(int x, int y, int w, int h)
 	mapPOS.set_position(x, y, w, h);
 }
 
+void MapOBJ::set_mapPOS(Rect&& area)
+{
+	mapPOS = std::move(area);
+}
+
 void MapOBJ::set_mapX(int x)
 {
 	mapPOS.setX(x);
@@ -133,12 +138,12 @@ void MapOBJ::on_mouseOut()
 {
 	//Object::on_mouseOut();
 
-	tx->set_blendAlpha(alpha_mod_mouseOut);
+	//tx->set_blendAlpha(alpha_mod_mouseOut);
 }
 
 void MapOBJ::on_mouseOver()
 {
 	//Object::on_mouseOver();
 
-	tx->set_blendAlpha(alpha_mod_mouseOver);
+	//tx->set_blendAlpha(alpha_mod_mouseOver);
 }
