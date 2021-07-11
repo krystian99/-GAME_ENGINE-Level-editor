@@ -12,6 +12,9 @@ public:
 	Object(Rect events_position) : 
 		Rect{ events_position }
 	{}
+	Object(const SDL_Rect & events_position) :
+		Rect{ events_position }
+	{}
 	Object(int x, int y, int w, int h) :
 		Rect{ x, y, w, h }
 	{}

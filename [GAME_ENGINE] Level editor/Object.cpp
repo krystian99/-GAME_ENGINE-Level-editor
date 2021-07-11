@@ -166,9 +166,9 @@ void Object::mouse_handler()
 		}
 
 		// kó³ko myszy
-		if (Mouse::is_WheelState(Mouse_key::WHEEL_UP))
+		if (Mouse::is_pressed(Mouse_key::WHEEL_UP))
 			on_mouseWheel_up_1hit();
-		else if (Mouse::is_WheelState(Mouse_key::WHEEL_DOWN))
+		else if (Mouse::is_pressed(Mouse_key::WHEEL_DOWN))
 			on_mouseWheel_down_1hit();
 	}
 }

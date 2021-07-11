@@ -40,6 +40,7 @@ void Mouse::update(SDL_Event * ev)
 		switch_buttons_down(ev);
 		break;
 	case SDL_MOUSEBUTTONUP:
+		updated = true;
 		if (ev->button.button == SDL_BUTTON_LEFT)
 			keys[int(Mouse_key::L_BUTTON)] = false;
 		else if (ev->button.button == SDL_BUTTON_RIGHT)
@@ -50,17 +51,11 @@ void Mouse::update(SDL_Event * ev)
 	case SDL_MOUSEWHEEL:
 		switch_motion_wheel_FLAG(ev);
 		break;
-	default:
-		updated = false;
-		break;
 	}
 
 	lButton_pressOnce.events();
 	rButton_pressOnce.events();
 	midButton_pressOnce.events();
-
-	wheelUP_pressOnce.events();
-	wheelDOWN_pressOnce.events();
 }
 
 bool Mouse::pressedOnce(Mouse_key key)
@@ -136,7 +131,7 @@ void Mouse::reset_states()
 
 	l_pressed_once = false;
 
-	updated = true;
+	updated = false;
 
 	keys[int(Mouse_key::WHEEL_UP)] = false;
 	keys[int(Mouse_key::WHEEL_DOWN)] = false;

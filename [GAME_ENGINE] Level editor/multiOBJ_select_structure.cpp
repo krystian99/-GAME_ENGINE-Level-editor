@@ -17,9 +17,6 @@ void multiOBJ_select_structure::events()
 
 	switch (state)
 	{
-	case States::SELECTING_OBJs:
-		//moveMap_Event();
-		break;
 	case States::MOVING_OBJs:
 		events_moving();
 		break;
@@ -27,11 +24,6 @@ void multiOBJ_select_structure::events()
 		movingFinsh_event();
 		break;
 	}
-}
-
-void multiOBJ_select_structure::events_indp()
-{
-
 }
 
 void multiOBJ_select_structure::set_borderOBJ(const Rect& pos, Enemy* enemy)

@@ -22,9 +22,7 @@ public:
 
 	void reset();
 
-	void events();
-
-	void events_indp();
+	void events() override;
 private:
 	// uruchamiane gdy zostanie zaznacozny obszar z obiektami do przeniesienia
 	void OBJs_set();
