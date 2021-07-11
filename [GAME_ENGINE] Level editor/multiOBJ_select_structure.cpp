@@ -2,8 +2,8 @@
 #include "Renderer.h"
 #include "CoordinateBar_map.h"
 
-multiOBJ_select_structure::multiOBJ_select_structure(Enemies& en, const Map_mouseHandler& map_mouse, const Rect* edit_a, const Rect* mapBG_a)
-	: enemies{ en }, map_mouseHandler{ map_mouse }
+multiOBJ_select_structure::multiOBJ_select_structure(Enemies& en, const Rect* edit_a, const Rect* mapBG_a)
+	: enemies{ en }
 {
 	edit_area = edit_a;
 	mapBG_area = mapBG_a;
@@ -27,32 +27,11 @@ void multiOBJ_select_structure::events()
 		movingFinsh_event();
 		break;
 	}
-
-	// sprawdü zdarzenie niezaleønie od obszaru
-	if (Keyboard::is_pressedKey_once(Key::DELETE) && moving_objects.size())
-	{
-		reset();
-
-		for (int i = 0; i < enemies.size(); i++) {
-			auto& enemy = enemies[i];
-
-			if (enemy->is_selected()) {
-				std::swap(enemy, enemies.back());
-				enemies.pop_back();
-				i--;
-			}
-		}
-	}
 }
 
 void multiOBJ_select_structure::events_indp()
 {
-	switch (state)
-	{
-	case States::SELECTING_OBJs:
-		moveMap_Event();
-		break;
-	}
+
 }
 
 void multiOBJ_select_structure::set_borderOBJ(const Rect& pos, Enemy* enemy)
@@ -98,7 +77,7 @@ void multiOBJ_select_structure::selectingOBJs()
 	const int& mY = Mouse::getY();
 
 	auto& point = clicked_point.get();
-	auto& map_point = map_mouseHandler.get_clickedPoint();
+	auto& map_point = clicked_pointMap.get();
 
 	int x, y, w, h;
 
@@ -110,32 +89,29 @@ void multiOBJ_select_structure::selectingOBJs()
 		mapX = CoordinateBar_map::getX();
 
 		w = point.x - mX;
-		mapW = map_point.getX() - CoordinateBar_map::getX();
+		mapW = map_point.x - CoordinateBar_map::getX();
 	}
 	else {
 		x = point.x;
-		mapX = map_point.getX();
+		mapX = map_point.x;
 
 		w = mX - point.x;
-		mapW = CoordinateBar_map::getX() - map_point.getX();
+		mapW = CoordinateBar_map::getX() - map_point.x;
 	}
 	if (mY < point.y) {
 		y = mY;
 		mapY = CoordinateBar_map::getY();
 
 		h = point.y - mY;
-		mapH = map_point.getY() - CoordinateBar_map::getY();
+		mapH = map_point.y - CoordinateBar_map::getY();
 	}
 	else {
 		y = point.y;
-		mapY = map_point.getY();
+		mapY = map_point.y;
 
 		h = mY - point.y;
-		mapH = CoordinateBar_map::getY() - map_point.getY();
+		mapH = CoordinateBar_map::getY() - map_point.y;
 	}
-
-	//selected_area.set_position(x, y, w, h);
-	//selected_area.set_mapPOS(mapX, mapY, mapW, mapH);
 
 	int RenderPOS_X, RenderPOS_Y;
 	double scaleX, scaleY;
@@ -156,13 +132,9 @@ void multiOBJ_select_structure::on_mouseL1hit()
 	{
 	case States::SELECTING_OBJs:
 		reset();
+
 		clicked_point = Mouse::get_clickedPoint();
-		break;
-	case States::MOVING_OBJs:
-
-		break;
-	case States::SET_OBJs:
-
+		clicked_pointMap = { CoordinateBar_map::getX(), CoordinateBar_map::getY() };
 		break;
 	}
 }
@@ -173,31 +145,16 @@ void multiOBJ_select_structure::on_mouseR1hit()
 	{
 	case States::SELECTING_OBJs:
 		clicked_point = Mouse::get_clickedPoint();
-
-		updateOBJs(clicked_point.get());
+		clicked_pointMap = { CoordinateBar_map::getX(), CoordinateBar_map::getY() };
+		updateOBJs();
 
 		if (selected_area.is_mouseKey_1hit(Mouse_key::R_BUTTON))
 			setState(States::MOVING_OBJs);
 		break;
 	case States::MOVING_OBJs:
-		//clicked_point = selected_area.get_clickedPoint();
-
 		setState(States::SET_OBJs);
 		break;
-	case States::SET_OBJs:
-
-		break;
 	}
-}
-
-void multiOBJ_select_structure::on_mouseOver()
-{
-
-}
-
-void multiOBJ_select_structure::on_mouseOut()
-{
-
 }
 
 void multiOBJ_select_structure::on_mouseL_press()
@@ -206,28 +163,6 @@ void multiOBJ_select_structure::on_mouseL_press()
 	{
 	case States::SELECTING_OBJs:
 		selectingOBJs();
-		break;
-	case States::MOVING_OBJs:
-
-		break;
-	case States::SET_OBJs:
-
-		break;
-	}
-}
-
-void multiOBJ_select_structure::on_mouseR_press()
-{
-	switch (state)
-	{
-	case States::SELECTING_OBJs:
-
-		break;
-	case States::MOVING_OBJs:
-
-		break;
-	case States::SET_OBJs:
-
 		break;
 	}
 }
@@ -239,26 +174,33 @@ void multiOBJ_select_structure::on_mouseL_pressUP()
 	case States::SELECTING_OBJs:
 		OBJs_set();
 		break;
-	case States::MOVING_OBJs:
-
-		break;
-	case States::SET_OBJs:
-
-		break;
 	}
+}
+
+
+void multiOBJ_select_structure::on_mouseWheel_up_1hit()
+{
+	moveMap_Event();
+}
+
+void multiOBJ_select_structure::on_mouseWheel_down_1hit()
+{
+	moveMap_Event();
 }
 
 void multiOBJ_select_structure::on_keyboardKey_DELETE_1hit()
 {
-	/*reset(edit_area->get_position());
+	reset();
 
-	for (int i = 0; i != enemies.size(); i++) {
-		if (enemies[i]->is_selected()) {
-			std::swap(enemies[i], enemies.back());
+	for (int i = 0; i < enemies.size(); i++) {
+		auto& enemy = enemies[i];
+
+		if (enemy->is_selected()) {
+			std::swap(enemy, enemies.back());
 			enemies.pop_back();
 			i--;
 		}
-	}*/
+	}
 }
 
 void multiOBJ_select_structure::render()
@@ -295,11 +237,8 @@ void multiOBJ_select_structure::render()
 	Renderer::set_defaultColor();
 }
 
-// uruchamiane 
 void multiOBJ_select_structure::OBJs_set()
 {
-	//updateOBJs(clicked_point.get());
-
 	for (auto& enemy : enemies) {
 		auto& pos_temp = enemy->get_position();
 
@@ -324,8 +263,6 @@ void multiOBJ_select_structure::movingFinsh_event()
 {
 	setState(States::SELECTING_OBJs);
 
-	setState_movingOBJs(false);
-
 	for (auto& moveOBJ : moving_objects) {
 		int RenderPOS_X, RenderPOS_Y;
 		double scaleTX_w, scaleTX_h;
@@ -344,8 +281,7 @@ void multiOBJ_select_structure::movingFinsh_event()
 		RenderPOS_X = round(scaleX * edit_area->getW()) + edit_area->left();
 		RenderPOS_Y = round(scaleY * edit_area->getH()) + edit_area->up();
 
-		moveOBJ.enemy->set_mapPOS(x, y);
-		moveOBJ.enemy->set_position(RenderPOS_X, RenderPOS_Y);
+		moveOBJ.setPOS(RenderPOS_X, RenderPOS_Y, x, y);
 	}
 
 	int RenderPOS_X, RenderPOS_Y;
@@ -365,7 +301,6 @@ void multiOBJ_select_structure::movingFinsh_event()
 	RenderPOS_X = round(scale_renderX * edit_area->getW()) + edit_area->left();
 	RenderPOS_Y = round(scale_renderY * edit_area->getH()) + edit_area->up();
 
-	//mapPos.set_position(x, y);
 	selected_area.set_position(RenderPOS_X, RenderPOS_Y);
 	selected_area.set_mapPOS(x, y);
 }
@@ -373,19 +308,16 @@ void multiOBJ_select_structure::movingFinsh_event()
 void multiOBJ_select_structure::events_moving()
 {
 	if (is_mouseOver()) {
-
-		setState_movingOBJs(true);
-
-		int tmp_px_left, tmp_px_up;
+		int tmp_px_left, tmp_px_up, tmp_px_left_map, tmp_px_up_map;
 
 		selected_area.setX(Mouse::getX() - px_left);
 		selected_area.setY(Mouse::getY() - px_up);
 
 		tmp_px_left = tmp_px_up = 0;
+		tmp_px_left_map = tmp_px_up_map = 0;
 
-		// nie wiem o co kaman ale cos zmienia pozycje renderowania i musi byÊ najpierw ta pÍtla
 		for (auto& enemy : moving_objects)
-			enemy.enemy->set_position(Mouse::getX() - enemy.px_left, Mouse::getY() - enemy.px_up);
+			enemy.setPOS(Mouse::getX() - enemy.px_left, Mouse::getY() - enemy.px_up, CoordinateBar_map::getX() - enemy.map_pxLEFT, CoordinateBar_map::getY() - enemy.map_pxUP);
 
 		if (enemy_up->up() < edit_area->up())
 			tmp_px_up = edit_area->up() - enemy_up->up();
@@ -393,34 +325,45 @@ void multiOBJ_select_structure::events_moving()
 		else if (enemy_down->down() > edit_area->down())
 			tmp_px_up = edit_area->down() - enemy_down->down();
 
-		if (enemy_left->left() < edit_area->left())
-			tmp_px_left = edit_area->left() - enemy_left->left();
+		if (enemy_left->left_map() < mapBG_area->left())
+			tmp_px_left = mapBG_area->left() - enemy_left->left_map();
 
-		else if (enemy_right->right() > edit_area->right())
-			tmp_px_left = edit_area->right() - enemy_right->right();
+		else if (enemy_right->right_map() > mapBG_area->right())
+			tmp_px_left = mapBG_area->right() - enemy_right->right_map();
+
+		if (enemy_up->up_map() < mapBG_area->up())
+			tmp_px_up_map = mapBG_area->up() - enemy_up->up_map();
+
+		else if (enemy_down->down_map() > mapBG_area->down())
+			tmp_px_up_map = mapBG_area->down() - enemy_down->down_map();
+
+		if (enemy_left->left_map() < mapBG_area->left())
+			tmp_px_left_map = mapBG_area->left() - enemy_left->left_map();
+
+		else if (enemy_right->right_map() > mapBG_area->right())
+			tmp_px_left_map = mapBG_area->right() - enemy_right->right_map();
 
 		selected_area.updateX(tmp_px_left);
 		selected_area.updateY(tmp_px_up);
 
 		for (auto& moveOBJ : moving_objects)
-			moveOBJ.enemy->update_position(tmp_px_left, tmp_px_up);
+			moveOBJ.updatePOS(tmp_px_left, tmp_px_up, tmp_px_left_map, tmp_px_up_map);
 	}
 }
+
 void multiOBJ_select_structure::moveMap_Event()
 {
-	if (Mouse::is_WheelState(Mouse_key::WHEEL_UP) || Mouse::is_WheelState(Mouse_key::WHEEL_DOWN)) {
-		double scaleX, scaleY;
+	double scaleX, scaleY;
 
-		int RenderPOS_X, RenderPOS_Y;
+	int RenderPOS_X, RenderPOS_Y;
 
-		scaleX = double(selected_area.get_mapX() - mapBG_area->left()) / double(mapBG_area->getW());
-		scaleY = double(selected_area.get_mapY() - mapBG_area->up()) / double(mapBG_area->getH());
+	scaleX = double(selected_area.get_mapX() - mapBG_area->left()) / double(mapBG_area->getW());
+	scaleY = double(selected_area.get_mapY() - mapBG_area->up()) / double(mapBG_area->getH());
 
-		RenderPOS_X = round(scaleX * edit_area->getW()) + edit_area->left();
-		RenderPOS_Y = round(scaleY * edit_area->getH()) + edit_area->up();
+	RenderPOS_X = round(scaleX * edit_area->getW()) + edit_area->left();
+	RenderPOS_Y = round(scaleY * edit_area->getH()) + edit_area->up();
 
-		selected_area.set_position(RenderPOS_X, RenderPOS_Y);
-	}
+	selected_area.set_position(RenderPOS_X, RenderPOS_Y);
 }
 
 void multiOBJ_select_structure::reset()
@@ -429,23 +372,35 @@ void multiOBJ_select_structure::reset()
 
 	enemy_up = enemy_down = enemy_left = enemy_right = nullptr;
 	moving_objects.clear();
-	selected_area.set_position(0, 0, 0, 0);
+	selected_area.set_position(0, 0, 1, 1);
 }
 
-void multiOBJ_select_structure::updateOBJs(SDL_Point clicked_point)
+void multiOBJ_select_structure::updateOBJs()
 {
 	// zachowanie proporcji po kliknieciu
-	px_up = clicked_point.y - selected_area.up(); // ile px w gore potrzeba by zaznaczenie bylo w oryginalnej pozycji
-	px_left = clicked_point.x - selected_area.left();
+	auto& clck_point = clicked_point.get();
+
+	px_up = clck_point.y - selected_area.up(); // ile px w gore potrzeba by zaznaczenie bylo w oryginalnej pozycji
+	px_left = clck_point.x - selected_area.left();
 
 	for (auto& enemy : moving_objects)
 	{
-		enemy.px_left = clicked_point.x - enemy.enemy->left();
-		enemy.px_up = clicked_point.y - enemy.enemy->up();
+		enemy.px_left = clck_point.x - enemy.enemy->left();
+		enemy.px_up = clck_point.y - enemy.enemy->up();
+
+		enemy.map_pxLEFT = clicked_pointMap.getX() - enemy.enemy->left_map();
+		enemy.map_pxUP = clicked_pointMap.getY() - enemy.enemy->up_map();
 	}
 }
 
-void multiOBJ_select_structure::setState_movingOBJs(bool state)
+void multiOBJ_select_structure::Move_OBJ::updatePOS(int upd_renderX, int upd_renderY, int upd_mapX, int upd_mapY)
 {
-	is_movingOBJs = state;
+	enemy->update_position(upd_renderX, upd_renderY);
+	enemy->update_mapPOS(upd_mapX, upd_mapY);
+}
+
+void multiOBJ_select_structure::Move_OBJ::setPOS(int renderX, int renderY, int mapX, int mapY)
+{
+	enemy->set_position(renderX, renderY);
+	enemy->set_mapPOS(mapX, mapY);
 }

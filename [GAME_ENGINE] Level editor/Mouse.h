@@ -20,6 +20,8 @@ class Mouse
 public:
 	static void update(SDL_Event *);
 
+	static void reset_states();
+
 	static const int & getX() { return mX; }
 	static const int & getY() { return mY; }
 
@@ -64,8 +66,6 @@ public:
 	static const Mouse_wheel & getWheelState() { return wheel_state; }
 private:
 	static void switch_buttons_down(SDL_Event *);
-
-	static void reset_states();
 
 	static void switch_motion_wheel_FLAG(SDL_Event *);
 private:

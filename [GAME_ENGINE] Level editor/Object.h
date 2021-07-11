@@ -20,7 +20,7 @@ public:
 	bool is_mouseKey_1hit(Mouse_key key) const { return is_mouseOver() && Mouse::pressedOnce(key); }
 	bool is_keyboardKey_1hit(Key key) const { return is_mouseOver() && key == Keyboard::get_currentKey(); }
 
-	Point get_clickedPoint() const { return clickedPoint; }
+	//Point get_clickedPoint() const { return clickedPoint; }
 
 	// Czy myszka jest na pozycji tego obiektu?
 	bool is_mouseOver() const { return mouse_over; }
@@ -98,7 +98,7 @@ private:
 private:
 	bool mouse_over;
 
-	Point clickedPoint{};
+	//Point clickedPoint{};
 
 	bool flag_pressed[Mouse::MAX_KEY_ID]{};
 };

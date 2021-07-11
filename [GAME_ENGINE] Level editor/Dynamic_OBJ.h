@@ -21,7 +21,6 @@ public:
 
 	void render();
 	void render(const SDL_Rect & tX_area, const SDL_Rect & destination_area);
-	//virtual void events();
 
 	bool is_flipped() const { return flip != SDL_FLIP_NONE; }
 

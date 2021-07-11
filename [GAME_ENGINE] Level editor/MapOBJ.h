@@ -71,16 +71,9 @@ private:
 	void reset_states();
 protected:
 	virtual void on_mouseL1hit() override;
-	virtual void on_mouseR1hit() {}
-	virtual void on_mouseW1hit() {} // kó³ko nacisniete raz przyciœniête
 
 	virtual void on_mouseOver(); // gdy myszka na pozycji obiektu
 	virtual void on_mouseOut(); // gdy myszka nie jest ju¿ na pozycji przycisku
-
-	// gdy trzymany przez jakiœ czas przycisk myszy
-	virtual void on_mouseL_press() {}
-	virtual void on_mouseR_press() {}
-	virtual void on_mouseW_press() {}
 protected:
 	static double SIZE_MULTIPLIER;
 

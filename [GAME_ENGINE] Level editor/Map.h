@@ -44,8 +44,6 @@ public:
 
 	void render();
 
-	const bool & is_mouseOver() const { return mouse_over; }
-
 	void set_background(const std::string & bg);
 
 	const SDL_Rect & get_position() const { return edit_area.get_position(); }
@@ -54,9 +52,10 @@ public:
 private:
 	void on_mouseR1hit() override;
 
-	void set_ScaledSize();
+	void on_mouseWheel_down_1hit() override;
+	void on_mouseWheel_up_1hit() override;
 
-	void mouseWheel_events();
+	void set_ScaledSize();
 
 	void Init_objectsSize();
 
@@ -69,14 +68,9 @@ private:
 	void create_EnemyOBJ(const SDL_Rect & mapPOS, const Enemy_ID & id, const SDL_RendererFlip & flip = SDL_FLIP_NONE);
 
 	void events_enemies();
-	void events_delete_enemies();
 
 	void render_map();
 	void render_enemies();
-
-	void move_map_Wheel();
-
-	void update_OBJs_renderPOS();
 private:
 	Map_mouseHandler map_mouseHandler;
 
@@ -93,16 +87,12 @@ private:
 
 	std::vector<Enemy_ptr> enemies;
 
-	bool pressing_mouseL_multiOBJ_select{ false };
-
 	// modu³y mapy
 	DeleteOBJ_structure deleteOBJ_s;
 	Enemies_placer enemy_placerModule;
 	multiOBJ_select_structure multiOBJ_s;
 	singleOBJmove_structure singleOBJmove_s;
 	Map_moveMouse_module map_MOVE_mouse_s;
-
-	//Module_base* current{ &multiOBJ_s };
 
 	Enemies_placer * current_module{ &enemy_placerModule };
 
