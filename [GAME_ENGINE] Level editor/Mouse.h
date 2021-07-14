@@ -57,7 +57,7 @@ public:
 	// klikniêto przycisk lub ruszono myszk¹
 	static bool isUpdated() { return updated || moved(); }
 
-	static bool moved();
+	static bool moved() { return mX != mX_r || mY != mY_r; }
 
 	static const SDL_Point & get_clickedPoint() { return clicked_point; }
 	//static const bool & check_clickedPoint(const SDL_Rect & pos);

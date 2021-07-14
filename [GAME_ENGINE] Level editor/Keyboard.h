@@ -22,7 +22,10 @@ enum class Key {
 class Keyboard
 {
 public:
+	static void INIT();
+
 	static void events(SDL_Event * ev);
+	static void events_indp();
 
 	static bool is_CapsLock_toggled();
 
@@ -38,9 +41,11 @@ public:
 	Wtedy klasa zarz¹dzaj¹ca przekierowuje dalej stany*/
 	static bool is_pressed_LCNTRL_Y() { return cntrl_y.pressedOnce(); }
 
-	static bool pressedOnce(int key) { return pressed_once[key]; }
+	static bool pressedOnce(Key key);
 
-	static bool is_pressedEscape() { return escape.pressedOnce(); }
+	static bool pressedOnce(std::vector<Key> keys);
+
+	static bool is_pressedEscape() { return pressed_once[int(Key::ESCAPE)]; }
 
 	static bool is_pressedBackspace() { return key_state == Key::BACKSPACE; }
 
@@ -94,8 +99,13 @@ private:
 	};
 
 	static Shortcut_keys cntrl_z, cntrl_y, escape;
+	
+	static std::vector<Key> pressed_keys;
 
 	static bool pressed_once[1000];
+	static bool flag_pressed_once[1000];
+
+	static std::vector<Key> keys_pressOnce;
 
 	static const Uint8* keyboard;
 

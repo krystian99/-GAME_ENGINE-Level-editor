@@ -48,7 +48,7 @@ void Engine::events()
 			}
 		}
 
-		if (Keyboard::is_pressedEscape()){// || Keyboard::is_pressed_LCNTRL_Z()) {
+		if (Keyboard::pressedOnce(Key::ESCAPE) || Keyboard::pressedOnce({ Key::LCNTRL, Key::D, Key::A })) {// || Keyboard::is_pressed_LCNTRL_Z()) {
 			switch (Engine_manager::getState()) {
 			case Engine_state::IS_IN_LC:
 				Engine_manager::setState(Engine_state::IS_IN_MENU);
@@ -81,6 +81,7 @@ void Engine::events()
 
 void Engine::events_indp()
 {
+	Keyboard::events_indp();
 	Engine_manager::getModule()->events_indp();
 }
 

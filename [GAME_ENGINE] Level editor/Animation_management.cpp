@@ -170,7 +170,7 @@ void Animation_management::keyboard_handler_indp()
 
 void Animation_management::keyboard_handler_dpnd()
 {
-	if (Keyboard::is_pressed_LCNTRL_Z()) {
+	if (Keyboard::pressedOnce({ Key::LCNTRL, Key::Z })) {
 		if (hitboxes.size())
 			hitboxes.pop_back();
 	}

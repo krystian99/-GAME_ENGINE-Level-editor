@@ -1,8 +1,6 @@
 #pragma once
-#include <SDL_render.h>
 #include "Mouse.h"
 #include "Keyboard.h"
-#include "Point.h"
 
 class Object : public Rect // przechwytywanie zdarzeñ myszy i klawiatury -> opakowany interfejs, który mo¿e zostaæ wykorzystany przez wszystkie obiekty
 {
@@ -22,8 +20,6 @@ public:
 	// czy klikniêto ten konkrenty przycisk na obiekcie?
 	bool is_mouseKey_1hit(Mouse_key key) const { return is_mouseOver() && Mouse::pressedOnce(key); }
 	bool is_keyboardKey_1hit(Key key) const { return is_mouseOver() && key == Keyboard::get_currentKey(); }
-
-	//Point get_clickedPoint() const { return clickedPoint; }
 
 	// Czy myszka jest na pozycji tego obiektu?
 	bool is_mouseOver() const { return mouse_over; }
@@ -100,8 +96,6 @@ private:
 	void keyboard_handler();
 private:
 	bool mouse_over;
-
-	//Point clickedPoint{};
 
 	bool flag_pressed[Mouse::MAX_KEY_ID]{};
 };

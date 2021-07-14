@@ -24,11 +24,6 @@ public:
 
 		set_scaled_position(pos);
 
-		/*position.x = std::round(pos.x * Video_Info::get_scaleW());
-		position.y = std::round(pos.y * Video_Info::get_scaleH());
-		position.w = std::round(pos.w * Video_Info::get_scaleW());
-		position.h = std::round(pos.h * Video_Info::get_scaleH());*/
-
 		if (getW() > getH()) {
 			orient = ScrollBar_orient::HORIZONTAL;
 			button_height = getH() - 2 * space_fromSide;

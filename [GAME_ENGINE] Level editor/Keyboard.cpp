@@ -4,7 +4,12 @@ Key Keyboard::key_state{ Key::NONE };
 Key Keyboard::mod_state{ Key::NONE };
 
 const Uint8* Keyboard::keyboard{ SDL_GetKeyboardState(nullptr) };
-bool Keyboard::pressed_once[1000];
+bool Keyboard::pressed_once[1000]{};
+bool Keyboard::flag_pressed_once[1000]{};
+
+std::vector<Key> Keyboard::pressed_keys;
+
+std::vector<Key> Keyboard::keys_pressOnce;
 
 Keyboard::Shortcut_keys Keyboard::cntrl_z{
 	{ Key::LCNTRL, Key::Z }
@@ -22,6 +27,9 @@ void Keyboard::switch_digits_up(SDL_Keycode& code)
 {
 }
 
+#include <iostream>
+using std::cout;
+
 void Keyboard::switch_keys_down(SDL_Event* ev)
 {
 	switch_liters(ev->key.keysym.sym);
@@ -32,10 +40,26 @@ void Keyboard::switch_keys_down(SDL_Event* ev)
 void Keyboard::switch_keys_up(SDL_Event* ev)
 {
 	mod_state = { Key::NONE };
+
+	switch_liters_up(ev->key.keysym.sym);
+	switch_others_up(ev->key.keysym.sym);
+
 	//key_state = { Key::NONE };
 	//cntrl_y.reset();
 	//cntrl_z.reset();
 	//escape.reset();
+}
+
+void Keyboard::INIT()
+{
+	using k = Key;
+
+	keys_pressOnce = {
+		Key::NONE, k::A, k::B, k::C, k::D, k::E, k::F, k::G, k::H, k::I, k::J, k::K, k::L, k::M,
+		k::N, k::O, k::P, k::Q, k::R, k::S, k::T, k::U, k::V, k::W, k::X, k::Y, k::Z,
+		k::SPACE, k::ENTER, k::DELETE, k::CAPS_LOCK, k::ESCAPE, k::BACKSPACE, k::SHIFT, k::LCNTRL, k::RSHIFT,
+		k::n1, k::n2, k::n3, k::n4, k::n5, k::n6, k::n7, k::n8, k::n9, k::n0,
+	};
 }
 
 void Keyboard::events(SDL_Event* ev)
@@ -51,12 +75,17 @@ void Keyboard::events(SDL_Event* ev)
 		break;
 	}
 
-	cntrl_z.events();
+	/*cntrl_z.events();
 	cntrl_y.events();
-	escape.events();
+	*/
 
+	//escape.events();
 }
 
+void Keyboard::events_indp()
+{
+
+}
 
 void Keyboard::switch_liters(SDL_Keycode & code)
 {
@@ -162,6 +191,9 @@ void Keyboard::switch_others(SDL_Keycode & code)
 	case SDLK_DELETE:
 		key_state = Key::DELETE;
 		break;
+	case SDLK_LCTRL:
+		key_state = Key::LCNTRL;
+		break;
 	}
 }
 
@@ -205,11 +237,113 @@ void Keyboard::switch_digits(SDL_Keycode & code)
 void Keyboard::switch_liters_up(SDL_Keycode & code)
 {
 	key_state = Key::NONE;
+
+	switch (code)
+	{
+	case SDLK_a:
+		flag_pressed_once[int(Key::A)] = false;
+		break;
+	case SDLK_b:
+		flag_pressed_once[int(Key::B)] = false;
+		break;
+	case SDLK_c:
+		flag_pressed_once[int(Key::C)] = false;
+		break;
+	case SDLK_d:
+		flag_pressed_once[int(Key::D)] = false;
+		break;
+	case SDLK_e:
+		flag_pressed_once[int(Key::E)] = false;
+		break;
+	case SDLK_f:
+		flag_pressed_once[int(Key::F)] = false;
+		break;
+	case SDLK_g:
+		flag_pressed_once[int(Key::G)] = false;
+		break;
+	case SDLK_h:
+		flag_pressed_once[int(Key::H)] = false;
+		break;
+	case SDLK_i:
+		flag_pressed_once[int(Key::I)] = false;
+		break;
+	case SDLK_j:
+		flag_pressed_once[int(Key::J)] = false;
+		break;
+	case SDLK_k:
+		flag_pressed_once[int(Key::K)] = false;
+		break;
+	case SDLK_l:
+		flag_pressed_once[int(Key::L)] = false;
+		break;
+	case SDLK_m:
+		flag_pressed_once[int(Key::M)] = false;
+		break;
+	case SDLK_n:
+		flag_pressed_once[int(Key::N)] = false;
+		break;
+	case SDLK_o:
+		flag_pressed_once[int(Key::O)] = false;
+		break;
+	case SDLK_p:
+		flag_pressed_once[int(Key::P)] = false;
+		break;
+	case SDLK_q:
+		flag_pressed_once[int(Key::Q)] = false;
+		break;
+	case SDLK_r:
+		flag_pressed_once[int(Key::R)] = false;
+		break;
+	case SDLK_s:
+		flag_pressed_once[int(Key::S)] = false;
+		break;
+	case SDLK_t:
+		flag_pressed_once[int(Key::T)] = false;
+		break;
+	case SDLK_u:
+		flag_pressed_once[int(Key::U)] = false;
+		break;
+	case SDLK_v:
+		flag_pressed_once[int(Key::V)] = false;
+		break;
+	case SDLK_w:
+		flag_pressed_once[int(Key::W)] = false;
+		break;
+	case SDLK_x:
+		flag_pressed_once[int(Key::X)] = false;
+		break;
+	case SDLK_y:
+		flag_pressed_once[int(Key::Y)] = false;
+		break;
+	case SDLK_z:
+		flag_pressed_once[int(Key::Z)] = false;
+		break;
+	}
 }
 
 void Keyboard::switch_others_up(SDL_Keycode & code)
 {
-	mod_state = Key::NONE;
+	switch (code)
+	{
+	case SDLK_SPACE:
+
+		break;
+	case SDLK_ESCAPE:
+		flag_pressed_once[int(Key::ESCAPE)] = false;
+		break;
+	case SDLK_KP_ENTER:
+
+		break;
+	case SDLK_BACKSPACE:
+
+		break;
+	case SDLK_DELETE:
+
+		break;
+	case SDLK_LCTRL:
+		flag_pressed_once[int(Key::LCNTRL)] = false;
+		break;
+	}
 }
 
 bool Keyboard::is_CapsLock_toggled()
@@ -220,6 +354,50 @@ bool Keyboard::is_CapsLock_toggled()
 	if (temp == SDL_Keymod::KMOD_CAPS)
 		return true;
 	return false;
+}
+
+bool Keyboard::pressedOnce(Key key)
+{
+	if (keyboard[int(key)])
+	{
+		if (!flag_pressed_once[int(key)])
+		{
+			flag_pressed_once[int(key)] = true;
+			pressed_once[int(key)] = true;
+		}
+		else
+			pressed_once[int(key)] = false;
+	}
+	else
+		pressed_once[int(key)] = false;
+
+	return pressed_once[int(key)];
+}
+
+bool Keyboard::pressedOnce(std::vector<Key> keys)
+{
+	/*
+	// sprawdz najpierw czy wciœniête klawisze
+	for (auto& key : keys)
+		if (!keyboard[int(key)])
+			return false;
+
+	for (auto& key : keys)
+		if (!pressedOnce(key))
+			return false;
+
+	return true;*/
+
+	for (auto& key : keys)
+		if (!keyboard[int(key)])
+			return false;
+
+	for (auto& key : keys)
+		if (!pressedOnce(key))
+			return false;
+
+	return true;
+
 }
 
 

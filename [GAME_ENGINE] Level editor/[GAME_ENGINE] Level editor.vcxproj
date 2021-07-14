@@ -181,6 +181,7 @@
     <ClInclude Include="Menu_local.h" />
     <ClInclude Include="MENU_Module_base.h" />
     <ClInclude Include="Module_base.h" />
+    <ClInclude Include="Module_Object.h" />
     <ClInclude Include="multiOBJ_select_structure.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="OBJ_TYPES.h" />
@@ -255,6 +256,7 @@
     <ClCompile Include="Menu_local.cpp" />
     <ClCompile Include="MENU_Module_base.cpp" />
     <ClCompile Include="Module_base.cpp" />
+    <ClCompile Include="Module_Object.cpp" />
     <ClCompile Include="multiOBJ_select_structure.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Point.cpp" />

@@ -95,11 +95,6 @@ bool Mouse::clickedPoint_inPOS(const Rect& pos)
 	return false;
 }
 
-bool Mouse::moved()
-{
-	return mX != mX_r || mY != mY_r;
-}
-
 void Mouse::switch_buttons_down(SDL_Event * ev)
 {
 	clicked_point = { mX, mY };

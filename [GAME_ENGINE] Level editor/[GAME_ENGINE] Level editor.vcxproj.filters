@@ -297,6 +297,9 @@
     <ClInclude Include="Key_pressOnce.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Module_Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Texture.cpp">
@@ -501,6 +504,9 @@
       <Filter>Level Editor\Modules.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Key_pressOnce.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Module_Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

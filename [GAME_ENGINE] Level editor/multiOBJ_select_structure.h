@@ -64,19 +64,9 @@ private:
 		int map_pxUP, map_pxLEFT;
 	};
 
-	struct SelectedArea_data
-	{
-		int renderX, renderY, renderW, renderH;
-		int mapX, mapY, mapW, mapH;
-	};
-
-	SelectedArea_data sa_data;
-
 	Point clicked_point, clicked_pointMap;
 
 	Rect mapPos;
-
-	//bool is_movingOBJs{ false };
 
 	int px_up, px_left;
 
@@ -93,8 +83,6 @@ private:
 	MapOBJ selected_area;
 
 	States state{ States::SELECTING_OBJs };
-
-	//const Map_mouseHandler& map_mouseHandler;
 
 	const Rect* edit_area;
 	const Rect* mapBG_area;
