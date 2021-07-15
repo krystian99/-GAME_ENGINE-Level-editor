@@ -209,6 +209,12 @@ void Keyboard::switch_others(SDL_Keycode & code)
 	case SDLK_LCTRL:
 		key_state = Key::LCNTRL;
 		break;
+	case SDLK_LSHIFT:
+		key_state = Key::LSHIFT;
+		break;
+	case SDLK_RSHIFT:
+		key_state = Key::RSHIFT;
+		break;
 	}
 }
 
@@ -355,6 +361,12 @@ void Keyboard::switch_others_up(SDL_Keycode & code)
 		break;
 	case SDLK_LCTRL:
 		key_state_up = Key::LCNTRL;
+		break;
+	case SDLK_LSHIFT:
+		key_state_up = Key::LSHIFT;
+		break;
+	case SDLK_RSHIFT:
+		key_state_up = Key::RSHIFT;
 		break;
 	}
 }

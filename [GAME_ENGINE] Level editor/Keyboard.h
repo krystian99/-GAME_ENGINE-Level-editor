@@ -13,7 +13,7 @@ enum class Key {
 	V = SDL_SCANCODE_V, B = SDL_SCANCODE_B, N = SDL_SCANCODE_N, M = SDL_SCANCODE_M,
 	SPACE = SDL_SCANCODE_SPACE, ENTER = SDL_SCANCODE_RETURN, DELETE = SDL_SCANCODE_DELETE, 
 	CAPS_LOCK = SDL_SCANCODE_CAPSLOCK, ESCAPE = SDL_SCANCODE_ESCAPE, BACKSPACE = SDL_SCANCODE_BACKSPACE, 
-	SHIFT = SDL_SCANCODE_LSHIFT,
+	LSHIFT = SDL_SCANCODE_LSHIFT,
 	n1 = SDL_SCANCODE_1, n2 = SDL_SCANCODE_2, n3 = SDL_SCANCODE_3, n4 = SDL_SCANCODE_4, n5 = SDL_SCANCODE_5, n6 = SDL_SCANCODE_6, 
 	n7 = SDL_SCANCODE_7, n8 = SDL_SCANCODE_8, n9 = SDL_SCANCODE_9, n0 = SDL_SCANCODE_0,
 	LCNTRL = SDL_SCANCODE_LCTRL,
@@ -59,7 +59,7 @@ public:
 
 	static bool is_pressedBackspace() { return key_state == Key::BACKSPACE; }
 
-	static bool is_pressedShift() { return keyboard[int(Key::SHIFT)] || keyboard[int(Key::RSHIFT)]; }
+	static bool is_pressedShift() { return keyboard[int(Key::LSHIFT)] || keyboard[int(Key::RSHIFT)]; }
 
 	static bool is_pressedKey(Key k) { return keyboard[int(k)]; }
 
