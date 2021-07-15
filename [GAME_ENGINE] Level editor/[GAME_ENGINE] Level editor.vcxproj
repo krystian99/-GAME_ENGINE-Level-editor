@@ -166,7 +166,6 @@
     <ClInclude Include="InputArea.h" />
     <ClInclude Include="Interact_OBJ.h" />
     <ClInclude Include="Key_pressOnce_s.h" />
-    <ClInclude Include="Key_pressOnce.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapOBJ.h" />
     <ClInclude Include="Map_events.h" />
@@ -242,8 +241,6 @@
     <ClCompile Include="HitBox.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="Interact_OBJ.cpp" />
-    <ClCompile Include="Key_pressOnce_s.cpp" />
-    <ClCompile Include="Key_pressOnce.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapOBJ.cpp" />
     <ClCompile Include="Map_events.cpp" />

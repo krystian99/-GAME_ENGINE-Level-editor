@@ -103,17 +103,17 @@ void Module_Object::mouse_handler()
 {
 	if (Mouse::isUpdated()) {
 		// przyciski myszy nacisniete raz
-		if (Mouse::pressedOnce(Mouse_key::L_BUTTON)) {
+		if (Mouse::is_pressedOnce(Mouse_key::L_BUTTON)) {
 			on_mouseL1hit();
 
 			flag_pressed[int(Mouse_key::L_BUTTON)] = true;
 		}
-		else if (Mouse::pressedOnce(Mouse_key::R_BUTTON)) {
+		else if (Mouse::is_pressedOnce(Mouse_key::R_BUTTON)) {
 			on_mouseR1hit();
 
 			flag_pressed[int(Mouse_key::R_BUTTON)] = true;
 		}
-		else if (Mouse::pressedOnce(Mouse_key::MID_BUTTON)) {
+		else if (Mouse::is_pressedOnce(Mouse_key::MID_BUTTON)) {
 			on_mouseW1hit();
 
 			flag_pressed[int(Mouse_key::MID_BUTTON)] = true;
@@ -159,6 +159,6 @@ void Module_Object::mouse_handler()
 
 void Module_Object::keyboard_handler()
 {
-	if (!Keyboard::is_pressedKey_once(Key::NONE))
+	if (Keyboard::is_keyPressed())
 		keyboardEvents_1hit();
 }

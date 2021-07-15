@@ -42,20 +42,14 @@ public:
 	static void INIT(){}
 
 	static void events(SDL_Event * ev);
-	static void events_indp();
 
 	static bool is_CapsLock_toggled();
 
-	//static bool* getPressedOnce() { return pressed_once; }
+	static bool is_keyPressed() { return !key_pressOnce_s.empty(); }
 
-	/* Musi zostaæ wywo³ane przez klasê zarz¹dzaj¹ca daym stanem
-	przyk³ad: MenuStart->events()
-	Wtedy klasa zarz¹dzaj¹ca przekierowuje dalej stany*/
-	static bool pressedOnce(Key key);
+	static bool is_pressedOnce(Key key);
 
-	static bool pressedOnce(std::vector<Key> keys);
-
-	//static bool is_pressedEscape() { return pressed_once[int(Key::ESCAPE)]; }
+	static bool is_pressedOnce(std::vector<Key> keys);
 
 	static bool is_pressedBackspace() { return key_state == Key::BACKSPACE; }
 
@@ -63,7 +57,7 @@ public:
 
 	static bool is_pressedKey(Key k) { return keyboard[int(k)]; }
 
-	static const Uint8* getKeys() { return keyboard; }
+	//static const Uint8* getKeys() { return keyboard; }
 
 	static bool is_pressedKey_once(Key k) { return key_state == k; }
 
@@ -81,7 +75,7 @@ private:
 	static void switch_keys_down(SDL_Event * ev);
 	static void switch_keys_up(SDL_Event * ev);
 private:
-	static Key_pressOnce_s key_pressOnce_s;
+	static Key_pressOnce_s<enum class Key> key_pressOnce_s;
 
 	static bool flag_pressed_once[1000];
 

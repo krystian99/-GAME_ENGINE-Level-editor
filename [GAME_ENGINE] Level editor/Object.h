@@ -18,8 +18,8 @@ public:
 	{}
 
 	// czy klikniêto ten konkrenty przycisk na obiekcie?
-	bool is_mouseKey_1hit(Mouse_key key) const { return is_mouseOver() && Mouse::pressedOnce(key); }
-	bool is_keyboardKey_1hit(Key key) const { return is_mouseOver() && Keyboard::pressedOnce(key); }
+	bool is_mouseKey_1hit(Mouse_key key) const { return is_mouseOver() && Mouse::is_pressedOnce(key); }
+	bool is_keyboardKey_1hit(Key key) const { return is_mouseOver() && Keyboard::is_pressedOnce(key); }
 
 	// Czy myszka jest na pozycji tego obiektu?
 	bool is_mouseOver() const { return mouse_over; }
@@ -87,6 +87,8 @@ protected:
 	virtual void on_keyboardKey_Z_1hit() {}
 
 	virtual void on_keyboardKey_DELETE_1hit() {}
+	virtual void on_keyboardKey_ESCAPE_1hit() {}
+	virtual void on_keyboardKey_ENTER_1hit() {}
 private:
 	void reset_states();
 
@@ -95,7 +97,7 @@ private:
 	void mouse_handler();
 	void keyboard_handler();
 private:
-	bool mouse_over;
+	bool mouse_over{ false };
 
 	bool flag_pressed[Mouse::MAX_KEY_ID]{};
 };

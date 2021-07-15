@@ -4,7 +4,7 @@
 #include "Texture.h"
 #include "Module_base.h"
 
-class Map_moveMouse_module : public Module_base
+class Map_moveMouse_module : public Module_base, public Object
 {
 	using Enemies = std::vector<Enemy_ptr>;
 public:
@@ -13,9 +13,8 @@ public:
 	{}
 
 	void events();
-	void events_indp();
-
-	void render();
+private:
+	void on_mouseL_press() override;
 private:
 	const Texture& mapBG;
 

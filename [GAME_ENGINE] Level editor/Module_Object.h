@@ -4,8 +4,8 @@
 
 class Module_Object
 {
-	bool is_mouseKey_1hit(Mouse_key key) const { return Mouse::pressedOnce(key); }
-	bool is_keyboardKey_1hit(Key key) const { return key == Keyboard::get_currentKey(); }
+	bool is_mouseKey_1hit(Mouse_key key) const { return Mouse::is_pressedOnce(key); }
+	bool is_keyboardKey_1hit(Key key) const { return Keyboard::is_pressedOnce(key); }
 
 	void events();
 

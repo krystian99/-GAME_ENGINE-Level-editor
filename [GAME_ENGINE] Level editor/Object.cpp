@@ -112,6 +112,12 @@ void Object::keyboardEvents_1hit()
 	case Key::DELETE:
 		on_keyboardKey_DELETE_1hit();
 		break;
+	case Key::ENTER:
+		on_keyboardKey_ENTER_1hit();
+		break;
+	case Key::ESCAPE:
+		on_keyboardKey_ESCAPE_1hit();
+		break;
 	}
 }
 
@@ -119,17 +125,17 @@ void Object::mouse_handler()
 {
 	if (Mouse::isUpdated()) {
 		// przyciski myszy nacisniete raz
-		if (Mouse::pressedOnce(Mouse_key::L_BUTTON)) {
+		if (Mouse::is_pressedOnce(Mouse_key::L_BUTTON)) {
 			on_mouseL1hit();
 
 			flag_pressed[int(Mouse_key::L_BUTTON)] = true;
 		}
-		else if (Mouse::pressedOnce(Mouse_key::R_BUTTON)) {
+		else if (Mouse::is_pressedOnce(Mouse_key::R_BUTTON)) {
 			on_mouseR1hit();
 
 			flag_pressed[int(Mouse_key::R_BUTTON)] = true;
 		}
-		else if (Mouse::pressedOnce(Mouse_key::MID_BUTTON)) {
+		else if (Mouse::is_pressedOnce(Mouse_key::MID_BUTTON)) {
 			on_mouseW1hit();
 
 			flag_pressed[int(Mouse_key::MID_BUTTON)] = true;
@@ -175,6 +181,6 @@ void Object::mouse_handler()
 
 void Object::keyboard_handler()
 {
-	if (!Keyboard::is_pressedKey_once(Key::NONE))
+	if (Keyboard::is_keyPressed())
 		keyboardEvents_1hit();
 }

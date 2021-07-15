@@ -50,7 +50,7 @@ void Animation_management::render()
 
 	animation.render(&animBG_area, &edit_area);
 
-	if (Mouse::is_pressedL())
+	if (Mouse::is_pressed(Mouse_key::L_BUTTON))
 	{
 		static const auto& point = Mouse::get_clickedPoint();
 		if (point.x >= edit_area.x && point.x <= edit_area.x + edit_area.w
@@ -110,7 +110,7 @@ void Animation_management::mouse_handler_indp()
 	if (Mouse::getX() >= edit_area.x && Mouse::getX() <= edit_area.x + edit_area.w
 		&& Mouse::getY() >= edit_area.y && Mouse::getY() <= edit_area.y + edit_area.h)
 	{
-		if (Mouse::is_pressedL()) {
+		if (Mouse::is_pressed(Mouse_key::L_BUTTON)) {
 			static const auto& point = Mouse::get_clickedPoint();
 			if (point.x >= edit_area.x && point.x <= edit_area.x + edit_area.w
 				&& point.y >= edit_area.y && point.y <= edit_area.y + edit_area.h)
@@ -122,7 +122,7 @@ void Animation_management::mouse_handler_indp()
 				is_hitBox_Set = false;
 			l_buttonPress = true;
 		}
-		else if (!Mouse::is_pressedL() && l_buttonPress && is_hitBox_Set) {
+		else if (!Mouse::is_pressed(Mouse_key::L_BUTTON) && l_buttonPress && is_hitBox_Set) {
 			hitboxes.push_back({ hitbox_area,{ 255 } });
 			l_buttonPress = false;
 		}
@@ -170,12 +170,12 @@ void Animation_management::keyboard_handler_indp()
 
 void Animation_management::keyboard_handler_dpnd()
 {
-	if (Keyboard::pressedOnce({ Key::LCNTRL, Key::Z })) {
+	if (Keyboard::is_pressedOnce({ Key::LCNTRL, Key::Z })) {
 		if (hitboxes.size())
 			hitboxes.pop_back();
 	}
 
-	if (Keyboard::is_pressedKey_once(Key::ESCAPE))
+	if (Keyboard::is_pressedOnce(Key::ESCAPE))
 	{
 		Engine_manager::setState(Engine_state::IS_IN_MENU);
 		Menu_manager::set_Menu(Menu_ID::ANIMATION_MENU);

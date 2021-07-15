@@ -27,7 +27,7 @@ void Button_input::events()
 	if (window->is_shown())
 		input->events();
 
-	if (Keyboard::is_pressedKey(Key::ENTER)) {
+	if (Keyboard::is_pressedOnce(Key::ENTER)) {
 		if (!input->is_empty()) {
 			if ((*check_input)(input->getStr())) {
 				input->reset();
@@ -41,7 +41,7 @@ void Button_input::events()
 			}
 		}
 	}
-	else if (Keyboard::is_pressedKey_once(Key::ESCAPE)) {
+	else if (Keyboard::is_pressedOnce(Key::ESCAPE)) {
 		input->reset();
 		window->hide();
 		active = false;

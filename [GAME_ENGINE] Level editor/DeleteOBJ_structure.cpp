@@ -2,6 +2,11 @@
 
 void DeleteOBJ_structure::events()
 {
+	Object::events();
+}
+
+void DeleteOBJ_structure::on_mouseL1hit()
+{
 	for (int i = 0; i < enemies.size(); ++i)
 	{
 		auto& enemy = enemies[i];

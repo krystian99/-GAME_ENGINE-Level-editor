@@ -1,6 +1,5 @@
 #include "Mouse.h"
 #include <SDL_mouse.h>
-#include "Key_pressOnce.h"
 
 int Mouse::mX = 0; // obecna pozycja
 int Mouse::mY = 0; // obecna pozycja
@@ -9,22 +8,14 @@ int Mouse::mY_r = 0; // poprzednia pozycja
 
 bool Mouse::updated{ false };
 
-bool Mouse::l_pressed_once{ false };
-
 SDL_Point Mouse::clicked_point{};
 
 bool Mouse::keys[100]{};
-bool Mouse::pressed_once[100]{};
-
-Key_pressOnce Mouse::lButton_pressOnce{ { Mouse_key::L_BUTTON }};
-Key_pressOnce Mouse::rButton_pressOnce{ { Mouse_key::R_BUTTON } };
-Key_pressOnce Mouse::midButton_pressOnce{ { Mouse_key::MID_BUTTON }};
-
-Key_pressOnce Mouse::wheelUP_pressOnce{ { Mouse_key::WHEEL_UP} };
-Key_pressOnce Mouse::wheelDOWN_pressOnce{ { Mouse_key::WHEEL_DOWN} };
 
 Mouse_key Mouse::key_state{ Mouse_key::NONE };
 Mouse_wheel Mouse::wheel_state{ Mouse_wheel::NONE };
+
+Key_pressOnce_s<Mouse_key> Mouse::keys_pressOnce;
 
 void Mouse::update(SDL_Event * ev)
 {
@@ -41,41 +32,47 @@ void Mouse::update(SDL_Event * ev)
 		break;
 	case SDL_MOUSEBUTTONUP:
 		updated = true;
-		if (ev->button.button == SDL_BUTTON_LEFT)
+		if (ev->button.button == SDL_BUTTON_LEFT) {
 			keys[int(Mouse_key::L_BUTTON)] = false;
-		else if (ev->button.button == SDL_BUTTON_RIGHT)
+
+			keys_pressOnce.switch_keysUp(Mouse_key::L_BUTTON);
+		}
+		else if (ev->button.button == SDL_BUTTON_RIGHT) {
 			keys[int(Mouse_key::R_BUTTON)] = false;
-		else if (ev->button.button == SDL_BUTTON_MIDDLE)
+
+			keys_pressOnce.switch_keysUp(Mouse_key::R_BUTTON);
+		}
+		else if (ev->button.button == SDL_BUTTON_MIDDLE) {
 			keys[int(Mouse_key::MID_BUTTON)] = false;
+
+			keys_pressOnce.switch_keysUp(Mouse_key::MID_BUTTON);
+		}
 		break;
 	case SDL_MOUSEWHEEL:
 		switch_motion_wheel_FLAG(ev);
 		break;
 	}
 
-	lButton_pressOnce.events();
-	rButton_pressOnce.events();
-	midButton_pressOnce.events();
+	keys_pressOnce.events();
 }
 
-bool Mouse::pressedOnce(Mouse_key key)
+bool Mouse::is_pressed(const std::vector<Mouse_key>& keys_check)
 {
-	return pressed_once[int(key)];
+	for (auto& k : keys_check)
+		if (!keys[int(k)])
+			return false;
+
+	return true;
 }
 
-bool Mouse::pressedOnce(int code)
+bool Mouse::is_pressedOnce(Mouse_key key)
 {
-	return pressed_once[code];
+	return keys_pressOnce.is_pressedOnce(key);
 }
 
-bool Mouse::is_pressedL_once()
+bool Mouse::is_pressedOnce(std::vector<Mouse_key> check_keys)
 {
-	return lButton_pressOnce.pressedOnce();
-}
-
-bool Mouse::is_pressedR_once()
-{
-	return rButton_pressOnce.pressedOnce();
+	return keys_pressOnce.is_pressedOnce(check_keys);
 }
 
 bool Mouse::is_inPOS(const SDL_Rect & pos)
@@ -103,18 +100,24 @@ void Mouse::switch_buttons_down(SDL_Event * ev)
 	switch (ev->button.button) {
 	case SDL_BUTTON_LEFT:
 		key_state = Mouse_key::L_BUTTON;
-		l_pressed_once = true;
 
 		keys[int(Mouse_key::L_BUTTON)] = true;
+
+		keys_pressOnce.switch_keysDown(Mouse_key::L_BUTTON);
 		break;
 	case SDL_BUTTON_RIGHT:
 		key_state = Mouse_key::R_BUTTON;
 
 		keys[int(Mouse_key::R_BUTTON)] = true;
+
+		keys_pressOnce.switch_keysDown(Mouse_key::R_BUTTON);
 		break;
 	case SDL_BUTTON_MIDDLE:
 		key_state = Mouse_key::MID_BUTTON;
+
 		keys[int(Mouse_key::MID_BUTTON)] = true;
+
+		keys_pressOnce.switch_keysDown(Mouse_key::MID_BUTTON);
 		break;
 	}
 }
@@ -123,8 +126,6 @@ void Mouse::reset_states()
 {
 	key_state = Mouse_key::NONE;
 	wheel_state = Mouse_wheel::NONE;
-
-	l_pressed_once = false;
 
 	updated = false;
 

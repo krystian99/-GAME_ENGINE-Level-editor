@@ -56,7 +56,7 @@ void InputArea::events()
 
 	if (current) 
 	{
-		if (!Keyboard::is_pressedKey_once(Key::NONE))
+		if (Keyboard::is_keyPressed())
 		{
 			if (alpha_enabled)
 				getLiters();

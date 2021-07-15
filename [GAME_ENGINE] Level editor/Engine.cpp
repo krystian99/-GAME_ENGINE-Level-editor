@@ -36,41 +36,42 @@ void Engine::events()
 			}
 		}
 
-		if (event_handler.window.windowID == Renderer::get_mainWindow_ID())
+		if (event_handler.window.windowID == Renderer::get_mainWindow_ID()) {
 			events_dpnd();
+
+			if (Keyboard::is_pressedOnce(Key::ESCAPE) || Keyboard::is_pressedOnce({ Key::LCNTRL, Key::RSHIFT, Key::D })) {
+				switch (Engine_manager::getState()) {
+				case Engine_state::IS_IN_LC:
+					Engine_manager::setState(Engine_state::IS_IN_MENU);
+					Menu_manager::set_Menu(Menu_ID::LEVEL_MENU);
+					level_editor.reset_states();
+					break;
+				case Engine_state::IS_IN_ANIMATION_MANAGEMENT:
+					Engine_manager::setState(Engine_state::IS_IN_MENU);
+					Menu_manager::set_Menu(Menu_ID::ANIMATION_MENU);
+					break;
+				case Engine_state::IS_IN_MENU:
+					switch (Menu_manager::getState()) {
+					case Menu_ID::START:
+						Engine_manager::Quit();
+						break;
+					case Menu_ID::LEVEL_MENU:
+						Menu_manager::set_Menu(Menu_ID::START);
+						break;
+					case Menu_ID::ANIMATION_MENU:
+						Menu_manager::set_Menu(Menu_ID::START);
+						break;
+					}
+					break;
+				}
+			}
+		}
 
 		// wykonaj eventy dla pozostalych okien
 		else {
 			switch (Engine_manager::getState()) {
 			case Engine_state::IS_IN_LC:
 				level_editor.events_multiwindow();
-				break;
-			}
-		}
-
-		if (Keyboard::pressedOnce(Key::ESCAPE) || Keyboard::pressedOnce({ Key::LCNTRL, Key::LSHIFT, Key::D })) {
-			switch (Engine_manager::getState()) {
-			case Engine_state::IS_IN_LC:
-				Engine_manager::setState(Engine_state::IS_IN_MENU);
-				Menu_manager::set_Menu(Menu_ID::LEVEL_MENU);
-				level_editor.reset_states();
-				break;
-			case Engine_state::IS_IN_ANIMATION_MANAGEMENT:
-				Engine_manager::setState(Engine_state::IS_IN_MENU);
-				Menu_manager::set_Menu(Menu_ID::ANIMATION_MENU);
-				break;
-			case Engine_state::IS_IN_MENU:
-				switch (Menu_manager::getState()) {
-				case Menu_ID::START:
-					Engine_manager::Quit();
-					break;
-				case Menu_ID::LEVEL_MENU:
-					Menu_manager::set_Menu(Menu_ID::START);
-					break;
-				case Menu_ID::ANIMATION_MENU:
-					Menu_manager::set_Menu(Menu_ID::START);
-					break;
-				}
 				break;
 			}
 		}
@@ -81,7 +82,6 @@ void Engine::events()
 
 void Engine::events_indp()
 {
-	Keyboard::events_indp();
 	Engine_manager::getModule()->events_indp();
 }
 

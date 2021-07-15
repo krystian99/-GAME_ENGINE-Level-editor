@@ -3,8 +3,7 @@
 #include <SDL_rect.h>
 #include <SDL_events.h>
 #include <vector>
-
-class Key_pressOnce;
+#include "Key_pressOnce_s.h"
 
 enum class Mouse_key {
 	NONE = 1,
@@ -30,26 +29,15 @@ public:
 
 	static const int MAX_KEY_ID = 33;
 
-	static const bool * getKeys() { return keys; }
-	//static int* getCounts() { return counts; }
-
-	static bool* get_pressedOnce() { return pressed_once; }
-
 	static bool is_WheelState(Mouse_key st) { return keys[int(st)]; }
 
 	static bool is_inState(Mouse_key key) { return key_state == key; }
 
-	static const bool & is_pressedL() { return keys[int(Mouse_key::L_BUTTON)]; }
-
 	static bool is_pressed(Mouse_key key) { return keys[int(key)]; }
+	static bool is_pressed(const std::vector<Mouse_key>& keys_check);
 
-	static bool pressedOnce(Mouse_key key);
-	static bool pressedOnce(int code);
-
-	static bool is_pressedL_once();
-	static bool is_pressedR_once();
-
-	static bool pressed_Lbutton() { return keys[int(Mouse_key::L_BUTTON)]; }
+	static bool is_pressedOnce(Mouse_key key);
+	static bool is_pressedOnce(std::vector<Mouse_key> check_keys);
 
 	static bool is_inPOS(const SDL_Rect & pos);
 	static bool clickedPoint_inPOS(const Rect &);
@@ -69,9 +57,7 @@ private:
 
 	static void switch_motion_wheel_FLAG(SDL_Event *);
 private:
-	static Key_pressOnce lButton_pressOnce, rButton_pressOnce, midButton_pressOnce;
-
-	static Key_pressOnce wheelUP_pressOnce, wheelDOWN_pressOnce;
+	static Key_pressOnce_s<Mouse_key> keys_pressOnce;
 
 	static Mouse_key key_state;
 	static Mouse_wheel wheel_state;
@@ -79,12 +65,6 @@ private:
 	static SDL_Point clicked_point; // gdy zostanie klikniêty lewy klawisz i jest trzymany, to zapisz wspó³rzêdne punktu 
 
 	static bool keys[100];
-
-	static bool pressed_once[100];
-
-	static bool l_pressed_once;
-
-	static bool l_pressed, r_pressed, m_pressed;
 
 	static bool updated;
 

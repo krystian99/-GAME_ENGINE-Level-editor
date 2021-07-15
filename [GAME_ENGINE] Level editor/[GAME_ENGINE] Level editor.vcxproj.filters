@@ -52,12 +52,12 @@
     <Filter Include="Keyboard">
       <UniqueIdentifier>{33974c9f-4ab5-4990-b730-2f116dc653f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mouse">
+      <UniqueIdentifier>{4f9b1571-b8d8-4ea1-b4cc-58206342f3db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Texture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Mouse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Setup.h">
@@ -294,9 +294,6 @@
     <ClInclude Include="Map_moveMouse_module.h">
       <Filter>Level Editor\Modules.h</Filter>
     </ClInclude>
-    <ClInclude Include="Key_pressOnce.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Module_Object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -306,15 +303,15 @@
     <ClInclude Include="Key_pressOnce_s.h">
       <Filter>Keyboard</Filter>
     </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Mouse</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Mouse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Setup.cpp">
@@ -506,17 +503,14 @@
     <ClCompile Include="Map_moveMouse_module.cpp">
       <Filter>Level Editor\Modules.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Key_pressOnce.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Module_Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Keyboard.cpp">
       <Filter>Keyboard</Filter>
     </ClCompile>
-    <ClCompile Include="Key_pressOnce_s.cpp">
-      <Filter>Keyboard</Filter>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Mouse</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -4,7 +4,7 @@ Key Keyboard::key_state{ Key::NONE };
 Key Keyboard::key_state_up{ Key::NONE };
 Key Keyboard::mod_state{ Key::NONE };
 
-Key_pressOnce_s Keyboard::key_pressOnce_s;
+Key_pressOnce_s<Key> Keyboard::key_pressOnce_s;
 
 const Uint8* Keyboard::keyboard{ SDL_GetKeyboardState(nullptr) };
 bool Keyboard::flag_pressed_once[1000]{};
@@ -95,11 +95,6 @@ void Keyboard::events(SDL_Event* ev)
 	}
 
 	key_pressOnce_s.events();
-}
-
-void Keyboard::events_indp()
-{
-
 }
 
 void Keyboard::switch_liters(SDL_Keycode & code)
@@ -197,7 +192,7 @@ void Keyboard::switch_others(SDL_Keycode & code)
 	case SDLK_ESCAPE:
 		key_state = Key::ESCAPE;
 		break;
-	case SDLK_KP_ENTER:
+	case SDLK_RETURN:
 		key_state = Key::ENTER;
 		break;
 	case SDLK_BACKSPACE:
@@ -350,7 +345,7 @@ void Keyboard::switch_others_up(SDL_Keycode & code)
 	case SDLK_ESCAPE:
 		key_state_up = Key::ESCAPE;
 		break;
-	case SDLK_KP_ENTER:
+	case SDLK_RETURN:
 		key_state_up = Key::ENTER;
 		break;
 	case SDLK_BACKSPACE:
@@ -381,12 +376,12 @@ bool Keyboard::is_CapsLock_toggled()
 	return false;
 }
 
-bool Keyboard::pressedOnce(Key key)
+bool Keyboard::is_pressedOnce(Key key)
 {
 	return key_pressOnce_s.is_pressedOnce(key);
 }
 
-bool Keyboard::pressedOnce(std::vector<Key> keys)
+bool Keyboard::is_pressedOnce(std::vector<Key> keys)
 {
 	return key_pressOnce_s.is_pressedOnce(keys);
 }
