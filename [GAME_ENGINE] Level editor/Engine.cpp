@@ -48,7 +48,7 @@ void Engine::events()
 			}
 		}
 
-		if (Keyboard::pressedOnce(Key::ESCAPE) || Keyboard::pressedOnce({ Key::LCNTRL, Key::D, Key::A })) {// || Keyboard::is_pressed_LCNTRL_Z()) {
+		if (Keyboard::pressedOnce(Key::ESCAPE)) {
 			switch (Engine_manager::getState()) {
 			case Engine_state::IS_IN_LC:
 				Engine_manager::setState(Engine_state::IS_IN_MENU);

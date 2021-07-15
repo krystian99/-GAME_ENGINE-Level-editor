@@ -154,48 +154,33 @@ void Map::on_mouseR1hit()
 
 void Map::on_mouseWheel_down_1hit()
 {
+	bool updated = false;
+
 	if (mapBG_area.left() > 0) {
+		updated = true;
 		if (mapBG_area.left() - MAP_MOVE_SIZE >= 0)
 			mapBG_area.updateX(-MAP_MOVE_SIZE);
 		else
 			mapBG_area.setX(0);
 	}
-
-	int RenderPOS_X, RenderPOS_Y;
-	double scaleX, scaleY;
-
-	for (auto& enemy : enemies) {
-		scaleX = double(enemy->get_mapX() - mapBG_area.left()) / double(mapBG_area.getW());
-		scaleY = double(enemy->get_mapY() - mapBG_area.up()) / double(mapBG_area.getH());
-
-		RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
-		RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
-
-		enemy->set_position(RenderPOS_X, RenderPOS_Y);
-	}
+	if (updated)
+		update_enemiesPOS();
 }
 
 void Map::on_mouseWheel_up_1hit()
 {
+	bool updated = false;
+
 	if (mapBG_area.right() < mapBG.getWidth()) {
+		updated = true;
 		if (mapBG_area.right() + MAP_MOVE_SIZE <= mapBG.getWidth())
 			mapBG_area.updateX(MAP_MOVE_SIZE);
 		else
 			mapBG_area.setX(mapBG.getWidth() - mapBG_area.getW());
 	}
 
-	int RenderPOS_X, RenderPOS_Y;
-	double scaleX, scaleY;
-
-	for (auto& enemy : enemies) {
-		scaleX = double(enemy->get_mapX() - mapBG_area.left()) / double(mapBG_area.getW());
-		scaleY = double(enemy->get_mapY() - mapBG_area.up()) / double(mapBG_area.getH());
-
-		RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
-		RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
-
-		enemy->set_position(RenderPOS_X, RenderPOS_Y);
-	}
+	if (updated)
+		update_enemiesPOS();
 }
 
 void Map::set_ScaledSize()
@@ -231,6 +216,22 @@ void Map::update_events()
 	}
 
 	Map_manager::reset_UpdateState();
+}
+
+void Map::update_enemiesPOS()
+{
+	int RenderPOS_X, RenderPOS_Y;
+	double scaleX, scaleY;
+
+	for (auto& enemy : enemies) {
+		scaleX = double(enemy->get_mapX() - mapBG_area.left()) / double(mapBG_area.getW());
+		scaleY = double(enemy->get_mapY() - mapBG_area.up()) / double(mapBG_area.getH());
+
+		RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
+		RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
+
+		enemy->set_position(RenderPOS_X, RenderPOS_Y);
+	}
 }
 
 void Map::reset()

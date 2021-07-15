@@ -251,8 +251,6 @@ void Keyboard::switch_digits(SDL_Keycode & code)
 
 void Keyboard::switch_liters_up(SDL_Keycode & code)
 {
-	key_state = Key::NONE;
-
 	switch (code)
 	{
 	case SDLK_a:

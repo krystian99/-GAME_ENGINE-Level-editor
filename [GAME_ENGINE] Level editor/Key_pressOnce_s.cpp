@@ -47,7 +47,7 @@ bool Key_pressOnce_s::is_pressedOnce(std::vector<Key> keys)
 		auto& key_pressed = keys_pressonce[i];
 		auto& key_check = keys[i];
 
-		if (!key_pressed.compare_key(key_check))
+		if (!key_pressed.compare_key(key_check) || !key_pressed.is_pressedOnce())
 			return false;
 	}
 

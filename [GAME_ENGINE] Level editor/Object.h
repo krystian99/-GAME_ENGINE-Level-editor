@@ -19,7 +19,7 @@ public:
 
 	// czy klikniêto ten konkrenty przycisk na obiekcie?
 	bool is_mouseKey_1hit(Mouse_key key) const { return is_mouseOver() && Mouse::pressedOnce(key); }
-	bool is_keyboardKey_1hit(Key key) const { return is_mouseOver() && key == Keyboard::get_currentKey(); }
+	bool is_keyboardKey_1hit(Key key) const { return is_mouseOver() && Keyboard::pressedOnce(key); }
 
 	// Czy myszka jest na pozycji tego obiektu?
 	bool is_mouseOver() const { return mouse_over; }

@@ -50,6 +50,7 @@ public:
 	// zwróæ obszar czêœci textury renderowanej na ekranie
 	const SDL_Rect & get_backgroundArea() const { return mapBG_area.get_position(); }
 private:
+	// wyœwietl okno opcji mapy
 	void on_mouseR1hit() override;
 
 	void on_mouseWheel_down_1hit() override;
@@ -60,6 +61,8 @@ private:
 	void Init_objectsSize();
 
 	void update_events();
+
+	void update_enemiesPOS();
 
 	void placing_mouseL_Events();
 	//void placing_mouseR_Events();
