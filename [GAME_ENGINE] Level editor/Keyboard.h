@@ -2,6 +2,7 @@
 #include <SDL_events.h>
 #include <SDL_keyboard.h>
 #include <vector>
+#include "Key_pressOnce_s.h"
 
 enum class Key {
 	NONE,
@@ -19,33 +20,42 @@ enum class Key {
 	RSHIFT = SDL_SCANCODE_RSHIFT
 }; // n - number
 
+enum class Key_queue {
+	NONE,
+	Q = SDLK_q, W = SDLK_w, E = SDLK_e, R = SDLK_r, T = SDLK_t, Y = SDLK_y,
+	U = SDLK_u, I = SDLK_i, O = SDLK_o, P = SDLK_p,
+	A = SDLK_a, S = SDLK_s, D = SDLK_d, F = SDLK_f, G = SDLK_g, H = SDLK_h,
+	J = SDLK_j, K = SDLK_k, L = SDLK_l, Z = SDLK_z, X = SDLK_x, C = SDLK_c,
+	V = SDLK_v, B = SDLK_b, N = SDLK_n, M = SDLK_m,
+	SPACE = SDLK_SPACE, ENTER = SDLK_RETURN, DELETE = SDLK_DELETE,
+	CAPS_LOCK = SDLK_CAPSLOCK, ESCAPE = SDLK_ESCAPE, BACKSPACE = SDLK_BACKSPACE,
+	SHIFT = SDLK_LSHIFT,
+	n1 = SDLK_1, n2 = SDLK_2, n3 = SDLK_3, n4 = SDLK_4, n5 = SDLK_5, n6 = SDLK_6,
+	n7 = SDLK_7, n8 = SDLK_8, n9 = SDLK_9, n0 = SDLK_0,
+	LCNTRL = SDLK_LCTRL,
+	RSHIFT = SDLK_RSHIFT
+}; // n - number
+
 class Keyboard
 {
 public:
-	static void INIT();
+	static void INIT(){}
 
 	static void events(SDL_Event * ev);
 	static void events_indp();
 
 	static bool is_CapsLock_toggled();
 
-	static bool* getPressedOnce() { return pressed_once; }
+	//static bool* getPressedOnce() { return pressed_once; }
 
 	/* Musi zostaæ wywo³ane przez klasê zarz¹dzaj¹ca daym stanem
 	przyk³ad: MenuStart->events()
 	Wtedy klasa zarz¹dzaj¹ca przekierowuje dalej stany*/
-	static bool is_pressed_LCNTRL_Z() { return cntrl_z.pressedOnce(); }
-
-	/* Musi zostaæ wywo³ane przez klasê zarz¹dzaj¹ca daym stanem
-	przyk³ad: MenuStart->events()
-	Wtedy klasa zarz¹dzaj¹ca przekierowuje dalej stany*/
-	static bool is_pressed_LCNTRL_Y() { return cntrl_y.pressedOnce(); }
-
 	static bool pressedOnce(Key key);
 
 	static bool pressedOnce(std::vector<Key> keys);
 
-	static bool is_pressedEscape() { return pressed_once[int(Key::ESCAPE)]; }
+	//static bool is_pressedEscape() { return pressed_once[int(Key::ESCAPE)]; }
 
 	static bool is_pressedBackspace() { return key_state == Key::BACKSPACE; }
 
@@ -71,44 +81,12 @@ private:
 	static void switch_keys_down(SDL_Event * ev);
 	static void switch_keys_up(SDL_Event * ev);
 private:
-	class Shortcut_keys
-	{
-	public:
-		Shortcut_keys(const std::vector<Key> &);
+	static Key_pressOnce_s key_pressOnce_s;
 
-		void events();
-
-		bool is_pressed() const { return pressed; }
-
-		bool pressedOnce();
-
-		void reset();
-	private:
-		bool isPressed() const;
-	private:
-		bool pressed{ false };
-
-		int code{0};
-
-		const Uint8* keyboard_keys;
-
-		std::vector<Key> keys;
-
-		bool flag_pressed_once{ false };
-		bool * pressed_once;
-	};
-
-	static Shortcut_keys cntrl_z, cntrl_y, escape;
-	
-	static std::vector<Key> pressed_keys;
-
-	static bool pressed_once[1000];
 	static bool flag_pressed_once[1000];
-
-	static std::vector<Key> keys_pressOnce;
 
 	static const Uint8* keyboard;
 
-	static Key key_state;
+	static Key key_state, key_state_up;
 	static Key mod_state;
 };

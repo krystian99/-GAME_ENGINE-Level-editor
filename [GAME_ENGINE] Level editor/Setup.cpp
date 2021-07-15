@@ -17,7 +17,6 @@ Setup::Setup() // inicjuje wszystkie zasoby
 	Video_Info::Init();
 	Renderer::Init();
 	Keyboard::INIT();
-	//Keyboard::Init();
 
 	using namespace Enemy_Types;
 
