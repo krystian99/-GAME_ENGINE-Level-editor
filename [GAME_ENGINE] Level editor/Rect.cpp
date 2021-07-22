@@ -65,10 +65,11 @@ Rect & Rect::operator=(Rect&& rect)
 
 Rect& Rect::operator=(const Rect& rect)
 {
-	pos.x = rect.left();
+	pos = rect.get_position();
+	/*pos.x = rect.left();
 	pos.y = rect.up();
 	pos.w = rect.getW();
-	pos.h = rect.getH();
+	pos.h = rect.getH();*/
 
 	return *this;
 }

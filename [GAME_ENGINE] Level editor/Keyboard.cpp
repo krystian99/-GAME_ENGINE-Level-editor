@@ -386,7 +386,7 @@ bool Keyboard::is_pressedOnce(Key key)
 	return key_pressOnce_s.is_pressedOnce(key);
 }
 
-bool Keyboard::is_pressedOnce(std::vector<Key> keys)
+bool Keyboard::is_pressedOnce(const std::vector<Key> & keys)
 {
 	return key_pressOnce_s.is_pressedOnce(keys);
 }

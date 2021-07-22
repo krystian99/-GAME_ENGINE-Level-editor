@@ -49,7 +49,7 @@ public:
 
 	static bool is_pressedOnce(Key key);
 
-	static bool is_pressedOnce(std::vector<Key> keys);
+	static bool is_pressedOnce(const std::vector<Key> & keys);
 
 	static bool is_pressedBackspace() { return key_state == Key::BACKSPACE; }
 
