@@ -5,9 +5,10 @@
 #include "Menu_manager.h"
 #include "Animation_management.h"
 #include "Script_Editor.h"
+#include "Module_Object.h"
 
 // g³ówna klasa steruj¹ca/operuj¹ca
-class Engine
+class Engine : public Module_Object
 {
 public:
 	Engine();
@@ -20,6 +21,9 @@ private:
 	void events_dpnd();
 
 	void render();
+private:
+	void on_keyboardKey_ESCAPE_1hit() override;
+	void on_keyboardKey_X_1hit() override;
 private:
 	SDL_Event event_handler{};
 

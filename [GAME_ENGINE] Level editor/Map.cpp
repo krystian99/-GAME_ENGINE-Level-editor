@@ -14,7 +14,7 @@
 Map::Map(int x, int y, int w, int h) :
 	Object{ x, y, w, h },
 	enemy_placerModule{ enemies, edit_area },
-	multiOBJ_s{ enemies, &edit_area, &mapBG_area },
+	multiOBJ_s{ enemies, edit_area, mapBG_area },
 	deleteOBJ_s{ enemies },
 	map_MOVE_mouse_s(enemies, mapBG_area, edit_area, mapBG),
 	singleOBJmove_s{ enemies, edit_area, mapBG_area }
@@ -78,10 +78,12 @@ void Map::events() // zdarzenia zale¿ne od myszki(przyciski myszki: lewy, prawy,
 
 	Object::events();
 
-	events_enemies();
+	//events_enemies();
 
 	if (is_mouseOver())
 	{
+		events_enemies();
+
 		map_mouseHandler.events();
 		mouse_over = true;
 
@@ -156,33 +158,26 @@ void Map::on_mouseR1hit()
 
 void Map::on_mouseWheel_down_1hit()
 {
-	bool updated = false;
-
 	if (mapBG_area.left() > 0) {
-		updated = true;
 		if (mapBG_area.left() - MAP_MOVE_SIZE >= 0)
 			mapBG_area.updateX(-MAP_MOVE_SIZE);
 		else
 			mapBG_area.setX(0);
-	}
-	if (updated)
+
 		update_enemiesPOS();
+	}
 }
 
 void Map::on_mouseWheel_up_1hit()
 {
-	bool updated = false;
-
 	if (mapBG_area.right() < mapBG.getWidth()) {
-		updated = true;
 		if (mapBG_area.right() + MAP_MOVE_SIZE <= mapBG.getWidth())
 			mapBG_area.updateX(MAP_MOVE_SIZE);
 		else
 			mapBG_area.setX(mapBG.getWidth() - mapBG_area.getW());
-	}
 
-	if (updated)
 		update_enemiesPOS();
+	}
 }
 
 void Map::set_ScaledSize()
@@ -222,18 +217,8 @@ void Map::update_events()
 
 void Map::update_enemiesPOS()
 {
-	int RenderPOS_X, RenderPOS_Y;
-	double scaleX, scaleY;
-
-	for (auto& enemy : enemies) {
-		scaleX = double(enemy->get_mapX() - mapBG_area.left()) / double(mapBG_area.getW());
-		scaleY = double(enemy->get_mapY() - mapBG_area.up()) / double(mapBG_area.getH());
-
-		RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
-		RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
-
-		enemy->set_position(RenderPOS_X, RenderPOS_Y);
-	}
+	for (auto& enemy : enemies)
+		enemy->set_renderPOS(edit_area, mapBG_area);
 }
 
 void Map::reset()

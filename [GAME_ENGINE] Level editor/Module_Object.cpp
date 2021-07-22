@@ -6,14 +6,9 @@ void Module_Object::events()
 	keyboard_handler();
 }
 
-void Module_Object::reset_states()
+void Module_Object::keyboardEvents_1hit(Key key)
 {
-
-}
-
-void Module_Object::keyboardEvents_1hit()
-{
-	switch (Keyboard::get_currentKey())
+	switch (key)
 	{
 	case Key::A:
 		on_keyboardKey_A_1hit();
@@ -96,6 +91,12 @@ void Module_Object::keyboardEvents_1hit()
 	case Key::DELETE:
 		on_keyboardKey_DELETE_1hit();
 		break;
+	case Key::ENTER:
+		on_keyboardKey_ENTER_1hit();
+		break;
+	case Key::ESCAPE:
+		on_keyboardKey_ESCAPE_1hit();
+		break;
 	}
 }
 
@@ -159,6 +160,8 @@ void Module_Object::mouse_handler()
 
 void Module_Object::keyboard_handler()
 {
-	if (Keyboard::is_keyPressed())
-		keyboardEvents_1hit();
+	auto key = Keyboard::get_actualKey();
+
+	if (key != Key::NONE)
+		keyboardEvents_1hit(key);
 }

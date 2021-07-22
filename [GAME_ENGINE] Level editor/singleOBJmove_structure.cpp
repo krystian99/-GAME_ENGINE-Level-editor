@@ -1,6 +1,5 @@
 #include "singleOBJmove_structure.h"
 #include "Mouse.h"
-#include "CoordinateBar_map.h"
 
 singleOBJmove_structure::SingleOBJmove_events singleOBJmove_structure::state{ SingleOBJmove_events::SELECTING };
 
@@ -37,26 +36,7 @@ void singleOBJmove_structure::events()
 
 void singleOBJmove_structure::movingOBJ_events()
 {
-	double scaleTX_w, scaleTX_h;
-	int x, y;
-
-	scaleTX_w = double(Mouse::getX() - px_left - edit_area.left()) / edit_area.getW();
-	scaleTX_h = double(Mouse::getY() - px_up - edit_area.up()) / edit_area.getH();
-
-	x = mapBG_area.left() + round(mapBG_area.getW() * scaleTX_w);
-	y = mapBG_area.up() + round(mapBG_area.getH() * scaleTX_h);
-
-	int RenderPOS_X, RenderPOS_Y;
-	double scaleX, scaleY;
-
-	scaleX = double(x - mapBG_area.left()) / double(mapBG_area.getW());
-	scaleY = double(y - mapBG_area.up()) / double(mapBG_area.getH());
-
-	RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
-	RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
-
-	current_enemy->set_mapPOS(x, y);
-	current_enemy->set_position(RenderPOS_X, RenderPOS_Y);
+	current_enemy->set_mapPOS(Mouse::getX() - px_left, Mouse::getY() - px_up, edit_area, mapBG_area);
 
 	int tmp_px_left, tmp_px_up;
 
@@ -93,24 +73,7 @@ void singleOBJmove_structure::selectingObject_events()
 
 void singleOBJmove_structure::setOBJ_onMap()
 {
-	double scaleTX_w, scaleTX_h;
-	int x, y;
-
-	scaleTX_w = double(current_enemy->left() - edit_area.left()) / edit_area.getW();
-	scaleTX_h = double(current_enemy->up() - edit_area.up()) / edit_area.getH();
-
-	x = mapBG_area.left() + round(mapBG_area.getW() * scaleTX_w);
-	y = mapBG_area.up() + round(mapBG_area.getH() * scaleTX_h);
-
-	int RenderPOS_X, RenderPOS_Y;
-	double scaleX, scaleY;
-	scaleX = double(x - mapBG_area.left()) / double(mapBG_area.getW());
-	scaleY = double(y - mapBG_area.up()) / double(mapBG_area.getH());
-	RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
-	RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
-
-	current_enemy->set_mapPOS(x, y);
-	current_enemy->set_position(RenderPOS_X, RenderPOS_Y);
+	//current_enemy->set_mapPOS(edit_area, mapBG_area);
 
 	reset();
 

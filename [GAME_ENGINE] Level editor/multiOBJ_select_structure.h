@@ -16,7 +16,10 @@ class multiOBJ_select_structure final : public Object, public Module_base // str
 	};
 	using Enemies = std::vector<Enemy_ptr>;
 public:
-	multiOBJ_select_structure(Enemies& en, const Rect* edit_a, const Rect* mapBG_a);
+	multiOBJ_select_structure(Enemies& en, const Rect& edit_a, const Rect& mapBG_a)
+		: enemies{ en }, edit_area{ edit_a }, mapBG_area{ mapBG_a }
+	{
+	}
 
 	void render();
 
@@ -84,6 +87,6 @@ private:
 
 	States state{ States::SELECTING_OBJs };
 
-	const Rect* edit_area;
-	const Rect* mapBG_area;
+	const Rect& edit_area;
+	const Rect& mapBG_area;
 };

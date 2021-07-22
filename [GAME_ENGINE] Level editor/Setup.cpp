@@ -6,7 +6,6 @@
 #include <SDL_ttf.h>
 #include "Enemy_Types.h"
 #include "Folder_button.h"
-#include "Keyboard.h"
 
 Setup::Setup() // inicjuje wszystkie zasoby
 {
@@ -16,7 +15,6 @@ Setup::Setup() // inicjuje wszystkie zasoby
 
 	Video_Info::Init();
 	Renderer::Init();
-	Keyboard::INIT();
 
 	using namespace Enemy_Types;
 

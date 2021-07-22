@@ -1,7 +1,6 @@
 #pragma once
 #include "Module_base.h"
 #include "Enemy.h"
-#include <SDL_rect.h>
 #include "Object.h"
 
 class singleOBJmove_structure : public Module_base, public Object

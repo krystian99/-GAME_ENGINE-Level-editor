@@ -7,17 +7,6 @@
 template <typename T>
 class Key_pressOnce_s
 {
-public:
-	bool is_pressedOnce(T key);
-	bool is_pressedOnce(std::vector<T> keys);
-
-	bool empty() const { return keys_pressonce.empty(); }
-
-	void events();
-
-	void switch_keysDown(const T& code);
-	void switch_keysUp(const T& code);
-private:
 	class key_pressOnce
 	{
 	public:
@@ -40,9 +29,39 @@ private:
 		bool pressed_once{ false };
 		bool flag_pressed_once{ false };
 	};
+public:
+	bool is_pressedOnce(T key);
+	bool is_pressedOnce(std::vector<T> keys);
 
+	bool empty() const { return keys_pressonce.empty(); }
+
+	bool is_1keyPressed() const { return keys_pressonce.size() == 1; }
+
+	T get_pressed1_key() const;
+
+	const std::vector<key_pressOnce>& get_pressedKeys() const { return keys_pressonce; }
+
+	void events();
+
+	void switch_keysDown(const T& code);
+	void switch_keysUp(const T& code);
+private:
 	std::vector<key_pressOnce> keys_pressonce;
 };
+
+template<typename T>
+T Key_pressOnce_s<T>::get_pressed1_key() const
+{
+	if (keys_pressonce.size() == 1)
+	{
+		const key_pressOnce & pressed_key = keys_pressonce.front();
+
+		if (pressed_key.is_pressedOnce())
+			return pressed_key.getKey();
+	}
+
+	return T::NONE;
+}
 
 template<typename T>
 void Key_pressOnce_s<T>::events()
@@ -80,7 +99,7 @@ bool Key_pressOnce_s<T>::is_pressedOnce(T key)
 template<typename T>
 bool Key_pressOnce_s<T>::is_pressedOnce(std::vector<T> keys)
 {
-	if (keys_pressonce.size() < keys.size())
+	if (keys_pressonce.empty() || keys_pressonce.size() < keys.size())
 		return false;
 
 	std::sort(keys.begin(), keys.end(), [](T k1, T k2)

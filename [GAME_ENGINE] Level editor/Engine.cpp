@@ -38,33 +38,6 @@ void Engine::events()
 
 		if (event_handler.window.windowID == Renderer::get_mainWindow_ID()) {
 			events_dpnd();
-
-			if (Keyboard::is_pressedOnce(Key::ESCAPE) || Keyboard::is_pressedOnce({ Key::LCNTRL, Key::RSHIFT, Key::D })) {
-				switch (Engine_manager::getState()) {
-				case Engine_state::IS_IN_LC:
-					Engine_manager::setState(Engine_state::IS_IN_MENU);
-					Menu_manager::set_Menu(Menu_ID::LEVEL_MENU);
-					level_editor.reset_states();
-					break;
-				case Engine_state::IS_IN_ANIMATION_MANAGEMENT:
-					Engine_manager::setState(Engine_state::IS_IN_MENU);
-					Menu_manager::set_Menu(Menu_ID::ANIMATION_MENU);
-					break;
-				case Engine_state::IS_IN_MENU:
-					switch (Menu_manager::getState()) {
-					case Menu_ID::START:
-						Engine_manager::Quit();
-						break;
-					case Menu_ID::LEVEL_MENU:
-						Menu_manager::set_Menu(Menu_ID::START);
-						break;
-					case Menu_ID::ANIMATION_MENU:
-						Menu_manager::set_Menu(Menu_ID::START);
-						break;
-					}
-					break;
-				}
-			}
 		}
 
 		// wykonaj eventy dla pozostalych okien
@@ -87,6 +60,11 @@ void Engine::events_indp()
 
 void Engine::events_dpnd()
 {
+	Module_Object::events();
+
+	if (is_mouse_shortcutKeys({ Mouse_key::L_BUTTON, Mouse_key::MID_BUTTON }))
+		Engine_manager::Quit();
+
 	Engine_manager::getModule()->events();
 }
 
@@ -103,4 +81,37 @@ void Engine::render()
 
 		Renderer::update();
 	}
+}
+
+void Engine::on_keyboardKey_ESCAPE_1hit()
+{
+	switch (Engine_manager::getState()) {
+	case Engine_state::IS_IN_LC:
+		Engine_manager::setState(Engine_state::IS_IN_MENU);
+		Menu_manager::set_Menu(Menu_ID::LEVEL_MENU);
+		level_editor.reset_states();
+		break;
+	case Engine_state::IS_IN_ANIMATION_MANAGEMENT:
+		Engine_manager::setState(Engine_state::IS_IN_MENU);
+		Menu_manager::set_Menu(Menu_ID::ANIMATION_MENU);
+		break;
+	case Engine_state::IS_IN_MENU:
+		switch (Menu_manager::getState()) {
+		case Menu_ID::START:
+			Engine_manager::Quit();
+			break;
+		case Menu_ID::LEVEL_MENU:
+			Menu_manager::set_Menu(Menu_ID::START);
+			break;
+		case Menu_ID::ANIMATION_MENU:
+			Menu_manager::set_Menu(Menu_ID::START);
+			break;
+		}
+		break;
+	}
+}
+
+void Engine::on_keyboardKey_X_1hit()
+{
+	Engine_manager::Quit();
 }

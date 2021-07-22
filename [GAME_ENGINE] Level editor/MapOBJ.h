@@ -27,6 +27,10 @@ public:
 	void set_mapPOS(int x, int y);
 	void set_mapPOS(int x, int y, int w, int h);
 	void set_mapPOS(Rect&& area);
+	void set_mapPOS(int renderX, int renderY, const Rect& edit_area, const Rect& mapBG_area);
+	// ustaw pozycjê mapy wzglêdem podanych danych do renderowania i w razie potrzeby dostosuj pozycje renderowania do mapy
+	void set_mapPOS(int renderX, int renderY, int renderW, int renderH, const Rect& edit_area, const Rect& mapBG_area);
+	void set_mapPOS(const Rect& edit_area, const Rect& mapBG_area);
 
 	void set_mapX(int x);
 	void set_mapY(int y);
@@ -37,6 +41,10 @@ public:
 	bool is_clicked() const { return clicked; }
 
 	bool is_selected() const { return selected; }
+
+	// zaktualizuj pozycjê renderowania wzglêdem przesuwanej mapy
+	void set_renderPOS(int mapX, int mapY, int mapW, int mapH, const Rect& edit_area, const Rect& mapBG_area);
+	void set_renderPOS(const Rect& edit_area, const Rect& mapBG_area);
 
 	void set_selectState(bool st);
 	void switch_selected_state();

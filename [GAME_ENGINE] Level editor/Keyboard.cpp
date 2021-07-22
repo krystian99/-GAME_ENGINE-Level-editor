@@ -97,6 +97,11 @@ void Keyboard::events(SDL_Event* ev)
 	key_pressOnce_s.events();
 }
 
+Key Keyboard::get_actualKey()
+{
+	return key_pressOnce_s.get_pressed1_key();
+}
+
 void Keyboard::switch_liters(SDL_Keycode & code)
 {
 	switch (code)

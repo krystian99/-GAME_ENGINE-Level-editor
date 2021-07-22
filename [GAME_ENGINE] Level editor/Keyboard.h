@@ -39,7 +39,7 @@ enum class Key_queue {
 class Keyboard
 {
 public:
-	static void INIT(){}
+	//static void INIT(){}
 
 	static void events(SDL_Event * ev);
 
@@ -60,6 +60,8 @@ public:
 	//static const Uint8* getKeys() { return keyboard; }
 
 	static bool is_pressedKey_once(Key k) { return key_state == k; }
+
+	static Key get_actualKey();
 
 	static const Key & get_currentKey() { return key_state; }
 	static const Key & getModState() { return mod_state; }

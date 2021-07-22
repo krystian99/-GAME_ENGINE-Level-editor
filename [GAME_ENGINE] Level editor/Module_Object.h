@@ -4,8 +4,12 @@
 
 class Module_Object
 {
+public:
 	bool is_mouseKey_1hit(Mouse_key key) const { return Mouse::is_pressedOnce(key); }
+	bool is_mouse_shortcutKeys(const std::vector<Mouse_key>& check_keys) { return Mouse::is_pressedOnce(check_keys); }
+
 	bool is_keyboardKey_1hit(Key key) const { return Keyboard::is_pressedOnce(key); }
+	bool is_keyboard_shortcutKeys(const std::vector<Key>& check_keys) { return Keyboard::is_pressedOnce(check_keys); }
 
 	void events();
 
@@ -57,15 +61,13 @@ protected:
 	virtual void on_keyboardKey_Z_1hit() {}
 
 	virtual void on_keyboardKey_DELETE_1hit() {}
+	virtual void on_keyboardKey_ESCAPE_1hit() {}
+	virtual void on_keyboardKey_ENTER_1hit() {}
 private:
-	void reset_states();
-
-	void keyboardEvents_1hit();
+	void keyboardEvents_1hit(Key key);
 
 	void mouse_handler();
 	void keyboard_handler();
 private:
-	bool mouse_over;
-
 	bool flag_pressed[Mouse::MAX_KEY_ID]{};
 };

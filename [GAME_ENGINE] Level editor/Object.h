@@ -1,6 +1,7 @@
 #pragma once
 #include "Mouse.h"
 #include "Keyboard.h"
+#include <vector>
 
 class Object : public Rect // przechwytywanie zdarzeñ myszy i klawiatury -> opakowany interfejs, który mo¿e zostaæ wykorzystany przez wszystkie obiekty
 {
@@ -19,7 +20,10 @@ public:
 
 	// czy klikniêto ten konkrenty przycisk na obiekcie?
 	bool is_mouseKey_1hit(Mouse_key key) const { return is_mouseOver() && Mouse::is_pressedOnce(key); }
+	bool is_mouse_shortcutKeys(const std::vector<Mouse_key>& check_keys) { return is_mouseOver() && Mouse::is_pressedOnce(check_keys); }
+
 	bool is_keyboardKey_1hit(Key key) const { return is_mouseOver() && Keyboard::is_pressedOnce(key); }
+	bool is_keyboard_shortcutKeys(const std::vector<Key>& check_keys) { return is_mouseOver() && Keyboard::is_pressedOnce(check_keys); }
 
 	// Czy myszka jest na pozycji tego obiektu?
 	bool is_mouseOver() const { return mouse_over; }
