@@ -6,7 +6,7 @@
 
 Menu_start::Menu_start() :
 	project_name{ { 370, 30, 500, 120 } ,"data/menus/start/PV.png" },
-	levelEditor_button{ { 400, 280, 400, 50 }, "data/menus/start/LEVEL.png" },
+	start_game{ { 400, 280, 400, 50 }, "data/start_game.png" },
 	animationsEditor_button{ { 370, 390, 480, 50 }, "data/menus/start/ANIM.png" },
 	Script_editor_button{ { 400, 490, 400, 50 }, "data/menus/start/SCRIPT.png" },
 	Exit{ { 1040, 850, 120, 50 }, "data/menus/start/EXIT.png" },
@@ -15,12 +15,12 @@ Menu_start::Menu_start() :
 
 void Menu_start::events()
 {
-	levelEditor_button.events();
+	start_game.events();
 	animationsEditor_button.events();
 	Script_editor_button.events();
 	Exit.events();
 
-	if (levelEditor_button.is_mouseKey_1hit(Mouse_key::L_BUTTON))
+	if (start_game.is_mouseKey_1hit(Mouse_key::L_BUTTON))
 		Menu_manager::set_Menu(Menu_ID::LEVEL_MENU);
 	else if (Exit.is_mouseKey_1hit(Mouse_key::L_BUTTON))
 		Engine_manager::Quit();
@@ -40,7 +40,7 @@ void Menu_start::render()
 
 	copyright.render();
 
-	levelEditor_button.render();
+	start_game.render();
 	animationsEditor_button.render();
 	Script_editor_button.render();
 }
