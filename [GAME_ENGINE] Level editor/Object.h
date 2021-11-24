@@ -3,6 +3,11 @@
 #include "Keyboard.h"
 #include <vector>
 
+struct Object_Data : public Rect_Data
+{
+
+};
+
 class Object : public Rect // przechwytywanie zdarzeñ myszy i klawiatury -> opakowany interfejs, który mo¿e zostaæ wykorzystany przez wszystkie obiekty
 {
 public:

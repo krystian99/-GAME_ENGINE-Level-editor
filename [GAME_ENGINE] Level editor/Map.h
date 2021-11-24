@@ -51,10 +51,12 @@ public:
 	const SDL_Rect & get_backgroundArea() const { return mapBG_area.get_position(); }
 private:
 	// wyœwietl okno opcji mapy
-	void on_mouseR1hit() override;
+	//void on_mouseR1hit() override;
 
 	void on_mouseWheel_down_1hit() override;
 	void on_mouseWheel_up_1hit() override;
+
+	void on_mouseL_press() override;
 
 	void set_ScaledSize();
 

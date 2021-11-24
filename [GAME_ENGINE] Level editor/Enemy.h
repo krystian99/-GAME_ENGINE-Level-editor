@@ -9,7 +9,7 @@ class Enemy;
 
 using Enemy_ptr = std::shared_ptr<Enemy>;
 
-struct Enemy_data : public OBJ_data
+struct Enemy_data : public Dynamic_OBJ_data
 {
 	Enemy_ID id; 
 };

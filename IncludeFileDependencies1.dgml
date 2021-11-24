@@ -1,0 +1,1808 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="(@1 @105)" Category="CodeSchema_ProjectItem" Bounds="907.718000462475,823.972001079107,120.744666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Module_base.h" Label="Module_base.h" />
+    <Node Id="(@1 @106)" Category="CodeSchema_ProjectItem" Bounds="766.892000308316,935.968001233265,159.791333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\MENU_Module_base.h" Label="MENU_Module_base.h" />
+    <Node Id="(@1 @107)" Category="CodeSchema_ProjectItem" Bounds="1639.17266759161,767.974001002028,110.531333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Menu_base.h" Label="Menu_base.h" />
+    <Node Id="(@1 @112)" Category="CodeSchema_ProjectItem" Bounds="1147.07800046247,935.968001233265,166.931333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\CoordinateBar_mouse.h" Label="CoordinateBar_mouse.h" />
+    <Node Id="(@1 @113)" Category="CodeSchema_ProjectItem" Bounds="2551.29333448952,879.970001156186,153.718000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Buttons_OBJ_create.h" Label="Buttons_OBJ_create.h" />
+    <Node Id="(@1 @116)" Category="CodeSchema_ProjectItem" Bounds="1334.25733394997,879.970001156186,139.148000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\LevelEditor_state.h" Label="LevelEditor_state.h" />
+    <Node Id="(@1 @153)" Category="CodeSchema_ProjectItem" Bounds="2018.06266759162,879.970001156186,144.638000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Event_handlerOBJ.h" Label="Event_handlerOBJ.h" />
+    <Node Id="(@1 @154)" Category="CodeSchema_ProjectItem" Bounds="149.214666743746,767.974001002028,99.5480000770791,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\EventOBJ.h" Label="EventOBJ.h" />
+    <Node Id="(@1 @157)" Category="CodeSchema_ProjectItem" Bounds="2780.62333487491,767.974001002028,115.794666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Interact_OBJ.h" Label="Interact_OBJ.h" />
+    <Node Id="(@1 @164)" Category="CodeSchema_ProjectItem" Bounds="334.820666897904,711.976000924949,78.7113334104124,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Block.h" Label="Block.h" />
+    <Node Id="(@1 @165)" Category="CodeSchema_ProjectItem" Bounds="1498.67800084787,767.974001002028,110.494666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Menu_local.h" Label="Menu_local.h" />
+    <Node Id="(@1 @176)" Category="CodeSchema_ProjectItem" Bounds="2205.20800123326,767.974001002028,112.858000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Menu_Level.h" Label="Menu_Level.h" />
+    <Node Id="(@1 @217)" Category="CodeSchema_ProjectItem" Bounds="1673.42000077079,879.970001156186,140.674666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Menu_Animation.h" Label="Menu_Animation.h" />
+    <Node Id="(@1 @220)" Category="CodeSchema_ProjectItem" Bounds="1238.14466751454,711.976000924949,86.0113334104124,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Button.h" Label="Button.h" />
+    <Node Id="(@1 @221)" Category="CodeSchema_ProjectItem" Bounds="1671.2613341812,823.972001079107,124.478000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Folder_button.h" Label="Folder_button.h" />
+    <Node Id="(@1 @226)" Category="CodeSchema_ProjectItem" Bounds="807.471333795807,767.974001002028,106.871333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Video_Info.h" Label="Video_Info.h" />
+    <Node Id="(@1 @245)" Category="CodeSchema_ProjectItem" Bounds="2735.0113345666,879.970001156186,154.901333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\CoordinateBar_map.h" Label="CoordinateBar_map.h" />
+    <Node Id="(@1 @248)" Category="CodeSchema_ProjectItem" Bounds="553.900000385395,711.976000924949,80.9480000770791,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Setup.h" Label="Setup.h" />
+    <Node Id="(@1 @253)" Category="CodeSchema_ProjectItem" Bounds="2095.31066805409,711.976000924949,96.4813334104124,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\ScrollBar.h" Label="ScrollBar.h" />
+    <Node Id="(@1 @26)" Category="CodeSchema_ProjectItem" Bounds="674.893333718728,767.974001002028,102.578000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\InputArea.h" Label="InputArea.h" />
+    <Node Id="(@1 @262)" Category="CodeSchema_ProjectItem" Bounds="225.871333410412,991.966001310344,176.374666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Block_module_Manager.h" Label="Block_module_Manager.h" />
+    <Node Id="(@1 @265)" Category="CodeSchema_ProjectItem" Bounds="392.496000154158,935.968001233265,156.898000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Animation_manager.h" Label="Animation_manager.h" />
+    <Node Id="(@1 @268)" Category="CodeSchema_ProjectItem" Bounds="956.683333718728,935.968001233265,160.394666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\LevelEditor_manager.h" Label="LevelEditor_manager.h" />
+    <Node Id="(@1 @269)" Category="CodeSchema_ProjectItem" Bounds="342.566000154158,879.970001156186,132.858000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Menu_manager.h" Label="Menu_manager.h" />
+    <Node Id="(@1 @270)" Category="CodeSchema_ProjectItem" Bounds="205.824666743745,935.968001233265,156.671333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Map_mouseHandler.h" Label="Map_mouseHandler.h" />
+    <Node Id="(@1 @271)" Category="CodeSchema_ProjectItem" Bounds="1516.83333410413,823.972001079107,124.428000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Event_handler.h" Label="Event_handler.h" />
+    <Node Id="(@1 @274)" Category="CodeSchema_ProjectItem" Bounds="443.532000308316,711.976000924949,80.368000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Timer.h" Label="Timer.h" />
+    <Node Id="(@1 @277)" Category="CodeSchema_ProjectItem" Bounds="2605.69933502907,711.976000924949,98.2480000770793,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Renderer.h" Label="Renderer.h" />
+    <Node Id="(@1 @282)" Category="CodeSchema_ProjectItem" Bounds="121.354666743746,711.976000924949,76.008000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Error.h" Label="Error.h" />
+    <Node Id="(@1 @293)" Category="CodeSchema_ProjectItem" Bounds="165.974666743747,823.972001079107,116.798000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Script_Editor.h" Label="Script_Editor.h" />
+    <Node Id="(@1 @298)" Category="CodeSchema_ProjectItem" Bounds="2545.65066766869,935.968001233265,175.021333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\ScroolBar_mapModules.h" Label="ScroolBar_mapModules.h" />
+    <Node Id="(@1 @305)" Category="CodeSchema_ProjectItem" Bounds="1081.26733394997,767.974001002028,107.894666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\OBJ_TYPES.h" Label="OBJ_TYPES.h" />
+    <Node Id="(@1 @306)" Category="CodeSchema_ProjectItem" Bounds="1920.81200107911,767.974001002028,111.988000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Block_types.h" Label="Block_types.h" />
+    <Node Id="(@1 @307)" Category="CodeSchema_ProjectItem" Bounds="2621.13600131035,823.972001079107,129.944666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\HitBoxes_types.h" Label="HitBoxes_types.h" />
+    <Node Id="(@1 @310)" Category="CodeSchema_ProjectItem" Bounds="1358.67000077079,767.974001002028,110.008000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Map_states.h" Label="Map_states.h" />
+    <Node Id="(@1 @321)" Category="CodeSchema_ProjectItem" Bounds="20,991.966001310344,175.871333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Buttons_Map_Functions.h" Label="Buttons_Map_Functions.h" />
+    <Node Id="(@1 @332)" Category="CodeSchema_ProjectItem" Bounds="2348.06600131034,767.974001002028,113.554666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Map_events.h" Label="Map_events.h" />
+    <Node Id="(@1 @345)" Category="CodeSchema_ProjectItem" Bounds="20,879.970001156186,131.108000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Module_Object.h" Label="Module_Object.h" />
+    <Node Id="(@1 @352)" Category="CodeSchema_ProjectItem" Bounds="1503.40533402705,879.970001156186,140.014666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Bar_modules_left.h" Label="Bar_modules_left.h" />
+    <Node Id="(@1 @355)" Category="CodeSchema_ProjectItem" Bounds="642.03733356457,991.966001310344,180.194666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Animation_management.h" Label="Animation_management.h" />
+    <Node Id="(@1 @358)" Category="CodeSchema_ProjectItem" Bounds="227.362666820825,711.976000924949,77.458000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Point.h" Label="Point.h" />
+    <Node Id="(@1 @359)" Category="CodeSchema_ProjectItem" Bounds="1219.16200069371,767.974001002028,109.508000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Menu_start.h" Label="Menu_start.h" />
+    <Node Id="(@1 @364)" Category="CodeSchema_ProjectItem" Bounds="459.67733356457,823.972001079107,118.598000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Button_input.h" Label="Button_input.h" />
+    <Node Id="(@1 @365)" Category="CodeSchema_ProjectItem" Bounds="20,711.976000924949,71.3546667437457,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Text.h" Label="Text.h" />
+    <Node Id="(@1 @366)" Category="CodeSchema_ProjectItem" Bounds="312.772666820825,823.972001079107,116.904666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Button_TEXT.h" Label="Button_TEXT.h" />
+    <Node Id="(@1 @367)" Category="CodeSchema_ProjectItem" Bounds="892.430667283299,711.976000924949,84.4546667437457,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\MENU.h" Label="MENU.h" />
+    <Node Id="(@1 @368)" Category="CodeSchema_ProjectItem" Bounds="1058.46266720622,823.972001079107,121.624666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Button_Menu.h" Label="Button_Menu.h" />
+    <Node Id="(@1 @371)" Category="CodeSchema_ProjectItem" Bounds="1719.27333448952,711.976000924949,94.0646667437456,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Window.h" Label="Window.h" />
+    <Node Id="(@1 @380)" Category="CodeSchema_ProjectItem" Bounds="1006.88533402704,711.976000924949,85.298000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\HitBox.h" Label="HitBox.h" />
+    <Node Id="(@1 @39)" Category="CodeSchema_ProjectItem" Bounds="833.513333718729,879.970001156186,136.118000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\MenuLocal_func.h" Label="MenuLocal_func.h" />
+    <Node Id="(@1 @40)" Category="CodeSchema_ProjectItem" Bounds="20,823.972001079107,115.974666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Button_Func.h" Label="Button_Func.h" />
+    <Node Id="(@1 @401)" Category="CodeSchema_ProjectItem" Bounds="2635.18533479783,767.974001002028,115.438000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\InputArea.cpp" Label="InputArea.cpp" />
+    <Node Id="(@1 @404)" Category="CodeSchema_ProjectItem" Bounds="2142.87866774578,823.972001079107,128.834666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Button_Func.cpp" Label="Button_Func.cpp" />
+    <Node Id="(@1 @405)" Category="CodeSchema_ProjectItem" Bounds="2491.62066805409,767.974001002028,113.564666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Keyboard.cpp" Label="Keyboard.cpp" />
+    <Node Id="(@1 @406)" Category="CodeSchema_ProjectItem" Bounds="1969.08266797701,711.976000924949,96.2280000770788,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Image.cpp" Label="Image.cpp" />
+    <Node Id="(@1 @411)" Category="CodeSchema_ProjectItem" Bounds="1541.7706672833,935.968001233265,168.684666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\BlockPlacer_module.cpp" Label="BlockPlacer_module.cpp" />
+    <Node Id="(@1 @420)" Category="CodeSchema_ProjectItem" Bounds="278.762666820825,767.974001002028,101.454666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Texture.cpp" Label="Texture.cpp" />
+    <Node Id="(@1 @421)" Category="CodeSchema_ProjectItem" Bounds="505.424000231236,879.970001156186,133.604666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Module_base.cpp" Label="Module_base.cpp" />
+    <Node Id="(@1 @422)" Category="CodeSchema_ProjectItem" Bounds="2139.74466751454,935.968001233265,172.651333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\MENU_Module_base.cpp" Label="MENU_Module_base.cpp" />
+    <Node Id="(@1 @423)" Category="CodeSchema_ProjectItem" Bounds="1363.44200069371,823.972001079107,123.391333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Menu_base.cpp" Label="Menu_base.cpp" />
+    <Node Id="(@1 @424)" Category="CodeSchema_ProjectItem" Bounds="20,767.974001002028,99.2146667437457,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Mouse.cpp" Label="Mouse.cpp" />
+    <Node Id="(@1 @425)" Category="CodeSchema_ProjectItem" Bounds="432.246000154158,991.966001310344,179.791333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\CoordinateBar_mouse.cpp" Label="CoordinateBar_mouse.cpp" />
+    <Node Id="(@1 @430)" Category="CodeSchema_ProjectItem" Bounds="579.394000231237,935.968001233265,157.498000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Event_handlerOBJ.cpp" Label="Event_handlerOBJ.cpp" />
+    <Node Id="(@1 @431)" Category="CodeSchema_ProjectItem" Bounds="2062.80000115618,767.974001002028,112.408000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\EventOBJ.cpp" Label="EventOBJ.cpp" />
+    <Node Id="(@1 @434)" Category="CodeSchema_ProjectItem" Bounds="1984.22400100203,823.972001079107,128.654666743745,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Interact_OBJ.cpp" Label="Interact_OBJ.cpp" />
+    <Node Id="(@1 @435)" Category="CodeSchema_ProjectItem" Bounds="1474.47400100203,711.976000924949,91.5713334104123,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Block.cpp" Label="Block.cpp" />
+    <Node Id="(@1 @436)" Category="CodeSchema_ProjectItem" Bounds="1210.08733394997,823.972001079107,123.354666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Menu_local.cpp" Label="Menu_local.cpp" />
+    <Node Id="(@1 @443)" Category="CodeSchema_ProjectItem" Bounds="2733.94733510615,711.976000924949,98.8713334104123,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Button.cpp" Label="Button.cpp" />
+    <Node Id="(@1 @444)" Category="CodeSchema_ProjectItem" Bounds="1166.91933387289,879.970001156186,137.338000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Folder_button.cpp" Label="Folder_button.cpp" />
+    <Node Id="(@1 @445)" Category="CodeSchema_ProjectItem" Bounds="757.986667052062,823.972001079107,119.731333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Video_Info.cpp" Label="Video_Info.cpp" />
+    <Node Id="(@1 @450)" Category="CodeSchema_ProjectItem" Bounds="1344.00933387289,935.968001233265,167.761333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\CoordinateBar_map.cpp" Label="CoordinateBar_map.cpp" />
+    <Node Id="(@1 @455)" Category="CodeSchema_ProjectItem" Bounds="1070.11333371873,991.966001310344,189.234666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Block_module_Manager.cpp" Label="Block_module_Manager.cpp" />
+    <Node Id="(@1 @458)" Category="CodeSchema_ProjectItem" Bounds="1939.98666743746,935.968001233265,169.758000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Animation_manager.cpp" Label="Animation_manager.cpp" />
+    <Node Id="(@1 @461)" Category="CodeSchema_ProjectItem" Bounds="2342.39600092495,935.968001233265,173.254666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\LevelEditor_manager.cpp" Label="LevelEditor_manager.cpp" />
+    <Node Id="(@1 @462)" Category="CodeSchema_ProjectItem" Bounds="2192.7006676687,879.970001156186,145.718000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Menu_manager.cpp" Label="Menu_manager.cpp" />
+    <Node Id="(@1 @463)" Category="CodeSchema_ProjectItem" Bounds="1740.45533402704,935.968001233265,169.531333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Map_mouseHandler.cpp" Label="Map_mouseHandler.cpp" />
+    <Node Id="(@1 @464)" Category="CodeSchema_ProjectItem" Bounds="999.631333795809,879.970001156186,137.288000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Event_handler.cpp" Label="Event_handler.cpp" />
+    <Node Id="(@1 @465)" Category="CodeSchema_ProjectItem" Bounds="1596.04533441244,711.976000924949,93.2280000770791,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Timer.cpp" Label="Timer.cpp" />
+    <Node Id="(@1 @466)" Category="CodeSchema_ProjectItem" Bounds="1779.70400100203,767.974001002028,111.108000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Renderer.cpp" Label="Renderer.cpp" />
+    <Node Id="(@1 @471)" Category="CodeSchema_ProjectItem" Bounds="2301.71333448952,823.972001079107,129.658000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Script_Editor.cpp" Label="Script_Editor.cpp" />
+    <Node Id="(@1 @472)" Category="CodeSchema_ProjectItem" Bounds="852.232000308317,991.966001310344,187.881333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\ScroolBar_mapModules.cpp" Label="ScroolBar_mapModules.cpp" />
+    <Node Id="(@1 @477)" Category="CodeSchema_ProjectItem" Bounds="2349.40000154158,711.976000924949,98.1413334104122,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Object.cpp" Label="Object.cpp" />
+    <Node Id="(@1 @478)" Category="CodeSchema_ProjectItem" Bounds="1844.09466751454,879.970001156186,143.968000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Module_Object.cpp" Label="Module_Object.cpp" />
+    <Node Id="(@1 @479)" Category="CodeSchema_ProjectItem" Bounds="1122.18333410412,711.976000924949,85.9613334104124,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Rect.cpp" Label="Rect.cpp" />
+    <Node Id="(@1 @480)" Category="CodeSchema_ProjectItem" Bounds="2368.41866774577,879.970001156186,152.874666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Bar_modules_left.cpp" Label="Bar_modules_left.cpp" />
+    <Node Id="(@1 @483)" Category="CodeSchema_ProjectItem" Bounds="1354.15600092495,711.976000924949,90.318000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Point.cpp" Label="Point.cpp" />
+    <Node Id="(@1 @486)" Category="CodeSchema_ProjectItem" Bounds="181.108000077078,879.970001156186,131.458000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Button_input.cpp" Label="Button_input.cpp" />
+    <Node Id="(@1 @487)" Category="CodeSchema_ProjectItem" Bounds="778.216000539554,711.976000924949,84.2146667437457,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Text.cpp" Label="Text.cpp" />
+    <Node Id="(@1 @488)" Category="CodeSchema_ProjectItem" Bounds="2461.3713345666,823.972001079107,129.764666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Button_TEXT.cpp" Label="Button_TEXT.cpp" />
+    <Node Id="(@1 @49)" Category="CodeSchema_ProjectItem" Bounds="1825.73933425828,823.972001079107,128.484666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Engine_stateID.h" Label="Engine_stateID.h" />
+    <Node Id="(@1 @491)" Category="CodeSchema_ProjectItem" Bounds="669.028666974982,879.970001156186,134.484666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Button_Menu.cpp" Label="Button_Menu.cpp" />
+    <Node Id="(@1 @492)" Category="CodeSchema_ProjectItem" Bounds="944.34266720622,767.974001002028,106.924666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Window.cpp" Label="Window.cpp" />
+    <Node Id="(@1 @493)" Category="CodeSchema_ProjectItem" Bounds="2477.54133495199,711.976000924949,98.1580000770791,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\HitBox.cpp" Label="HitBox.cpp" />
+    <Node Id="(@1 @50)" Category="CodeSchema_ProjectItem" Bounds="542.472000308316,767.974001002028,102.421333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Others_ID.h" Label="Others_ID.h" />
+    <Node Id="(@1 @51)" Category="CodeSchema_ProjectItem" Bounds="2221.7920014645,711.976000924949,97.6080000770789,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Menu_ID.h" Label="Menu_ID.h" />
+    <Node Id="(@1 @52)" Category="CodeSchema_ProjectItem" Bounds="410.21733356457,767.974001002028,102.254666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Enemy_ID.h" Label="Enemy_ID.h" />
+    <Node Id="(@1 @61)" Category="CodeSchema_ProjectItem" Bounds="1843.33800123326,711.976000924949,95.7446667437457,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\resource.h" Label="resource.h" />
+    <Node Id="(@1 @72)" Category="CodeSchema_ProjectItem" Bounds="664.848000462474,711.976000924949,83.368000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Image.h" Label="Image.h" />
+    <Node Id="(@1 @77)" Category="CodeSchema_ProjectItem" Bounds="608.27533364165,823.972001079107,119.711333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Map_module.h" Label="Map_module.h" />
+    <Node Id="(@1 @78)" Category="CodeSchema_ProjectItem" Bounds="20,935.968001233265,155.824666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\BlockPlacer_module.h" Label="BlockPlacer_module.h" />
+    <Node Id="@100" Category="CodeSchema_ProjectItem" Bounds="363.945,319.990000385395,184.701333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\multiOBJ_select_structure.h" Label="multiOBJ_select_structure.h" />
+    <Node Id="@102" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_gesture.h" Label="SDL_gesture.h" />
+    <Node Id="@104" Category="CodeSchema_ProjectItem" Bounds="336.998333333333,543.982000693712,88.5946667437457,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Texture.h" Label="Texture.h" />
+    <Node Id="@109" Category="CodeSchema_ProjectItem" Bounds="339.118333333333,599.980000770791,86.3546667437457,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Mouse.h" Label="Mouse.h" />
+    <Node Id="@11" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\cctype" Label="cctype" />
+    <Node Id="@111" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_mouse.h" Label="SDL_mouse.h" />
+    <Node Id="@115" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_terminate.h" Label="corecrt_terminate.h" />
+    <Node Id="@118" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\stddef.h" Label="stddef.h" />
+    <Node Id="@120" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_ttf.h" Label="SDL_ttf.h" />
+    <Node Id="@122" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\crtdbg.h" Label="crtdbg.h" />
+    <Node Id="@124" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_config.h" Label="SDL_config.h" />
+    <Node Id="@126" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_stdio_config.h" Label="corecrt_stdio_config.h" />
+    <Node Id="@128" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstring.h" Label="corecrt_wstring.h" />
+    <Node Id="@13" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\compare" Label="compare" />
+    <Node Id="@130" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\string.h" Label="string.h" />
+    <Node Id="@132" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\vcruntime_string.h" Label="vcruntime_string.h" />
+    <Node Id="@134" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_log.h" Label="SDL_log.h" />
+    <Node Id="@136" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\stdarg.h" Label="stdarg.h" />
+    <Node Id="@138" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\vcruntime_new_debug.h" Label="vcruntime_new_debug.h" />
+    <Node Id="@140" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_search.h" Label="corecrt_search.h" />
+    <Node Id="@142" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_touch.h" Label="SDL_touch.h" />
+    <Node Id="@144" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\eh.h" Label="eh.h" />
+    <Node Id="@146" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\math.h" Label="math.h" />
+    <Node Id="@148" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_math.h" Label="corecrt_math.h" />
+    <Node Id="@15" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\cstddef" Label="cstddef" />
+    <Node Id="@150" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\use_ansi.h" Label="use_ansi.h" />
+    <Node Id="@152" Category="CodeSchema_ProjectItem" Bounds="409.028333333333,487.984000616633,94.5346667437457,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\MapOBJ.h" Label="MapOBJ.h" />
+    <Node Id="@156" Category="CodeSchema_ProjectItem" Bounds="493.555,431.986000539554,121.481333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Dynamic_OBJ.h" Label="Dynamic_OBJ.h" />
+    <Node Id="@159" Category="CodeSchema_ProjectItem" Bounds="2468.86666666667,151.996000154158,110.858000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Enemy_OBJ.h" Label="Enemy_OBJ.h" />
+    <Node Id="@161" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\xkeycheck.h" Label="xkeycheck.h" />
+    <Node Id="@163" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_joystick.h" Label="SDL_joystick.h" />
+    <Node Id="@167" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\signal.h" Label="signal.h" />
+    <Node Id="@169" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\concurrencysal.h" Label="concurrencysal.h" />
+    <Node Id="@17" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\xstddef" Label="xstddef" />
+    <Node Id="@171" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\sal.h" Label="sal.h" />
+    <Node Id="@173" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_metal.h" Label="SDL_metal.h" />
+    <Node Id="@175" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL.h" Label="SDL.h" />
+    <Node Id="@178" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_filesystem.h" Label="SDL_filesystem.h" />
+    <Node Id="@180" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_system.h" Label="SDL_system.h" />
+    <Node Id="@182" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_platform.h" Label="SDL_platform.h" />
+    <Node Id="@184" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_endian.h" Label="SDL_endian.h" />
+    <Node Id="@186" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_main.h" Label="SDL_main.h" />
+    <Node Id="@188" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\ammintrin.h" Label="ammintrin.h" />
+    <Node Id="@19" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\cstring" Label="cstring" />
+    <Node Id="@190" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\emmintrin.h" Label="emmintrin.h" />
+    <Node Id="@192" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\immintrin.h" Label="immintrin.h" />
+    <Node Id="@194" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\nmmintrin.h" Label="nmmintrin.h" />
+    <Node Id="@196" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\pmmintrin.h" Label="pmmintrin.h" />
+    <Node Id="@198" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\smmintrin.h" Label="smmintrin.h" />
+    <Node Id="@2" Category="CodeSchema_PoundIncludeFile" Bounds="0,0,2927.31466674375,1037.96400138742" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\[GAME_ENGINE] Level editor.vcxproj" Group="Expanded" Label="[GAME_ENGINE] Level editor.vcxproj" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@200" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\tmmintrin.h" Label="tmmintrin.h" />
+    <Node Id="@202" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\wmmintrin.h" Label="wmmintrin.h" />
+    <Node Id="@204" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\xmmintrin.h" Label="xmmintrin.h" />
+    <Node Id="@206" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\zmmintrin.h" Label="zmmintrin.h" />
+    <Node Id="@208" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\mmintrin.h" Label="mmintrin.h" />
+    <Node Id="@21" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\xstring" Label="xstring" />
+    <Node Id="@210" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\intrin.h" Label="intrin.h" />
+    <Node Id="@212" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\arm64_neon.h" Label="arm64_neon.h" />
+    <Node Id="@214" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\arm_neon.h" Label="arm_neon.h" />
+    <Node Id="@216" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_version.h" Label="SDL_version.h" />
+    <Node Id="@219" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\vcruntime_exception.h" Label="vcruntime_exception.h" />
+    <Node Id="@223" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_video.h" Label="SDL_video.h" />
+    <Node Id="@225" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_cpuinfo.h" Label="SDL_cpuinfo.h" />
+    <Node Id="@228" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h" Label="corecrt_wstdio.h" />
+    <Node Id="@23" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\string" Label="string" />
+    <Node Id="@230" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h" Label="stdio.h" />
+    <Node Id="@232" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_audio.h" Label="SDL_audio.h" />
+    <Node Id="@234" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wconio.h" Label="corecrt_wconio.h" />
+    <Node Id="@236" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wio.h" Label="corecrt_wio.h" />
+    <Node Id="@238" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\errno.h" Label="errno.h" />
+    <Node Id="@240" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_loadso.h" Label="SDL_loadso.h" />
+    <Node Id="@242" Category="CodeSchema_ProjectItem" Bounds="785.133333333333,263.992000308316,74.3246667437458,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Map.h" Label="Map.h" />
+    <Node Id="@244" Category="CodeSchema_ProjectItem" Bounds="486.738333333333,151.996000154158,173.114666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Event_handlerOBJ_map.h" Label="Event_handlerOBJ_map.h" />
+    <Node Id="@247" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\setjmp.h" Label="setjmp.h" />
+    <Node Id="@25" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\intrin0.h" Label="intrin0.h" />
+    <Node Id="@250" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\vcruntime_startup.h" Label="vcruntime_startup.h" />
+    <Node Id="@252" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_startup.h" Label="corecrt_startup.h" />
+    <Node Id="@255" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\wchar.h" Label="wchar.h" />
+    <Node Id="@257" Category="CodeSchema_ProjectItem" Bounds="1384.70666666667,319.990000385395,131.178000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Enemies_placer.h" Label="Enemies_placer.h" />
+    <Node Id="@259" Category="CodeSchema_ProjectItem" Bounds="2086.98333333333,151.996000154158,188.624666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Buttons_Functions_header.h" Label="Buttons_Functions_header.h" />
+    <Node Id="@261" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_render.h" Label="SDL_render.h" />
+    <Node Id="@264" Category="CodeSchema_ProjectItem" Bounds="1169.23333333333,151.996000154158,138.124666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Engine_manager.h" Label="Engine_manager.h" />
+    <Node Id="@267" Category="CodeSchema_ProjectItem" Bounds="1387.215,207.994000231237,126.161333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Map_manager.h" Label="Map_manager.h" />
+    <Node Id="@273" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_gamecontroller.h" Label="SDL_gamecontroller.h" />
+    <Node Id="@276" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_timer.h" Label="SDL_timer.h" />
+    <Node Id="@279" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\shared\sdkddkver.h" Label="sdkddkver.h" />
+    <Node Id="@28" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdlib.h" Label="corecrt_wstdlib.h" />
+    <Node Id="@281" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_power.h" Label="SDL_power.h" />
+    <Node Id="@284" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_error.h" Label="SDL_error.h" />
+    <Node Id="@286" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_sensor.h" Label="SDL_sensor.h" />
+    <Node Id="@288" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\xpolymorphic_allocator.h" Label="xpolymorphic_allocator.h" />
+    <Node Id="@290" Category="CodeSchema_ProjectItem" Bounds="729.045,207.994000231237,116.501333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\LevelCreator.h" Label="LevelCreator.h" />
+    <Node Id="@292" Category="CodeSchema_ProjectItem" Bounds="26.4299999999998,151.996000154158,215.731333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Event_handlerOBJ_LevelCreator.h" Label="Event_handlerOBJ_LevelCreator.h" />
+    <Node Id="@295" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\arm64intr.h" Label="arm64intr.h" />
+    <Node Id="@297" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\armintr.h" Label="armintr.h" />
+    <Node Id="@30" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdlib.h" Label="stdlib.h" />
+    <Node Id="@300" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_math_defines.h" Label="corecrt_math_defines.h" />
+    <Node Id="@302" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\inttypes.h" Label="inttypes.h" />
+    <Node Id="@304" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\sys\types.h" Label="types.h" />
+    <Node Id="@309" Category="CodeSchema_ProjectItem" Bounds="2401.04333333333,95.9980000770788,120.504666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Enemy_Types.h" Label="Enemy_Types.h" />
+    <Node Id="@312" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\vadefs.h" Label="vadefs.h" />
+    <Node Id="@314" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\crtdefs.h" Label="crtdefs.h" />
+    <Node Id="@316" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\yvals.h" Label="yvals.h" />
+    <Node Id="@318" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_pixels.h" Label="SDL_pixels.h" />
+    <Node Id="@32" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\xatomic.h" Label="xatomic.h" />
+    <Node Id="@320" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\CodeAnalysis\sourceannotations.h" Label="sourceannotations.h" />
+    <Node Id="@323" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_rwops.h" Label="SDL_rwops.h" />
+    <Node Id="@325" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wprocess.h" Label="corecrt_wprocess.h" />
+    <Node Id="@327" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\process.h" Label="process.h" />
+    <Node Id="@329" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\limits.h" Label="limits.h" />
+    <Node Id="@331" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_events.h" Label="SDL_events.h" />
+    <Node Id="@334" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_hints.h" Label="SDL_hints.h" />
+    <Node Id="@336" Category="CodeSchema_ProjectItem" Bounds="249.458333333333,655.97800084787,139.674666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Key_pressOnce_s.h" Label="Key_pressOnce_s.h" />
+    <Node Id="@338" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_memcpy_s.h" Label="corecrt_memcpy_s.h" />
+    <Node Id="@34" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_atomic.h" Label="SDL_atomic.h" />
+    <Node Id="@340" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\float.h" Label="float.h" />
+    <Node Id="@342" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\sys\stat.h" Label="stat.h" />
+    <Node Id="@344" Category="CodeSchema_ProjectItem" Bounds="221.655,543.982000693712,85.2813334104123,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Object.h" Label="Object.h" />
+    <Node Id="@347" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wdirect.h" Label="corecrt_wdirect.h" />
+    <Node Id="@349" Category="CodeSchema_ProjectItem" Bounds="419.745,655.97800084787,73.1013334104124,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Rect.h" Label="Rect.h" />
+    <Node Id="@351" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_rect.h" Label="SDL_rect.h" />
+    <Node Id="@354" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_quit.h" Label="SDL_quit.h" />
+    <Node Id="@357" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\stdint.h" Label="stdint.h" />
+    <Node Id="@36" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_haptic.h" Label="SDL_haptic.h" />
+    <Node Id="@361" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt.h" Label="corecrt.h" />
+    <Node Id="@363" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_assert.h" Label="SDL_assert.h" />
+    <Node Id="@370" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\vcruntime_new.h" Label="vcruntime_new.h" />
+    <Node Id="@373" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\mm3dnow.h" Label="mm3dnow.h" />
+    <Node Id="@375" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\setjmpex.h" Label="setjmpex.h" />
+    <Node Id="@377" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_mutex.h" Label="SDL_mutex.h" />
+    <Node Id="@379" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_messagebox.h" Label="SDL_messagebox.h" />
+    <Node Id="@38" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_stdinc.h" Label="SDL_stdinc.h" />
+    <Node Id="@382" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\shared\winpackagefamily.h" Label="winpackagefamily.h" />
+    <Node Id="@384" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\shared\winapifamily.h" Label="winapifamily.h" />
+    <Node Id="@386" Category="CodeSchema_ProjectItem" Bounds="968.461666666667,375.988000462474,85.6680000770792,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Enemy.h" Label="Enemy.h" />
+    <Node Id="@388" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\memory.h" Label="memory.h" />
+    <Node Id="@390" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_memory.h" Label="corecrt_memory.h" />
+    <Node Id="@392" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\isa_availability.h" Label="isa_availability.h" />
+    <Node Id="@394" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\algorithm" Label="algorithm" />
+    <Node Id="@396" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\exception" Label="exception" />
+    <Node Id="@398" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\xtr1common" Label="xtr1common" />
+    <Node Id="@400" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\cstdio" Label="cstdio" />
+    <Node Id="@403" Category="CodeSchema_ProjectItem" Bounds="1163.80666666667,95.9980000770793,148.978000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\MenuLocal_func.cpp" Label="MenuLocal_func.cpp" />
+    <Node Id="@408" Category="CodeSchema_ProjectItem" Bounds="1216.84166666667,263.992000308316,202.908000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Map_moveMouse_module.cpp" Label="Map_moveMouse_module.cpp" />
+    <Node Id="@410" Category="CodeSchema_ProjectItem" Bounds="2306.01,151.996000154158,132.571333410413,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Map_module.cpp" Label="Map_module.cpp" />
+    <Node Id="@413" Category="CodeSchema_ProjectItem" Bounds="1002.72166666667,95.9980000770793,99.148000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Engine.cpp" Label="Engine.cpp" />
+    <Node Id="@415" Category="CodeSchema_ProjectItem" Bounds="2677.375,263.992000308316,195.841333410413,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\singleOBJmove_structure.cpp" Label="singleOBJmove_structure.cpp" />
+    <Node Id="@417" Category="CodeSchema_ProjectItem" Bounds="585.481666666667,263.992000308316,169.628000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\DeleteOBJ_structure.cpp" Label="DeleteOBJ_structure.cpp" />
+    <Node Id="@419" Category="CodeSchema_ProjectItem" Bounds="357.515,263.992000308316,197.561333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\multiOBJ_select_structure.cpp" Label="multiOBJ_select_structure.cpp" />
+    <Node Id="@42" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\malloc.h" Label="malloc.h" />
+    <Node Id="@427" Category="CodeSchema_ProjectItem" Bounds="2272.00666666667,40,166.578000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Buttons_OBJ_create.cpp" Label="Buttons_OBJ_create.cpp" />
+    <Node Id="@429" Category="CodeSchema_ProjectItem" Bounds="272.598333333333,151.996000154158,107.394666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\MapOBJ.cpp" Label="MapOBJ.cpp" />
+    <Node Id="@433" Category="CodeSchema_ProjectItem" Bounds="487.125,375.988000462474,134.341333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Dynamic_OBJ.cpp" Label="Dynamic_OBJ.cpp" />
+    <Node Id="@438" Category="CodeSchema_ProjectItem" Bounds="2213.43666666667,95.9980000770788,125.718000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Menu_Level.cpp" Label="Menu_Level.cpp" />
+    <Node Id="@44" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_malloc.h" Label="corecrt_malloc.h" />
+    <Node Id="@440" Category="CodeSchema_ProjectItem" Bounds="882.601666666666,95.9980000770793,89.388000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\main.cpp" Label="main.cpp" />
+    <Node Id="@442" Category="CodeSchema_ProjectItem" Bounds="1876.52833333333,95.998000077079,153.534666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Menu_Animation.cpp" Label="Menu_Animation.cpp" />
+    <Node Id="@447" Category="CodeSchema_ProjectItem" Bounds="647.703333333333,40.0000000000005,87.1846667437458,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Map.cpp" Label="Map.cpp" />
+    <Node Id="@449" Category="CodeSchema_ProjectItem" Bounds="474.308333333333,95.9980000770793,185.974666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Event_handlerOBJ_map.cpp" Label="Event_handlerOBJ_map.cpp" />
+    <Node Id="@452" Category="CodeSchema_ProjectItem" Bounds="2469.39166666667,40,93.8080000770792,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Setup.cpp" Label="Setup.cpp" />
+    <Node Id="@454" Category="CodeSchema_ProjectItem" Bounds="2763.27666666667,40,144.038000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Enemies_placer.cpp" Label="Enemies_placer.cpp" />
+    <Node Id="@457" Category="CodeSchema_ProjectItem" Bounds="1342.80333333333,95.9980000770793,150.984666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Engine_manager.cpp" Label="Engine_manager.cpp" />
+    <Node Id="@46" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_misc.h" Label="SDL_misc.h" />
+    <Node Id="@460" Category="CodeSchema_ProjectItem" Bounds="2593.785,40,139.021333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Map_manager.cpp" Label="Map_manager.cpp" />
+    <Node Id="@468" Category="CodeSchema_ProjectItem" Bounds="722.615,95.9980000770793,129.361333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\LevelCreator.cpp" Label="LevelCreator.cpp" />
+    <Node Id="@470" Category="CodeSchema_ProjectItem" Bounds="20,95.9980000770793,228.591333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Event_handlerOBJ_LevelCreator.cpp" Label="Event_handlerOBJ_LevelCreator.cpp" />
+    <Node Id="@474" Category="CodeSchema_ProjectItem" Bounds="2551.93,95.9980000770788,188.731333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Buttons_Map_Functions.cpp" Label="Buttons_Map_Functions.cpp" />
+    <Node Id="@476" Category="CodeSchema_ProjectItem" Bounds="502.088333333334,207.994000231237,126.414666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Map_events.cpp" Label="Map_events.cpp" />
+    <Node Id="@48" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_thread.h" Label="SDL_thread.h" />
+    <Node Id="@482" Category="CodeSchema_ProjectItem" Bounds="1652.76833333333,95.9980000770793,193.054666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Animation_management.cpp" Label="Animation_management.cpp" />
+    <Node Id="@485" Category="CodeSchema_ProjectItem" Bounds="2060.11166666667,95.9980000770788,122.368000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Menu_start.cpp" Label="Menu_start.cpp" />
+    <Node Id="@490" Category="CodeSchema_ProjectItem" Bounds="1524.63833333333,95.9980000770793,97.3146667437456,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\MENU.cpp" Label="MENU.cpp" />
+    <Node Id="@495" Category="CodeSchema_ProjectItem" Bounds="962.031666666667,319.990000385395,98.528000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Enemy.cpp" Label="Enemy.cpp" />
+    <Node Id="@497" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\cwchar" Label="cwchar" />
+    <Node Id="@499" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\vector" Label="vector" />
+    <Node Id="@5" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\cstdlib" Label="cstdlib" />
+    <Node Id="@501" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\type_traits" Label="type_traits" />
+    <Node Id="@503" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\climits" Label="climits" />
+    <Node Id="@505" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\limits" Label="limits" />
+    <Node Id="@507" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\concepts" Label="concepts" />
+    <Node Id="@509" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\cfloat" Label="cfloat" />
+    <Node Id="@511" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\bit" Label="bit" />
+    <Node Id="@513" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\cstdint" Label="cstdint" />
+    <Node Id="@515" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\initializer_list" Label="initializer_list" />
+    <Node Id="@517" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\new" Label="new" />
+    <Node Id="@519" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\xmemory" Label="xmemory" />
+    <Node Id="@521" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\xutility" Label="xutility" />
+    <Node Id="@523" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\utility" Label="utility" />
+    <Node Id="@54" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_clipboard.h" Label="SDL_clipboard.h" />
+    <Node Id="@56" Category="CodeSchema_ProjectItem" Bounds="207.943333333333,599.980000770791,100.704666743746,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Keyboard.h" Label="Keyboard.h" />
+    <Node Id="@58" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_keyboard.h" Label="SDL_keyboard.h" />
+    <Node Id="@60" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_surface.h" Label="SDL_surface.h" />
+    <Node Id="@63" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_scancode.h" Label="SDL_scancode.h" />
+    <Node Id="@65" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_keycode.h" Label="SDL_keycode.h" />
+    <Node Id="@67" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\close_code.h" Label="close_code.h" />
+    <Node Id="@69" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\begin_code.h" Label="begin_code.h" />
+    <Node Id="@7" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\iosfwd" Label="iosfwd" />
+    <Node Id="@71" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_blendmode.h" Label="SDL_blendmode.h" />
+    <Node Id="@74" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_locale.h" Label="SDL_locale.h" />
+    <Node Id="@76" Category="CodeSchema_ProjectItem" Bounds="1091.27166666667,319.990000385395,190.048000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Map_moveMouse_module.h" Label="Map_moveMouse_module.h" />
+    <Node Id="@80" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\vcruntime.h" Label="vcruntime.h" />
+    <Node Id="@82" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wtime.h" Label="corecrt_wtime.h" />
+    <Node Id="@84" Category="CodeSchema_ProjectItem" Bounds="884.151666666666,151.996000154158,86.288000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\Engine.h" Label="Engine.h" />
+    <Node Id="@86" Category="CodeSchema_ProjectItem" FilePath="C:\SDL2\include\SDL_shape.h" Label="SDL_shape.h" />
+    <Node Id="@88" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wctype.h" Label="corecrt_wctype.h" />
+    <Node Id="@9" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\tuple" Label="tuple" />
+    <Node Id="@90" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\ctype.h" Label="ctype.h" />
+    <Node Id="@92" Category="CodeSchema_ProjectItem" FilePath="$(ProgramFiles)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_share.h" Label="corecrt_share.h" />
+    <Node Id="@94" Category="CodeSchema_ProjectItem" FilePath="$(VsInstallDir)\VC\Tools\MSVC\14.29.30037\include\yvals_core.h" Label="yvals_core.h" />
+    <Node Id="@96" Category="CodeSchema_ProjectItem" Bounds="2554.805,319.990000385395,182.981333410412,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\singleOBJmove_structure.h" Label="singleOBJmove_structure.h" />
+    <Node Id="@98" Category="CodeSchema_ProjectItem" Bounds="743.911666666667,319.990000385395,156.768000077079,25.998000077079" FilePath="$(VsSolution)\[GAME_ENGINE] Level editor\DeleteOBJ_structure.h" Label="DeleteOBJ_structure.h" />
+    <Node Id="G4" Category="CodeSchema_PoundIncludeGroup" Group="Collapsed" Label="Windows SDK" />
+    <Node Id="OthersGroup" Category="CodeSchema_PoundIncludeGroup" Group="Collapsed" Label="Inne" />
+    <Node Id="PoundIncludeGraphExternalsGroup" Category="Externals" Bounds="1391.36566670521,1067.96400138742,144.583333333333,25" Group="Collapsed" Label="Obiekty zewnętrzne" />
+    <Node Id="Windows SDK Dołączone pośrednio" Category="CodeSchema_PoundIncludeGroup" Group="Collapsed" Label="Dołączone pośrednio" />
+  </Nodes>
+  <Links>
+    <Link Source="@100" Target="@152" Category="PoundInclude" Bounds="456.295654296875,345.988006591797,0,132.996002197266" />
+    <Link Source="@100" Target="@386" Category="PoundInclude" Bounds="548.646362304688,342.306945800781,410.860778808594,41.4547424316406" />
+    <Link Source="@102" Target="@142" Category="PoundInclude" />
+    <Link Source="@102" Target="@223" Category="PoundInclude" />
+    <Link Source="@102" Target="@284" Category="PoundInclude" />
+    <Link Source="@102" Target="@38" Category="PoundInclude" />
+    <Link Source="@102" Target="@67" Category="PoundInclude" />
+    <Link Source="@102" Target="@69" Category="PoundInclude" />
+    <Link Source="@104" Target="@120" Category="PoundInclude" />
+    <Link Source="@104" Target="@23" Category="PoundInclude" />
+    <Link Source="@104" Target="@261" Category="PoundInclude" />
+    <Link Source="@109" Target="@331" Category="PoundInclude" />
+    <Link Source="@109" Target="@336" Category="PoundInclude" Bounds="340.646850585938,625.97802734375,27.0244140625,24.0208129882813" />
+    <Link Source="@109" Target="@349" Category="PoundInclude" Bounds="399.473541259766,625.97802734375,32.4674987792969,24.569091796875" />
+    <Link Source="@109" Target="@351" Category="PoundInclude" />
+    <Link Source="@109" Target="@499" Category="PoundInclude" />
+    <Link Source="@11" Target="@90" Category="PoundInclude" />
+    <Link Source="@11" Target="@94" Category="PoundInclude" />
+    <Link Source="@111" Target="@223" Category="PoundInclude" />
+    <Link Source="@111" Target="@284" Category="PoundInclude" />
+    <Link Source="@111" Target="@38" Category="PoundInclude" />
+    <Link Source="@111" Target="@67" Category="PoundInclude" />
+    <Link Source="@111" Target="@69" Category="PoundInclude" />
+    <Link Source="@115" Target="@361" Category="PoundInclude" />
+    <Link Source="@118" Target="@361" Category="PoundInclude" />
+    <Link Source="@120" Target="@175" Category="PoundInclude" />
+    <Link Source="@120" Target="@67" Category="PoundInclude" />
+    <Link Source="@120" Target="@69" Category="PoundInclude" />
+    <Link Source="@122" Target="@138" Category="PoundInclude" />
+    <Link Source="@122" Target="@361" Category="PoundInclude" />
+    <Link Source="@124" Target="@182" Category="PoundInclude" />
+    <Link Source="@124" Target="@279" Category="PoundInclude" />
+    <Link Source="@126" Target="@361" Category="PoundInclude" />
+    <Link Source="@128" Target="@132" Category="PoundInclude" />
+    <Link Source="@128" Target="@361" Category="PoundInclude" />
+    <Link Source="@13" Target="@398" Category="PoundInclude" />
+    <Link Source="@13" Target="@507" Category="PoundInclude" />
+    <Link Source="@13" Target="@511" Category="PoundInclude" />
+    <Link Source="@13" Target="@94" Category="PoundInclude" />
+    <Link Source="@130" Target="@128" Category="PoundInclude" />
+    <Link Source="@130" Target="@132" Category="PoundInclude" />
+    <Link Source="@130" Target="@361" Category="PoundInclude" />
+    <Link Source="@130" Target="@390" Category="PoundInclude" />
+    <Link Source="@132" Target="@80" Category="PoundInclude" />
+    <Link Source="@134" Target="@38" Category="PoundInclude" />
+    <Link Source="@134" Target="@67" Category="PoundInclude" />
+    <Link Source="@134" Target="@69" Category="PoundInclude" />
+    <Link Source="@136" Target="@80" Category="PoundInclude" />
+    <Link Source="@138" Target="@370" Category="PoundInclude" />
+    <Link Source="@140" Target="@118" Category="PoundInclude" />
+    <Link Source="@140" Target="@361" Category="PoundInclude" />
+    <Link Source="@142" Target="@223" Category="PoundInclude" />
+    <Link Source="@142" Target="@284" Category="PoundInclude" />
+    <Link Source="@142" Target="@38" Category="PoundInclude" />
+    <Link Source="@142" Target="@67" Category="PoundInclude" />
+    <Link Source="@142" Target="@69" Category="PoundInclude" />
+    <Link Source="@144" Target="@115" Category="PoundInclude" />
+    <Link Source="@144" Target="@312" Category="PoundInclude" />
+    <Link Source="@146" Target="@148" Category="PoundInclude" />
+    <Link Source="@146" Target="@300" Category="PoundInclude" />
+    <Link Source="@148" Target="@361" Category="PoundInclude" />
+    <Link Source="@15" Target="@118" Category="PoundInclude" />
+    <Link Source="@15" Target="@398" Category="PoundInclude" />
+    <Link Source="@15" Target="@94" Category="PoundInclude" />
+    <Link Source="@152" Target="@104" Category="PoundInclude" Bounds="405.917266845703,513.981994628906,32.9684143066406,24.6155395507813" />
+    <Link Source="@152" Target="@344" Category="PoundInclude" Bounds="314.650573730469,513.970458984375,97.1150207519531,28.32421875" />
+    <Link Source="@152" Target="@349" Category="PoundInclude" Bounds="456.295654296875,513.981994628906,0,132.996032714844" />
+    <Link Source="@156" Target="@152" Category="PoundInclude" Bounds="486.858978271484,457.984008789063,44.6876525878906,25.5348510742188" />
+    <Link Source="@159" Target="@267" Category="PoundInclude" Bounds="1522.37145996094,177.994003295898,953.882690429688,40.6328887939453" />
+    <Link Source="@159" Target="@386" Category="PoundInclude" Bounds="1063.12353515625,177.994003295898,1461.17211914063,209.074783325195" />
+    <Link Source="@163" Target="@284" Category="PoundInclude" />
+    <Link Source="@163" Target="@38" Category="PoundInclude" />
+    <Link Source="@163" Target="@67" Category="PoundInclude" />
+    <Link Source="@163" Target="@69" Category="PoundInclude" />
+    <Link Source="@167" Target="@361" Category="PoundInclude" />
+    <Link Source="@17" Target="@15" Category="PoundInclude" />
+    <Link Source="@17" Target="@398" Category="PoundInclude" />
+    <Link Source="@17" Target="@5" Category="PoundInclude" />
+    <Link Source="@17" Target="@515" Category="PoundInclude" />
+    <Link Source="@17" Target="@94" Category="PoundInclude" />
+    <Link Source="@171" Target="@169" Category="PoundInclude" />
+    <Link Source="@171" Target="@320" Category="PoundInclude" />
+    <Link Source="@173" Target="@223" Category="PoundInclude" />
+    <Link Source="@173" Target="@67" Category="PoundInclude" />
+    <Link Source="@173" Target="@69" Category="PoundInclude" />
+    <Link Source="@175" Target="@134" Category="PoundInclude" />
+    <Link Source="@175" Target="@163" Category="PoundInclude" />
+    <Link Source="@175" Target="@173" Category="PoundInclude" />
+    <Link Source="@175" Target="@178" Category="PoundInclude" />
+    <Link Source="@175" Target="@180" Category="PoundInclude" />
+    <Link Source="@175" Target="@184" Category="PoundInclude" />
+    <Link Source="@175" Target="@186" Category="PoundInclude" />
+    <Link Source="@175" Target="@216" Category="PoundInclude" />
+    <Link Source="@175" Target="@223" Category="PoundInclude" />
+    <Link Source="@175" Target="@225" Category="PoundInclude" />
+    <Link Source="@175" Target="@232" Category="PoundInclude" />
+    <Link Source="@175" Target="@240" Category="PoundInclude" />
+    <Link Source="@175" Target="@261" Category="PoundInclude" />
+    <Link Source="@175" Target="@273" Category="PoundInclude" />
+    <Link Source="@175" Target="@276" Category="PoundInclude" />
+    <Link Source="@175" Target="@281" Category="PoundInclude" />
+    <Link Source="@175" Target="@284" Category="PoundInclude" />
+    <Link Source="@175" Target="@286" Category="PoundInclude" />
+    <Link Source="@175" Target="@323" Category="PoundInclude" />
+    <Link Source="@175" Target="@331" Category="PoundInclude" />
+    <Link Source="@175" Target="@334" Category="PoundInclude" />
+    <Link Source="@175" Target="@34" Category="PoundInclude" />
+    <Link Source="@175" Target="@36" Category="PoundInclude" />
+    <Link Source="@175" Target="@363" Category="PoundInclude" />
+    <Link Source="@175" Target="@377" Category="PoundInclude" />
+    <Link Source="@175" Target="@379" Category="PoundInclude" />
+    <Link Source="@175" Target="@38" Category="PoundInclude" />
+    <Link Source="@175" Target="@46" Category="PoundInclude" />
+    <Link Source="@175" Target="@48" Category="PoundInclude" />
+    <Link Source="@175" Target="@54" Category="PoundInclude" />
+    <Link Source="@175" Target="@67" Category="PoundInclude" />
+    <Link Source="@175" Target="@69" Category="PoundInclude" />
+    <Link Source="@175" Target="@74" Category="PoundInclude" />
+    <Link Source="@175" Target="@86" Category="PoundInclude" />
+    <Link Source="@178" Target="@38" Category="PoundInclude" />
+    <Link Source="@178" Target="@67" Category="PoundInclude" />
+    <Link Source="@178" Target="@69" Category="PoundInclude" />
+    <Link Source="@180" Target="@223" Category="PoundInclude" />
+    <Link Source="@180" Target="@261" Category="PoundInclude" />
+    <Link Source="@180" Target="@38" Category="PoundInclude" />
+    <Link Source="@180" Target="@58" Category="PoundInclude" />
+    <Link Source="@180" Target="@67" Category="PoundInclude" />
+    <Link Source="@180" Target="@69" Category="PoundInclude" />
+    <Link Source="@182" Target="@384" Category="PoundInclude" />
+    <Link Source="@182" Target="@67" Category="PoundInclude" />
+    <Link Source="@182" Target="@69" Category="PoundInclude" />
+    <Link Source="@184" Target="@38" Category="PoundInclude" />
+    <Link Source="@184" Target="@67" Category="PoundInclude" />
+    <Link Source="@184" Target="@69" Category="PoundInclude" />
+    <Link Source="@186" Target="@38" Category="PoundInclude" />
+    <Link Source="@186" Target="@67" Category="PoundInclude" />
+    <Link Source="@186" Target="@69" Category="PoundInclude" />
+    <Link Source="@19" Target="@130" Category="PoundInclude" />
+    <Link Source="@19" Target="@94" Category="PoundInclude" />
+    <Link Source="@190" Target="@204" Category="PoundInclude" />
+    <Link Source="@192" Target="@202" Category="PoundInclude" />
+    <Link Source="@192" Target="@206" Category="PoundInclude" />
+    <Link Source="@194" Target="@198" Category="PoundInclude" />
+    <Link Source="@196" Target="@190" Category="PoundInclude" />
+    <Link Source="@198" Target="@200" Category="PoundInclude" />
+    <Link Source="@2" Target="(@1 @105)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @106)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @107)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @112)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @113)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @116)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @153)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @154)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @157)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @164)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @165)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @176)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @217)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @220)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @221)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @226)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @245)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @248)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @253)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @26)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @262)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @265)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @268)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @269)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @270)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @271)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @274)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @277)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @282)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @293)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @298)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @305)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @306)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @307)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @310)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @321)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @332)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @345)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @352)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @355)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @358)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @359)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @364)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @365)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @366)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @367)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @368)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @371)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @380)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @39)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @40)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @401)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @404)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @405)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @406)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @411)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @420)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @421)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @422)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @423)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @424)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @425)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @430)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @431)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @434)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @435)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @436)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @443)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @444)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @445)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @450)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @455)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @458)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @461)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @462)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @463)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @464)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @465)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @466)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @471)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @472)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @477)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @478)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @479)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @480)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @483)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @486)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @487)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @488)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @49)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @491)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @492)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @493)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @50)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @51)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @52)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @61)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @72)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @77)" Category="Contains" />
+    <Link Source="@2" Target="(@1 @78)" Category="Contains" />
+    <Link Source="@2" Target="@100" Category="Contains" />
+    <Link Source="@2" Target="@104" Category="Contains" />
+    <Link Source="@2" Target="@109" Category="Contains" />
+    <Link Source="@2" Target="@152" Category="Contains" />
+    <Link Source="@2" Target="@156" Category="Contains" />
+    <Link Source="@2" Target="@159" Category="Contains" />
+    <Link Source="@2" Target="@242" Category="Contains" />
+    <Link Source="@2" Target="@244" Category="Contains" />
+    <Link Source="@2" Target="@257" Category="Contains" />
+    <Link Source="@2" Target="@259" Category="Contains" />
+    <Link Source="@2" Target="@264" Category="Contains" />
+    <Link Source="@2" Target="@267" Category="Contains" />
+    <Link Source="@2" Target="@290" Category="Contains" />
+    <Link Source="@2" Target="@292" Category="Contains" />
+    <Link Source="@2" Target="@309" Category="Contains" />
+    <Link Source="@2" Target="@336" Category="Contains" />
+    <Link Source="@2" Target="@344" Category="Contains" />
+    <Link Source="@2" Target="@349" Category="Contains" />
+    <Link Source="@2" Target="@386" Category="Contains" />
+    <Link Source="@2" Target="@403" Category="Contains" />
+    <Link Source="@2" Target="@408" Category="Contains" />
+    <Link Source="@2" Target="@410" Category="Contains" />
+    <Link Source="@2" Target="@413" Category="Contains" />
+    <Link Source="@2" Target="@415" Category="Contains" />
+    <Link Source="@2" Target="@417" Category="Contains" />
+    <Link Source="@2" Target="@419" Category="Contains" />
+    <Link Source="@2" Target="@427" Category="Contains" />
+    <Link Source="@2" Target="@429" Category="Contains" />
+    <Link Source="@2" Target="@433" Category="Contains" />
+    <Link Source="@2" Target="@438" Category="Contains" />
+    <Link Source="@2" Target="@440" Category="Contains" />
+    <Link Source="@2" Target="@442" Category="Contains" />
+    <Link Source="@2" Target="@447" Category="Contains" />
+    <Link Source="@2" Target="@449" Category="Contains" />
+    <Link Source="@2" Target="@452" Category="Contains" />
+    <Link Source="@2" Target="@454" Category="Contains" />
+    <Link Source="@2" Target="@457" Category="Contains" />
+    <Link Source="@2" Target="@460" Category="Contains" />
+    <Link Source="@2" Target="@468" Category="Contains" />
+    <Link Source="@2" Target="@470" Category="Contains" />
+    <Link Source="@2" Target="@474" Category="Contains" />
+    <Link Source="@2" Target="@476" Category="Contains" />
+    <Link Source="@2" Target="@482" Category="Contains" />
+    <Link Source="@2" Target="@485" Category="Contains" />
+    <Link Source="@2" Target="@490" Category="Contains" />
+    <Link Source="@2" Target="@495" Category="Contains" />
+    <Link Source="@2" Target="@56" Category="Contains" />
+    <Link Source="@2" Target="@76" Category="Contains" />
+    <Link Source="@2" Target="@84" Category="Contains" />
+    <Link Source="@2" Target="@96" Category="Contains" />
+    <Link Source="@2" Target="@98" Category="Contains" />
+    <Link Source="@200" Target="@196" Category="PoundInclude" />
+    <Link Source="@202" Target="@194" Category="PoundInclude" />
+    <Link Source="@204" Target="@208" Category="PoundInclude" />
+    <Link Source="@204" Target="@42" Category="PoundInclude" />
+    <Link Source="@21" Target="@288" Category="PoundInclude" />
+    <Link Source="@21" Target="@519" Category="PoundInclude" />
+    <Link Source="@21" Target="@7" Category="PoundInclude" />
+    <Link Source="@21" Target="@94" Category="PoundInclude" />
+    <Link Source="@210" Target="@188" Category="PoundInclude" />
+    <Link Source="@210" Target="@192" Category="PoundInclude" />
+    <Link Source="@210" Target="@212" Category="PoundInclude" />
+    <Link Source="@210" Target="@214" Category="PoundInclude" />
+    <Link Source="@210" Target="@247" Category="PoundInclude" />
+    <Link Source="@210" Target="@25" Category="PoundInclude" />
+    <Link Source="@210" Target="@295" Category="PoundInclude" />
+    <Link Source="@210" Target="@297" Category="PoundInclude" />
+    <Link Source="@210" Target="@357" Category="PoundInclude" />
+    <Link Source="@210" Target="@373" Category="PoundInclude" />
+    <Link Source="@210" Target="@80" Category="PoundInclude" />
+    <Link Source="@212" Target="@171" Category="PoundInclude" />
+    <Link Source="@212" Target="@357" Category="PoundInclude" />
+    <Link Source="@214" Target="@171" Category="PoundInclude" />
+    <Link Source="@214" Target="@212" Category="PoundInclude" />
+    <Link Source="@214" Target="@357" Category="PoundInclude" />
+    <Link Source="@216" Target="@38" Category="PoundInclude" />
+    <Link Source="@216" Target="@67" Category="PoundInclude" />
+    <Link Source="@216" Target="@69" Category="PoundInclude" />
+    <Link Source="@219" Target="@144" Category="PoundInclude" />
+    <Link Source="@219" Target="@370" Category="PoundInclude" />
+    <Link Source="@223" Target="@318" Category="PoundInclude" />
+    <Link Source="@223" Target="@351" Category="PoundInclude" />
+    <Link Source="@223" Target="@38" Category="PoundInclude" />
+    <Link Source="@223" Target="@60" Category="PoundInclude" />
+    <Link Source="@223" Target="@67" Category="PoundInclude" />
+    <Link Source="@223" Target="@69" Category="PoundInclude" />
+    <Link Source="@225" Target="@190" Category="PoundInclude" />
+    <Link Source="@225" Target="@192" Category="PoundInclude" />
+    <Link Source="@225" Target="@196" Category="PoundInclude" />
+    <Link Source="@225" Target="@204" Category="PoundInclude" />
+    <Link Source="@225" Target="@208" Category="PoundInclude" />
+    <Link Source="@225" Target="@210" Category="PoundInclude" />
+    <Link Source="@225" Target="@212" Category="PoundInclude" />
+    <Link Source="@225" Target="@214" Category="PoundInclude" />
+    <Link Source="@225" Target="@295" Category="PoundInclude" />
+    <Link Source="@225" Target="@297" Category="PoundInclude" />
+    <Link Source="@225" Target="@373" Category="PoundInclude" />
+    <Link Source="@225" Target="@38" Category="PoundInclude" />
+    <Link Source="@225" Target="@67" Category="PoundInclude" />
+    <Link Source="@225" Target="@69" Category="PoundInclude" />
+    <Link Source="@228" Target="@126" Category="PoundInclude" />
+    <Link Source="@228" Target="@361" Category="PoundInclude" />
+    <Link Source="@23" Target="@11" Category="PoundInclude" />
+    <Link Source="@23" Target="@21" Category="PoundInclude" />
+    <Link Source="@23" Target="@94" Category="PoundInclude" />
+    <Link Source="@230" Target="@228" Category="PoundInclude" />
+    <Link Source="@230" Target="@361" Category="PoundInclude" />
+    <Link Source="@232" Target="@184" Category="PoundInclude" />
+    <Link Source="@232" Target="@284" Category="PoundInclude" />
+    <Link Source="@232" Target="@323" Category="PoundInclude" />
+    <Link Source="@232" Target="@377" Category="PoundInclude" />
+    <Link Source="@232" Target="@38" Category="PoundInclude" />
+    <Link Source="@232" Target="@48" Category="PoundInclude" />
+    <Link Source="@232" Target="@67" Category="PoundInclude" />
+    <Link Source="@232" Target="@69" Category="PoundInclude" />
+    <Link Source="@234" Target="@126" Category="PoundInclude" />
+    <Link Source="@234" Target="@361" Category="PoundInclude" />
+    <Link Source="@236" Target="@361" Category="PoundInclude" />
+    <Link Source="@236" Target="@92" Category="PoundInclude" />
+    <Link Source="@238" Target="@361" Category="PoundInclude" />
+    <Link Source="@240" Target="@284" Category="PoundInclude" />
+    <Link Source="@240" Target="@38" Category="PoundInclude" />
+    <Link Source="@240" Target="@67" Category="PoundInclude" />
+    <Link Source="@240" Target="@69" Category="PoundInclude" />
+    <Link Source="@242" Target="@100" Category="PoundInclude" Bounds="557.024780273438,286.858489990234,228.108581542969,33.2610473632813" />
+    <Link Source="@242" Target="@257" Category="PoundInclude" Bounds="859.4580078125,280.304718017578,516.2841796875,46.0364379882813" />
+    <Link Source="@242" Target="@386" Category="PoundInclude" Bounds="847.598205566406,289.989990234375,137.753601074219,80.8369750976563" />
+    <Link Source="@242" Target="@76" Category="PoundInclude" Bounds="859.4580078125,282.708068847656,233.44580078125,35.9134521484375" />
+    <Link Source="@242" Target="@96" Category="PoundInclude" Bounds="859.4580078125,278.508056640625,1704.41186523438,40.6446838378906" />
+    <Link Source="@242" Target="@98" Category="PoundInclude" Bounds="822.295654296875,289.989990234375,0,21" />
+    <Link Source="@244" Target="@242" Category="PoundInclude" Bounds="593.259155273438,177.994003295898,183.642395019531,84.8976287841797" />
+    <Link Source="@247" Target="@375" Category="PoundInclude" />
+    <Link Source="@247" Target="@80" Category="PoundInclude" />
+    <Link Source="@25" Target="@80" Category="PoundInclude" />
+    <Link Source="@250" Target="@80" Category="PoundInclude" />
+    <Link Source="@252" Target="@146" Category="PoundInclude" />
+    <Link Source="@252" Target="@250" Category="PoundInclude" />
+    <Link Source="@252" Target="@361" Category="PoundInclude" />
+    <Link Source="@255" Target="@128" Category="PoundInclude" />
+    <Link Source="@255" Target="@132" Category="PoundInclude" />
+    <Link Source="@255" Target="@228" Category="PoundInclude" />
+    <Link Source="@255" Target="@234" Category="PoundInclude" />
+    <Link Source="@255" Target="@236" Category="PoundInclude" />
+    <Link Source="@255" Target="@28" Category="PoundInclude" />
+    <Link Source="@255" Target="@304" Category="PoundInclude" />
+    <Link Source="@255" Target="@325" Category="PoundInclude" />
+    <Link Source="@255" Target="@338" Category="PoundInclude" />
+    <Link Source="@255" Target="@342" Category="PoundInclude" />
+    <Link Source="@255" Target="@347" Category="PoundInclude" />
+    <Link Source="@255" Target="@361" Category="PoundInclude" />
+    <Link Source="@255" Target="@82" Category="PoundInclude" />
+    <Link Source="@255" Target="@88" Category="PoundInclude" />
+    <Link Source="@257" Target="@386" Category="PoundInclude" Bounds="1063.05737304688,341.355407714844,321.649291992188,41.0289611816406" />
+    <Link Source="@259" Target="@267" Category="PoundInclude" Bounds="1522.35009765625,172.219757080078,564.63330078125,43.2535400390625" />
+    <Link Source="@261" Target="@223" Category="PoundInclude" />
+    <Link Source="@261" Target="@351" Category="PoundInclude" />
+    <Link Source="@261" Target="@38" Category="PoundInclude" />
+    <Link Source="@261" Target="@67" Category="PoundInclude" />
+    <Link Source="@261" Target="@69" Category="PoundInclude" />
+    <Link Source="@264" Target="@290" Category="PoundInclude" Bounds="854.477722167969,173.570068359375,314.755554199219,39.0813293457031" />
+    <Link Source="@267" Target="@242" Category="PoundInclude" Bounds="868.422424316406,226.617828369141,518.792541503906,46.2601013183594" />
+    <Link Source="@267" Target="@257" Category="PoundInclude" Bounds="1450.29565429688,233.992004394531,0,76.9979858398438" />
+    <Link Source="@267" Target="@76" Category="PoundInclude" Bounds="1186.29565429688,230.29621887207,200.919311523438,80.6937713623047" />
+    <Link Source="@273" Target="@163" Category="PoundInclude" />
+    <Link Source="@273" Target="@284" Category="PoundInclude" />
+    <Link Source="@273" Target="@286" Category="PoundInclude" />
+    <Link Source="@273" Target="@323" Category="PoundInclude" />
+    <Link Source="@273" Target="@38" Category="PoundInclude" />
+    <Link Source="@273" Target="@67" Category="PoundInclude" />
+    <Link Source="@273" Target="@69" Category="PoundInclude" />
+    <Link Source="@276" Target="@284" Category="PoundInclude" />
+    <Link Source="@276" Target="@38" Category="PoundInclude" />
+    <Link Source="@276" Target="@67" Category="PoundInclude" />
+    <Link Source="@276" Target="@69" Category="PoundInclude" />
+    <Link Source="@28" Target="@361" Category="PoundInclude" />
+    <Link Source="@281" Target="@38" Category="PoundInclude" />
+    <Link Source="@281" Target="@67" Category="PoundInclude" />
+    <Link Source="@281" Target="@69" Category="PoundInclude" />
+    <Link Source="@284" Target="@38" Category="PoundInclude" />
+    <Link Source="@284" Target="@67" Category="PoundInclude" />
+    <Link Source="@284" Target="@69" Category="PoundInclude" />
+    <Link Source="@286" Target="@284" Category="PoundInclude" />
+    <Link Source="@286" Target="@38" Category="PoundInclude" />
+    <Link Source="@286" Target="@67" Category="PoundInclude" />
+    <Link Source="@286" Target="@69" Category="PoundInclude" />
+    <Link Source="@288" Target="@501" Category="PoundInclude" />
+    <Link Source="@288" Target="@519" Category="PoundInclude" />
+    <Link Source="@288" Target="@523" Category="PoundInclude" />
+    <Link Source="@288" Target="@9" Category="PoundInclude" />
+    <Link Source="@288" Target="@94" Category="PoundInclude" />
+    <Link Source="@290" Target="@242" Category="PoundInclude" Bounds="795.420349121094,233.992004394531,13.9805297851563,22.3680725097656" />
+    <Link Source="@292" Target="@290" Category="PoundInclude" Bounds="241.511901855469,176.858093261719,478.816162109375,31.8293762207031" />
+    <Link Source="@30" Target="@140" Category="PoundInclude" />
+    <Link Source="@30" Target="@28" Category="PoundInclude" />
+    <Link Source="@30" Target="@329" Category="PoundInclude" />
+    <Link Source="@30" Target="@361" Category="PoundInclude" />
+    <Link Source="@30" Target="@44" Category="PoundInclude" />
+    <Link Source="@300" Target="@361" Category="PoundInclude" />
+    <Link Source="@302" Target="@357" Category="PoundInclude" />
+    <Link Source="@302" Target="@361" Category="PoundInclude" />
+    <Link Source="@304" Target="@361" Category="PoundInclude" />
+    <Link Source="@309" Target="@159" Category="PoundInclude" Bounds="2475.92016601563,121.996002197266,27.0244140625,24.0208435058594" />
+    <Link Source="@314" Target="@361" Category="PoundInclude" />
+    <Link Source="@314" Target="@80" Category="PoundInclude" />
+    <Link Source="@316" Target="@122" Category="PoundInclude" />
+    <Link Source="@316" Target="@150" Category="PoundInclude" />
+    <Link Source="@316" Target="@314" Category="PoundInclude" />
+    <Link Source="@316" Target="@94" Category="PoundInclude" />
+    <Link Source="@318" Target="@184" Category="PoundInclude" />
+    <Link Source="@318" Target="@38" Category="PoundInclude" />
+    <Link Source="@318" Target="@67" Category="PoundInclude" />
+    <Link Source="@318" Target="@69" Category="PoundInclude" />
+    <Link Source="@32" Target="@25" Category="PoundInclude" />
+    <Link Source="@32" Target="@316" Category="PoundInclude" />
+    <Link Source="@32" Target="@501" Category="PoundInclude" />
+    <Link Source="@323" Target="@284" Category="PoundInclude" />
+    <Link Source="@323" Target="@38" Category="PoundInclude" />
+    <Link Source="@323" Target="@67" Category="PoundInclude" />
+    <Link Source="@323" Target="@69" Category="PoundInclude" />
+    <Link Source="@325" Target="@361" Category="PoundInclude" />
+    <Link Source="@327" Target="@252" Category="PoundInclude" />
+    <Link Source="@327" Target="@325" Category="PoundInclude" />
+    <Link Source="@327" Target="@361" Category="PoundInclude" />
+    <Link Source="@329" Target="@80" Category="PoundInclude" />
+    <Link Source="@331" Target="@102" Category="PoundInclude" />
+    <Link Source="@331" Target="@111" Category="PoundInclude" />
+    <Link Source="@331" Target="@142" Category="PoundInclude" />
+    <Link Source="@331" Target="@163" Category="PoundInclude" />
+    <Link Source="@331" Target="@223" Category="PoundInclude" />
+    <Link Source="@331" Target="@273" Category="PoundInclude" />
+    <Link Source="@331" Target="@284" Category="PoundInclude" />
+    <Link Source="@331" Target="@354" Category="PoundInclude" />
+    <Link Source="@331" Target="@38" Category="PoundInclude" />
+    <Link Source="@331" Target="@58" Category="PoundInclude" />
+    <Link Source="@331" Target="@67" Category="PoundInclude" />
+    <Link Source="@331" Target="@69" Category="PoundInclude" />
+    <Link Source="@334" Target="@38" Category="PoundInclude" />
+    <Link Source="@334" Target="@67" Category="PoundInclude" />
+    <Link Source="@334" Target="@69" Category="PoundInclude" />
+    <Link Source="@336" Target="@331" Category="PoundInclude" />
+    <Link Source="@336" Target="@394" Category="PoundInclude" />
+    <Link Source="@336" Target="@499" Category="PoundInclude" />
+    <Link Source="@338" Target="@132" Category="PoundInclude" />
+    <Link Source="@338" Target="@238" Category="PoundInclude" />
+    <Link Source="@338" Target="@361" Category="PoundInclude" />
+    <Link Source="@34" Target="@182" Category="PoundInclude" />
+    <Link Source="@34" Target="@38" Category="PoundInclude" />
+    <Link Source="@34" Target="@67" Category="PoundInclude" />
+    <Link Source="@34" Target="@69" Category="PoundInclude" />
+    <Link Source="@340" Target="@361" Category="PoundInclude" />
+    <Link Source="@342" Target="@304" Category="PoundInclude" />
+    <Link Source="@342" Target="@361" Category="PoundInclude" />
+    <Link Source="@344" Target="@109" Category="PoundInclude" Bounds="291.687408447266,569.97998046875,55.0856323242188,26.1414184570313" />
+    <Link Source="@344" Target="@499" Category="PoundInclude" />
+    <Link Source="@344" Target="@56" Category="PoundInclude" Bounds="260.647308349609,569.97998046875,2.25555419921875,21.05126953125" />
+    <Link Source="@347" Target="@361" Category="PoundInclude" />
+    <Link Source="@349" Target="@351" Category="PoundInclude" />
+    <Link Source="@351" Target="@284" Category="PoundInclude" />
+    <Link Source="@351" Target="@318" Category="PoundInclude" />
+    <Link Source="@351" Target="@323" Category="PoundInclude" />
+    <Link Source="@351" Target="@38" Category="PoundInclude" />
+    <Link Source="@351" Target="@67" Category="PoundInclude" />
+    <Link Source="@351" Target="@69" Category="PoundInclude" />
+    <Link Source="@354" Target="@284" Category="PoundInclude" />
+    <Link Source="@354" Target="@38" Category="PoundInclude" />
+    <Link Source="@357" Target="@80" Category="PoundInclude" />
+    <Link Source="@36" Target="@163" Category="PoundInclude" />
+    <Link Source="@36" Target="@284" Category="PoundInclude" />
+    <Link Source="@36" Target="@38" Category="PoundInclude" />
+    <Link Source="@36" Target="@67" Category="PoundInclude" />
+    <Link Source="@36" Target="@69" Category="PoundInclude" />
+    <Link Source="@361" Target="@384" Category="PoundInclude" />
+    <Link Source="@361" Target="@80" Category="PoundInclude" />
+    <Link Source="@363" Target="@124" Category="PoundInclude" />
+    <Link Source="@363" Target="@167" Category="PoundInclude" />
+    <Link Source="@363" Target="@67" Category="PoundInclude" />
+    <Link Source="@363" Target="@69" Category="PoundInclude" />
+    <Link Source="@370" Target="@80" Category="PoundInclude" />
+    <Link Source="@373" Target="@204" Category="PoundInclude" />
+    <Link Source="@373" Target="@208" Category="PoundInclude" />
+    <Link Source="@373" Target="@80" Category="PoundInclude" />
+    <Link Source="@375" Target="@247" Category="PoundInclude" />
+    <Link Source="@377" Target="@284" Category="PoundInclude" />
+    <Link Source="@377" Target="@38" Category="PoundInclude" />
+    <Link Source="@377" Target="@67" Category="PoundInclude" />
+    <Link Source="@377" Target="@69" Category="PoundInclude" />
+    <Link Source="@379" Target="@223" Category="PoundInclude" />
+    <Link Source="@379" Target="@38" Category="PoundInclude" />
+    <Link Source="@379" Target="@67" Category="PoundInclude" />
+    <Link Source="@379" Target="@69" Category="PoundInclude" />
+    <Link Source="@38" Target="@118" Category="PoundInclude" />
+    <Link Source="@38" Target="@124" Category="PoundInclude" />
+    <Link Source="@38" Target="@130" Category="PoundInclude" />
+    <Link Source="@38" Target="@136" Category="PoundInclude" />
+    <Link Source="@38" Target="@146" Category="PoundInclude" />
+    <Link Source="@38" Target="@171" Category="PoundInclude" />
+    <Link Source="@38" Target="@230" Category="PoundInclude" />
+    <Link Source="@38" Target="@255" Category="PoundInclude" />
+    <Link Source="@38" Target="@30" Category="PoundInclude" />
+    <Link Source="@38" Target="@302" Category="PoundInclude" />
+    <Link Source="@38" Target="@304" Category="PoundInclude" />
+    <Link Source="@38" Target="@340" Category="PoundInclude" />
+    <Link Source="@38" Target="@357" Category="PoundInclude" />
+    <Link Source="@38" Target="@388" Category="PoundInclude" />
+    <Link Source="@38" Target="@42" Category="PoundInclude" />
+    <Link Source="@38" Target="@67" Category="PoundInclude" />
+    <Link Source="@38" Target="@69" Category="PoundInclude" />
+    <Link Source="@38" Target="@90" Category="PoundInclude" />
+    <Link Source="@384" Target="@382" Category="PoundInclude" />
+    <Link Source="@386" Target="@156" Category="PoundInclude" Bounds="623.969543457031,394.235626220703,344.492126464844,42.2119750976563" />
+    <Link Source="@388" Target="@390" Category="PoundInclude" />
+    <Link Source="@390" Target="@132" Category="PoundInclude" />
+    <Link Source="@390" Target="@338" Category="PoundInclude" />
+    <Link Source="@390" Target="@361" Category="PoundInclude" />
+    <Link Source="@394" Target="@519" Category="PoundInclude" />
+    <Link Source="@394" Target="@94" Category="PoundInclude" />
+    <Link Source="@396" Target="@219" Category="PoundInclude" />
+    <Link Source="@396" Target="@316" Category="PoundInclude" />
+    <Link Source="@396" Target="@42" Category="PoundInclude" />
+    <Link Source="@396" Target="@501" Category="PoundInclude" />
+    <Link Source="@398" Target="@94" Category="PoundInclude" />
+    <Link Source="@400" Target="@230" Category="PoundInclude" />
+    <Link Source="@400" Target="@94" Category="PoundInclude" />
+    <Link Source="@403" Target="@264" Category="PoundInclude" Bounds="1238.29565429688,121.996002197266,0,21" />
+    <Link Source="@408" Target="@76" Category="PoundInclude" Bounds="1225.22253417969,289.989990234375,62.4315185546875,26.4851684570313" />
+    <Link Source="@410" Target="@267" Category="PoundInclude" Bounds="1522.36877441406,177.994003295898,791.148559570313,40.0438079833984" />
+    <Link Source="@413" Target="@264" Category="PoundInclude" Bounds="1095.47241210938,121.996002197266,91.028564453125,27.4054565429688" />
+    <Link Source="@413" Target="@84" Category="PoundInclude" Bounds="964.525817871094,121.996002197266,58.753173828125,26.3204956054688" />
+    <Link Source="@415" Target="@96" Category="PoundInclude" Bounds="2684.49658203125,289.989990234375,60.85400390625,26.416259765625" />
+    <Link Source="@417" Target="@98" Category="PoundInclude" Bounds="705.579956054688,289.989990234375,72.986328125,26.8887634277344" />
+    <Link Source="@419" Target="@100" Category="PoundInclude" Bounds="456.295654296875,289.989990234375,0,21" />
+    <Link Source="@42" Target="@361" Category="PoundInclude" />
+    <Link Source="@42" Target="@44" Category="PoundInclude" />
+    <Link Source="@427" Target="@259" Category="PoundInclude" Bounds="2245.384765625,65.9980010986328,119.945068359375,83.9395294189453" />
+    <Link Source="@427" Target="@309" Category="PoundInclude" Bounds="2379.90185546875,65.9980010986328,48.829833984375,25.796028137207" />
+    <Link Source="@429" Target="@152" Category="PoundInclude" Bounds="326.295654296875,177.994003295898,91.5569152832031,306.429489135742" />
+    <Link Source="@429" Target="@267" Category="PoundInclude" Bounds="378.313079833984,177.687957763672,999.906768798828,40.9325256347656" />
+    <Link Source="@433" Target="@156" Category="PoundInclude" Bounds="554.295654296875,401.985992431641,0,21" />
+    <Link Source="@438" Target="@264" Category="PoundInclude" Bounds="1316.3525390625,121.996002197266,905.514892578125,40.2680816650391" />
+    <Link Source="@44" Target="@361" Category="PoundInclude" />
+    <Link Source="@440" Target="@84" Category="PoundInclude" Bounds="927.295654296875,121.996002197266,0,21" />
+    <Link Source="@442" Target="@264" Category="PoundInclude" Bounds="1316.34191894531,121.872665405273,562.335083007813,38.4503021240234" />
+    <Link Source="@447" Target="@242" Category="PoundInclude" Bounds="691.295654296875,65.9980010986328,92.31494140625,194.456466674805" />
+    <Link Source="@447" Target="@244" Category="PoundInclude" Bounds="450.714538574219,60.0185890197754,196.98876953125,88.5324211120605" />
+    <Link Source="@447" Target="@264" Category="PoundInclude" Bounds="734.888000488281,56.3921203613281,471.092468261719,91.3686981201172" />
+    <Link Source="@447" Target="@267" Category="PoundInclude" Bounds="411.295654296875,59.3788948059082,966.92431640625,159.217388153076" />
+    <Link Source="@447" Target="@309" Category="PoundInclude" Bounds="734.888000488281,53.8520812988281,1663.84954833984,41.1730804443359" />
+    <Link Source="@449" Target="@244" Category="PoundInclude" Bounds="568.6884765625,121.996002197266,2.25555419921875,21.0512237548828" />
+    <Link Source="@452" Target="@309" Category="PoundInclude" Bounds="2480.36938476563,65.9980010986328,23.158935546875,23.5790786743164" />
+    <Link Source="@454" Target="@257" Category="PoundInclude" Bounds="1524.82983398438,65.9980010986328,1310.4658203125,258.722702026367" />
+    <Link Source="@454" Target="@267" Category="PoundInclude" Bounds="1522.37377929688,65.9980010986328,1306.92822265625,153.287139892578" />
+    <Link Source="@454" Target="@309" Category="PoundInclude" Bounds="2530.44213867188,63.5264053344727,232.88134765625,34.4603881835938" />
+    <Link Source="@457" Target="@264" Category="PoundInclude" Bounds="1288.67333984375,121.996002197266,87.83837890625,27.3264923095703" />
+    <Link Source="@46" Target="@38" Category="PoundInclude" />
+    <Link Source="@46" Target="@67" Category="PoundInclude" />
+    <Link Source="@46" Target="@69" Category="PoundInclude" />
+    <Link Source="@460" Target="@267" Category="PoundInclude" Bounds="1522.37170410156,65.9980010986328,1248.92395019531,152.691696166992" />
+    <Link Source="@460" Target="@309" Category="PoundInclude" Bounds="2516.85961914063,65.9980010986328,99.545166015625,27.5957107543945" />
+    <Link Source="@468" Target="@244" Category="PoundInclude" Bounds="631.679016113281,121.996002197266,105.940124511719,27.7216491699219" />
+    <Link Source="@468" Target="@264" Category="PoundInclude" Bounds="851.866760253906,119.79940032959,308.422180175781,36.4804458618164" />
+    <Link Source="@468" Target="@267" Category="PoundInclude" Bounds="802.616455078125,121.996002197266,575.611938476563,95.0669555664063" />
+    <Link Source="@468" Target="@290" Category="PoundInclude" Bounds="787.295654296875,121.996002197266,0,76.9980010986328" />
+    <Link Source="@470" Target="@292" Category="PoundInclude" Bounds="134.295669555664,121.996002197266,0,21" />
+    <Link Source="@474" Target="@259" Category="PoundInclude" Bounds="2284.23657226563,120.323753356934,268.003173828125,32.2744979858398" />
+    <Link Source="@474" Target="@96" Category="PoundInclude" Bounds="2646.29565429688,121.996002197266,0,188.993988037109" />
+    <Link Source="@476" Target="@242" Category="PoundInclude" Bounds="624.953918457031,233.992004394531,151.3857421875,32.985595703125" />
+    <Link Source="@48" Target="@284" Category="PoundInclude" />
+    <Link Source="@48" Target="@30" Category="PoundInclude" />
+    <Link Source="@48" Target="@327" Category="PoundInclude" />
+    <Link Source="@48" Target="@34" Category="PoundInclude" />
+    <Link Source="@48" Target="@377" Category="PoundInclude" />
+    <Link Source="@48" Target="@38" Category="PoundInclude" />
+    <Link Source="@48" Target="@67" Category="PoundInclude" />
+    <Link Source="@48" Target="@69" Category="PoundInclude" />
+    <Link Source="@482" Target="@264" Category="PoundInclude" Bounds="1316.30493164063,119.685768127441,336.543823242188,36.7969436645508" />
+    <Link Source="@485" Target="@264" Category="PoundInclude" Bounds="1316.34985351563,121.996002197266,749.79736328125,39.6715850830078" />
+    <Link Source="@490" Target="@264" Category="PoundInclude" Bounds="1316.03747558594,118.053375244141,208.600830078125,34.4188385009766" />
+    <Link Source="@495" Target="@386" Category="PoundInclude" Bounds="1011.29565429688,345.988006591797,0,21" />
+    <Link Source="@497" Target="@255" Category="PoundInclude" />
+    <Link Source="@497" Target="@400" Category="PoundInclude" />
+    <Link Source="@497" Target="@94" Category="PoundInclude" />
+    <Link Source="@499" Target="@288" Category="PoundInclude" />
+    <Link Source="@499" Target="@519" Category="PoundInclude" />
+    <Link Source="@499" Target="@94" Category="PoundInclude" />
+    <Link Source="@5" Target="@146" Category="PoundInclude" />
+    <Link Source="@5" Target="@30" Category="PoundInclude" />
+    <Link Source="@5" Target="@94" Category="PoundInclude" />
+    <Link Source="@501" Target="@17" Category="PoundInclude" />
+    <Link Source="@501" Target="@513" Category="PoundInclude" />
+    <Link Source="@501" Target="@94" Category="PoundInclude" />
+    <Link Source="@503" Target="@329" Category="PoundInclude" />
+    <Link Source="@503" Target="@94" Category="PoundInclude" />
+    <Link Source="@505" Target="@17" Category="PoundInclude" />
+    <Link Source="@505" Target="@25" Category="PoundInclude" />
+    <Link Source="@505" Target="@392" Category="PoundInclude" />
+    <Link Source="@505" Target="@497" Category="PoundInclude" />
+    <Link Source="@505" Target="@503" Category="PoundInclude" />
+    <Link Source="@505" Target="@509" Category="PoundInclude" />
+    <Link Source="@505" Target="@94" Category="PoundInclude" />
+    <Link Source="@507" Target="@370" Category="PoundInclude" />
+    <Link Source="@507" Target="@501" Category="PoundInclude" />
+    <Link Source="@507" Target="@94" Category="PoundInclude" />
+    <Link Source="@509" Target="@340" Category="PoundInclude" />
+    <Link Source="@509" Target="@94" Category="PoundInclude" />
+    <Link Source="@511" Target="@25" Category="PoundInclude" />
+    <Link Source="@511" Target="@392" Category="PoundInclude" />
+    <Link Source="@511" Target="@501" Category="PoundInclude" />
+    <Link Source="@511" Target="@505" Category="PoundInclude" />
+    <Link Source="@511" Target="@94" Category="PoundInclude" />
+    <Link Source="@513" Target="@357" Category="PoundInclude" />
+    <Link Source="@513" Target="@94" Category="PoundInclude" />
+    <Link Source="@515" Target="@15" Category="PoundInclude" />
+    <Link Source="@515" Target="@94" Category="PoundInclude" />
+    <Link Source="@517" Target="@370" Category="PoundInclude" />
+    <Link Source="@517" Target="@396" Category="PoundInclude" />
+    <Link Source="@517" Target="@94" Category="PoundInclude" />
+    <Link Source="@519" Target="@32" Category="PoundInclude" />
+    <Link Source="@519" Target="@5" Category="PoundInclude" />
+    <Link Source="@519" Target="@505" Category="PoundInclude" />
+    <Link Source="@519" Target="@513" Category="PoundInclude" />
+    <Link Source="@519" Target="@517" Category="PoundInclude" />
+    <Link Source="@519" Target="@521" Category="PoundInclude" />
+    <Link Source="@519" Target="@9" Category="PoundInclude" />
+    <Link Source="@519" Target="@94" Category="PoundInclude" />
+    <Link Source="@521" Target="@19" Category="PoundInclude" />
+    <Link Source="@521" Target="@316" Category="PoundInclude" />
+    <Link Source="@521" Target="@5" Category="PoundInclude" />
+    <Link Source="@521" Target="@503" Category="PoundInclude" />
+    <Link Source="@521" Target="@523" Category="PoundInclude" />
+    <Link Source="@523" Target="@13" Category="PoundInclude" />
+    <Link Source="@523" Target="@17" Category="PoundInclude" />
+    <Link Source="@523" Target="@501" Category="PoundInclude" />
+    <Link Source="@523" Target="@507" Category="PoundInclude" />
+    <Link Source="@523" Target="@94" Category="PoundInclude" />
+    <Link Source="@54" Target="@38" Category="PoundInclude" />
+    <Link Source="@54" Target="@67" Category="PoundInclude" />
+    <Link Source="@54" Target="@69" Category="PoundInclude" />
+    <Link Source="@56" Target="@331" Category="PoundInclude" />
+    <Link Source="@56" Target="@336" Category="PoundInclude" Bounds="272.455810546875,625.97802734375,26.0497436523438,23.9136352539063" />
+    <Link Source="@56" Target="@499" Category="PoundInclude" />
+    <Link Source="@56" Target="@58" Category="PoundInclude" />
+    <Link Source="@58" Target="@223" Category="PoundInclude" />
+    <Link Source="@58" Target="@284" Category="PoundInclude" />
+    <Link Source="@58" Target="@38" Category="PoundInclude" />
+    <Link Source="@58" Target="@65" Category="PoundInclude" />
+    <Link Source="@58" Target="@67" Category="PoundInclude" />
+    <Link Source="@58" Target="@69" Category="PoundInclude" />
+    <Link Source="@60" Target="@318" Category="PoundInclude" />
+    <Link Source="@60" Target="@323" Category="PoundInclude" />
+    <Link Source="@60" Target="@351" Category="PoundInclude" />
+    <Link Source="@60" Target="@38" Category="PoundInclude" />
+    <Link Source="@60" Target="@67" Category="PoundInclude" />
+    <Link Source="@60" Target="@69" Category="PoundInclude" />
+    <Link Source="@60" Target="@71" Category="PoundInclude" />
+    <Link Source="@63" Target="@38" Category="PoundInclude" />
+    <Link Source="@65" Target="@38" Category="PoundInclude" />
+    <Link Source="@65" Target="@63" Category="PoundInclude" />
+    <Link Source="@7" Target="@17" Category="PoundInclude" />
+    <Link Source="@7" Target="@19" Category="PoundInclude" />
+    <Link Source="@7" Target="@316" Category="PoundInclude" />
+    <Link Source="@7" Target="@400" Category="PoundInclude" />
+    <Link Source="@7" Target="@497" Category="PoundInclude" />
+    <Link Source="@71" Target="@67" Category="PoundInclude" />
+    <Link Source="@71" Target="@69" Category="PoundInclude" />
+    <Link Source="@74" Target="@284" Category="PoundInclude" />
+    <Link Source="@74" Target="@38" Category="PoundInclude" />
+    <Link Source="@74" Target="@67" Category="PoundInclude" />
+    <Link Source="@74" Target="@69" Category="PoundInclude" />
+    <Link Source="@76" Target="@386" Category="PoundInclude" Bounds="1060.30151367188,345.988006591797,85.370849609375,27.3176879882813" />
+    <Link Source="@80" Target="@171" Category="PoundInclude" />
+    <Link Source="@80" Target="@312" Category="PoundInclude" />
+    <Link Source="@82" Target="@361" Category="PoundInclude" />
+    <Link Source="@84" Target="@290" Category="PoundInclude" Bounds="828.150634765625,177.994003295898,66.6463623046875,26.6575775146484" />
+    <Link Source="@86" Target="@223" Category="PoundInclude" />
+    <Link Source="@86" Target="@318" Category="PoundInclude" />
+    <Link Source="@86" Target="@351" Category="PoundInclude" />
+    <Link Source="@86" Target="@38" Category="PoundInclude" />
+    <Link Source="@86" Target="@60" Category="PoundInclude" />
+    <Link Source="@86" Target="@67" Category="PoundInclude" />
+    <Link Source="@86" Target="@69" Category="PoundInclude" />
+    <Link Source="@88" Target="@361" Category="PoundInclude" />
+    <Link Source="@9" Target="@13" Category="PoundInclude" />
+    <Link Source="@9" Target="@501" Category="PoundInclude" />
+    <Link Source="@9" Target="@521" Category="PoundInclude" />
+    <Link Source="@9" Target="@94" Category="PoundInclude" />
+    <Link Source="@90" Target="@361" Category="PoundInclude" />
+    <Link Source="@90" Target="@88" Category="PoundInclude" />
+    <Link Source="@92" Target="@361" Category="PoundInclude" />
+    <Link Source="@94" Target="@161" Category="PoundInclude" />
+    <Link Source="@94" Target="@80" Category="PoundInclude" />
+    <Link Source="@96" Target="@386" Category="PoundInclude" Bounds="1063.12731933594,345.988006591797,1505.24743652344,41.8289794921875" />
+    <Link Source="@98" Target="@386" Category="PoundInclude" Bounds="866.168884277344,345.988006591797,94.8040771484375,28.0890808105469" />
+    <Link Source="G4" Target="@115" Category="Contains" />
+    <Link Source="G4" Target="@118" Category="Contains" />
+    <Link Source="G4" Target="@122" Category="Contains" />
+    <Link Source="G4" Target="@130" Category="Contains" />
+    <Link Source="G4" Target="@146" Category="Contains" />
+    <Link Source="G4" Target="@167" Category="Contains" />
+    <Link Source="G4" Target="@230" Category="Contains" />
+    <Link Source="G4" Target="@255" Category="Contains" />
+    <Link Source="G4" Target="@279" Category="Contains" />
+    <Link Source="G4" Target="@30" Category="Contains" />
+    <Link Source="G4" Target="@302" Category="Contains" />
+    <Link Source="G4" Target="@304" Category="Contains" />
+    <Link Source="G4" Target="@327" Category="Contains" />
+    <Link Source="G4" Target="@340" Category="Contains" />
+    <Link Source="G4" Target="@361" Category="Contains" />
+    <Link Source="G4" Target="@384" Category="Contains" />
+    <Link Source="G4" Target="@388" Category="Contains" />
+    <Link Source="G4" Target="@42" Category="Contains" />
+    <Link Source="G4" Target="@90" Category="Contains" />
+    <Link Source="G4" Target="Windows SDK Dołączone pośrednio" Category="Contains" />
+    <Link Source="OthersGroup" Target="@102" Category="Contains" />
+    <Link Source="OthersGroup" Target="@11" Category="Contains" />
+    <Link Source="OthersGroup" Target="@111" Category="Contains" />
+    <Link Source="OthersGroup" Target="@120" Category="Contains" />
+    <Link Source="OthersGroup" Target="@124" Category="Contains" />
+    <Link Source="OthersGroup" Target="@13" Category="Contains" />
+    <Link Source="OthersGroup" Target="@132" Category="Contains" />
+    <Link Source="OthersGroup" Target="@134" Category="Contains" />
+    <Link Source="OthersGroup" Target="@136" Category="Contains" />
+    <Link Source="OthersGroup" Target="@138" Category="Contains" />
+    <Link Source="OthersGroup" Target="@142" Category="Contains" />
+    <Link Source="OthersGroup" Target="@144" Category="Contains" />
+    <Link Source="OthersGroup" Target="@15" Category="Contains" />
+    <Link Source="OthersGroup" Target="@150" Category="Contains" />
+    <Link Source="OthersGroup" Target="@161" Category="Contains" />
+    <Link Source="OthersGroup" Target="@163" Category="Contains" />
+    <Link Source="OthersGroup" Target="@169" Category="Contains" />
+    <Link Source="OthersGroup" Target="@17" Category="Contains" />
+    <Link Source="OthersGroup" Target="@171" Category="Contains" />
+    <Link Source="OthersGroup" Target="@173" Category="Contains" />
+    <Link Source="OthersGroup" Target="@175" Category="Contains" />
+    <Link Source="OthersGroup" Target="@178" Category="Contains" />
+    <Link Source="OthersGroup" Target="@180" Category="Contains" />
+    <Link Source="OthersGroup" Target="@182" Category="Contains" />
+    <Link Source="OthersGroup" Target="@184" Category="Contains" />
+    <Link Source="OthersGroup" Target="@186" Category="Contains" />
+    <Link Source="OthersGroup" Target="@188" Category="Contains" />
+    <Link Source="OthersGroup" Target="@19" Category="Contains" />
+    <Link Source="OthersGroup" Target="@190" Category="Contains" />
+    <Link Source="OthersGroup" Target="@192" Category="Contains" />
+    <Link Source="OthersGroup" Target="@194" Category="Contains" />
+    <Link Source="OthersGroup" Target="@196" Category="Contains" />
+    <Link Source="OthersGroup" Target="@198" Category="Contains" />
+    <Link Source="OthersGroup" Target="@200" Category="Contains" />
+    <Link Source="OthersGroup" Target="@202" Category="Contains" />
+    <Link Source="OthersGroup" Target="@204" Category="Contains" />
+    <Link Source="OthersGroup" Target="@206" Category="Contains" />
+    <Link Source="OthersGroup" Target="@208" Category="Contains" />
+    <Link Source="OthersGroup" Target="@21" Category="Contains" />
+    <Link Source="OthersGroup" Target="@210" Category="Contains" />
+    <Link Source="OthersGroup" Target="@212" Category="Contains" />
+    <Link Source="OthersGroup" Target="@214" Category="Contains" />
+    <Link Source="OthersGroup" Target="@216" Category="Contains" />
+    <Link Source="OthersGroup" Target="@219" Category="Contains" />
+    <Link Source="OthersGroup" Target="@223" Category="Contains" />
+    <Link Source="OthersGroup" Target="@225" Category="Contains" />
+    <Link Source="OthersGroup" Target="@23" Category="Contains" />
+    <Link Source="OthersGroup" Target="@232" Category="Contains" />
+    <Link Source="OthersGroup" Target="@240" Category="Contains" />
+    <Link Source="OthersGroup" Target="@247" Category="Contains" />
+    <Link Source="OthersGroup" Target="@25" Category="Contains" />
+    <Link Source="OthersGroup" Target="@250" Category="Contains" />
+    <Link Source="OthersGroup" Target="@261" Category="Contains" />
+    <Link Source="OthersGroup" Target="@273" Category="Contains" />
+    <Link Source="OthersGroup" Target="@276" Category="Contains" />
+    <Link Source="OthersGroup" Target="@281" Category="Contains" />
+    <Link Source="OthersGroup" Target="@284" Category="Contains" />
+    <Link Source="OthersGroup" Target="@286" Category="Contains" />
+    <Link Source="OthersGroup" Target="@288" Category="Contains" />
+    <Link Source="OthersGroup" Target="@295" Category="Contains" />
+    <Link Source="OthersGroup" Target="@297" Category="Contains" />
+    <Link Source="OthersGroup" Target="@312" Category="Contains" />
+    <Link Source="OthersGroup" Target="@314" Category="Contains" />
+    <Link Source="OthersGroup" Target="@316" Category="Contains" />
+    <Link Source="OthersGroup" Target="@318" Category="Contains" />
+    <Link Source="OthersGroup" Target="@32" Category="Contains" />
+    <Link Source="OthersGroup" Target="@320" Category="Contains" />
+    <Link Source="OthersGroup" Target="@323" Category="Contains" />
+    <Link Source="OthersGroup" Target="@329" Category="Contains" />
+    <Link Source="OthersGroup" Target="@331" Category="Contains" />
+    <Link Source="OthersGroup" Target="@334" Category="Contains" />
+    <Link Source="OthersGroup" Target="@34" Category="Contains" />
+    <Link Source="OthersGroup" Target="@351" Category="Contains" />
+    <Link Source="OthersGroup" Target="@354" Category="Contains" />
+    <Link Source="OthersGroup" Target="@357" Category="Contains" />
+    <Link Source="OthersGroup" Target="@36" Category="Contains" />
+    <Link Source="OthersGroup" Target="@363" Category="Contains" />
+    <Link Source="OthersGroup" Target="@370" Category="Contains" />
+    <Link Source="OthersGroup" Target="@373" Category="Contains" />
+    <Link Source="OthersGroup" Target="@375" Category="Contains" />
+    <Link Source="OthersGroup" Target="@377" Category="Contains" />
+    <Link Source="OthersGroup" Target="@379" Category="Contains" />
+    <Link Source="OthersGroup" Target="@38" Category="Contains" />
+    <Link Source="OthersGroup" Target="@392" Category="Contains" />
+    <Link Source="OthersGroup" Target="@394" Category="Contains" />
+    <Link Source="OthersGroup" Target="@396" Category="Contains" />
+    <Link Source="OthersGroup" Target="@398" Category="Contains" />
+    <Link Source="OthersGroup" Target="@400" Category="Contains" />
+    <Link Source="OthersGroup" Target="@46" Category="Contains" />
+    <Link Source="OthersGroup" Target="@48" Category="Contains" />
+    <Link Source="OthersGroup" Target="@497" Category="Contains" />
+    <Link Source="OthersGroup" Target="@499" Category="Contains" />
+    <Link Source="OthersGroup" Target="@5" Category="Contains" />
+    <Link Source="OthersGroup" Target="@501" Category="Contains" />
+    <Link Source="OthersGroup" Target="@503" Category="Contains" />
+    <Link Source="OthersGroup" Target="@505" Category="Contains" />
+    <Link Source="OthersGroup" Target="@507" Category="Contains" />
+    <Link Source="OthersGroup" Target="@509" Category="Contains" />
+    <Link Source="OthersGroup" Target="@511" Category="Contains" />
+    <Link Source="OthersGroup" Target="@513" Category="Contains" />
+    <Link Source="OthersGroup" Target="@515" Category="Contains" />
+    <Link Source="OthersGroup" Target="@517" Category="Contains" />
+    <Link Source="OthersGroup" Target="@519" Category="Contains" />
+    <Link Source="OthersGroup" Target="@521" Category="Contains" />
+    <Link Source="OthersGroup" Target="@523" Category="Contains" />
+    <Link Source="OthersGroup" Target="@54" Category="Contains" />
+    <Link Source="OthersGroup" Target="@58" Category="Contains" />
+    <Link Source="OthersGroup" Target="@60" Category="Contains" />
+    <Link Source="OthersGroup" Target="@63" Category="Contains" />
+    <Link Source="OthersGroup" Target="@65" Category="Contains" />
+    <Link Source="OthersGroup" Target="@67" Category="Contains" />
+    <Link Source="OthersGroup" Target="@69" Category="Contains" />
+    <Link Source="OthersGroup" Target="@7" Category="Contains" />
+    <Link Source="OthersGroup" Target="@71" Category="Contains" />
+    <Link Source="OthersGroup" Target="@74" Category="Contains" />
+    <Link Source="OthersGroup" Target="@80" Category="Contains" />
+    <Link Source="OthersGroup" Target="@86" Category="Contains" />
+    <Link Source="OthersGroup" Target="@9" Category="Contains" />
+    <Link Source="OthersGroup" Target="@94" Category="Contains" />
+    <Link Source="PoundIncludeGraphExternalsGroup" Target="G4" Category="Contains" />
+    <Link Source="PoundIncludeGraphExternalsGroup" Target="OthersGroup" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@126" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@128" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@140" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@148" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@228" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@234" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@236" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@238" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@252" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@28" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@300" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@325" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@338" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@342" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@347" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@382" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@390" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@44" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@82" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@88" Category="Contains" />
+    <Link Source="Windows SDK Dołączone pośrednio" Target="@92" Category="Contains" />
+  </Links>
+  <Categories>
+    <Category Id="CodeSchema_PoundIncludeFile" Label="Plik projektu C++" BasedOn="File" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="Plik projektu C++" />
+    <Category Id="CodeSchema_PoundIncludeGroup" Label="Grupa dyrektywy #include" BasedOn="Group" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="Grupa dyrektywy #include" />
+    <Category Id="CodeSchema_ProjectItem" Label="Element projektu" BasedOn="File" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Type" Icon="File" NavigationActionLabel="Elementy projektu" />
+    <Category Id="Contains" Label="Zawiera" Description="Określa, czy źródło łącza zawiera obiekt docelowy" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Zawarte w" IsContainment="True" OutgoingActionLabel="Zawiera" />
+    <Category Id="Externals" Label="Obiekty zewnętrzne" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="Obiekty zewnętrzne" />
+    <Category Id="File" Label="Plik" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="File" NavigationActionLabel="Pliki" />
+    <Category Id="Group" Label="Grupa" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" IsProviderRoot="False" NavigationActionLabel="Grupy" />
+    <Category Id="PoundInclude" Label="#include" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Dyrektywa #include użyta przez" OutgoingActionLabel="#include" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="FilePath" Label="Ścieżka pliku" Description="Ścieżka pliku" DataType="System.String" />
+    <Property Id="Group" Label="Grupuj" Description="Wyświetlaj węzeł jako grupę" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Icon" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="Label" Label="Etykieta" Description="Etykieta, którą można wyświetlić, obiektu Annotable." DataType="System.String" />
+    <Property Id="Language" Label="Język" Description="Język" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="Zestaw" ValueType="Uri" />
+    <Name Id="File" Label="Plik" ValueType="Uri" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="1" Uri="Assembly=$(VsSolutionUri)/[GAME_ENGINE] LEVEL EDITOR/[GAME_ENGINE] LEVEL EDITOR.VCXPROJ" />
+    <Alias n="2" Id="(@1)" />
+    <Alias n="3" Uri="Assembly=" />
+    <Alias n="4" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/cstdlib" />
+    <Alias n="5" Id="(@3 @4)" />
+    <Alias n="6" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/iosfwd" />
+    <Alias n="7" Id="(@3 @6)" />
+    <Alias n="8" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/tuple" />
+    <Alias n="9" Id="(@3 @8)" />
+    <Alias n="10" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/cctype" />
+    <Alias n="11" Id="(@3 @10)" />
+    <Alias n="12" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/compare" />
+    <Alias n="13" Id="(@3 @12)" />
+    <Alias n="14" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/cstddef" />
+    <Alias n="15" Id="(@3 @14)" />
+    <Alias n="16" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/xstddef" />
+    <Alias n="17" Id="(@3 @16)" />
+    <Alias n="18" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/cstring" />
+    <Alias n="19" Id="(@3 @18)" />
+    <Alias n="20" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/xstring" />
+    <Alias n="21" Id="(@3 @20)" />
+    <Alias n="22" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/string" />
+    <Alias n="23" Id="(@3 @22)" />
+    <Alias n="24" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/intrin0.h" />
+    <Alias n="25" Id="(@3 @24)" />
+    <Alias n="26" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/InputArea.h" />
+    <Alias n="27" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_wstdlib.h" />
+    <Alias n="28" Id="(@3 @27)" />
+    <Alias n="29" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/stdlib.h" />
+    <Alias n="30" Id="(@3 @29)" />
+    <Alias n="31" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/xatomic.h" />
+    <Alias n="32" Id="(@3 @31)" />
+    <Alias n="33" Uri="File=file:///C:/SDL2/include/SDL_atomic.h" />
+    <Alias n="34" Id="(@3 @33)" />
+    <Alias n="35" Uri="File=file:///C:/SDL2/include/SDL_haptic.h" />
+    <Alias n="36" Id="(@3 @35)" />
+    <Alias n="37" Uri="File=file:///C:/SDL2/include/SDL_stdinc.h" />
+    <Alias n="38" Id="(@3 @37)" />
+    <Alias n="39" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/MenuLocal_func.h" />
+    <Alias n="40" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Button_Func.h" />
+    <Alias n="41" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/malloc.h" />
+    <Alias n="42" Id="(@3 @41)" />
+    <Alias n="43" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_malloc.h" />
+    <Alias n="44" Id="(@3 @43)" />
+    <Alias n="45" Uri="File=file:///C:/SDL2/include/SDL_misc.h" />
+    <Alias n="46" Id="(@3 @45)" />
+    <Alias n="47" Uri="File=file:///C:/SDL2/include/SDL_thread.h" />
+    <Alias n="48" Id="(@3 @47)" />
+    <Alias n="49" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Engine_stateID.h" />
+    <Alias n="50" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Others_ID.h" />
+    <Alias n="51" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Menu_ID.h" />
+    <Alias n="52" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Enemy_ID.h" />
+    <Alias n="53" Uri="File=file:///C:/SDL2/include/SDL_clipboard.h" />
+    <Alias n="54" Id="(@3 @53)" />
+    <Alias n="55" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Keyboard.h" />
+    <Alias n="56" Id="(@1 @55)" />
+    <Alias n="57" Uri="File=file:///C:/SDL2/include/SDL_keyboard.h" />
+    <Alias n="58" Id="(@3 @57)" />
+    <Alias n="59" Uri="File=file:///C:/SDL2/include/SDL_surface.h" />
+    <Alias n="60" Id="(@3 @59)" />
+    <Alias n="61" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/resource.h" />
+    <Alias n="62" Uri="File=file:///C:/SDL2/include/SDL_scancode.h" />
+    <Alias n="63" Id="(@3 @62)" />
+    <Alias n="64" Uri="File=file:///C:/SDL2/include/SDL_keycode.h" />
+    <Alias n="65" Id="(@3 @64)" />
+    <Alias n="66" Uri="File=file:///C:/SDL2/include/close_code.h" />
+    <Alias n="67" Id="(@3 @66)" />
+    <Alias n="68" Uri="File=file:///C:/SDL2/include/begin_code.h" />
+    <Alias n="69" Id="(@3 @68)" />
+    <Alias n="70" Uri="File=file:///C:/SDL2/include/SDL_blendmode.h" />
+    <Alias n="71" Id="(@3 @70)" />
+    <Alias n="72" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Image.h" />
+    <Alias n="73" Uri="File=file:///C:/SDL2/include/SDL_locale.h" />
+    <Alias n="74" Id="(@3 @73)" />
+    <Alias n="75" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Map_moveMouse_module.h" />
+    <Alias n="76" Id="(@1 @75)" />
+    <Alias n="77" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Map_module.h" />
+    <Alias n="78" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/BlockPlacer_module.h" />
+    <Alias n="79" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/vcruntime.h" />
+    <Alias n="80" Id="(@3 @79)" />
+    <Alias n="81" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_wtime.h" />
+    <Alias n="82" Id="(@3 @81)" />
+    <Alias n="83" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Engine.h" />
+    <Alias n="84" Id="(@1 @83)" />
+    <Alias n="85" Uri="File=file:///C:/SDL2/include/SDL_shape.h" />
+    <Alias n="86" Id="(@3 @85)" />
+    <Alias n="87" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_wctype.h" />
+    <Alias n="88" Id="(@3 @87)" />
+    <Alias n="89" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/ctype.h" />
+    <Alias n="90" Id="(@3 @89)" />
+    <Alias n="91" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_share.h" />
+    <Alias n="92" Id="(@3 @91)" />
+    <Alias n="93" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/yvals_core.h" />
+    <Alias n="94" Id="(@3 @93)" />
+    <Alias n="95" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/singleOBJmove_structure.h" />
+    <Alias n="96" Id="(@1 @95)" />
+    <Alias n="97" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/DeleteOBJ_structure.h" />
+    <Alias n="98" Id="(@1 @97)" />
+    <Alias n="99" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/multiOBJ_select_structure.h" />
+    <Alias n="100" Id="(@1 @99)" />
+    <Alias n="101" Uri="File=file:///C:/SDL2/include/SDL_gesture.h" />
+    <Alias n="102" Id="(@3 @101)" />
+    <Alias n="103" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Texture.h" />
+    <Alias n="104" Id="(@1 @103)" />
+    <Alias n="105" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Module_base.h" />
+    <Alias n="106" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/MENU_Module_base.h" />
+    <Alias n="107" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Menu_base.h" />
+    <Alias n="108" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Mouse.h" />
+    <Alias n="109" Id="(@1 @108)" />
+    <Alias n="110" Uri="File=file:///C:/SDL2/include/SDL_mouse.h" />
+    <Alias n="111" Id="(@3 @110)" />
+    <Alias n="112" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/CoordinateBar_mouse.h" />
+    <Alias n="113" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Buttons_OBJ_create.h" />
+    <Alias n="114" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_terminate.h" />
+    <Alias n="115" Id="(@3 @114)" />
+    <Alias n="116" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/LevelEditor_state.h" />
+    <Alias n="117" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/stddef.h" />
+    <Alias n="118" Id="(@3 @117)" />
+    <Alias n="119" Uri="File=file:///C:/SDL2/include/SDL_ttf.h" />
+    <Alias n="120" Id="(@3 @119)" />
+    <Alias n="121" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/crtdbg.h" />
+    <Alias n="122" Id="(@3 @121)" />
+    <Alias n="123" Uri="File=file:///C:/SDL2/include/SDL_config.h" />
+    <Alias n="124" Id="(@3 @123)" />
+    <Alias n="125" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_stdio_config.h" />
+    <Alias n="126" Id="(@3 @125)" />
+    <Alias n="127" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_wstring.h" />
+    <Alias n="128" Id="(@3 @127)" />
+    <Alias n="129" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/string.h" />
+    <Alias n="130" Id="(@3 @129)" />
+    <Alias n="131" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/vcruntime_string.h" />
+    <Alias n="132" Id="(@3 @131)" />
+    <Alias n="133" Uri="File=file:///C:/SDL2/include/SDL_log.h" />
+    <Alias n="134" Id="(@3 @133)" />
+    <Alias n="135" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/stdarg.h" />
+    <Alias n="136" Id="(@3 @135)" />
+    <Alias n="137" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/vcruntime_new_debug.h" />
+    <Alias n="138" Id="(@3 @137)" />
+    <Alias n="139" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_search.h" />
+    <Alias n="140" Id="(@3 @139)" />
+    <Alias n="141" Uri="File=file:///C:/SDL2/include/SDL_touch.h" />
+    <Alias n="142" Id="(@3 @141)" />
+    <Alias n="143" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/eh.h" />
+    <Alias n="144" Id="(@3 @143)" />
+    <Alias n="145" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/math.h" />
+    <Alias n="146" Id="(@3 @145)" />
+    <Alias n="147" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_math.h" />
+    <Alias n="148" Id="(@3 @147)" />
+    <Alias n="149" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/use_ansi.h" />
+    <Alias n="150" Id="(@3 @149)" />
+    <Alias n="151" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/MapOBJ.h" />
+    <Alias n="152" Id="(@1 @151)" />
+    <Alias n="153" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Event_handlerOBJ.h" />
+    <Alias n="154" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/EventOBJ.h" />
+    <Alias n="155" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Dynamic_OBJ.h" />
+    <Alias n="156" Id="(@1 @155)" />
+    <Alias n="157" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Interact_OBJ.h" />
+    <Alias n="158" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Enemy_OBJ.h" />
+    <Alias n="159" Id="(@1 @158)" />
+    <Alias n="160" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/xkeycheck.h" />
+    <Alias n="161" Id="(@3 @160)" />
+    <Alias n="162" Uri="File=file:///C:/SDL2/include/SDL_joystick.h" />
+    <Alias n="163" Id="(@3 @162)" />
+    <Alias n="164" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Block.h" />
+    <Alias n="165" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Menu_local.h" />
+    <Alias n="166" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/signal.h" />
+    <Alias n="167" Id="(@3 @166)" />
+    <Alias n="168" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/concurrencysal.h" />
+    <Alias n="169" Id="(@3 @168)" />
+    <Alias n="170" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/sal.h" />
+    <Alias n="171" Id="(@3 @170)" />
+    <Alias n="172" Uri="File=file:///C:/SDL2/include/SDL_metal.h" />
+    <Alias n="173" Id="(@3 @172)" />
+    <Alias n="174" Uri="File=file:///C:/SDL2/include/SDL.h" />
+    <Alias n="175" Id="(@3 @174)" />
+    <Alias n="176" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Menu_Level.h" />
+    <Alias n="177" Uri="File=file:///C:/SDL2/include/SDL_filesystem.h" />
+    <Alias n="178" Id="(@3 @177)" />
+    <Alias n="179" Uri="File=file:///C:/SDL2/include/SDL_system.h" />
+    <Alias n="180" Id="(@3 @179)" />
+    <Alias n="181" Uri="File=file:///C:/SDL2/include/SDL_platform.h" />
+    <Alias n="182" Id="(@3 @181)" />
+    <Alias n="183" Uri="File=file:///C:/SDL2/include/SDL_endian.h" />
+    <Alias n="184" Id="(@3 @183)" />
+    <Alias n="185" Uri="File=file:///C:/SDL2/include/SDL_main.h" />
+    <Alias n="186" Id="(@3 @185)" />
+    <Alias n="187" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/ammintrin.h" />
+    <Alias n="188" Id="(@3 @187)" />
+    <Alias n="189" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/emmintrin.h" />
+    <Alias n="190" Id="(@3 @189)" />
+    <Alias n="191" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/immintrin.h" />
+    <Alias n="192" Id="(@3 @191)" />
+    <Alias n="193" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/nmmintrin.h" />
+    <Alias n="194" Id="(@3 @193)" />
+    <Alias n="195" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/pmmintrin.h" />
+    <Alias n="196" Id="(@3 @195)" />
+    <Alias n="197" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/smmintrin.h" />
+    <Alias n="198" Id="(@3 @197)" />
+    <Alias n="199" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/tmmintrin.h" />
+    <Alias n="200" Id="(@3 @199)" />
+    <Alias n="201" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/wmmintrin.h" />
+    <Alias n="202" Id="(@3 @201)" />
+    <Alias n="203" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/xmmintrin.h" />
+    <Alias n="204" Id="(@3 @203)" />
+    <Alias n="205" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/zmmintrin.h" />
+    <Alias n="206" Id="(@3 @205)" />
+    <Alias n="207" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/mmintrin.h" />
+    <Alias n="208" Id="(@3 @207)" />
+    <Alias n="209" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/intrin.h" />
+    <Alias n="210" Id="(@3 @209)" />
+    <Alias n="211" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/arm64_neon.h" />
+    <Alias n="212" Id="(@3 @211)" />
+    <Alias n="213" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/arm_neon.h" />
+    <Alias n="214" Id="(@3 @213)" />
+    <Alias n="215" Uri="File=file:///C:/SDL2/include/SDL_version.h" />
+    <Alias n="216" Id="(@3 @215)" />
+    <Alias n="217" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Menu_Animation.h" />
+    <Alias n="218" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/vcruntime_exception.h" />
+    <Alias n="219" Id="(@3 @218)" />
+    <Alias n="220" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Button.h" />
+    <Alias n="221" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Folder_button.h" />
+    <Alias n="222" Uri="File=file:///C:/SDL2/include/SDL_video.h" />
+    <Alias n="223" Id="(@3 @222)" />
+    <Alias n="224" Uri="File=file:///C:/SDL2/include/SDL_cpuinfo.h" />
+    <Alias n="225" Id="(@3 @224)" />
+    <Alias n="226" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Video_Info.h" />
+    <Alias n="227" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_wstdio.h" />
+    <Alias n="228" Id="(@3 @227)" />
+    <Alias n="229" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/stdio.h" />
+    <Alias n="230" Id="(@3 @229)" />
+    <Alias n="231" Uri="File=file:///C:/SDL2/include/SDL_audio.h" />
+    <Alias n="232" Id="(@3 @231)" />
+    <Alias n="233" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_wconio.h" />
+    <Alias n="234" Id="(@3 @233)" />
+    <Alias n="235" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_wio.h" />
+    <Alias n="236" Id="(@3 @235)" />
+    <Alias n="237" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/errno.h" />
+    <Alias n="238" Id="(@3 @237)" />
+    <Alias n="239" Uri="File=file:///C:/SDL2/include/SDL_loadso.h" />
+    <Alias n="240" Id="(@3 @239)" />
+    <Alias n="241" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Map.h" />
+    <Alias n="242" Id="(@1 @241)" />
+    <Alias n="243" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Event_handlerOBJ_map.h" />
+    <Alias n="244" Id="(@1 @243)" />
+    <Alias n="245" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/CoordinateBar_map.h" />
+    <Alias n="246" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/setjmp.h" />
+    <Alias n="247" Id="(@3 @246)" />
+    <Alias n="248" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Setup.h" />
+    <Alias n="249" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/vcruntime_startup.h" />
+    <Alias n="250" Id="(@3 @249)" />
+    <Alias n="251" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_startup.h" />
+    <Alias n="252" Id="(@3 @251)" />
+    <Alias n="253" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/ScrollBar.h" />
+    <Alias n="254" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/wchar.h" />
+    <Alias n="255" Id="(@3 @254)" />
+    <Alias n="256" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Enemies_placer.h" />
+    <Alias n="257" Id="(@1 @256)" />
+    <Alias n="258" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Buttons_Functions_header.h" />
+    <Alias n="259" Id="(@1 @258)" />
+    <Alias n="260" Uri="File=file:///C:/SDL2/include/SDL_render.h" />
+    <Alias n="261" Id="(@3 @260)" />
+    <Alias n="262" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Block_module_Manager.h" />
+    <Alias n="263" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Engine_manager.h" />
+    <Alias n="264" Id="(@1 @263)" />
+    <Alias n="265" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Animation_manager.h" />
+    <Alias n="266" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Map_manager.h" />
+    <Alias n="267" Id="(@1 @266)" />
+    <Alias n="268" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/LevelEditor_manager.h" />
+    <Alias n="269" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Menu_manager.h" />
+    <Alias n="270" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Map_mouseHandler.h" />
+    <Alias n="271" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Event_handler.h" />
+    <Alias n="272" Uri="File=file:///C:/SDL2/include/SDL_gamecontroller.h" />
+    <Alias n="273" Id="(@3 @272)" />
+    <Alias n="274" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Timer.h" />
+    <Alias n="275" Uri="File=file:///C:/SDL2/include/SDL_timer.h" />
+    <Alias n="276" Id="(@3 @275)" />
+    <Alias n="277" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Renderer.h" />
+    <Alias n="278" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/shared/sdkddkver.h" />
+    <Alias n="279" Id="(@3 @278)" />
+    <Alias n="280" Uri="File=file:///C:/SDL2/include/SDL_power.h" />
+    <Alias n="281" Id="(@3 @280)" />
+    <Alias n="282" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Error.h" />
+    <Alias n="283" Uri="File=file:///C:/SDL2/include/SDL_error.h" />
+    <Alias n="284" Id="(@3 @283)" />
+    <Alias n="285" Uri="File=file:///C:/SDL2/include/SDL_sensor.h" />
+    <Alias n="286" Id="(@3 @285)" />
+    <Alias n="287" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/xpolymorphic_allocator.h" />
+    <Alias n="288" Id="(@3 @287)" />
+    <Alias n="289" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/LevelCreator.h" />
+    <Alias n="290" Id="(@1 @289)" />
+    <Alias n="291" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Event_handlerOBJ_LevelCreator.h" />
+    <Alias n="292" Id="(@1 @291)" />
+    <Alias n="293" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Script_Editor.h" />
+    <Alias n="294" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/arm64intr.h" />
+    <Alias n="295" Id="(@3 @294)" />
+    <Alias n="296" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/armintr.h" />
+    <Alias n="297" Id="(@3 @296)" />
+    <Alias n="298" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/ScroolBar_mapModules.h" />
+    <Alias n="299" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_math_defines.h" />
+    <Alias n="300" Id="(@3 @299)" />
+    <Alias n="301" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/inttypes.h" />
+    <Alias n="302" Id="(@3 @301)" />
+    <Alias n="303" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/sys/types.h" />
+    <Alias n="304" Id="(@3 @303)" />
+    <Alias n="305" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/OBJ_TYPES.h" />
+    <Alias n="306" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Block_types.h" />
+    <Alias n="307" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/HitBoxes_types.h" />
+    <Alias n="308" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Enemy_Types.h" />
+    <Alias n="309" Id="(@1 @308)" />
+    <Alias n="310" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Map_states.h" />
+    <Alias n="311" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/vadefs.h" />
+    <Alias n="312" Id="(@3 @311)" />
+    <Alias n="313" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/crtdefs.h" />
+    <Alias n="314" Id="(@3 @313)" />
+    <Alias n="315" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/yvals.h" />
+    <Alias n="316" Id="(@3 @315)" />
+    <Alias n="317" Uri="File=file:///C:/SDL2/include/SDL_pixels.h" />
+    <Alias n="318" Id="(@3 @317)" />
+    <Alias n="319" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/CodeAnalysis/sourceannotations.h" />
+    <Alias n="320" Id="(@3 @319)" />
+    <Alias n="321" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Buttons_Map_Functions.h" />
+    <Alias n="322" Uri="File=file:///C:/SDL2/include/SDL_rwops.h" />
+    <Alias n="323" Id="(@3 @322)" />
+    <Alias n="324" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_wprocess.h" />
+    <Alias n="325" Id="(@3 @324)" />
+    <Alias n="326" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/process.h" />
+    <Alias n="327" Id="(@3 @326)" />
+    <Alias n="328" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/limits.h" />
+    <Alias n="329" Id="(@3 @328)" />
+    <Alias n="330" Uri="File=file:///C:/SDL2/include/SDL_events.h" />
+    <Alias n="331" Id="(@3 @330)" />
+    <Alias n="332" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Map_events.h" />
+    <Alias n="333" Uri="File=file:///C:/SDL2/include/SDL_hints.h" />
+    <Alias n="334" Id="(@3 @333)" />
+    <Alias n="335" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Key_pressOnce_s.h" />
+    <Alias n="336" Id="(@1 @335)" />
+    <Alias n="337" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_memcpy_s.h" />
+    <Alias n="338" Id="(@3 @337)" />
+    <Alias n="339" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/float.h" />
+    <Alias n="340" Id="(@3 @339)" />
+    <Alias n="341" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/sys/stat.h" />
+    <Alias n="342" Id="(@3 @341)" />
+    <Alias n="343" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Object.h" />
+    <Alias n="344" Id="(@1 @343)" />
+    <Alias n="345" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Module_Object.h" />
+    <Alias n="346" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_wdirect.h" />
+    <Alias n="347" Id="(@3 @346)" />
+    <Alias n="348" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Rect.h" />
+    <Alias n="349" Id="(@1 @348)" />
+    <Alias n="350" Uri="File=file:///C:/SDL2/include/SDL_rect.h" />
+    <Alias n="351" Id="(@3 @350)" />
+    <Alias n="352" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Bar_modules_left.h" />
+    <Alias n="353" Uri="File=file:///C:/SDL2/include/SDL_quit.h" />
+    <Alias n="354" Id="(@3 @353)" />
+    <Alias n="355" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Animation_management.h" />
+    <Alias n="356" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/stdint.h" />
+    <Alias n="357" Id="(@3 @356)" />
+    <Alias n="358" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Point.h" />
+    <Alias n="359" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Menu_start.h" />
+    <Alias n="360" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt.h" />
+    <Alias n="361" Id="(@3 @360)" />
+    <Alias n="362" Uri="File=file:///C:/SDL2/include/SDL_assert.h" />
+    <Alias n="363" Id="(@3 @362)" />
+    <Alias n="364" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Button_input.h" />
+    <Alias n="365" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Text.h" />
+    <Alias n="366" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Button_TEXT.h" />
+    <Alias n="367" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/MENU.h" />
+    <Alias n="368" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Button_Menu.h" />
+    <Alias n="369" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/vcruntime_new.h" />
+    <Alias n="370" Id="(@3 @369)" />
+    <Alias n="371" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Window.h" />
+    <Alias n="372" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/mm3dnow.h" />
+    <Alias n="373" Id="(@3 @372)" />
+    <Alias n="374" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/setjmpex.h" />
+    <Alias n="375" Id="(@3 @374)" />
+    <Alias n="376" Uri="File=file:///C:/SDL2/include/SDL_mutex.h" />
+    <Alias n="377" Id="(@3 @376)" />
+    <Alias n="378" Uri="File=file:///C:/SDL2/include/SDL_messagebox.h" />
+    <Alias n="379" Id="(@3 @378)" />
+    <Alias n="380" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/HitBox.h" />
+    <Alias n="381" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/shared/winpackagefamily.h" />
+    <Alias n="382" Id="(@3 @381)" />
+    <Alias n="383" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/shared/winapifamily.h" />
+    <Alias n="384" Id="(@3 @383)" />
+    <Alias n="385" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Enemy.h" />
+    <Alias n="386" Id="(@1 @385)" />
+    <Alias n="387" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/memory.h" />
+    <Alias n="388" Id="(@3 @387)" />
+    <Alias n="389" Uri="File=$(ProgramFilesUri)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt_memory.h" />
+    <Alias n="390" Id="(@3 @389)" />
+    <Alias n="391" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/isa_availability.h" />
+    <Alias n="392" Id="(@3 @391)" />
+    <Alias n="393" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/algorithm" />
+    <Alias n="394" Id="(@3 @393)" />
+    <Alias n="395" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/exception" />
+    <Alias n="396" Id="(@3 @395)" />
+    <Alias n="397" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/xtr1common" />
+    <Alias n="398" Id="(@3 @397)" />
+    <Alias n="399" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/cstdio" />
+    <Alias n="400" Id="(@3 @399)" />
+    <Alias n="401" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/InputArea.cpp" />
+    <Alias n="402" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/MenuLocal_func.cpp" />
+    <Alias n="403" Id="(@1 @402)" />
+    <Alias n="404" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Button_Func.cpp" />
+    <Alias n="405" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Keyboard.cpp" />
+    <Alias n="406" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Image.cpp" />
+    <Alias n="407" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Map_moveMouse_module.cpp" />
+    <Alias n="408" Id="(@1 @407)" />
+    <Alias n="409" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Map_module.cpp" />
+    <Alias n="410" Id="(@1 @409)" />
+    <Alias n="411" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/BlockPlacer_module.cpp" />
+    <Alias n="412" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Engine.cpp" />
+    <Alias n="413" Id="(@1 @412)" />
+    <Alias n="414" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/singleOBJmove_structure.cpp" />
+    <Alias n="415" Id="(@1 @414)" />
+    <Alias n="416" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/DeleteOBJ_structure.cpp" />
+    <Alias n="417" Id="(@1 @416)" />
+    <Alias n="418" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/multiOBJ_select_structure.cpp" />
+    <Alias n="419" Id="(@1 @418)" />
+    <Alias n="420" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Texture.cpp" />
+    <Alias n="421" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Module_base.cpp" />
+    <Alias n="422" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/MENU_Module_base.cpp" />
+    <Alias n="423" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Menu_base.cpp" />
+    <Alias n="424" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Mouse.cpp" />
+    <Alias n="425" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/CoordinateBar_mouse.cpp" />
+    <Alias n="426" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Buttons_OBJ_create.cpp" />
+    <Alias n="427" Id="(@1 @426)" />
+    <Alias n="428" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/MapOBJ.cpp" />
+    <Alias n="429" Id="(@1 @428)" />
+    <Alias n="430" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Event_handlerOBJ.cpp" />
+    <Alias n="431" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/EventOBJ.cpp" />
+    <Alias n="432" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Dynamic_OBJ.cpp" />
+    <Alias n="433" Id="(@1 @432)" />
+    <Alias n="434" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Interact_OBJ.cpp" />
+    <Alias n="435" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Block.cpp" />
+    <Alias n="436" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Menu_local.cpp" />
+    <Alias n="437" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Menu_Level.cpp" />
+    <Alias n="438" Id="(@1 @437)" />
+    <Alias n="439" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/main.cpp" />
+    <Alias n="440" Id="(@1 @439)" />
+    <Alias n="441" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Menu_Animation.cpp" />
+    <Alias n="442" Id="(@1 @441)" />
+    <Alias n="443" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Button.cpp" />
+    <Alias n="444" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Folder_button.cpp" />
+    <Alias n="445" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Video_Info.cpp" />
+    <Alias n="446" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Map.cpp" />
+    <Alias n="447" Id="(@1 @446)" />
+    <Alias n="448" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Event_handlerOBJ_map.cpp" />
+    <Alias n="449" Id="(@1 @448)" />
+    <Alias n="450" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/CoordinateBar_map.cpp" />
+    <Alias n="451" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Setup.cpp" />
+    <Alias n="452" Id="(@1 @451)" />
+    <Alias n="453" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Enemies_placer.cpp" />
+    <Alias n="454" Id="(@1 @453)" />
+    <Alias n="455" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Block_module_Manager.cpp" />
+    <Alias n="456" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Engine_manager.cpp" />
+    <Alias n="457" Id="(@1 @456)" />
+    <Alias n="458" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Animation_manager.cpp" />
+    <Alias n="459" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Map_manager.cpp" />
+    <Alias n="460" Id="(@1 @459)" />
+    <Alias n="461" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/LevelEditor_manager.cpp" />
+    <Alias n="462" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Menu_manager.cpp" />
+    <Alias n="463" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Map_mouseHandler.cpp" />
+    <Alias n="464" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Event_handler.cpp" />
+    <Alias n="465" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Timer.cpp" />
+    <Alias n="466" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Renderer.cpp" />
+    <Alias n="467" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/LevelCreator.cpp" />
+    <Alias n="468" Id="(@1 @467)" />
+    <Alias n="469" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Event_handlerOBJ_LevelCreator.cpp" />
+    <Alias n="470" Id="(@1 @469)" />
+    <Alias n="471" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Script_Editor.cpp" />
+    <Alias n="472" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/ScroolBar_mapModules.cpp" />
+    <Alias n="473" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Buttons_Map_Functions.cpp" />
+    <Alias n="474" Id="(@1 @473)" />
+    <Alias n="475" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Map_events.cpp" />
+    <Alias n="476" Id="(@1 @475)" />
+    <Alias n="477" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Object.cpp" />
+    <Alias n="478" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Module_Object.cpp" />
+    <Alias n="479" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Rect.cpp" />
+    <Alias n="480" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Bar_modules_left.cpp" />
+    <Alias n="481" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Animation_management.cpp" />
+    <Alias n="482" Id="(@1 @481)" />
+    <Alias n="483" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Point.cpp" />
+    <Alias n="484" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Menu_start.cpp" />
+    <Alias n="485" Id="(@1 @484)" />
+    <Alias n="486" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Button_input.cpp" />
+    <Alias n="487" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Text.cpp" />
+    <Alias n="488" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Button_TEXT.cpp" />
+    <Alias n="489" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/MENU.cpp" />
+    <Alias n="490" Id="(@1 @489)" />
+    <Alias n="491" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Button_Menu.cpp" />
+    <Alias n="492" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Window.cpp" />
+    <Alias n="493" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/HitBox.cpp" />
+    <Alias n="494" Uri="File=$(VsSolutionUri)/[GAME_ENGINE] Level editor/Enemy.cpp" />
+    <Alias n="495" Id="(@1 @494)" />
+    <Alias n="496" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/cwchar" />
+    <Alias n="497" Id="(@3 @496)" />
+    <Alias n="498" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/vector" />
+    <Alias n="499" Id="(@3 @498)" />
+    <Alias n="500" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/type_traits" />
+    <Alias n="501" Id="(@3 @500)" />
+    <Alias n="502" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/climits" />
+    <Alias n="503" Id="(@3 @502)" />
+    <Alias n="504" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/limits" />
+    <Alias n="505" Id="(@3 @504)" />
+    <Alias n="506" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/concepts" />
+    <Alias n="507" Id="(@3 @506)" />
+    <Alias n="508" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/cfloat" />
+    <Alias n="509" Id="(@3 @508)" />
+    <Alias n="510" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/bit" />
+    <Alias n="511" Id="(@3 @510)" />
+    <Alias n="512" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/cstdint" />
+    <Alias n="513" Id="(@3 @512)" />
+    <Alias n="514" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/initializer_list" />
+    <Alias n="515" Id="(@3 @514)" />
+    <Alias n="516" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/new" />
+    <Alias n="517" Id="(@3 @516)" />
+    <Alias n="518" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/xmemory" />
+    <Alias n="519" Id="(@3 @518)" />
+    <Alias n="520" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/xutility" />
+    <Alias n="521" Id="(@3 @520)" />
+    <Alias n="522" Uri="File=$(VsInstallDirUri)/VC/Tools/MSVC/14.29.30037/include/utility" />
+    <Alias n="523" Id="(@3 @522)" />
+  </IdentifierAliases>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Plik projektu C++" ValueLabel="Ma kategorię">
+      <Condition Expression="HasCategory('CodeSchema_PoundIncludeFile')" />
+      <Setter Property="Background" Value="#FFEFEFEF" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Obiekty zewnętrzne" ValueLabel="Ma kategorię">
+      <Condition Expression="HasCategory('Externals')" />
+      <Setter Property="Background" Value="#FFA08080" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Plik źródłowy" ValueLabel="Ma kategorię">
+      <Condition Expression="HasCategory('CodeSchema_ProjectItem')" />
+      <Setter Property="Background" Value="#FFC0C0C0" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Grupa dyrektywy #include" ValueLabel="Ma kategorię">
+      <Condition Expression="HasCategory('CodeSchema_PoundIncludeGroup')" />
+      <Setter Property="Background" Value="#FFEFEFEF" />
+    </Style>
+  </Styles>
+  <Paths>
+    <Path Id="ProgramFiles" Value="C:\Program Files (x86)" />
+    <Path Id="ProgramFilesUri" Value="file:///C:/Program Files (x86)" />
+    <Path Id="VsInstallDir" Value="E:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise" />
+    <Path Id="VsInstallDirUri" Value="file:///E:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise" />
+    <Path Id="VsSolution" Value="F:\[GAME_ENGINE] Level editor" />
+    <Path Id="VsSolutionUri" Value="file:///F:/[GAME_ENGINE] Level editor" />
+  </Paths>
+</DirectedGraph>

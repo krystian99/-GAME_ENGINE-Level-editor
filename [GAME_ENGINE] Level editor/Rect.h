@@ -1,6 +1,11 @@
 #pragma once
 #include <SDL_rect.h>
 
+struct Rect_Data
+{
+	SDL_Rect pos;
+};
+
 // opakowanie struktury SDL_Rect dla szybszego kodowania
 class Rect
 {

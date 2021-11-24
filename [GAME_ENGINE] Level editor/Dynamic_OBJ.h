@@ -3,7 +3,7 @@
 #include <SDL_render.h>
 #include "Texture.h"
 
-struct OBJ_data : MapOBJ_data
+struct Dynamic_OBJ_data : MapOBJ_data
 {
 	SDL_RendererFlip flip;
 };

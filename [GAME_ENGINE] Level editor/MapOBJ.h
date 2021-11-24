@@ -44,6 +44,7 @@ public:
 
 	// zaktualizuj pozycjê renderowania wzglêdem przesuwanej mapy
 	void set_renderPOS(int mapX, int mapY, int mapW, int mapH, const Rect& edit_area, const Rect& mapBG_area);
+	void set_renderPOS(SDL_Rect map_pos, const Rect& edit_area, const Rect& mapBG_area);
 	void set_renderPOS(const Rect& edit_area, const Rect& mapBG_area);
 
 	void set_selectState(bool st);
@@ -96,7 +97,7 @@ private:
 
 	bool selected{ false }; // czy wybrany obiekt
 
-	Texture* tx;
+	Texture* tx{ nullptr };
 
 	Uint8 alpha_mod_mouseOut{ 255 };
 	Uint8 alpha_mod_mouseOver{ 100 };

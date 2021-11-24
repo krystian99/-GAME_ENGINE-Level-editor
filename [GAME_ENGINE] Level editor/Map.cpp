@@ -151,11 +151,6 @@ void Map::set_background(const std::string& bg)
 	Engine_manager::set_updateState(Engine_updateState::RENDER_READY);
 }
 
-void Map::on_mouseR1hit()
-{
-	//cout << "Wcisnieto prawy przycisk myszy!\n";
-}
-
 void Map::on_mouseWheel_down_1hit()
 {
 	if (mapBG_area.left() > 0) {
@@ -177,6 +172,14 @@ void Map::on_mouseWheel_up_1hit()
 			mapBG_area.setX(mapBG.getWidth() - mapBG_area.getW());
 
 		update_enemiesPOS();
+	}
+}
+
+void Map::on_mouseL_press()
+{
+	if (!Map_manager::get_currentModule())
+	{
+		map_MOVE_mouse_s.events();
 	}
 }
 
@@ -285,14 +288,14 @@ void Map::create_EnemyOBJ(const SDL_Rect& mapPOS, const Enemy_ID& id, const SDL_
 {
 	using namespace Enemy_Types;
 
-	static int RenderPOS_X, RenderPOS_Y, RenderPOS_W, RenderPOS_H;
+	/*static int RenderPOS_X, RenderPOS_Y, RenderPOS_W, RenderPOS_H;
 	static double scaleX, scaleY;
 
 	scaleX = double(mapPOS.x - mapBG_area.left()) / double(mapBG_area.getW());
 	scaleY = double(mapPOS.y - mapBG_area.up()) / double(mapBG_area.getH());
 
 	RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
-	RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
+	RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();*/
 
 	switch (id)
 	{
@@ -310,13 +313,18 @@ void Map::create_EnemyOBJ(const SDL_Rect& mapPOS, const Enemy_ID& id, const SDL_
 		break;
 	}
 
-	scaleX = double(mapPOS.w) / double(mapBG_area.getW());
+	/*scaleX = double(mapPOS.w) / double(mapBG_area.getW());
 	scaleY = double(mapPOS.h) / double(mapBG_area.getH());
 
 	RenderPOS_W = round(scaleX * edit_area.getW());
 	RenderPOS_H = round(scaleY * edit_area.getH());
 
-	enemies.back()->set_position(RenderPOS_X, RenderPOS_Y, RenderPOS_W, RenderPOS_H);
+	enemies.back()->set_position(RenderPOS_X, RenderPOS_Y, RenderPOS_W, RenderPOS_H);*/
+
+	
+	auto& enemy = enemies.back();
+
+	enemy->set_renderPOS(mapPOS, edit_area, mapBG_area);
 }
 
 void Map::events_enemies()

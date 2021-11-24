@@ -134,6 +134,26 @@ void MapOBJ::set_renderPOS(int mapX, int mapY, int mapW, int mapH, const Rect& e
 	set_position(RenderPOS_X, RenderPOS_Y, RenderPOS_W, RenderPOS_H);
 }
 
+void MapOBJ::set_renderPOS(SDL_Rect map, const Rect& edit_area, const Rect& mapBG_area)
+{
+	int RenderPOS_X, RenderPOS_Y, RenderPOS_W, RenderPOS_H;
+	double scaleX, scaleY, scaleW, scaleH;
+
+	scaleX = double(map.x - mapBG_area.left()) / double(mapBG_area.getW());
+	scaleY = double(map.y - mapBG_area.up()) / double(mapBG_area.getH());
+
+	scaleW = double(map.w) / double(mapBG_area.right() - mapBG_area.left());
+	scaleH = double(map.h) / double(mapBG_area.down() - mapBG_area.up());
+
+	RenderPOS_X = round(scaleX * edit_area.getW()) + edit_area.left();
+	RenderPOS_Y = round(scaleY * edit_area.getH()) + edit_area.up();
+
+	RenderPOS_W = round(scaleW * edit_area.getW());
+	RenderPOS_H = round(scaleH * edit_area.getH());
+
+	set_position(RenderPOS_X, RenderPOS_Y, RenderPOS_W, RenderPOS_H);
+}
+
 void MapOBJ::set_renderPOS(const Rect& edit_area, const Rect& mapBG_area)
 {
 	int RenderPOS_X, RenderPOS_Y;
@@ -224,14 +244,16 @@ void MapOBJ::on_mouseL1hit()
 
 void MapOBJ::on_mouseOut()
 {
-	//Object::on_mouseOut();
-
-	//tx->set_blendAlpha(alpha_mod_mouseOut);
+	if (tx)
+	{
+		tx->set_blendAlpha(alpha_mod_mouseOut);
+	}
 }
 
 void MapOBJ::on_mouseOver()
 {
-	//Object::on_mouseOver();
-
-	//tx->set_blendAlpha(alpha_mod_mouseOver);
+	if (tx)
+	{
+		tx->set_blendAlpha(alpha_mod_mouseOver);
+	}
 }
