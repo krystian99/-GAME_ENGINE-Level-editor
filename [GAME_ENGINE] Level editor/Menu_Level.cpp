@@ -4,23 +4,20 @@
 #include "Error.h"
 
 Menu_Level::Menu_Level() :
-	currentMenu{ { 400, 30, 400, 50 }, "data/menus/level_editor/LEVEL.png" },
-	level_nameInput_button{ { 485, 220, 200, 50 }, "data/menus/level_editor/LEVELNAME.png" },
-	map_nameInput_button{ { 485, 400, 200, 50 }, "data/menus/level_editor/MAPNAME.png" },
-	input_levelName{ "data/menus/level_editor/INPUT BUTTON.png" },
-	input_mapName{ "data/menus/level_editor/INPUT BUTTON.png" },
-	input_area_level{ { 360, 290, 480, 50 }, 365, 287, "data/fonts/standard_font.ttf", 50, { 0, 0, 45 } },
-	input_area_map{ { 360, 470, 480, 50 }, 365, 467, "data/fonts/standard_font.ttf", 50, { 0, 0, 45 } },
-	New{ { 350, 641, 500, 70 }, "data/menus/level_editor/NEW.png" },
-	Load{ { 350, 735, 500, 70 }, "data/menus/level_editor/LOAD.png" }
+	plansza{ {200, 100, 800, 800 }, "data/plansza.png"},
+	kolko{ {300, 150, 200, 200 }, "data/kolko.png"}
 {
-	input_levelName.set_scaled_position({ 350, 280, 500, 70 });
-	input_mapName.set_scaled_position({ 350, 460, 500, 70 });
+	//data[0][0].set_position(300, 150, 200, 200);
 }
 
 void Menu_Level::events() // nie ma takiej potrzeby ¿eby tworzyæ specjalnych obiekty, skoro i tak s¹ tylko raz tworzone w tym miejscu i potrzebuj¹ wsparcia g³ównej klasy menu ¿eby wykonaæ dana czynnoœæ
 {
-	input_levelName.events();
+	/*if (data[0][0].is_mouseKey_1hit(Mouse_key::L_BUTTON))
+	{
+		kolko.render();
+	}*/
+
+	/*input_levelName.events();
 	input_mapName.events();
 
 	input_area_level.events();
@@ -49,12 +46,12 @@ void Menu_Level::events() // nie ma takiej potrzeby ¿eby tworzyæ specjalnych obi
 
 		input_mapName.set_active(true);
 		input_levelName.set_active(false);
-	}
+	}*/
 }
 
 void Menu_Level::events_indp()
 {
-	New.events();
+	/*New.events();
 	Load.events();
 
 	if (New.is_mouseKey_1hit(Mouse_key::L_BUTTON) && !input_area_level.is_empty() && !input_area_map.is_empty()) {
@@ -64,12 +61,14 @@ void Menu_Level::events_indp()
 	else if (Load.is_mouseKey_1hit(Mouse_key::L_BUTTON) && !input_area_level.is_empty()) {
 		if (LevelEditor_manager::loadLevel(input_area_level.getStr()))
 			Engine_manager::setState(Engine_state::IS_IN_LC);
-	}
+	}*/
 }
 
 void Menu_Level::render()
 {
-	currentMenu.render();
+	plansza.render();
+
+	/*currentMenu.render();
 
 	level_nameInput_button.render();
 	map_nameInput_button.render();
@@ -81,5 +80,5 @@ void Menu_Level::render()
 	input_area_map.render();
 
 	New.render();
-	Load.render();
+	Load.render();*/
 }

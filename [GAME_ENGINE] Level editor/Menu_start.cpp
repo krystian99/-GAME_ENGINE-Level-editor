@@ -20,8 +20,10 @@ void Menu_start::events()
 	Script_editor_button.events();
 	Exit.events();
 
-	if (start_game.is_mouseKey_1hit(Mouse_key::L_BUTTON))
+	if (start_game.is_mouseKey_1hit(Mouse_key::L_BUTTON)) {
+		//Engine_manager::setState(Engine_state::IS_IN_LC);
 		Menu_manager::set_Menu(Menu_ID::LEVEL_MENU);
+	}
 	else if (Exit.is_mouseKey_1hit(Mouse_key::L_BUTTON))
 		Engine_manager::Quit();
 	else if (animationsEditor_button.is_mouseKey_1hit(Mouse_key::L_BUTTON)) // jak na razie wy³¹czone, bo jest niedopracowane

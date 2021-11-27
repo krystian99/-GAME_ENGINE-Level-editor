@@ -55,6 +55,9 @@
     <Filter Include="Mouse">
       <UniqueIdentifier>{4f9b1571-b8d8-4ea1-b4cc-58206342f3db}</UniqueIdentifier>
     </Filter>
+    <Filter Include="states">
+      <UniqueIdentifier>{90bec638-4909-4cdf-a914-bbe7dc9d46d5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Texture.h">
@@ -76,9 +79,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Engine_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine_stateID.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LevelEditor_state.h">
@@ -305,6 +305,9 @@
     </ClInclude>
     <ClInclude Include="Mouse.h">
       <Filter>Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine_stateID.h">
+      <Filter>states</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

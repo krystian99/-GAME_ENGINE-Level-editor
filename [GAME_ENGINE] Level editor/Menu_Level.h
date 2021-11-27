@@ -17,13 +17,9 @@ public:
 
 	~Menu_Level() {}
 private:
-	Button New, Load;
+	Object data[3][3];
+	
+	Image plansza;
 
-	Image currentMenu;
-
-	Image map_nameInput_button, level_nameInput_button;
-
-	Folder_button input_levelName, input_mapName;
-
-	InputArea input_area_level, input_area_map;
+	Image kolko;
 };

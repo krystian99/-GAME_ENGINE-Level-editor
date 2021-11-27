@@ -31,6 +31,17 @@ Map::Map(int x, int y, int w, int h) :
 
 	// ustaw pozycjê gdzie bêd¹ odbywa³y sie eventy na tej strukturze
 	multiOBJ_s.set_position(edit_area.get_position());
+
+	set_background("data/plansza.png");
+}
+
+void Map::start_newGame()
+{
+
+}
+
+void Map::reset_game()
+{
 }
 
 void Map::save_Objects(const std::string& name)

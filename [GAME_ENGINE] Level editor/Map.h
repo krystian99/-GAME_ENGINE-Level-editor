@@ -30,6 +30,10 @@ class Map : public Object
 public:
 	Map(int x, int y, int w, int h);
 
+	void start_newGame();
+
+	void reset_game();
+
 	bool isUpdated() const { return updated; }
 
 	void save_Objects(const std::string & name); // zapisuje dane wszystkich obiektów do pliku
